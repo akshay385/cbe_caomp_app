@@ -185,20 +185,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 										]
 									},
-
-								]
-							},
-							{
-								"itemno": "item1",
-								"item_desc": "Air Storage Vessel",
-								"capacity_each_in_cu_mtr": "770 Cu Mtr",
-								"dia_in_mm": "4500",
-								"tl_to_tl_len": "45500",
-								"moc": " ",
-								"design_pressure_bar": "16",
-								"weights_in_kg": "1320000",
-								"qty_no": "6",
-								"bidders": [
 									{
 										"Supplier": "Artson Enginerring Ltd",
 										"Location": "Nashik",
@@ -232,8 +218,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"IGST": "18%",
 												"UGST": "",
 												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
-												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
-												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
 												"Per Diem rate for Supervision for Erection and commissioning": " ",
 												"PriceBasis": "Ex-Works Nashik",
 												"Point of Delivery": "Ex-Works Nashik",
@@ -341,7 +327,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 									},
 
 								]
-							}
+							},
 						]
 					};
 
@@ -482,7 +468,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 							hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`));
 
 							var vbmiddlesection = hbmiddlesection.getItems()[k];
-				
+
 							vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + generateUniqueId()}`));
 
 							var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
