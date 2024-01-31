@@ -454,7 +454,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						let curr_sectionvbox = Scrollhbox.getItems()[i];
 
 						curr_sectionvbox.addItem(new sap.m.VBox(`${"vboxsuppnameloc" + (i + 1)}`));
-						curr_sectionvbox.addItem(new sap.m.VBox(`${"hbmiddlesection" + (i + 1)}`));
+						curr_sectionvbox.addItem(new sap.m.HBox(`${"hbmiddlesection" + (i + 1)}`));
 						//vbox1
 						let vboxsuppnameloc = curr_sectionvbox.getItems()[0];
 
@@ -472,249 +472,265 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						vboxsuppnameloc.addStyleClass("v11spaceBetweenclass");
 
 
-						//vbox2
-
-						let hbmiddlesection = curr_sectionvbox.getItems()[1];
-
-						let vbmiddlesection = hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`));
-
-						vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + (i + 1)}`));
-
-						let vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
-
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].qtn_ref}`,
-						}));
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].date}`
-						}));
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].validity}`
-						}));
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + (i + 1)}`, {
-							text: ""
-						}));
-						vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
-
-
-						/////////
-						vbmiddlesection.addItem(new sap.m.Label(`${"original_offer" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].offername}`,
-							design: "Bold"
-						}));
-
-						var oTable = new sap.m.Table({
-							id: `${"offer" + generateUniqueId()}`,
-							class: "tableBorder",
-							growing: true,
-							growingThreshold: 20,
-							width: "100%",
-							fixedLayout: false
-						});
-
-						vbmiddlesection.addItem(oTable);
-
-						// Define columns
+						//Hbox middle
 						debugger
-						var oColumn1 = new sap.m.Column({
-							id: `${"unit_rate" + generateUniqueId()}`,
-							header: new sap.m.Text({ text: "unit rate(INR)", wrapping: false })
-						});
+						var hbmiddlesection = curr_sectionvbox.getItems()[1];
 
-						var oColumn2 = new sap.m.Column({
-							id: `${"unit_rate_per" + generateUniqueId()}`,
-							header: new sap.m.Text({ text: "unit rate/KG", wrapping: false })
-						});
+						//Loop for Vboxs
+						for (let k = 0; k < DataGiven.items[0].bidders[i].offers.length; k++) {
+							debugger
+							hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`));
 
-						var oColumn3 = new sap.m.Column({
-							id: `${"total_amt_offer" + generateUniqueId()}`,
-							header: new sap.m.Text({ text: "Total Amount (INR)", wrapping: false })
-						});
+							var vbmiddlesection = hbmiddlesection.getItems()[k];
+				
+							vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + generateUniqueId()}`));
 
-						// Add columns to the table
-						oTable.addColumn(oColumn1);
-						oTable.addColumn(oColumn2);
-						oTable.addColumn(oColumn3);
+							var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
 
-						for (let j = 0; j < DataGiven.items.length; j++) {
-							var oItem = new sap.m.ColumnListItem({
-								id: `${"item1data" + generateUniqueId()}`,
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].qtn_ref}`,
+							}));
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].date}`
+							}));
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].validity}`
+							}));
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
+								text: ""
+							}));
+							vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
+
+
+							/////////
+							// var innerHbox = new sap.m.HBox(`${"innerHBox"+generateUniqueId()}`);
+
+							// vbmiddlesection.addItem(innerHbox);
+
+							// var hboxitems = vbmiddlesection.getItems()[1];
+
+							var inner_vbox = new sap.m.VBox(`${"innervbox" + generateUniqueId()}`);
+							vbmiddlesection.addItem(inner_vbox);
+							// hboxitems.addItem(inner_vbox);
+
+							inner_vbox.addItem(new sap.m.Label(`${"original_offer" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].offername}`,
+								design: "Bold"
+							}));
+
+							var oTable = new sap.m.Table({
+								id: `${"offer" + generateUniqueId()}`,
+								class: "tableBorder",
+								growing: true,
+								growingThreshold: 20,
+								width: "100%",
+								fixedLayout: false
+							});
+
+							inner_vbox.addItem(oTable);
+
+							// Define columns
+							debugger
+							var oColumn1 = new sap.m.Column({
+								id: `${"unit_rate" + generateUniqueId()}`,
+								header: new sap.m.Text({ text: "unit rate(INR)", wrapping: false })
+							});
+
+							var oColumn2 = new sap.m.Column({
+								id: `${"unit_rate_per" + generateUniqueId()}`,
+								header: new sap.m.Text({ text: "unit rate/KG", wrapping: false })
+							});
+
+							var oColumn3 = new sap.m.Column({
+								id: `${"total_amt_offer" + generateUniqueId()}`,
+								header: new sap.m.Text({ text: "Total Amount (INR)", wrapping: false })
+							});
+
+							// Add columns to the table
+							oTable.addColumn(oColumn1);
+							oTable.addColumn(oColumn2);
+							oTable.addColumn(oColumn3);
+
+							for (let j = 0; j < DataGiven.items.length; j++) {
+								var oItem = new sap.m.ColumnListItem({
+									id: `${"item1data" + generateUniqueId()}`,
+									cells: [
+										new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[k].unit_rate}` }),
+										new sap.m.Text({ text: "178" }),
+										new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[k].total_amt_inr}` })
+									]
+								});
+								oTable.addItem(oItem);
+
+							}
+							var oItem1 = new sap.m.ColumnListItem({
+								id: `${"blankspace" + generateUniqueId()}`,
 								cells: [
-									new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[0].unit_rate}` }),
-									new sap.m.Text({ text: "178" }),
-									new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[0].total_amt_inr}` })
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" })
 								]
 							});
-							oTable.addItem(oItem);
 
+							oTable.addItem(oItem1);
+							var oItem2 = new sap.m.ColumnListItem({
+								id: `${"spare" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["spares for 2 years"]}` })
+								]
+							});
+
+							oTable.addItem(oItem2);
+							var oItem3 = new sap.m.ColumnListItem({
+								id: `${"grandtotal" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].grandtotal}` })
+								]
+							});
+
+							oTable.addItem(oItem3);
+							var oItem4 = new sap.m.ColumnListItem({
+								id: `${"parkingmarking" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Packing, Marking, Forwarding & Freight"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem4);
+							var oItem5 = new sap.m.ColumnListItem({
+								id: `${"inspection" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Inspection / Testing Charges"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem5);
+							var oItem6 = new sap.m.ColumnListItem({
+								id: `${"documentation" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Documentation Charges"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem6);
+							var oItem7 = new sap.m.ColumnListItem({
+								id: `${"totalbasicpricing" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Total Basic Price including packing, marking & forwarding"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem7);
+							var oItem8 = new sap.m.ColumnListItem({
+								id: `${"rnod" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].RNOD}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem8);
+							var oItem9 = new sap.m.ColumnListItem({
+								id: `${"customduty" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Custom Duty & Cess"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem9);
+							var oItem10 = new sap.m.ColumnListItem({
+								id: `${"sgst" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].SGST}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem10);
+							var oItem11 = new sap.m.ColumnListItem({
+								id: `${"igst" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].IGST}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${(Number(DataGiven.items[0].bidders[i].offers[k].IGST)) * (Number(DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"])) / 100}` }),
+								]
+							});
+
+							oTable.addItem(oItem11);
+							var oItem12 = new sap.m.ColumnListItem({
+								id: `${"ugst" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].UGST}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${(Number(DataGiven.items[0].bidders[i].offers[k].UGST)) * (Number(DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"])) / 100}` }),
+								]
+							});
+
+							oTable.addItem(oItem12);
+							var oItem13 = new sap.m.ColumnListItem({
+								id: `${"shipment" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Shipment charges from EXW to ISRO Mahendragiri"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem13);
+							var oItem14 = new sap.m.ColumnListItem({
+								id: `${"totalincludingtaxes" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Total Basic Price including packing, marking & forwarding, Transportation including Taxes"]}` })
+								]
+							});
+							oTable.addItem(oItem14);
+							var oItem14 = new sap.m.ColumnListItem({
+								id: `${"total_excluding_taxes" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes"]}` })
+								]
+							});
+							oTable.addItem(oItem14);
+							var oItem15 = new sap.m.ColumnListItem({
+								id: `${"total_excluding_taxes" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Per Diem rate for Supervision for Erection and commissioning"]}` })
+								]
+							});
+							oTable.addItem(oItem15);
 						}
-						var oItem1 = new sap.m.ColumnListItem({
-							id: `${"blankspace" + generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" })
-							]
-						});
-
-						oTable.addItem(oItem1);
-						var oItem2 = new sap.m.ColumnListItem({
-							id: `${"spare" + generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["spares for 2 years"]}` })
-							]
-						});
-
-						oTable.addItem(oItem2);
-						var oItem3 = new sap.m.ColumnListItem({
-							id: `${"grandtotal" + generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].grandtotal}` })
-							]
-						});
-
-						oTable.addItem(oItem3);
-						var oItem4 = new sap.m.ColumnListItem({
-							id: `${"parkingmarking" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Packing, Marking, Forwarding & Freight"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem4);
-						var oItem5 = new sap.m.ColumnListItem({
-							id: `${"inspection" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Inspection / Testing Charges"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem5);
-						var oItem6 = new sap.m.ColumnListItem({
-							id: `${"documentation" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Documentation Charges"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem6);
-						var oItem7 = new sap.m.ColumnListItem({
-							id: `${"totalbasicpricing" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem7);
-						var oItem8 = new sap.m.ColumnListItem({
-							id: `${"rnod" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].RNOD}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem8);
-						var oItem9 = new sap.m.ColumnListItem({
-							id: `${"customduty" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Custom Duty & Cess"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem9);
-						var oItem10 = new sap.m.ColumnListItem({
-							id: `${"sgst" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].SGST}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem10);
-						var oItem11 = new sap.m.ColumnListItem({
-							id: `${"igst" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].IGST}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${(Number(DataGiven.items[0].bidders[i].offers[0].IGST)) * (Number(DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"])) / 100}` }),
-							]
-						});
-
-						oTable.addItem(oItem11);
-						var oItem12 = new sap.m.ColumnListItem({
-							id: `${"ugst" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].UGST}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${(Number(DataGiven.items[0].bidders[i].offers[0].UGST)) * (Number(DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"])) / 100}` }),
-							]
-						});
-
-						oTable.addItem(oItem12);
-						var oItem13 = new sap.m.ColumnListItem({
-							id: `${"shipment" + generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Shipment charges from EXW to ISRO Mahendragiri"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem13);
-						var oItem14 = new sap.m.ColumnListItem({
-							id: `${"totalincludingtaxes" + generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding, Transportation including Taxes"]}` })
-							]
-						});
-						oTable.addItem(oItem14);
-						var oItem14 = new sap.m.ColumnListItem({
-							id: `${"total_excluding_taxes" + generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes"]}` })
-							]
-						});
-						oTable.addItem(oItem14);
-						var oItem15 = new sap.m.ColumnListItem({
-							id: `${"total_excluding_taxes" + generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Per Diem rate for Supervision for Erection and commissioning"]}` })
-							]
-						});
-						oTable.addItem(oItem15);
 
 
 					}
