@@ -1,0 +1,54 @@
+{
+    "Client": "ISRO - TWT",
+    "Project": "TRISONIC WIND TUNNEL Project, ISRO, Vikram Sarabhai Space Centre, Thiruvananthapuram, Kerala",
+    "Indent": "Awaited",
+    "bidders": [
+        {
+            "Supplier": "Artson Enginerring Ltd",
+            "Location": "Nashik",
+            "items": [
+                {
+                    "item_desc": "Air Storage Vessel",
+                    "capacity_each_in_cu_mtr": "770 Cu Mtr",
+                    "dia_in_mm": "4500",
+                    "tl_to_tl_len": "45500",
+                    "moc": " ",
+                    "design_pressure_bar": "16",
+                    "weights_in_kg": "1320000",
+                    "qty_no": "6",
+                    "offers": [
+                        {
+                            "original_offer": {
+                                "qtn_ref": "AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1",
+                                "date": "11-02-2019",
+                                "validity": "120 days",
+                                "unit_rate_inr": "39095000",
+                                "unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
+                                "total_amt_inr": "unit_rate_inr * qty_no(6)",
+                                "spares for 2 years": " 50,000"
+                            },
+                            "Reverse Auction Offer": {
+                                "qtn_ref": "Reverse Auction",
+                                "date": "15-04-2019",
+                                "validity": "120 days",
+                                "unit_rate_inr": "35166666",
+                                "unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
+                                "total_amt_inr": "unit_rate_inr * qty_no(6)",
+                                "spares for 2 years": " "
+                            },
+                            "Final Negotiated Price after Reverse Auction": {
+                                "qtn_ref": "E-Mail offer dated 30-04-2019",
+                                "date": "30-04-2019",
+                                "validity": "120 days",
+                                "unit_rate_inr": " 33875000",
+                                "unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
+                                "total_amt_inr": "unit_rate_inr * qty_no(6)",
+                                "spares for 2 years": " "
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

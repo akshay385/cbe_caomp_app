@@ -1,0 +1,17 @@
+COLUMN TABLE CBE_Item (
+  itemno INTEGER,
+  itemname NVARCHAR(5000) NOT NULL,
+  indent NVARCHAR(5000),
+  client NVARCHAR(5000),
+  project NVARCHAR(5000),
+  capacity_each NVARCHAR(5000),
+  dia_mm NVARCHAR(5000),
+  tl_to_tl_length NVARCHAR(5000),
+  moc NVARCHAR(5000),
+  design_pressure_bar NVARCHAR(5000),
+  weights NVARCHAR(5000),
+  quantity NVARCHAR(5000),
+  PRIMARY KEY(itemname)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN CBE_Supplier AS supplier_rel ON (supplier_rel.itemno = itemno)
+)

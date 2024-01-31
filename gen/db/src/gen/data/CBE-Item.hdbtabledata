@@ -1,0 +1,47 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "CBE_ITEM",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "CBE-Item.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ITEMNO",
+          "ITEMNAME",
+          "INDENT",
+          "CLIENT",
+          "PROJECT",
+          "CAPACITY_EACH",
+          "DIA_MM",
+          "TL_TO_TL_LENGTH",
+          "MOC",
+          "DESIGN_PRESSURE_BAR",
+          "WEIGHTS",
+          "QUANTITY"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ITEMNO": "itemno",
+        "ITEMNAME": "itemname",
+        "INDENT": "indent",
+        "CLIENT": "client",
+        "PROJECT": "project",
+        "CAPACITY_EACH": "capacity_each",
+        "DIA_MM": "dia_mm",
+        "TL_TO_TL_LENGTH": "tl_to_tl_length",
+        "MOC": "moc",
+        "DESIGN_PRESSURE_BAR": "design_pressure_bar",
+        "WEIGHTS": "weights",
+        "QUANTITY": "quantity"
+      }
+    }
+  ]
+}

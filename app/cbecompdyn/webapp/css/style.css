@@ -1,0 +1,26 @@
+.v3spaceBetweenclass{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top:40px;
+}
+
+.v11spaceBetweenclass{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.spacebetweenclass{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.vbmiddlesectionclass{
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}

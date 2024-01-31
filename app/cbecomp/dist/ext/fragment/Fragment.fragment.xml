@@ -168,7 +168,7 @@
                                             <Label id="label1" text="" />
                                         </HBox>
                                         <HBox id="hbox2" alignItems="End">
-                                            <Label design="Bold" id="ite1m1" text="Spares for 2 Years operation" />
+                                            <Label id="ite1m1" text="Spares for 2 Years operation" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -198,7 +198,7 @@
                                             <Label id="label3" text="" />
                                         </HBox>
                                         <HBox id="hbox6" alignItems="End">
-                                            <Label design="Bold" id="item3" text="Packing, Marking, Forwarding and Freight" />
+                                            <Label id="item3" text="Packing, Marking, Forwarding and Freight" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -210,7 +210,7 @@
                                             <Label id="label4" text="" />
                                         </HBox>
                                         <HBox id="hbox8" alignItems="End">
-                                            <Label design="Bold" id="itesasm4" text="Inspection / Testing Charges" />
+                                            <Label id="itesasm4" text="Inspection / Testing Charges" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -225,7 +225,7 @@
                                             <Label id="label5" text="" />
                                         </HBox>
                                         <HBox id="hbox10" alignItems="End">
-                                            <Label design="Bold" id="item5" text="Documentation Charges" />
+                                            <Label id="item5" text="Documentation Charges" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -240,7 +240,8 @@
                                             <Label id="label6" text="" />
                                         </HBox>
                                         <HBox id="hbox12" alignItems="End">
-                                            <Label design="Bold" id="item6" text="Total Basic Price including packing, marking and forwarding" />
+                                            <Label design="Bold" id="item6" text="Total Basic Price including packing, marking..." tooltip="Total Basic Price including packing, marking and forwarding" />
+                                            <core:Icon id="icon3" src="sap-icon://navigation-down-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" size="13px" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" press="handler.collapseFunB"></core:Icon>
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -268,56 +269,51 @@
                                             <Label id="label8" text="" />
                                         </HBox>
                                         <HBox id="hbox16" alignItems="End">
-                                            <Label design="Bold" id="item8" text="Custom Duty and Cess" />
+                                            <Label id="item8" text="Custom Duty and Cess" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="21uv22">
+
                                 <form:fields>
                                     <HBox id="demox11" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hbox21" alignItems="Start">
                                             <Label id="label11" text="" />
                                         </HBox>
                                         <HBox id="hbox22" alignItems="End">
-                                            <Label design="Bold" id="item11" text="SGST" />
+                                            <Label id="item11" text="SGST" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="23wx24">
+
                                 <form:fields>
                                     <HBox id="demox12" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hbox23" alignItems="Start">
                                             <Label id="label12" text="" />
                                         </HBox>
                                         <HBox id="hbox24" alignItems="End">
-                                            <Label design="Bold" id="item12" text="IGST" />
+                                            <Label id="item12" text="IGST" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
 
-                            <form:FormElement id="25yz26">
                                 <form:fields>
                                     <HBox id="demox13" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hbox25" alignItems="Start">
                                             <Label id="label13" text="" />
                                         </HBox>
                                         <HBox id="hbox26" alignItems="End">
-                                            <Label design="Bold" id="item13" text="UGST" />
+                                            <Label id="item13" text="UGST" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="updatedElementID1">
+
                                 <form:fields>
                                     <HBox id="newHBoxID11" justifyContent="SpaceBetween" height="22px">
                                         <HBox id="hBox1ID1" alignItems="Start">
                                             <Label id="newLabelID11" text="" />
                                         </HBox>
                                         <HBox id="hBox2ID1" alignItems="End">
-                                            <Label design="Bold" id="newItemID11" text="Shipment charges from EXW to ISRO Mahendragiri " />
+                                            <Label id="newItemID11" text="Shipment charges from EXW to ISRO Mahendragiri " />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -330,7 +326,8 @@
                                             <Label id="newLabelID1" text="" />
                                         </HBox>
                                         <HBox id="hBox2ID" alignItems="End">
-                                            <Label design="Bold" id="newItemID1" text="Total Basic Price including packing, marking and forwarding" />
+                                            <Label design="Bold" id="newItemID1" text="Total Basic Price including packing,..." tooltip="Total Basic Price including packing, marking and forwarding, Transportation including Taxes" />
+                                            <core:Icon id="icon1" src="sap-icon://navigation-down-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" size="13px" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" press="handler.collapseFunD"></core:Icon>
                                         </HBox>
                                     </HBox>
                                 </form:fields>
@@ -378,158 +375,146 @@
                                     </HBox>
                                 </form:fields>
                             </form:FormElement>
+
                             <form:FormElement id="formElement2ID">
                                 <form:fields>
-                                    <HBox id="hBox32ID" justifyContent="SpaceBetween" height="30px">
+                                    <HBox id="hBox32ID" justifyContent="SpaceBetween" height="72px">
                                         <HBox id="hBox3ID" alignItems="Start">
                                             <Label id="label2ID" text="" />
                                         </HBox>
                                         <HBox id="hBox4ID" alignItems="End">
                                             <Label design="Bold" id="item2ID" text=" PriceBasis" />
+                                            <core:Icon id="icon2" src="sap-icon://navigation-down-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" size="13px" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" press="handler.collapseFunG"></core:Icon>
                                         </HBox>
                                     </HBox>
                                 </form:fields>
                             </form:FormElement>
-                            <form:FormElement id="formElement3ID">
+                            <form:FormElement id="formElemweent2ID">
                                 <form:fields>
-                                    <HBox id="hBox5ID" justifyContent="SpaceBetween" height="20px">
+                                    <HBox id="hBox5ID" justifyContent="SpaceBetween" height="15px">
                                         <HBox id="hBox6ID" alignItems="Start">
                                             <Label id="label3ID" text="" />
                                         </HBox>
                                         <HBox id="hBox7ID" alignItems="End">
-                                            <Label design="Bold" id="item3ID" text="Point of Delivery" />
+                                            <Label id="item3ID" text="Point of Delivery" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement4ID">
+
                                 <form:fields>
-                                    <HBox id="hBox8ID" justifyContent="SpaceBetween" height="25px">
+                                    <HBox id="hBox8ID" justifyContent="SpaceBetween" height="18px">
                                         <HBox id="hBox9ID" alignItems="Start">
                                             <Label id="label4ID" text="" />
                                         </HBox>
                                         <HBox id="hBox10ID" alignItems="End">
-                                            <Label design="Bold" id="item4ID" text="Delivery Period" />
+                                            <Label id="item4ID" text="Delivery Period" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement5ID">
+
                                 <form:fields>
-                                    <HBox id="hBox11ID" justifyContent="SpaceBetween" height="25px">
+                                    <HBox id="hBox11ID" justifyContent="SpaceBetween" height="104px">
                                         <HBox id="hBox12ID" alignItems="Start">
                                             <Label id="label5ID" text="" />
                                         </HBox>
                                         <HBox id="hBox13ID" alignItems="End">
-                                            <Label design="Bold" id="item5ID" text="Payment Terms" />
+                                            <Label id="item5ID" text="Payment Terms" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement7ID">
+
                                 <form:fields>
-                                    <HBox id="hBox17ID" justifyContent="SpaceBetween" height="25px">
+                                    <HBox id="hBox17ID" justifyContent="SpaceBetween" height="100px">
                                         <HBox id="hBox18ID" alignItems="Start">
                                             <Label id="label7ID" text="" />
                                         </HBox>
                                         <HBox id="hBox19ID" alignItems="End">
-                                            <Label design="Bold" id="item7ID" text="Liquidated Damages" />
+                                            <Label id="item7ID" text="Liquidated Damages" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement8ID">
+
                                 <form:fields>
-                                    <HBox id="hBox20ID" justifyContent="SpaceBetween" height="25px">
+                                    <HBox id="hBox20ID" justifyContent="SpaceBetween" height="108px">
                                         <HBox id="hBox21ID" alignItems="Start">
                                             <Label id="label8ID" text="" />
                                         </HBox>
                                         <HBox id="hBox22ID" alignItems="End">
-                                            <Label design="Bold" id="item8ID" text="Warranty / Defect Liability Period" />
+                                            <Label id="item8ID" text="Warranty / Defect Liability Period" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement9ID">
+
                                 <form:fields>
-                                    <HBox id="hBox23ID" justifyContent="SpaceBetween" height="25px">
+                                    <HBox id="hBox23ID" justifyContent="SpaceBetween" height="93px">
                                         <HBox id="hBox24ID" alignItems="Start">
                                             <Label id="label9ID" text="" />
                                         </HBox>
                                         <HBox id="hBox25ID" alignItems="End">
-                                            <Label design="Bold" id="item9ID" text="CPBG" />
+                                            <Label id="item9ID" text="CPBG" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement10ID">
+
                                 <form:fields>
-                                    <HBox id="hBox26ID" justifyContent="SpaceBetween" height="25px">
+                                    <HBox id="hBox26ID" justifyContent="SpaceBetween" height="100px">
                                         <HBox id="hBox27ID" alignItems="Start">
                                             <Label id="label10ID" text="" />
                                         </HBox>
                                         <HBox id="hBox28ID" alignItems="End">
-                                            <Label design="Bold" id="item10ID" text="Contact Person" />
+                                            <Label id="item10ID" text="Contact Person" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement11ID">
+
                                 <form:fields>
                                     <HBox id="hBox29ID" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hBox30ID" alignItems="Start">
                                             <Label id="label11ID" text="" />
                                         </HBox>
                                         <HBox id="hBox31ID" alignItems="End">
-                                            <Label design="Bold" id="item11ID" text="Contact No." />
+                                            <Label id="item11ID" text="Contact No." />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement12ID">
+
                                 <form:fields>
                                     <HBox id="hBox32sdsID" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hBox33ID" alignItems="Start">
                                             <Label id="label12ID" text="" />
                                         </HBox>
                                         <HBox id="hBox34ID" alignItems="End">
-                                            <Label design="Bold" id="item12ID" text=" Order can be given to……..." />
+                                            <Label id="item12ID" text=" Order can be given to……..." />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement13ID">
+
                                 <form:fields>
                                     <HBox id="hBox35ID" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hBox36ID" alignItems="Start">
                                             <Label id="label13ID" text="" />
                                         </HBox>
                                         <HBox id="hBox37ID" alignItems="End">
-                                            <Label design="Bold" id="item13ID" text=" Techncially Approved " />
+                                            <Label id="item13ID" text=" Techncially Approved " />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
-                            </form:FormElement>
-                            <form:FormElement id="formElement14ID">
+
                                 <form:fields>
                                     <HBox id="hBox38ID" justifyContent="SpaceBetween" height="25px">
                                         <HBox id="hBox39ID" alignItems="Start">
                                             <Label id="label14ID" text="" />
                                         </HBox>
                                         <HBox id="hBox40ID" alignItems="End">
-                                            <Label design="Bold" id="item14ID" text="Approved Vendor" />
+                                            <Label id="item14ID" text="Approved Vendor" />
                                         </HBox>
                                     </HBox>
                                 </form:fields>
                             </form:FormElement>
-                            <!-- <form:FormElement id="1sz22">
-                                <form:fields>
-                                    <HBox id="hb1zs13">
 
-                                        <Label id="itzemdwname" text="Nashik" />
-                                    </HBox>
-                                </form:fields>
-                            </form:FormElement> -->
+
+
+
                         </form:formElements>
                     </form:FormContainer>
                 </form:formContainers>
@@ -548,7 +533,7 @@
                                 <form:formElements>
                                     <form:FormElement id="1s2">
                                         <form:fields>
-                                            <HBox id="hb1s1" justifyContent="Center" height="11px">
+                                            <HBox id="hb1s1" justifyContent="Center" width="auto" height="11px">
 
                                                 <Title id="itemdname" text="Artson Enginerring Ltd" wrapping='true'/>
                                             </HBox>
@@ -567,14 +552,13 @@
                         </form:formContainers>
                     </form:Form>
 
-
                     <!-- ... (your existing form structure) ... -->
 
                     <!-- HBox for Tables -->
-                                        <HBox id="tablesHBox">
+                    <HBox id="tablesHBox" >
                         <!-- Original Offer Table -->
 
-                        <VBox id= "v7677">
+                        <VBox id= "v7677" >
 
                             <HBox id="aelnsk" height="22px">
                                 <Text id="qnt" text="AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1"></Text>
@@ -589,7 +573,7 @@
 
 
                             <Label design="Bold" id="offers" text="Original Offer" />
-                            <Table id="myTable12121" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                            <Table id="myTable12121" class="tableBorder" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
                                     <Column id="col221112">
@@ -627,7 +611,7 @@
                                             <Text id="txt34" text="50000" />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item455">
+                                    <ColumnListItem id="item455" class="custCellBolder">
                                         <cells>
                                             <Text id="t235" text=" " />
                                             <Text id="ta35" text=" " />
@@ -655,7 +639,7 @@
                                             <Text id="txt8" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item49">
+                                    <ColumnListItem id="item49" class="custCellBolder">
                                         <cells>
                                             <Text id="t239" text=" " />
                                             <Text id="ta39" text=" " />
@@ -705,14 +689,14 @@
                                             <Text id="txt16" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item417">
+                                    <ColumnListItem id="item417" class="custCellBold">
                                         <cells>
                                             <Text id="t1317" text=" " />
                                             <Text id="ta317" text=" " />
                                             <Text id="txt17" text="27,68,51,600                                              " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item418">
+                                    <ColumnListItem id="item418" class="custCellBold">
                                         <cells>
                                             <Text id="t1318" text=" " />
                                             <Text id="ta318" text=" " />
@@ -736,7 +720,7 @@
                                 </items>
                             </Table>
                         </VBox>
-                        <VBox id= "v3356">
+                        <VBox id= "v3356" >
                             <HBox id="hhbbbox_qnt2" height="22px">
                                 <Text id="qnt2" text="Reverse Auction"></Text>
                             </HBox>
@@ -752,7 +736,7 @@
 
 
                             <Label design="Bold" id="tiitle221" text="Reverse Auction Offer" />
-                            <Table id="myTable121" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                            <Table id="myTable121" class="tableBorder" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
                                     <Column id="col2211">
@@ -789,7 +773,7 @@
                                             <Text id="texttxt34" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item155">
+                                    <ColumnListItem id="item155" class="custCellBolder">
                                         <cells>
                                             <Text id="text235" text=" " />
                                             <Text id="texta35" text=" " />
@@ -817,7 +801,7 @@
                                             <Text id="texttxt8" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item149">
+                                    <ColumnListItem id="item149" class="custCellBolder">
                                         <cells>
                                             <Text id="text239" text=" " />
                                             <Text id="texta39" text=" " />
@@ -867,25 +851,26 @@
                                             <Text id="texttxt16" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1417">
-                                        <cells>
-                                            <Text id="text1317" text=" " />
-                                            <Text id="texta317" text=" " />
-                                            <Text id="texttxt17" text="59000" />
-                                        </cells>
-                                    </ColumnListItem>
-                                    <ColumnListItem id="item1418">
+
+                                    <ColumnListItem id="item1418" class="custCellBold">
                                         <cells>
                                             <Text id="text1318" text=" " />
                                             <Text id="texta318" text=" " />
                                             <Text id="texttxt18" text=" 24,89,79,995                                             " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1419">
+                                    <ColumnListItem id="item1419" class="custCellBold">
                                         <cells>
                                             <Text id="text1319" text=" " />
                                             <Text id="texta319" text=" " />
                                             <Text id="texttxt19" text=" 21,09,99,996                                             " />
+                                        </cells>
+                                    </ColumnListItem>
+                                    <ColumnListItem id="item1417">
+                                        <cells>
+                                            <Text id="text1317" text=" " />
+                                            <Text id="texta317" text=" " />
+                                            <Text id="texttxt17" text="" />
                                         </cells>
                                     </ColumnListItem>
                                     <ColumnListItem id="item1420">
@@ -899,7 +884,7 @@
 
                             </Table>
                         </VBox>
-                        <VBox id= "v3356333">
+                        <VBox id= "v3356333" >
                             <HBox id="hhbbbox_qnt12" height="22px">
                                 <Text id="qnt12" text="E-Mail offer dated 30-04-2019"></Text>
                             </HBox>
@@ -952,7 +937,7 @@
                                             <Text id="texttxt341" text="" />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4551">
+                                    <ColumnListItem id="item4551" class="custCellBolder">
                                         <cells>
                                             <Text id="text2351" text=" " />
                                             <Text id="texta351" text=" " />
@@ -980,7 +965,7 @@
                                             <Text id="texttxt81" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item491">
+                                    <ColumnListItem id="item491" class="custCellBolder">
                                         <cells>
                                             <Text id="text2391" text=" " />
                                             <Text id="texta391" text=" " />
@@ -1030,14 +1015,14 @@
                                             <Text id="texttxt161" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4171">
+                                    <ColumnListItem id="item4171" class="custCellBold">
                                         <cells>
                                             <Text id="text13171" text=" " />
                                             <Text id="texta3171" text=" " />
                                             <Text id="texttxt171" text=" 20,32,50,000                                            " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4181">
+                                    <ColumnListItem id="item4181" class="custCellBold">
                                         <cells>
                                             <Text id="text13181" text=" " />
                                             <Text id="texta3181" text=" " />
@@ -1064,102 +1049,304 @@
                         </VBox>
 
                     </HBox>
-                    <form:Form id="sectionform112222" editable="false">
-                        <form:layout>
-                            <form:ResponsiveGridLayout id="r2esp112" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-                        </form:layout>
-                        <form:formContainers>
-                            <form:FormContainer id="fg12" ariaLabelledBy="Title">
-                                <form:formElements>
-                                    <form:FormElement id="112s22">
-                                        <form:fields>
-                                            <HBox id="hbo212x1" height="17px">
-                                                <Text id="i2temdname2" text="Ex-Works Nashik"/>
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="112s2221">
-                                        <form:fields>
-                                            <HBox id="hbo1212x2" height="20px">
-                                                <Text id="i2123" text="Ex-Works Nashik" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="1122ss">
-                                        <form:fields>
-                                            <HBox id="hb12ox3" height="25px">
-                                                <Text id="i211" text="Receipt of order, Approved MDS – 0 date" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2hf">
-                                        <form:fields>
-                                            <HBox id="h12box4" height="25px">
-                                                <Text id="swa222f2" text="10% Total Contracts Price shall be released after submission of following documents:" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sn22a">
-                                        <form:fields>
-                                            <HBox id="h12box5" height="27px">
-                                                <Text id="svwa2222" text="0.5% (Half percent) of Total Contract Price, subject to a maximum of 5%" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2j2a2">
-                                        <form:fields>
-                                            <HBox id="h12box6" height="27px">
-                                                <Text id="swah2222" text="Warranty for the performance of all the Ordered items/packages under the Contract" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2w">
-                                        <form:fields>
-                                            <HBox id="hb12ox7" width="100%" height="26px">
-                                                <Text id="swa2222w" text="Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months." width="70%" wrapping="true"/>
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2y2a">
-                                        <form:fields>
-                                            <HBox id="h12box8" height="26px">
-                                                <Text id="sfwa222" text="Mr.Prashant Bachhav / Mr.Saket Mathur" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="usa22a">
-                                        <form:fields>
-                                            <HBox id="heebox9" height="26px">
-                                                <Text id="nswa222" text="Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sj22a">
-                                        <form:fields>
-                                            <HBox id="hddbox10" height="24px">
-                                                <Text id="swaff222" text=" M/s Artson Engineering Ltd " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="shh22a">
-                                        <form:fields>
-                                            <HBox id="hddbox11" height="23px">
-                                                <Text id="shhhwa222" text="Technically Accepted" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2uiu2a">
-                                        <form:fields>
-                                            <HBox id="hzxzbox12" height="20px">
-                                                <Text id="sytwa222" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                </form:formElements>
-                            </form:FormContainer>
+                    <VBox id="sectioncomboboxid1">
+                        <ComboBox id="section1combobox1" placeholder="Final Negotiated Price after Reverse Auction" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" change="handler.onChangefun">
+                            <core:Item id="11comboxitem1" text="Original Offer" />
+                            <core:Item id="c11omboxitem2" text="Reverse Auction Offer" />
+                            <core:Item id="c11omboxi2323tem2" text="Final Negotiated Price after Reverse Auction" />
+                        </ComboBox>
+                        <HBox id="someid132">
+                            <form:Form id="sectionform112222" visible="false" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="112s22">
+                                                <form:fields>
+                                                    <HBox id="hbo212x1" height="17px">
+                                                        <Text id="i2temdname2" text="Ex-Works NashikO"/>
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="112s2221">
+                                                <form:fields>
+                                                    <HBox id="hbo1212x2" height="20px">
+                                                        <Text id="i2123" text="Ex-Works Nashik" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="1122ss">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrol1lcontainer' width="500px" height="100px">
+                                                        <Text id="i211" text="Receipt of order, Approved MDS 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation and approval from CCOE-PESO office To + 12 Weeks : Material procurement To + 24 Weeks : Manufacturing, NDT clearance To + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces ) To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2hf">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='news1crollcon1tainer122' width="500px" height="100px">
+                                                        <Text id="swa222f2" text="10% Total Contracts Price shall be released after submission of following documents: a) Corporate Guarantee for advance equivalent to 10% of Total Contract Price. b) Correct Proforma invoice c) Corporate Performance Guarantee for 10% of Total Contract Price to be submitted within 15 days from the date of PO date. d Unconditional acceptance of Purchase Order. 2) 10% Total Contract Price shall be released after design and drawing approval and submission of Corporate Guarantee of equivalent amount. 3) 20% Total Contracts Price shall be released within 30 days upon receipt of major materials like: a) Plates b) Corporate Guarantee of equivalent amount. 4. 30% of the Total Contract Price shall be payable within 30 days after dispatch. 5. 10% of the Total Contract Price shall be payable within 30 days upon successful Hydrotest at site 6.15% of the Total Contract Price shall be payable within 30 days upon successful NDT at site 6. 5% of the Total Contract Price shall be payable within 30 days upon handing over of Tank , submission of as built Drawings and Final Document Dossier. All payment shall be released after completion of approved milestone. Payments shall be released through NEFT/RTGS/Bank to Bank transfer upon receipt of certified invoice. All invoices for payments must mention TPL job no. OG-500047-ISRO-SIET. Commercial Invoices shall be consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. All Bank Guarantees shall be as per TPL formats and shall be sent to TPL, RO Mumbai at Powai. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sn22a">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='news1crollcontainer11' width="500px" height="100px">
+                                                        <Text id="svwa2222" text="0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2j2a2">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='news1crollcontainer12' width="500px" height="100px">
+                                                        <TextArea id="swah2222" editable="true" width="100%" value="Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier. During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier. Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. "/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2w">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='news1crollcontainer13' width="500px" height="100px">
+                                                        <Text id="swa2222w" text="Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months. " width="70%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2y2a">
+                                                <form:fields>
+                                                    <HBox id="h12box8" height="26px">
+                                                        <Text id="sfwa222" text="Mr.Prashant Bachhav / Mr.Saket Mathur" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="usa22a">
+                                                <form:fields>
+                                                    <HBox id="heebox9" height="26px">
+                                                        <Text id="nswa222" text="Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sj22a">
+                                                <form:fields>
+                                                    <HBox id="hddbox10" height="24px">
+                                                        <Text id="swaff222" text=" M/s Artson Engineering Ltd " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="shh22a">
+                                                <form:fields>
+                                                    <HBox id="hddbox11" height="23px">
+                                                        <Text id="shhhwa222" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2uiu2a">
+                                                <form:fields>
+                                                    <HBox id="hzxzbox12" height="20px">
+                                                        <Text id="sytwa222" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
 
-                        </form:formContainers>
-                    </form:Form>
+                                </form:formContainers>
+                            </form:Form>
+                            <form:Form id="sectionform112222b" visible="false" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp111112b" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="f444g12b" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="formcomboboxids112s22b">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbo212x1b" height="17px">
+                                                        <Text id="formcomboboxidsi2temdname2b" text="Ex-Works NashikR"/>
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids112s2221b">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbo1212x2b" height="20px">
+                                                        <Text id="formcomboboxidsi2123b" text="Ex-Works Nashik" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids1122ssb">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrol1lcontainerb' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsi211b" text="Receipt of order, Approved MDS 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation and approval from CCOE-PESO office To + 12 Weeks : Material procurement To + 24 Weeks : Manufacturing, NDT clearance To + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces ) To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2hfb">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcon1tainer122b' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa222f2b" text="10% Total Contracts Price shall be released after submission of following documents: a) Corporate Guarantee for advance equivalent to 10% of Total Contract Price. b) Correct Proforma invoice c) Corporate Performance Guarantee for 10% of Total Contract Price to be submitted within 15 days from the date of PO date. d Unconditional acceptance of Purchase Order. 2) 10% Total Contract Price shall be released after design and drawing approval and submission of Corporate Guarantee of equivalent amount. 3) 20% Total Contracts Price shall be released within 30 days upon receipt of major materials like: a) Plates b) Corporate Guarantee of equivalent amount. 4. 30% of the Total Contract Price shall be payable within 30 days after dispatch. 5. 10% of the Total Contract Price shall be payable within 30 days upon successful Hydrotest at site 6.15% of the Total Contract Price shall be payable within 30 days upon successful NDT at site 6. 5% of the Total Contract Price shall be payable within 30 days upon handing over of Tank , submission of as built Drawings and Final Document Dossier. All payment shall be released after completion of approved milestone. Payments shall be released through NEFT/RTGS/Bank to Bank transfer upon receipt of certified invoice. All invoices for payments must mention TPL job no. OG-500047-ISRO-SIET. Commercial Invoices shall be consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. All Bank Guarantees shall be as per TPL formats and shall be sent to TPL, RO Mumbai at Powai. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssn22ab">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcontainer11b' width="500px" height="100px">
+                                                        <Text id="formcomboboxidssvwa2222b" text="0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2j2a2b">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcontainer12b' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz1" editable="true" width="100%" value="Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier. During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier. Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. "/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2wb">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcontainer13b' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa2222wb" text="Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months. " width="70%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2y2ab">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsh12box8b" height="26px">
+                                                        <Text id="formcomboboxidssfwa222b" text="Mr.Prashant Bachhav / Mr.Saket Mathur" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidsusa22ab">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsheebox9b" height="26px">
+                                                        <Text id="formcomboboxidsnswa222b" text="Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssj22ab">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshddbox10b" height="24px">
+                                                        <Text id="formcomboboxidsswaff222b" text=" M/s Artson Engineering Ltd " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssh22ab">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshddbox11b" height="23px">
+                                                        <Text id="formcomboboxidsshhhwa222b" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2uiu2ab">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshzxzbox12b" height="20px">
+                                                        <Text id="formcomboboxidssytwa222b" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+                            <form:Form id="sectionform112222c" visible="true" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp11wewew2c" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fgwewewe12c" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="formcomboboxids112s22c">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbo212x1c" height="17px">
+                                                        <Text id="formcomboboxidsi2temdname2c" text="Ex-Works NashikF"/>
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids112s2221c">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbo1212x2c" height="20px">
+                                                        <Text id="formcomboboxidsi2123c" text="Ex-Works Nashik" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids1122ssc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrol1lcontainerc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsi211c" text="Receipt of order, Approved MDS 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation and approval from CCOE-PESO office To + 12 Weeks : Material procurement To + 24 Weeks : Manufacturing, NDT clearance To + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces ) To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2hfc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcon1tainer122c' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa222f2c" text="10% Total Contracts Price shall be released after submission of following documents: a) Corporate Guarantee for advance equivalent to 10% of Total Contract Price. b) Correct Proforma invoice c) Corporate Performance Guarantee for 10% of Total Contract Price to be submitted within 15 days from the date of PO date. d Unconditional acceptance of Purchase Order. 2) 10% Total Contract Price shall be released after design and drawing approval and submission of Corporate Guarantee of equivalent amount. 3) 20% Total Contracts Price shall be released within 30 days upon receipt of major materials like: a) Plates b) Corporate Guarantee of equivalent amount. 4. 30% of the Total Contract Price shall be payable within 30 days after dispatch. 5. 10% of the Total Contract Price shall be payable within 30 days upon successful Hydrotest at site 6.15% of the Total Contract Price shall be payable within 30 days upon successful NDT at site 6. 5% of the Total Contract Price shall be payable within 30 days upon handing over of Tank , submission of as built Drawings and Final Document Dossier. All payment shall be released after completion of approved milestone. Payments shall be released through NEFT/RTGS/Bank to Bank transfer upon receipt of certified invoice. All invoices for payments must mention TPL job no. OG-500047-ISRO-SIET. Commercial Invoices shall be consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. All Bank Guarantees shall be as per TPL formats and shall be sent to TPL, RO Mumbai at Powai. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssn22ac">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcontainer11c' width="500px" height="100px">
+                                                        <Text id="formcomboboxidssvwa2222c" text="0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2j2a2c">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcontainer12c' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxidsswah2222c" editable="true" width="100%" value="Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier. During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier. Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. " />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2wc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnews1crollcontainer13c' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa2222wc" text="Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months. " width="70%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2y2ac">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsh12box8c" height="26px">
+                                                        <Text id="formcomboboxidssfwa222c" text="Mr.Prashant Bachhav / Mr.Saket Mathur" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidsusa22ac">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsheebox9c" height="26px">
+                                                        <Text id="formcomboboxidsnswa222c" text="Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssj22ac">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshddbox10c" height="24px">
+                                                        <Text id="formcomboboxidsswaff222c" text=" M/s Artson Engineering Ltd " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssh22ac">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshddbox11c" height="23px">
+                                                        <Text id="formcomboboxidsshhhwa222c" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2uiu2ac">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshzxzbox12c" height="20px">
+                                                        <Text id="formcomboboxidssytwa222c" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+
+
+                        </HBox>
+                    </VBox>
+
 
                 </VBox>
                 <!-- for Walchandnagar Industries Limited					 -->
@@ -1197,7 +1384,7 @@
                     <HBox id="tablesHBox1">
                         <!-- Original Offer Table -->
 
-                        <VBox id= "v76776">
+                        <VBox id= "v76776" class="customVBox">
 
                             <HBox id="hhbbbox_qnt6" height="22px">
                                 <Text id="qnt6" text="WIL/AERO/TPL/19"></Text>
@@ -1214,7 +1401,7 @@
 
 
                             <Label design="Bold" id="offers6" text="Original and Final Offer " />
-                            <Table id="myTable121216" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                            <Table id="myTable121216" class="tableBorder" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
                                     <Column id="col2211126">
@@ -1252,7 +1439,7 @@
                                             <Text id="txt346" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4556">
+                                    <ColumnListItem id="item4556" class="custCellBolder">
                                         <cells>
                                             <Text id="t2356" text=" " />
                                             <Text id="ta356" text=" " />
@@ -1280,7 +1467,7 @@
                                             <Text id="txt86" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item496">
+                                    <ColumnListItem id="item496" class="custCellBolder">
                                         <cells>
                                             <Text id="t2396" text=" " />
                                             <Text id="ta396" text=" " />
@@ -1330,14 +1517,14 @@
                                             <Text id="txt166" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4176">
+                                    <ColumnListItem id="item4176" class="custCellBold">
                                         <cells>
                                             <Text id="t13176" text=" " />
                                             <Text id="ta3176" text=" " />
                                             <Text id="txt176" text=" 287023200 " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4186">
+                                    <ColumnListItem id="item4186" class="custCellBold">
                                         <cells>
                                             <Text id="t13186" text=" " />
                                             <Text id="ta3186" text=" " />
@@ -1361,7 +1548,7 @@
                                 </items>
                             </Table>
                         </VBox>
-                        <VBox id= "v33566">
+                        <VBox id= "v33566" class="customVBox">
                             <HBox id="hhbbbox_qnt26" height="22px">
                                 <Text id="qnt26" text="Reverse Auction"></Text>
                             </HBox>
@@ -1414,7 +1601,7 @@
                                             <Text id="texttxt34a" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item155a">
+                                    <ColumnListItem id="item155a" class="custCellBolder">
                                         <cells>
                                             <Text id="text235a" text=" " />
                                             <Text id="texta35a" text=" " />
@@ -1442,7 +1629,7 @@
                                             <Text id="texttxt8a" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item149a">
+                                    <ColumnListItem id="item149a" class="custCellBolder">
                                         <cells>
                                             <Text id="text239a" text=" " />
                                             <Text id="texta39a" text=" " />
@@ -1492,14 +1679,14 @@
                                             <Text id="texttxt16a" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1417a">
+                                    <ColumnListItem id="item1417a" class="custCellBold">
                                         <cells>
                                             <Text id="text1317a" text=" " />
                                             <Text id="texta317a" text=" " />
                                             <Text id="texttxt1a7" text=" 27,61,20,000 " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1418a">
+                                    <ColumnListItem id="item1418a" class="custCellBold">
                                         <cells>
                                             <Text id="text1318a" text=" " />
                                             <Text id="texta318a" text=" " />
@@ -1526,102 +1713,206 @@
                         </VBox>
 
                     </HBox>
-                    <form:Form id="sectionform1122a" editable="false">
-                        <form:layout>
-                            <form:ResponsiveGridLayout id="r2esp112a" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-                        </form:layout>
-                        <form:formContainers>
-                            <form:FormContainer id="fg12a" ariaLabelledBy="Title">
-                                <form:formElements>
-                                    <form:FormElement id="112s22a">
-                                        <form:fields>
-                                            <HBox id="hbox1a" height="17px">
-                                                <Text id="i2temdname2a" text="Ex-Works Pune" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="112s2221a">
-                                        <form:fields>
-                                            <HBox id="hbox2a" height="20px">
-                                                <Text id="i2123a" text="Ex-Works Pune" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="1122ssa">
-                                        <form:fields>
-                                            <HBox id="hbox3a" height="25px">
-                                                <Text id="i211a" text="60 Weeks" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2hfa">
-                                        <form:fields>
-                                            <HBox id="hbox4a" height="25px">
-                                                <Text id="swa222f2a" text="  10% of Total Contract Value shall be payable as advance against submission of following documents:" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sn22aa">
-                                        <form:fields>
-                                            <HBox id="hbox5a" height="27px">
-                                                <Text id="svwa2222a" text="LD of 0.5% for per weeks delay to a max. 5% of PO value" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2j2a2a">
-                                        <form:fields>
-                                            <HBox id="hbox6a" height="27px">
-                                                <Text id="swah2222a" text="Warranty for the performance of all the Ordered items/packages under the Contract" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2wa">
-                                        <form:fields>
-                                            <HBox id="hbox7a" height="26px">
-                                                <Text id="swa2222wa" text="Corporate Guarantee valid til the expiry of Defect Liability Prd with further claim period validity of (06) months." />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2y2aa">
-                                        <form:fields>
-                                            <HBox id="hbox8a" height="26px">
-                                                <Text id="sfwa222a" text="Ranjan Gaur" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="usa22aa">
-                                        <form:fields>
-                                            <HBox id="hbox9a" height="26px">
-                                                <Text id="nswa222a" text="Tel : (O) +91-20-30252988 (M) +91-9158169086" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sj22aaa">
-                                        <form:fields>
-                                            <HBox id="hbox10a" height="24px">
-                                                <Text id="swaff222a" text=" " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="shh22aa">
-                                        <form:fields>
-                                            <HBox id="hbox11a" height="23px">
-                                                <Text id="shhhwa2a22aaa" text="Technically Accepted" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2uiua2aa">
-                                        <form:fields>
-                                            <HBox id="hbox12a" height="20px">
-                                                <Text id="sytwa222aaa" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                </form:formElements>
-                            </form:FormContainer>
-                        </form:formContainers>
+                    <VBox id="hboxsection1">
+                        <ComboBox id="section1combobox" placeholder="Final negotiated Offer" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" change="handler.onChangefun1">
+                            <core:Item id="comboxitem1" text="Original and Final Offer" />
+                            <core:Item id="comboxitem2" text="Final negotiated Offer" />
+                        </ComboBox>
+                        <HBox id="3formsection">
+                            <form:Form id="sectionform1122a" visible="false" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112a" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12a" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="112s22a">
+                                                <form:fields>
+                                                    <HBox id="hbox1a" height="17px">
+                                                        <Text id="i2temdname2a" text="Ex-Works Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="112s2221a">
+                                                <form:fields>
+                                                    <HBox id="hbox2a" height="20px">
+                                                        <Text id="i2123a" text="Ex-Works Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="1122ssa">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer9221' width="500px" height="100px">
+                                                        <Text id="i211a" text="60 Weeks" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2hfa">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer91' width="500px" height="100px">
+                                                        <Text id="swa222f2a" text="(1) 10% of Total Contract Value shall be payable as advance against submission of following documents: (a) Advance Bank Guarantee (ABG) of equivalent amount (10%). (b) Submission of Contract Performance Bank Guarantee (CPBG) of 10% of Total Contract Price as mentioned under Clause no-11 of this SCC. (c) Unconditional acceptance of the LOA and/or PO. (d) QAP/ITP, Data sheets, drawings and other related engineering inputs/ documents for providing manufacturing clearance. (e) Correct Original Pro-Forma Invoice to claim Advance amount. (2) 70% of Total Contract Value shall be payable upon receipt of all the materials/equipment at ISRO project site after successful inspection, issuance of Acceptance Cum Release Note (ACRN) by TPL and against submission of Original invoice copy. (3) 10% of Total Contract Value shall be payable upon successful commissioning, Performance Guarantee Test Run (PGTR) and final acceptance by TPL and/or ISRO. (4) 10% of Total Contract Value shall be payable upon receipt of As built Drawings, Final Document Dossier O M manual. All payment terms shall be on pro-rata basis. Payment shall be released within 45 days via E-payment system” (through NEFT/RTGS/Bank to Bank transfer) and on submission of certified invoices as per the instructions in the Purchase Order." width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sn22aa">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer92' width="500px" height="100px">
+                                                        <Text id="svwa2222a" text="LD of 0.5% for per weeks delay to a max. 5% of PO value" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2j2a2a">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer93' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz23" editable="true" width="100%" value="Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 12 (Twelve) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 15 (Fifteen) months from the date of last supply at project site, whichever is earlier. Warrantee shall not apply to wear  tear parts, rubber seals, gasket etc and shall not apply in case of improper/operations and modifications or repairs incorrectly carried out." />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2wa">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer9223' width="500px" height="100px">
+                                                        <Text id="swa2222wa" text="10% CPBG shall be submitted within 10 days from the date of receipt of this Contract" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2y2aa">
+                                                <form:fields>
+                                                    <HBox id="hbox8a" height="26px">
+                                                        <Text id="sfwa222a" text="Ranjan Gaur" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="usa22aa">
+                                                <form:fields>
+                                                    <HBox id="hbox9a" height="26px">
+                                                        <Text id="nswa222a" text="Tel : (O) +91-20-30252988 (M) +91-9158169086" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sj22aaa">
+                                                <form:fields>
+                                                    <HBox id="hbox10a" height="24px">
+                                                        <Text id="swaff222a" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="shh22aa">
+                                                <form:fields>
+                                                    <HBox id="hbox11a" height="23px">
+                                                        <Text id="shhhwa2a22aaa" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2uiua2aa">
+                                                <form:fields>
+                                                    <HBox id="hbox12a" height="20px">
+                                                        <Text id="sytwa222aaa" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
 
-                    </form:Form>
+                            </form:Form>
+                            <form:Form id="sectionform1122b" visible="true" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112b" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12b" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="112s22b">
+                                                <form:fields>
+                                                    <HBox id="hbox1b" height="17px">
+                                                        <Text id="i2temdname2b" text="Ex-Works Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="112s2221b">
+                                                <form:fields>
+                                                    <HBox id="hbox2b" height="20px">
+                                                        <Text id="i2123b" text="Ex-Works Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="1122ssab">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer9221b' width="500px" height="100px">
+                                                        <Text id="i211b" text="60 Weeks" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2hfab">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer91b' width="500px" height="100px">
+                                                        <Text id="swa222f2b" text="(1) 10% of Total Contract Value shall be payable as advance against submission of following documents: (a) Advance Bank Guarantee (ABG) of equivalent amount (10%). (b) Submission of Contract Performance Bank Guarantee (CPBG) of 10% of Total Contract Price as mentioned under Clause no-11 of this SCC. (c) Unconditional acceptance of the LOA and/or PO. (d) QAP/ITP, Data sheets, drawings and other related engineering inputs/documents for providing manufacturing clearance. (e) Correct Original Pro-Forma Invoice to claim Advance amount. (2) 70% of Total Contract Value shall be payable upon receipt of all the materials/equipment at ISRO project site after successful inspection, issuance of Acceptance Cum Release Note (ACRN) by TPL and against submission of Original invoice copy. (3) 10% of Total Contract Value shall be payable upon successful commissioning, Performance Guarantee Test Run (PGTR) and final acceptance by TPL and/or ISRO. (4) 10% of Total Contract Value shall be payable upon receipt of As built Drawings, Final Document Dossier O M manual. All payment terms shall be on pro-rata basis. Payment shall be released within 45 days via E-payment system” (through NEFT/RTGS/Bank to Bank transfer) and on submission of certified invoices as per the instructions in the Purchase Order." width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sn22ab">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer92b' width="500px" height="100px">
+                                                        <Text id="svwa2222b" text="LD of 0.5% for per weeks delay to a max. 5% of PO value" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2j2a2ab">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer93b' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz2213" editable="true" width="100%" value="Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 12 (Twelve) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 15 (Fifteen) months from the date of last supply at project site, whichever is earlier. Warrantee shall not apply to wear tear parts, rubber seals, gasket etc and shall not apply in case of improper/operations and modifications or repairs incorrectly carried out." />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2wab">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer9223b' width="500px" height="100px">
+                                                        <Text id="swa2222wab" text="10% CPBG shall be submitted within 10 days from the date of receipt of this Contract" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2y2aab">
+                                                <form:fields>
+                                                    <HBox id="hbox8b" height="26px">
+                                                        <Text id="sfwa222b" text="Ranjan Gaur" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="usa22ab">
+                                                <form:fields>
+                                                    <HBox id="hbox9b" height="26px">
+                                                        <Text id="nswa222b" text="Tel : (O) +91-20-30252988 (M) +91-9158169086" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sj22aaab">
+                                                <form:fields>
+                                                    <HBox id="hbox10b" height="24px">
+                                                        <Text id="swaff222b" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="shh22ab">
+                                                <form:fields>
+                                                    <HBox id="hbox11b" height="23px">
+                                                        <Text id="shhhwa2a22aaab" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2uiua2aab">
+                                                <form:fields>
+                                                    <HBox id="hbox12b" height="20px">
+                                                        <Text id="sytwa222aab" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+
+                        </HBox>
+                    </VBox>
                 </VBox>
                 <!-- end of for Walchandnagar Industries Limited	 -->
                 <!-- start Acoustics India Pvt Ltd. -->
@@ -1659,7 +1950,7 @@
                     <HBox id="tablesHBoxz">
                         <!-- Original Offer Table -->
 
-                        <VBox id= "v7677z">
+                        <VBox id= "v7677z" class="customVBox">
 
                             <HBox id="hhbbbox_qntz" height="22px">
                                 <Text id="qntz" text="ENQ-PE-19-013 REV 01 dt 02.04.19"></Text>
@@ -1676,7 +1967,7 @@
 
 
                             <Label design="Bold" id="offersz" text="Original Offer" />
-                            <Table id="myTable12121z" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                            <Table id="myTable12121z" class="tableBorder" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
                                     <Column id="col221112z">
@@ -1714,7 +2005,7 @@
                                             <Text id="txt34z" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item45z5">
+                                    <ColumnListItem id="item45z5" class="custCellBolder">
                                         <cells>
                                             <Text id="t235z" text=" " />
                                             <Text id="ta35z" text=" " />
@@ -1742,7 +2033,7 @@
                                             <Text id="txt8z" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item49z">
+                                    <ColumnListItem id="item49z" class="custCellBolder">
                                         <cells>
                                             <Text id="t239z" text=" " />
                                             <Text id="ta39z" text=" " />
@@ -1792,14 +2083,14 @@
                                             <Text id="txt16z" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item417z">
+                                    <ColumnListItem id="item417z" class="custCellBold">
                                         <cells>
                                             <Text id="t1317z" text=" " />
                                             <Text id="ta317z" text=" " />
                                             <Text id="txt17z" text=" 49,73,70,000 " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item418z">
+                                    <ColumnListItem id="item418z" class="custCellBold">
                                         <cells>
                                             <Text id="t1318z" text=" " />
                                             <Text id="ta318z" text=" " />
@@ -1823,7 +2114,7 @@
                                 </items>
                             </Table>
                         </VBox>
-                        <VBox id= "v3356z">
+                        <VBox id= "v3356z" class="customVBox">
                             <HBox id="hhbbbox_qnt2z" height="22px">
                                 <Text id="qnt2z" text="Reverse Auction"></Text>
                             </HBox>
@@ -1876,7 +2167,7 @@
                                             <Text id="texttxt34z" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item155z">
+                                    <ColumnListItem id="item155z" class="custCellBolder">
                                         <cells>
                                             <Text id="text235z" text=" " />
                                             <Text id="texta35z" text=" " />
@@ -1904,7 +2195,7 @@
                                             <Text id="texttxt8z" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item149z">
+                                    <ColumnListItem id="item149z" class="custCellBolder">
                                         <cells>
                                             <Text id="text239z" text=" " />
                                             <Text id="texta39z" text=" " />
@@ -1954,14 +2245,14 @@
                                             <Text id="texttxt16z" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1417z">
+                                    <ColumnListItem id="item1417z" class="custCellBold">
                                         <cells>
                                             <Text id="text1317z" text=" " />
                                             <Text id="texta317z" text=" " />
                                             <Text id="texttxt17z" text=" 42,48,00,000 " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1418z">
+                                    <ColumnListItem id="item1418z" class="custCellBold">
                                         <cells>
                                             <Text id="text1318zz" text=" " />
                                             <Text id="texta318z" text=" " />
@@ -1988,102 +2279,207 @@
                         </VBox>
 
                     </HBox>
-                    <form:Form id="sectionform112222q" editable="false">
-                        <form:layout>
-                            <form:ResponsiveGridLayout id="r2esp112q" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-                        </form:layout>
-                        <form:formContainers>
-                            <form:FormContainer id="fg12q" ariaLabelledBy="Title">
-                                <form:formElements>
-                                    <form:FormElement id="112s22q">
-                                        <form:fields>
-                                            <HBox id="hbo212x1q" height="17px">
-                                                <Text id="i2temdname2q" text="FOR Site"/>
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="112s2221q">
-                                        <form:fields>
-                                            <HBox id="hbo1212x2q" height="20px">
-                                                <Text id="i2123q" text="FOR Site" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="1122ssq">
-                                        <form:fields>
-                                            <HBox id="hb12ox3q" height="25px">
-                                                <Text id="i211q" text="Delivery shall be 18 -24 months from the date" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2hfq">
-                                        <form:fields>
-                                            <HBox id="h12box4q" height="25px">
-                                                <Text id="swa222f2q" text=" 10% advance along with PO" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sn22aq">
-                                        <form:fields>
-                                            <HBox id="h12box5q" height="27px">
-                                                <Text id="svwa2222q" text="LD of 0.5% for per weeks delay to a max. 5% of PO value" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2j2a2q">
-                                        <form:fields>
-                                            <HBox id="h12box6q" height="27px">
-                                                <Text id="swah2222q" text="The Air storage Vessels are guaranteed for mechanical workmanship" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2wq">
-                                        <form:fields>
-                                            <HBox id="hb12ox7q" height="26px">
-                                                <Text id="swa2222wq" text="To be discussed" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2y2aq">
-                                        <form:fields>
-                                            <HBox id="h12box8q" height="26px">
-                                                <Text id="sfwa222q" text=" A. JAIKUMAR " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="usa22aq">
-                                        <form:fields>
-                                            <HBox id="heebox9q" height="26px">
-                                                <Text id="nswa222q" text="TEL : +91-4339-321999" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sj22aq">
-                                        <form:fields>
-                                            <HBox id="hddbox10q" height="24px">
-                                                <Text id="swaff222q" text=" " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="shh22aq">
-                                        <form:fields>
-                                            <HBox id="hddbox11q" height="23px">
-                                                <Text id="shhhwa222q" text="Technically Accepted" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2uiu2aq">
-                                        <form:fields>
-                                            <HBox id="hzxzbox12q" height="20px">
-                                                <Text id="sytwa222q" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                </form:formElements>
-                            </form:FormContainer>
+                    <VBox id="sectioncomboboxid2">
+                        <ComboBox id="section1combobox2" placeholder="Final Offer" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" change="handler.onChangefun2">
+                            <core:Item id="comboxitem19" text="Original Offer" />
+                            <core:Item id="comboxitem20" text="Final Offer" />
+                        </ComboBox>
+                        <HBox id='newidid2'>
+                            <form:Form id="sectionform112222q" visible="false" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112q" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12q" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="112s22q">
+                                                <form:fields>
+                                                    <HBox id="hbo212x1q" height="17px">
+                                                        <Text id="i2temdname2q" text="FOR Site"/>
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="112s2221q">
+                                                <form:fields>
+                                                    <HBox id="hbo1212x2q" height="20px">
+                                                        <Text id="i2123q" text="FOR Site" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="1122ssq">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollco3ntainer83' width="500px" height="100px">
+                                                        <Text id="i211q" text="Delivery shall be 18 -24 months from the date of receipt of PO / Drawing Approval / Manufacturing Clearance whichever is later. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2hfq">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollconta3iner81' width="500px" height="100px">
+                                                        <Text id="swa222f2q" text="10% advance along with PO • 10% against submission of Drawings QAP • 30% against identification of Major Raw materials (Plates) • 30% against pro rate completion of Pre fabrication • 10% against pro rate completion of Hydro testing • 10% against pro rate final completion Handing over " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sn22aq">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer8233' width="500px" height="100px">
+                                                        <Text id="svwa2222q" text="LD of 0.5% for per weeks delay to a max. 5% of PO value" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2j2a2q">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer82' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz123d" editable="true" width="100%" value="The Air storage Vessels are guaranteed for mechanical workmanship for a period of 12 months from the date of commissioning or 18 months from the date of dispatch whichever is earlier." />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2wq">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer821' width="500px" height="100px">
+                                                        <Text id="swa2222wq" text="To be discussed" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2y2aq">
+                                                <form:fields>
+                                                    <HBox id="h12box8q" height="26px">
+                                                        <Text id="sfwa222q" text=" A. JAIKUMAR " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="usa22aq">
+                                                <form:fields>
+                                                    <HBox id="heebox9q" height="26px">
+                                                        <Text id="nswa222q" text="TEL : +91-4339-321999" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sj22aq">
+                                                <form:fields>
+                                                    <HBox id="hddbox10q" height="24px">
+                                                        <Text id="swaff222q" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="shh22aq">
+                                                <form:fields>
+                                                    <HBox id="hddbox11q" height="23px">
+                                                        <Text id="shhhwa222q" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2uiu2aq">
+                                                <form:fields>
+                                                    <HBox id="hzxzbox12q" height="20px">
+                                                        <Text id="sytwa222q" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
 
-                        </form:formContainers>
-                    </form:Form>
+                                </form:formContainers>
+                            </form:Form>
+                            <form:Form id="sectionform112222qc" visible="true" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112qc" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12qc" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="formcomboboxids112s22qc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbo212x1qc" height="17px">
+                                                        <Text id="formcomboboxidsi2temdname2qc" text="FOR Site"/>
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids112s2221qc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbo1212x2qc" height="20px">
+                                                        <Text id="formcomboboxidsi2123qc" text="FOR Site" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids1122ssqc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollco3ntainer83qc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsi211qc" text="Delivery shall be 18 -24 months from the date of receipt of PO / Drawing Approval / Manufacturing Clearance whichever is later. " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2hfqc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollconta3iner81qc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa222f2qc" text="10% advance along with PO • 10% against submission of Drawings QAP • 30% against identification of Major Raw materials (Plates) • 30% against pro rate completion of Pre fabrication • 10% against pro rate completion of Hydro testing • 10% against pro rate final completion Handing over " width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssn22aqc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer8233qc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidssvwa2222qc" text="LD of 0.5% for per weeks delay to a max. 5% of PO value" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2j2a2qc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer82qc' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz221i9n3" editable="true" width="100%" value="The Air storage Vessels are guaranteed for mechanical workmanship for a period of 12 months from the date of commissioning or 18 months from the date of dispatch whichever is earlier." />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2wqc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer821qc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa2222wqc" text="To be discussed" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2y2aqc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsh12box8qc" height="26px">
+                                                        <Text id="formcomboboxidssfwa222qc" text=" A. JAIKUMAR " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidsusa22aqc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsheebox9qc" height="26px">
+                                                        <Text id="formcomboboxidsnswa222qc" text="TEL : +91-4339-321999" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssj22aqc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshddbox10qc" height="24px">
+                                                        <Text id="formcomboboxidsswaff222qc" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssh22aqc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshddbox11qc" height="23px">
+                                                        <Text id="formcomboboxidsshhhwa222qc" text="Technically Accepted" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2uiu2aqc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshzxzbox12qc" height="20px">
+                                                        <Text id="formcomboboxidssytwa222qc" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+
+                        </HBox>
+                    </VBox>
+
 
                 </VBox>
                 <!-- end Acoustics India Pvt Ltd.					 -->
@@ -2122,7 +2518,7 @@
                     <HBox id="tablesHBox1w">
                         <!-- Original Offer Table -->
 
-                        <VBox id= "v76776w">
+                        <VBox id= "v76776w" class="customVBox">
 
                             <HBox id="hhbbbox_qnt6w" height="22px">
                                 <Text id="qnt6w" text="MKTG/18505/VSSC/2018"></Text>
@@ -2140,7 +2536,7 @@
 
 
                             <Label design="Bold" id="offers6w" text="Original Offer" />
-                            <Table id="myTable121216w" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                            <Table id="myTable121216w" class="tableBorder" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
                                     <Column id="col2211126w">
@@ -2178,7 +2574,7 @@
                                             <Text id="txt346w" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4556w">
+                                    <ColumnListItem id="item4556w" class="custCellBolder">
                                         <cells>
                                             <Text id="t2356w" text=" " />
                                             <Text id="ta356w" text=" " />
@@ -2206,7 +2602,7 @@
                                             <Text id="txt86w" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item496w">
+                                    <ColumnListItem id="item496w" class="custCellBolder">
                                         <cells>
                                             <Text id="t2396w" text=" " />
                                             <Text id="ta396w" text=" " />
@@ -2256,14 +2652,14 @@
                                             <Text id="txt166w" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4176w">
+                                    <ColumnListItem id="item4176w" class="custCellBold">
                                         <cells>
                                             <Text id="t13176w" text=" " />
                                             <Text id="ta3176w" text=" " />
                                             <Text id="txt176w" text=" 44,81,64,000 " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4186w">
+                                    <ColumnListItem id="item4186w" class="custCellBold">
                                         <cells>
                                             <Text id="t13186w" text=" " />
                                             <Text id="ta3186w" text=" " />
@@ -2287,7 +2683,7 @@
                                 </items>
                             </Table>
                         </VBox>
-                        <VBox id= "v33566w">
+                        <VBox id= "v33566w" class="customVBox">
                             <HBox id="hhbbbox_qnt26w" height="22px">
                                 <Text id="qnt26w" text="Reverse Auction"></Text>
                             </HBox>
@@ -2340,7 +2736,7 @@
                                             <Text id="texttxt34aw" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item155aw">
+                                    <ColumnListItem id="item155aw" class="custCellBolder">
                                         <cells>
                                             <Text id="text235wa" text=" " />
                                             <Text id="texta35aw" text=" " />
@@ -2368,7 +2764,7 @@
                                             <Text id="texttxt8aw" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item149aw">
+                                    <ColumnListItem id="item149aw" class="custCellBolder">
                                         <cells>
                                             <Text id="text239aw" text=" " />
                                             <Text id="texta39wa" text=" " />
@@ -2418,14 +2814,14 @@
                                             <Text id="texttxt16wa" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1417aw">
+                                    <ColumnListItem id="item1417aw" class="custCellBold">
                                         <cells>
                                             <Text id="text1317aw" text=" " />
                                             <Text id="texta317aw" text=" " />
                                             <Text id="texttxt1a7w" text="25,70,04,000" />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1418aw">
+                                    <ColumnListItem id="item1418aw" class="custCellBold">
                                         <cells>
                                             <Text id="text1318aw" text=" " />
                                             <Text id="texta318aw" text=" " />
@@ -2452,102 +2848,207 @@
                         </VBox>
 
                     </HBox>
-                    <form:Form id="sectionform1122aw" editable="false">
-                        <form:layout>
-                            <form:ResponsiveGridLayout id="r2esp112aw" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-                        </form:layout>
-                        <form:formContainers>
-                            <form:FormContainer id="fg12aw" ariaLabelledBy="Title">
-                                <form:formElements>
-                                    <form:FormElement id="112s22aw">
-                                        <form:fields>
-                                            <HBox id="hbox1aw" height="17px">
-                                                <Text id="i2temdname2aw" text="Ex-Works" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="112s2221aw">
-                                        <form:fields>
-                                            <HBox id="hbox2aw" height="20px">
-                                                <Text id="i2123aw" text="Ex-Works " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="1122ssaw">
-                                        <form:fields>
-                                            <HBox id="hbox3aw" height="25px">
-                                                <Text id="i211aw" text="15 Months for supply at site" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2hfaw">
-                                        <form:fields>
-                                            <HBox id="hbox4aw" height="25px">
-                                                <Text id="swa222f2wa" text="For 10% advane payment purpose" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sn22aaw">
-                                        <form:fields>
-                                            <HBox id="hbox5aw" height="27px">
-                                                <Text id="svwa2222aw" text="1% to 10%" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2j2a2aw">
-                                        <form:fields>
-                                            <HBox id="hbox6aw" height="27px">
-                                                <Text id="swah2222aw" text="12 Months from the date of Blowdown or 18 Months from Supply" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2waw">
-                                        <form:fields>
-                                            <HBox id="hbox7aw" height="26px">
-                                                <Text id="swa2222waw" text="10% CPBG shall be submitted within 10 days from the date of receipt of this Contract." />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2y2aaw">
-                                        <form:fields>
-                                            <HBox id="hbox8aw" height="26px">
-                                                <Text id="sfwa222aw" text="SNVS Ramesh Manager (Marketing)" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="usa22aaw">
-                                        <form:fields>
-                                            <HBox id="hbox9aw" height="26px">
-                                                <Text id="nswa222aw" text="8916681515" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sj22aaaw">
-                                        <form:fields>
-                                            <HBox id="hbox10aw" height="24px">
-                                                <Text id="swaff222aw" text=" " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="shh22aaw">
-                                        <form:fields>
-                                            <HBox id="hbox11aw" height="23px">
-                                                <Text id="shhhwa2a22aaaw" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2uiua2aaw">
-                                        <form:fields>
-                                            <HBox id="hbox12aw" height="20px">
-                                                <Text id="sytwa222aaaw" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                </form:formElements>
-                            </form:FormContainer>
-                        </form:formContainers>
+                    <VBox id="sectioncomboboxid3">
+                        <ComboBox id="section1combobox3" placeholder="Final Offer" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" change="handler.onChangefun2">
+                            <core:Item id="comboxite1124423m1" text="Original Offer" />
+                            <core:Item id="comboxitesdsm2" text="Final Offer" />
+                        </ComboBox>
+                        <HBox id='newidid3'>
+                            <form:Form id="sectionform1122aw" visible="false" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112aw" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12aw" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="112s22aw">
+                                                <form:fields>
+                                                    <HBox id="hbox1aw" height="17px">
+                                                        <Text id="i2temdname2aw" text="Ex-Works" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="112s2221aw">
+                                                <form:fields>
+                                                    <HBox id="hbox2aw" height="20px">
+                                                        <Text id="i2123aw" text="Ex-Works " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="1122ssaw">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainerf31' width="500px" height="100px">
+                                                        <Text id="i211aw" text="15 Months for supply at site" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2hfaw">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainerf32' width="500px" height="100px">
+                                                        <Text id="swa222f2wa" text="1) For 10% advane payment purpose QAP/IPT, Datasheets, drawings and related documents requirement may please be removed as it will take 12 weeks time for completion. (2) 70% payment through irrevocable LC (from a first class bank which is rated not less than A- by S and P or A3 by Moody  against despatch documents on prorata basis for each Vessel (3 ) 15% payment due against the commissioning may please be released against submission of equivalent BG or irrecovable LC ( from a first class bank which is rated not less than A- by S and P or A3 by Moody s) which will be valid upto final acceptance by TPL (4) 5% payment due against receipt of As built drawings may please be released against submission of equivalent BG which will be valid upto submission of As built drawings " width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sn22aaw">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainerf33' width="500px" height="100px">
+                                                        <Text id="svwa2222aw" text="1% to 10%" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2j2a2aw">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainerf34' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz23d210" editable="true" width="100%" value="12 Months from the date of Blowdown or 18 Months from Supply" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2waw">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer35' width="500px" height="100px">
+                                                        <Text id="swa2222waw" text="10% CPBG shall be submitted within 10 days from the date of receipt of this Contract." width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2y2aaw">
+                                                <form:fields>
+                                                    <HBox id="hbox8aw" height="26px">
+                                                        <Text id="sfwa222aw" text="SNVS Ramesh Manager (Marketing)" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="usa22aaw">
+                                                <form:fields>
+                                                    <HBox id="hbox9aw" height="26px">
+                                                        <Text id="nswa222aw" text="8916681515" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sj22aaaw">
+                                                <form:fields>
+                                                    <HBox id="hbox10aw" height="24px">
+                                                        <Text id="swaff222aw" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="shh22aaw">
+                                                <form:fields>
+                                                    <HBox id="hbox11aw" height="23px">
+                                                        <Text id="shhhwa2a22aaaw" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2uiua2aaw">
+                                                <form:fields>
+                                                    <HBox id="hbox12aw" height="20px">
+                                                        <Text id="sytwa222aaaw" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
 
-                    </form:Form>
+                            </form:Form>
+                            <form:Form id="sectionform1122awc" visible="true" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="r2esp112awc" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12awc" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="formcomboboxids112s22awc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox1awc" height="17px">
+                                                        <Text id="formcomboboxidsi2temdname2awc" text="Ex-Works" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids112s2221awc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox2awc" height="20px">
+                                                        <Text id="formcomboboxidsi2123awc" text="Ex-Works " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids1122ssawc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainerf31awc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsi211awc" text="15 Months for supply at site" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2hfawc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainerf32awc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa222f2awa" text="1) For 10% advance payment purpose QAP/IPT, Datasheets, drawings and related documents requirement may please be removed as it will take 12 weeks time for completion. (2) 70% payment through irrevocable LC (from a first-class bank which is rated not less than A- by S and P or A3 by Moody against despatch documents on a prorata basis for each Vessel (3 ) 15% payment due against the commissioning may please be released against submission of equivalent BG or irrevocable LC ( from a first-class bank which is rated not less than A- by S and P or A3 by Moody s) which will be valid up to final acceptance by TPL (4) 5% payment due against receipt of As-built drawings may please be released against submission of equivalent BG which will be valid up to submission of As-built drawings " width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssn22aawc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainerf33awc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidssvwa2222awc" text="1% to 10%" width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2j2a2awc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainerf34awc' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz23322sd" editable="true" width="100%" value="12 Months from the date of Blowdown or 18 Months from Supply" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2wawc">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer35awc' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa2222wawc" text="10% CPBG shall be submitted within 10 days from the date of receipt of this Contract." width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2y2aawc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox8awc" height="26px">
+                                                        <Text id="formcomboboxidssfwa222awc" text="SNVS Ramesh Manager (Marketing)" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidsusa22aawc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsbox9awc" height="26px">
+                                                        <Text id="formcomboboxidsnswa222awc" text="8916681515" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssj22aaawc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox10awc" height="24px">
+                                                        <Text id="formcomboboxidsswaff222awc" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidsshh22aawc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox11awc" height="23px">
+                                                        <Text id="formcomboboxidsshhhwa2a22aaawc" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2uiua2aawc">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox12awc" height="20px">
+                                                        <Text id="formcomboboxidssytwa222aaawc" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+
+                        </HBox>
+                    </VBox>
+
                 </VBox>
                 <!-- end of Bharta Heavy Electricals Limited -->
 
@@ -2586,7 +3087,7 @@
                     <HBox id="tablesHBox1we">
                         <!-- Original Offer Table -->
 
-                        <VBox id= "v76776we">
+                        <VBox id= "v76776we" class="customVBox">
 
                             <HBox id="hhbbbox_qnt6we" height="22px">
                                 <Text id="qnt6we" text="E-RFQ and E-Offer"></Text>
@@ -2604,7 +3105,7 @@
 
 
                             <Label design="Bold" id="offers6we" text="Original Offer" />
-                            <Table id="myTable121216we" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                            <Table id="myTable121216we" class="tableBorder" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
                                     <Column id="col2211126we">
@@ -2642,7 +3143,7 @@
                                             <Text id="txt346we" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4556we">
+                                    <ColumnListItem id="item4556we" class="custCellBolder">
                                         <cells>
                                             <Text id="t2356we" text=" " />
                                             <Text id="ta356we" text=" " />
@@ -2670,7 +3171,7 @@
                                             <Text id="txt86we" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item496we">
+                                    <ColumnListItem id="item496we" class="custCellBolder">
                                         <cells>
                                             <Text id="t2396we" text=" " />
                                             <Text id="ta396we" text=" " />
@@ -2720,14 +3221,14 @@
                                             <Text id="txt166we" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4176we">
+                                    <ColumnListItem id="item4176we" class="custCellBold">
                                         <cells>
                                             <Text id="t13176we" text=" " />
                                             <Text id="ta3176we" text=" " />
                                             <Text id="txt176we" text="50,97,60,000" />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item4186we">
+                                    <ColumnListItem id="item4186we" class="custCellBold">
                                         <cells>
                                             <Text id="t13186we" text=" " />
                                             <Text id="ta3186we" text=" " />
@@ -2751,7 +3252,7 @@
                                 </items>
                             </Table>
                         </VBox>
-                        <VBox id= "v33566we">
+                        <VBox id= "v33566we" class="customVBox">
                             <HBox id="hhbbbox_qnt26ew" height="22px">
                                 <Text id="qnt26ew" text="Online Reverse Auction Offer"></Text>
                             </HBox>
@@ -2766,7 +3267,7 @@
                             </HBox>
 
 
-                            <Label design="Bold" id="tiitele2216w" text="Final Offer" />
+                            <Label design="Bold" id="tiitele2216w" text="Online Reverse Auction Offer" />
                             <Table id="myTable1216we" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                                 <!--  Define columns and bindings for the table  -->
                                 <columns>
@@ -2804,7 +3305,7 @@
                                             <Text id="texttxt34awe" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item155awe">
+                                    <ColumnListItem id="item155awe" class="custCellBolder">
                                         <cells>
                                             <Text id="text235wae" text=" " />
                                             <Text id="texta35awe" text=" " />
@@ -2832,7 +3333,7 @@
                                             <Text id="texttxt8awe" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item149awe">
+                                    <ColumnListItem id="item149awe" class="custCellBolder">
                                         <cells>
                                             <Text id="text239awe" text=" " />
                                             <Text id="texta39wae" text=" " />
@@ -2882,14 +3383,14 @@
                                             <Text id="texttxt16wae" text=" " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1417awe">
+                                    <ColumnListItem id="item1417awe" class="custCellBold">
                                         <cells>
                                             <Text id="text1317awe" text=" " />
                                             <Text id="texta317awe" text=" " />
                                             <Text id="texttxt1a7we" text=" 31,86,00,000 " />
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem id="item1418awe">
+                                    <ColumnListItem id="item1418awe" class="custCellBold">
                                         <cells>
                                             <Text id="text1318awe" text=" " />
                                             <Text id="texta318awe" text=" " />
@@ -2916,102 +3417,207 @@
                         </VBox>
 
                     </HBox>
-                    <form:Form id="sectieonform1122aw" editable="false">
-                        <form:layout>
-                            <form:ResponsiveGridLayout id="er2esp112aw" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
-                        </form:layout>
-                        <form:formContainers>
-                            <form:FormContainer id="fg12awe" ariaLabelledBy="Title">
-                                <form:formElements>
-                                    <form:FormElement id="112s22awe">
-                                        <form:fields>
-                                            <HBox id="hbox1awe" height="17px">
-                                                <Text id="i2temdname2awe" text="Ex-Works -Pune" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="112s2221awe">
-                                        <form:fields>
-                                            <HBox id="hbox2awe" height="20px">
-                                                <Text id="i2123awe" text="Ex-Works -Pune" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="1122ssawe">
-                                        <form:fields>
-                                            <HBox id="hbox3awe" height="25px">
-                                                <Text id="i211awe" text="Not Provided" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2hfawe">
-                                        <form:fields>
-                                            <HBox id="hbox4awe" height="25px">
-                                                <Text id="swa222f2wae" text="10% of Total Contract " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sn22aawe">
-                                        <form:fields>
-                                            <HBox id="hbox5awe" height="27px">
-                                                <Text id="svwa2222awe" text="Not Acceptable" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2j2a2awe">
-                                        <form:fields>
-                                            <HBox id="hbox6awe" height="27px">
-                                                <Text id="swah2222awe" text="upplier shall provide warranty" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s22a2wawe">
-                                        <form:fields>
-                                            <HBox id="hbox7awe" height="26px">
-                                                <Text id="swa2222wawe" text=" 5% of CPBG	" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2y2aawe">
-                                        <form:fields>
-                                            <HBox id="hbox8awe" height="26px">
-                                                <Text id="sfwa222awe" text="Mr. Binit A. Veshvikar -Managing Director" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="usa22aawe">
-                                        <form:fields>
-                                            <HBox id="hbox9awe" height="26px">
-                                                <Text id="nswa222awe" text="Tel : 08983261111  Mob : 9923021256" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="sj22aaawe">
-                                        <form:fields>
-                                            <HBox id="hbox10awe" height="24px">
-                                                <Text id="swaff222awe" text=" " />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="shh22aawe">
-                                        <form:fields>
-                                            <HBox id="hbox11awe" height="23px">
-                                                <Text id="shhhwa2a22aaawe" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                    <form:FormElement id="s2uiua2aawe">
-                                        <form:fields>
-                                            <HBox id="hbox12awe" height="20px">
-                                                <Text id="sytwa222aaawe" text="Yes" />
-                                            </HBox>
-                                        </form:fields>
-                                    </form:FormElement>
-                                </form:formElements>
-                            </form:FormContainer>
-                        </form:formContainers>
+                    <VBox id="sectioncomboboxid4">
+                        <ComboBox id="section1combobox4" placeholder="Online Reverse Auction Offer" core:require="{ handler: 'cbecomp/ext/fragment/Combobox'}" change="handler.onChangefun3">
+                            <core:Item id="comboxitem144" text="Original Offer" />
+                            <core:Item id="comboxitem288" text="Online Reverse Auction Offer" />
+                        </ComboBox>
+                        <HBox id='newidid344'>
+                            <form:Form id="sectieonform1122aw" visible="false" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="er2esp112aw" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12awe" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="112s22awe">
+                                                <form:fields>
+                                                    <HBox id="hbox1awe" height="17px">
+                                                        <Text id="i2temdname2awe" text="Ex-Works -Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="112s2221awe">
+                                                <form:fields>
+                                                    <HBox id="hbox2awe" height="20px">
+                                                        <Text id="i2123awe" text="Ex-Works -Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="1122ssawe">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer71' width="500px" height="100px">
+                                                        <Text id="i211awe" text="Not Provided" width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2hfawe">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer72' width="500px" height="100px">
+                                                        <Text id="swa222f2wae" text=" The payment terms shall be as follows:(1) 10% of Total Contract Value shall be payable as advance against submission of following documents: (a) Advance Bank Guarantee (ABG) of equivalent amount (10%). (b) Submission of Contract Performance Bank Guarantee (CPBG) of 10% of Total Contract Price (c) Unconditional acceptance of the LOA and/or PO. (d) QAP/ITP, Data sheets, drawings and other related engineering inputs/ documents for providing manufacturing clearance. (e) Correct Original Pro-Forma Invoice to claim Advance amount.(2) 70% of Total Contract Value shall be payable upon receipt of all the materials/equipment at ISRO project site after successful inspection, issuance of Acceptance Cum Release Note (ACRN) by TPL and against submission of Original invoice copy.(3) 10% of Total Contract Value shall be payable upon successful commissioning, Performance Guarantee Test Run (PGTR) and final acceptance by TPL and/or ISRO.(4) 10% of Total Contract Value shall be payable upon receipt of As built Drawings, Final Document Dossier and O qand M manual.All payment terms shall be on pro-rata basis. Payment shall be released within 45 days via E-payment systemâ€ (through NEFT/RTGS/Bank to Bank transfer) and on submission of certified invoices as per the instructions in the Purchase Order.All invoices for payments must mention TPL job no. OG-500047, shall be raised in the name of M/s. Tata Projects Limited and shall be sent as detailed in the Purchase Order." width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sn22aawe">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer73' width="500px" height="100px">
+                                                        <Text id="svwa2222awe" text="Not Acceptable" width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2j2a2awe">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer74' width="500px" height="100px">
+                                                        <Text id="swah2222awe" text="upplier shall provide warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 24 (Twenty Four) months from the date of first Blow Down (i.e. tentalively 05-May-2021) and final acceptance in writing by TPL and/or ISRO or 40 (Forty) months from the date of last supply at project site " width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s22a2wawe">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='newscrollcontainer75' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxz232sw1" editable="true" width="100%" value=" 5% of CPBG" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2y2aawe">
+                                                <form:fields>
+                                                    <HBox id="hbox8awe" height="26px">
+                                                        <Text id="sfwa222awe" text="Mr. Binit A. Veshvikar -Managing Director" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="usa22aawe">
+                                                <form:fields>
+                                                    <HBox id="hbox9awe" height="26px">
+                                                        <Text id="nswa222awe" text="Tel : 08983261111  Mob : 9923021256" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="sj22aaawe">
+                                                <form:fields>
+                                                    <HBox id="hbox10awe" height="24px">
+                                                        <Text id="swaff222awe" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="shh22aawe">
+                                                <form:fields>
+                                                    <HBox id="hbox11awe" height="23px">
+                                                        <Text id="shhhwa2a22aaawe" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="s2uiua2aawe">
+                                                <form:fields>
+                                                    <HBox id="hbox12awe" height="20px">
+                                                        <Text id="sytwa222aaawe" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
 
-                    </form:Form>
+                            </form:Form>
+                            <form:Form id="sectieonform1122awd" visible="true" editable="false">
+                                <form:layout>
+                                    <form:ResponsiveGridLayout id="er2esp112awd" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                                </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer id="fg12awed" ariaLabelledBy="Title">
+                                        <form:formElements>
+                                            <form:FormElement id="formcomboboxids112s22awed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox1awed" height="17px">
+                                                        <Text id="formcomboboxidsi2temdname2awed" text="Ex-Works -Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids112s2221awed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox2awed" height="20px">
+                                                        <Text id="formcomboboxidsi2123awed" text="Ex-Works -Pune" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxids1122ssawed">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer71awed' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsi211awed" text="Not Provided" width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2hfawed">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer72awed' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswa222f2waed" text="The payment terms shall be as follows:(1) 10% of Total Contract Value shall be payable as advance against submission of the following documents: (a) Advance Bank Guarantee (ABG) of equivalent amount (10%). (b) Submission of Contract Performance Bank Guarantee (CPBG) of 10% of Total Contract Price (c) Unconditional acceptance of the LOA and/or PO. (d) QAP/ITP, Data sheets, drawings and other related engineering inputs/documents for providing manufacturing clearance. (e) Correct Original Pro-Forma Invoice to claim Advance amount.(2) 70% of Total Contract Value shall be payable upon receipt of all the materials/equipment at ISRO project site after successful inspection, issuance of Acceptance Cum Release Note (ACRN) by TPL and against submission of Original invoice copy.(3) 10% of Total Contract Value shall be payable upon successful commissioning, Performance Guarantee Test Run (PGTR) and final acceptance by TPL and/or ISRO.(4) 10% of Total Contract Value shall be payable upon receipt of As-built Drawings, Final Document Dossier and O qand M manual.All payment terms shall be on a pro-rata basis. Payment shall be released within 45 days via E-payment systemâ€ (through NEFT/RTGS/Bank to Bank transfer) and on submission of certified invoices as per the instructions in the Purchase Order.All invoices for payments must mention TPL job no. OG-500047, shall be raised in the name of M/s. Tata Projects Limited and shall be sent as detailed in the Purchase Order." width="100%" wrapping="true" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssn22aawed">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer73awed' width="500px" height="100px">
+                                                        <Text id="formcomboboxidssvwa2222awed" text="Not Acceptable" width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2j2a2awed">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer74awed' width="500px" height="100px">
+                                                        <Text id="formcomboboxidsswah2222awed" text="Supplier shall provide warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 24 (Twenty Four) months from the date of the first Blow Down (i.e. tentatively 05-May-2021) and final acceptance in writing by TPL and/or ISRO or 40 (Forty) months from the date of the last supply at the project site " width="100%" wrapping="true"/>
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss22a2wawed">
+                                                <form:fields>
+                                                    <ScrollContainer vertical="true" id='formcomboboxidsnewscrollcontainer75awed' width="500px" height="100px">
+                                                        <TextArea id="formcomboboxzwss223" editable="true" width="100%" value=" 5% of CPBG" />
+                                                    </ScrollContainer>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2y2aawed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox8awed" height="26px">
+                                                        <Text id="formcomboboxidssfwa222awed" text="Mr. Binit A. Veshvikar -Managing Director" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidsusa22aawed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidsbox9awed" height="26px">
+                                                        <Text id="formcomboboxidsnswa222awed" text="Tel : 08983261111  Mob : 9923021256" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssj22aaawed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox10awed" height="24px">
+                                                        <Text id="formcomboboxidsswaff222awed" text=" " />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidssh22aawed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox11awed" height="23px">
+                                                        <Text id="formcomboboxidsshhhwa2a22aaawed" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement id="formcomboboxidss2uiua2aawed">
+                                                <form:fields>
+                                                    <HBox id="formcomboboxidshbox12awed" height="20px">
+                                                        <Text id="formcomboboxidssytwa222aaawed" text="Yes" />
+                                                    </HBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+
+                        </HBox>
+                    </VBox>
+
                 </VBox>
                 <!-- end of ASP Water and Power Projects Pvt Ltd-->
 

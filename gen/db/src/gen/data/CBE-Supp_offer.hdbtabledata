@@ -1,0 +1,75 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "CBE_SUPP_OFFER",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "CBE-Supp_offer.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "SUPPLIER_NO",
+          "OFFERS",
+          "UNIT_RATE",
+          "UNIT_RATE_PER_KG",
+          "TOTAL_AMOUNT",
+          "QUANT_REF",
+          "DATE_OFFER",
+          "VALIDITY",
+          "OTHER_FARE",
+          "GRAND_TOTAL",
+          "PACKING_MFF",
+          "INSPEC_TESTING_CHARGES",
+          "DOC_CHARGES",
+          "TOTAL_BASIC_PRICE",
+          "RNOD",
+          "CUSTOM_DUTY",
+          "SGST",
+          "IGST_PER",
+          "IGST_AMOUNT",
+          "UGST",
+          "SHIPMENT_CHARGES",
+          "TOTAL_BASIC_PRICE_INCLUDE_TAX",
+          "TOTAL_BASIC_PRICE_INCLUDE_TAX2",
+          "SPARES_TWO_YEARS",
+          "PER_DIEM_RATE"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "id",
+        "SUPPLIER_NO": "supplier_no",
+        "OFFERS": "offers",
+        "UNIT_RATE": "unit_rate",
+        "UNIT_RATE_PER_KG": "unit_rate_per_kg",
+        "TOTAL_AMOUNT": "total_amount",
+        "QUANT_REF": "quant_ref",
+        "DATE_OFFER": "date_offer",
+        "VALIDITY": "validity",
+        "OTHER_FARE": "other_fare",
+        "GRAND_TOTAL": "grand_total",
+        "PACKING_MFF": "packing_mff",
+        "INSPEC_TESTING_CHARGES": "inspec_testing_charges",
+        "DOC_CHARGES": "doc_charges",
+        "TOTAL_BASIC_PRICE": "total_basic_price",
+        "RNOD": "rnod",
+        "CUSTOM_DUTY": "custom_duty",
+        "SGST": "sgst",
+        "IGST_PER": "igst_per",
+        "IGST_AMOUNT": "igst_amount",
+        "UGST": "UGST",
+        "SHIPMENT_CHARGES": "shipment_charges",
+        "TOTAL_BASIC_PRICE_INCLUDE_TAX": "total_basic_price_include_tax",
+        "TOTAL_BASIC_PRICE_INCLUDE_TAX2": "total_basic_price_include_tax2",
+        "SPARES_TWO_YEARS": "Spares_two_years",
+        "PER_DIEM_RATE": "Per_diem_rate"
+      }
+    }
+  ]
+}

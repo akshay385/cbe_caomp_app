@@ -4,8 +4,9 @@ sap.ui.define([
     'use strict';
 
     return {
-        onPress: function(oEvent) {
+        onChangefun: function(oEvent) {
             MessageToast.show("Custom handler invoked.");
+            debugger
         }
     };
 });

@@ -1,0 +1,17 @@
+{
+  "Component-preload.js": 1706693812808,
+  "model/data.json": 1706525866431,
+  "manifest.json": 1706693812390,
+  "data1.json": 1706520496921,
+  "data.json": 1706524450107,
+  "ext/controller/ObjectPageCon.controller.js": 1706693692143,
+  "ext/fragment/Fragment.js": 1706505096963,
+  "Component.js": 1706504794631,
+  "i18n/i18n.properties": 1706504830158,
+  "Component-dbg.js": 1706504794631,
+  "ext/controller/ObjectPageCon-dbg.controller.js": 1706693692143,
+  "ext/fragment/Fragment-dbg.js": 1706505096963,
+  "ext/fragment/Fragment.fragment.xml": 1706692758061,
+  "css/style.css": 1706692935011,
+  "index.html": 1706504794635
+}

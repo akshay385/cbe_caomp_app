@@ -1,3 +1,0 @@
-custom fragment
-
-#cbecomp::ItemObjectPage--fe::CustomSection::Fragment-innerGrid

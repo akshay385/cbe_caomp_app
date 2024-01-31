@@ -1,0 +1,6 @@
+id,supplier_no,offers,unit_rate,unit_rate_per_kg,total_amount,quant_ref,date_offer,validity,other_fare,grand_total,packing_mff,inspec_testing_charges,doc_charges,total_basic_price,rnod,custom_duty,sgst,igst_per,igst_amount,UGST,shipment_charges,total_basic_price_include_tax,total_basic_price_include_tax2,Spares_two_years,Per_diem_rate
+uuid1,1,Original Offer,39095000,178,234570000,"AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1",11-02-2019,120 days,50000,234620000,included,included,included,234620000,null,NA,null,18%,42231600,NA,By TPL,276851600,234620000,NA,NA
+uuid11,1,Reverse Auction Offer,35166666,160,210999996,Reverse Auction,15-04-2019,120 days,,210999996,included,included,included,210999996,null,NA,null,18%,37979999,NA,By TPL,248979995,210999996,NA,7500
+uuid12,1,Final Negotiated Price after Reverse Auction,33875000,154,203250000,E-Mail offer dated 30-04-2019,30-04-2019,120 days,,203250000,included,included,included,203250000,null,NA,null,18%,0,NA,By TPL,203250000,203250000,NA,NA
+uuid2,2,Offer Given,121,8,600,QtnRef2,,,,,,,,,,,,,,,,,,,
+uuid3,3,Next Offer Given,149,9,700,QtnRef3,,,,,,,,,,,,,,,,,,,

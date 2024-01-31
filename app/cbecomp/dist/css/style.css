@@ -8,6 +8,15 @@
     border: 1px solid #0000004b;
 }
 
+.custCellBolder{
+    font-weight: bolder;
+}
+
+.custCellBold{
+    font-weight: bold;
+    
+}
+
 /* vbox id=sectionform1 */
 #cbecomp\:\:ItemObjectPage--fe\:\:CustomSubSection\:\:Fragment--sectionform1,
 #cbecomp\:\:ItemObjectPage--fe\:\:CustomSubSection\:\:Fragment--sectionform122,/* vbox 2 */
@@ -22,3 +31,21 @@
     margin-top: 0%;
 }
 
+.customVBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customVBox .sapMLabel {
+    text-align: center;
+}
+
+.tableBorder {
+    border-right: 1px solid #696464;
+    border-top: 1px solid #696464;
+}
+
+.lastTableBorder{
+    border-top: 1px solid #696464;
+}

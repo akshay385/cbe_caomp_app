@@ -1,0 +1,17 @@
+VIEW Catalogcbeservice_Item AS SELECT
+  Item_0.itemno,
+  Item_0.itemname,
+  Item_0.indent,
+  Item_0.client,
+  Item_0.project,
+  Item_0.capacity_each,
+  Item_0.dia_mm,
+  Item_0.tl_to_tl_length,
+  Item_0.moc,
+  Item_0.design_pressure_bar,
+  Item_0.weights,
+  Item_0.quantity
+FROM CBE_Item AS Item_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN Catalogcbeservice_supplier AS supplier_rel ON (supplier_rel.itemno = itemno)
+)
