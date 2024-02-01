@@ -286,6 +286,258 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 								]
 							},
+							{
+								"itemno": "item1",
+								"item_desc": "Air Storage Vessel",
+								"capacity_each_in_cu_mtr": "770 Cu Mtr",
+								"dia_in_mm": "4500",
+								"tl_to_tl_len": "45500",
+								"moc": " ",
+								"design_pressure_bar": "16",
+								"weights_in_kg": "1320000",
+								"qty_no": "6",
+								"bidders": [
+									{
+										"Supplier": "Artson Enginerring Ltd",
+										"Location": "Nashik",
+										"offers": [
+											{
+												"offername": "Original Offer",
+												"qtn_ref": "AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1",
+												"date": "11-02-2019",
+												"validity": "120 days",
+												"unit_rate": "39095000",
+												"unit_rate_per_unit": "178",
+												"total_amt_inr": " 23,45,70,000",
+												"spares for 2 years": " 50,000",
+												"grandtotal": " 23,46,20,000",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 23,46,20,000",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
+												"Per Diem rate for Supervision for Erection and commissioning": " ",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+											{
+												"offername": "Reverse Auction Offer",
+												"qtn_ref": "Reverse Auction",
+												"date": "15-04-2019",
+												"validity": "120 days",
+												"unit_rate": "35166666",
+												"unit_rate_per_kg": "160",
+												"total_amt_inr": " 21,09,99,996",
+												"spares for 2 years": " ",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 21,09,99,996",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Per Diem rate for Supervision for Erection and commissioning": "7500",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+											{
+												"offername": "Final Negotiated Price after Reverse Auction",
+												"qtn_ref": "E-Mail offer dated 30-04-2019",
+												"date": "30-04-2019",
+												"validity": "120 days",
+												"unit_rate": " 33875000",
+												"unit_rate_per_kg": "154",
+												"total_amt_inr": " 20,32,50,000",
+												"spares for 2 years": " ",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 20,32,50,000",
+												"RNOD": " ",
+												"Custom Duty & Cess": "",
+												"SGST": "",
+												"IGST": "",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Per Diem rate for Supervision for Erection and commissioning": " ",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											}
+
+										]
+									},
+									{
+										"Supplier": "Artson Enginerring Ltd",
+										"Location": "Nashik",
+										"offers": [
+											{
+												"offername": "Original Offer",
+												"qtn_ref": "AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1",
+												"date": "11-02-2019",
+												"validity": "120 days",
+												"unit_rate": "39095000",
+												"unit_rate_per_unit": "178",
+												"total_amt_inr": " 23,45,70,000",
+												"spares for 2 years": " 50,000",
+												"grandtotal": " 23,46,20,000",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 23,46,20,000",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
+												"Per Diem rate for Supervision for Erection and commissioning": " ",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+											{
+												"offername": "Reverse Auction Offer",
+												"qtn_ref": "Reverse Auction",
+												"date": "15-04-2019",
+												"validity": "120 days",
+												"unit_rate": "35166666",
+												"unit_rate_per_kg": "160",
+												"total_amt_inr": " 21,09,99,996",
+												"spares for 2 years": " ",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 21,09,99,996",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Per Diem rate for Supervision for Erection and commissioning": "7500",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+
+
+										]
+									},
+
+
+								]
+							},
 						]
 					};
 
@@ -715,9 +967,92 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								text:`${DataGiven.items[0].bidders[i].offers[k].PriceBasis}`
 							}));
 
+							//Point of Delivery
 							chvbox.addItem(new sap.m.Text(`${"pointofdelivery"+generateUniqueId()}`,{
 								text:`${DataGiven.items[0].bidders[i].offers[k]["Point of Delivery"]}`
 							}));
+							debugger
+							//Delivery Period
+							chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[2].addContent(new sap.m.Text(`${"deliveryperiod"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Delivery Period"]}`
+							}));
+
+
+							//Payment Terms
+							chvbox.addItem(new sap.m.ScrollContainer(`${"paymenttermsScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[3].addContent(new sap.m.Text(`${"paymentterms"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Payment Terms"]}`
+							}));
+
+							//Liquidated Damages
+							chvbox.addItem(new sap.m.ScrollContainer(`${"liquidedScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[4].addContent(new sap.m.Text(`${"liquided"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Liquidated Damages"]}`
+							}));
+
+							//Warranty / Defect Liability Period
+							chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[5].addContent(new sap.m.Text(`${"warranty"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Warranty / Defect Liability Period"]}`
+							}));
+
+							//CPBG
+							chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[6].addContent(new sap.m.Text(`${"cpbg"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k].CPBG	}`
+							}));
+
+							//Contact Person
+							chvbox.addItem(new sap.m.Text(`${"contactperson"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Contact Person"]}`
+							}));
+
+							//Contact NO
+							chvbox.addItem(new sap.m.Text(`${"contactno"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Contact No."]}`
+							}));
+							
+							//Order can be given to……...
+							chvbox.addItem(new sap.m.Text(`${"ordercanbe"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Order can be given to……..."]}`
+							}));
+							
+							//Techncially Approved
+							chvbox.addItem(new sap.m.Text(`${"technicallyapproved"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Techncially Approved"]}`
+							}));
+							
+							//Approved Vendor
+							chvbox.addItem(new sap.m.Text(`${"approvedvendor"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Approved Vendor"]}`
+							}));
+							
 
 
 
