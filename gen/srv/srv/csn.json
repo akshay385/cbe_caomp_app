@@ -10,6 +10,10 @@
         },
         "itemname": {
           "@Common.Label": "Items Desc",
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "@Common.Label": "Pan Number",
           "key": true,
           "type": "cds.String"
         },
@@ -522,6 +526,10 @@
         },
         "itemname": {
           "@Common.Label": "Items Desc",
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "@Common.Label": "Pan Number",
           "key": true,
           "type": "cds.String"
         },

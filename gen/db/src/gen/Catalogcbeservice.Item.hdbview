@@ -1,6 +1,7 @@
 VIEW Catalogcbeservice_Item AS SELECT
   Item_0.itemno,
   Item_0.itemname,
+  Item_0.PAN_Number,
   Item_0.indent,
   Item_0.client,
   Item_0.project,

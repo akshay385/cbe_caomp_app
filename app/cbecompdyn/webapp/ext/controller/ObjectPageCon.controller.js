@@ -11,7 +11,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			 */
 			onInit: function () {
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
+				debugger
 				var oModel = this.base.getExtensionAPI().getModel();
+
+
 			},
 			routing: {
 				onAfterBinding: async function (oBindingContext) {
@@ -81,7 +84,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
 												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
 												"Per Diem rate for Supervision for Erection and commissioning": " ",
-												"PriceBasis": "Ex-Works Nashik",
+												"PriceBasis": "Ex-Works NashikO",
 												"Point of Delivery": "Ex-Works Nashik",
 												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
 												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
@@ -169,7 +172,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
 												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
 												"Per Diem rate for Supervision for Erection and commissioning": " ",
-												"PriceBasis": "Ex-Works Nashik",
+												"PriceBasis": "Ex-Works NashikF",
 												"Point of Delivery": "Ex-Works Nashik",
 												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
 												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
@@ -657,10 +660,23 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						//3rd vbox final one
 						var vbox_last_section = curr_sectionvbox.getItems()[2];
 
-						var combobox = new sap.m.ComboBox(`${"combobox" + (i + 1)}`);
+						var combobox = new sap.m.ComboBox(`${"combobox" + (i + 1)}`, {
+							change: function (oEvent) {
+								debugger
+								for (let index = 0; index < oEvent.getSource().getParent().getItems()[1].getItems().length; index++) {
+									if (oEvent.getSource().getItems()[index].getText() == oEvent.getSource().getValue()) {
+										oEvent.getSource().getParent().getItems()[1].getItems()[index].setVisible(true);
+									}
+									else {
+										oEvent.getSource().getParent().getItems()[1].getItems()[index].setVisible(false);
+									}
+
+								}
+							}
+						});
 						vbox_last_section.addItem(combobox);
 
-						var hboxcombo = new sap.m.HBox(`${"hboxcombo"+(i+1)}`);
+						var hboxcombo = new sap.m.HBox(`${"hboxcombo" + (i + 1)}`);
 						vbox_last_section.addItem(hboxcombo);
 
 						var last_hcombobox = vbox_last_section.getItems()[1];
@@ -949,113 +965,117 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 							debugger
 							var combobox_item = vbox_last_section.getItems()[0]
 
+							combobox_item.setValue(`${DataGiven.items[0].bidders[i].offers[(DataGiven.items[0].bidders[i].offers.length) - 1].offername}`);
+
+
+
 							var item = new sap.ui.core.Item(`${"item1" + (generateUniqueId())}`, {
 								text: `${DataGiven.items[0].bidders[i].offers[k].offername}`
 							})
 
 							combobox_item.addItem(item);
 
-							last_hcombobox.addItem(new sap.m.VBox(`${"offer"+generateUniqueId()}`));
+							last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`));
 
 							var chvbox = last_hcombobox.getItems()[k];
+
+							if (combobox_item.getValue() != DataGiven.items[0].bidders[i].offers[k].offername) {
+								chvbox.setVisible(false)
+							}
 
 							chvbox.addStyleClass("spacebetweenclass");
 
 							debugger
 							//Price Basis
-							chvbox.addItem(new sap.m.Text(`${"pricebasis"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k].PriceBasis}`
+							chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].PriceBasis}`
 							}));
 
 							//Point of Delivery
-							chvbox.addItem(new sap.m.Text(`${"pointofdelivery"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Point of Delivery"]}`
+							chvbox.addItem(new sap.m.Text(`${"pointofdelivery" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Point of Delivery"]}`
 							}));
 							debugger
 							//Delivery Period
-							chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll"+generateUniqueId()}`,{
-								vertical:true,
-								width:"500px",
-								height:"100px"
+							chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll" + generateUniqueId()}`, {
+								vertical: true,
+								width: "500px",
+								height: "100px"
 							}))
 
-							chvbox.getItems()[2].addContent(new sap.m.Text(`${"deliveryperiod"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Delivery Period"]}`
+							chvbox.getItems()[2].addContent(new sap.m.Text(`${"deliveryperiod" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Delivery Period"]}`
 							}));
 
 
 							//Payment Terms
-							chvbox.addItem(new sap.m.ScrollContainer(`${"paymenttermsScroll"+generateUniqueId()}`,{
-								vertical:true,
-								width:"500px",
-								height:"100px"
+							chvbox.addItem(new sap.m.ScrollContainer(`${"paymenttermsScroll" + generateUniqueId()}`, {
+								vertical: true,
+								width: "500px",
+								height: "100px"
 							}))
 
-							chvbox.getItems()[3].addContent(new sap.m.Text(`${"paymentterms"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Payment Terms"]}`
+							chvbox.getItems()[3].addContent(new sap.m.Text(`${"paymentterms" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Payment Terms"]}`
 							}));
 
 							//Liquidated Damages
-							chvbox.addItem(new sap.m.ScrollContainer(`${"liquidedScroll"+generateUniqueId()}`,{
-								vertical:true,
-								width:"500px",
-								height:"100px"
+							chvbox.addItem(new sap.m.ScrollContainer(`${"liquidedScroll" + generateUniqueId()}`, {
+								vertical: true,
+								width: "500px",
+								height: "100px"
 							}))
 
-							chvbox.getItems()[4].addContent(new sap.m.Text(`${"liquided"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Liquidated Damages"]}`
+							chvbox.getItems()[4].addContent(new sap.m.Text(`${"liquided" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Liquidated Damages"]}`
 							}));
 
 							//Warranty / Defect Liability Period
-							chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll"+generateUniqueId()}`,{
-								vertical:true,
-								width:"500px",
-								height:"100px"
+							chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll" + generateUniqueId()}`, {
+								vertical: true,
+								width: "500px",
+								height: "100px"
 							}))
 
-							chvbox.getItems()[5].addContent(new sap.m.Text(`${"warranty"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Warranty / Defect Liability Period"]}`
+							chvbox.getItems()[5].addContent(new sap.m.Text(`${"warranty" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Warranty / Defect Liability Period"]}`
 							}));
 
 							//CPBG
-							chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll"+generateUniqueId()}`,{
-								vertical:true,
-								width:"500px",
-								height:"100px"
+							chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll" + generateUniqueId()}`, {
+								vertical: true,
+								width: "500px",
+								height: "100px"
 							}))
 
-							chvbox.getItems()[6].addContent(new sap.m.Text(`${"cpbg"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k].CPBG	}`
+							chvbox.getItems()[6].addContent(new sap.m.Text(`${"cpbg" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].CPBG}`
 							}));
 
 							//Contact Person
-							chvbox.addItem(new sap.m.Text(`${"contactperson"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Contact Person"]}`
+							chvbox.addItem(new sap.m.Text(`${"contactperson" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Contact Person"]}`
 							}));
 
 							//Contact NO
-							chvbox.addItem(new sap.m.Text(`${"contactno"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Contact No."]}`
+							chvbox.addItem(new sap.m.Text(`${"contactno" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Contact No."]}`
 							}));
-							
+
 							//Order can be given to……...
-							chvbox.addItem(new sap.m.Text(`${"ordercanbe"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Order can be given to……..."]}`
+							chvbox.addItem(new sap.m.Text(`${"ordercanbe" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Order can be given to……..."]}`
 							}));
-							
+
 							//Techncially Approved
-							chvbox.addItem(new sap.m.Text(`${"technicallyapproved"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Techncially Approved"]}`
+							chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Techncially Approved"]}`
 							}));
-							
+
 							//Approved Vendor
-							chvbox.addItem(new sap.m.Text(`${"approvedvendor"+generateUniqueId()}`,{
-								text:`${DataGiven.items[0].bidders[i].offers[k]["Approved Vendor"]}`
+							chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k]["Approved Vendor"]}`
 							}));
-							
-
-
-
 
 
 

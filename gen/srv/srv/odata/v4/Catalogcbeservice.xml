@@ -44,10 +44,11 @@
       </EntityType>
       <EntityType Name="Item">
         <Key>
-          <PropertyRef Name="itemname"/>
+          <PropertyRef Name="PAN_Number"/>
         </Key>
         <Property Name="itemno" Type="Edm.Int32"/>
-        <Property Name="itemname" Type="Edm.String" Nullable="false"/>
+        <Property Name="itemname" Type="Edm.String"/>
+        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
         <Property Name="indent" Type="Edm.String"/>
         <Property Name="client" Type="Edm.String"/>
         <Property Name="project" Type="Edm.String"/>
@@ -219,6 +220,9 @@
       </Annotations>
       <Annotations Target="Catalogcbeservice.Item/itemname">
         <Annotation Term="Common.Label" String="Items Desc"/>
+      </Annotations>
+      <Annotations Target="Catalogcbeservice.Item/PAN_Number">
+        <Annotation Term="Common.Label" String="Pan Number"/>
       </Annotations>
       <Annotations Target="Catalogcbeservice.Item/indent">
         <Annotation Term="Common.Label" String="Indent"/>

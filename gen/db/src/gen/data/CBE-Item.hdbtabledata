@@ -15,6 +15,7 @@
         "import_columns": [
           "ITEMNO",
           "ITEMNAME",
+          "PAN_NUMBER",
           "INDENT",
           "CLIENT",
           "PROJECT",
@@ -31,6 +32,7 @@
       "column_mappings": {
         "ITEMNO": "itemno",
         "ITEMNAME": "itemname",
+        "PAN_NUMBER": "PAN_Number",
         "INDENT": "indent",
         "CLIENT": "client",
         "PROJECT": "project",

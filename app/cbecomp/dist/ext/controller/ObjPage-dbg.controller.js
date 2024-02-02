@@ -11,6 +11,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			 */
 			onInit: function () {
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
+				debugger
 				var oModel = this.base.getExtensionAPI().getModel();
 			},
 			routing: {

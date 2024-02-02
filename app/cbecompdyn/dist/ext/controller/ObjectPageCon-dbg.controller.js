@@ -11,7 +11,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			 */
 			onInit: function () {
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
+				debugger
 				var oModel = this.base.getExtensionAPI().getModel();
+
+
 			},
 			routing: {
 				onAfterBinding: async function (oBindingContext) {
@@ -58,7 +61,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"unit_rate_per_unit": "178",
 												"total_amt_inr": " 23,45,70,000",
 												"spares for 2 years": " 50,000",
-												"grandtotal":" 23,46,20,000",
+												"grandtotal": " 23,46,20,000",
 												"Packing, Marking, Forwarding & Freight": [
 													"Included",
 													" "
@@ -78,8 +81,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"IGST": "18%",
 												"UGST": "",
 												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
-												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
-												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
 												"Per Diem rate for Supervision for Erection and commissioning": " ",
 												"PriceBasis": "Ex-Works Nashik",
 												"Point of Delivery": "Ex-Works Nashik",
@@ -100,8 +103,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"date": "15-04-2019",
 												"validity": "120 days",
 												"unit_rate": "35166666",
-												"unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
-												"total_amt_inr": "unit_rate_inr * qty_no(6)",
+												"unit_rate_per_kg": "160",
+												"total_amt_inr": " 21,09,99,996",
 												"spares for 2 years": " ",
 												"Packing, Marking, Forwarding & Freight": [
 													"Included",
@@ -115,7 +118,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 													"Included",
 													" "
 												],
-												"Total Basic Price including packing, marking & forwarding": "grandtotal + all above 3 values eg:doc_charges[1]",
+												"Total Basic Price including packing, marking & forwarding": " 21,09,99,996",
 												"RNOD": " ",
 												"Custom Duty & Cess": "NA",
 												"SGST": "",
@@ -144,8 +147,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"date": "30-04-2019",
 												"validity": "120 days",
 												"unit_rate": " 33875000",
-												"unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
-												"total_amt_inr": "unit_rate_inr * qty_no(6)",
+												"unit_rate_per_kg": "154",
+												"total_amt_inr": " 20,32,50,000",
 												"spares for 2 years": " ",
 												"Packing, Marking, Forwarding & Freight": [
 													"Included",
@@ -159,7 +162,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 													"Included",
 													" "
 												],
-												"Total Basic Price including packing, marking & forwarding": "grandtotal + all above 3 values eg:doc_charges[1]",
+												"Total Basic Price including packing, marking & forwarding": " 20,32,50,000",
 												"RNOD": " ",
 												"Custom Duty & Cess": "",
 												"SGST": "",
@@ -185,7 +188,105 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 										]
 									},
-									
+									{
+										"Supplier": "Artson Enginerring Ltd",
+										"Location": "Nashik",
+										"offers": [
+											{
+												"offername": "Original Offer",
+												"qtn_ref": "AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1",
+												"date": "11-02-2019",
+												"validity": "120 days",
+												"unit_rate": "39095000",
+												"unit_rate_per_unit": "178",
+												"total_amt_inr": " 23,45,70,000",
+												"spares for 2 years": " 50,000",
+												"grandtotal": " 23,46,20,000",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 23,46,20,000",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
+												"Per Diem rate for Supervision for Erection and commissioning": " ",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+											{
+												"offername": "Reverse Auction Offer",
+												"qtn_ref": "Reverse Auction",
+												"date": "15-04-2019",
+												"validity": "120 days",
+												"unit_rate": "35166666",
+												"unit_rate_per_kg": "160",
+												"total_amt_inr": " 21,09,99,996",
+												"spares for 2 years": " ",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 21,09,99,996",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Per Diem rate for Supervision for Erection and commissioning": "7500",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+
+
+										]
+									},
+
+
 								]
 							},
 							{
@@ -212,7 +313,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"unit_rate_per_unit": "178",
 												"total_amt_inr": " 23,45,70,000",
 												"spares for 2 years": " 50,000",
-												"grandtotal":" 23,46,20,000",
+												"grandtotal": " 23,46,20,000",
 												"Packing, Marking, Forwarding & Freight": [
 													"Included",
 													" "
@@ -232,8 +333,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"IGST": "18%",
 												"UGST": "",
 												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
-												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
-												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
 												"Per Diem rate for Supervision for Erection and commissioning": " ",
 												"PriceBasis": "Ex-Works Nashik",
 												"Point of Delivery": "Ex-Works Nashik",
@@ -254,8 +355,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"date": "15-04-2019",
 												"validity": "120 days",
 												"unit_rate": "35166666",
-												"unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
-												"total_amt_inr": "unit_rate_inr * qty_no(6)",
+												"unit_rate_per_kg": "160",
+												"total_amt_inr": " 21,09,99,996",
 												"spares for 2 years": " ",
 												"Packing, Marking, Forwarding & Freight": [
 													"Included",
@@ -269,7 +370,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 													"Included",
 													" "
 												],
-												"Total Basic Price including packing, marking & forwarding": "grandtotal + all above 3 values eg:doc_charges[1]",
+												"Total Basic Price including packing, marking & forwarding": " 21,09,99,996",
 												"RNOD": " ",
 												"Custom Duty & Cess": "NA",
 												"SGST": "",
@@ -298,8 +399,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 												"date": "30-04-2019",
 												"validity": "120 days",
 												"unit_rate": " 33875000",
-												"unit_rate_per_kg": "total_amt_inr / weights_in_kg(1320000)",
-												"total_amt_inr": "unit_rate_inr * qty_no(6)",
+												"unit_rate_per_kg": "154",
+												"total_amt_inr": " 20,32,50,000",
 												"spares for 2 years": " ",
 												"Packing, Marking, Forwarding & Freight": [
 													"Included",
@@ -313,7 +414,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 													"Included",
 													" "
 												],
-												"Total Basic Price including packing, marking & forwarding": "grandtotal + all above 3 values eg:doc_charges[1]",
+												"Total Basic Price including packing, marking & forwarding": " 20,32,50,000",
 												"RNOD": " ",
 												"Custom Duty & Cess": "",
 												"SGST": "",
@@ -339,9 +440,107 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 										]
 									},
-									
+									{
+										"Supplier": "Artson Enginerring Ltd",
+										"Location": "Nashik",
+										"offers": [
+											{
+												"offername": "Original Offer",
+												"qtn_ref": "AEL/NSK/TPL/AV/PB/16054/2018-19, Rev-1",
+												"date": "11-02-2019",
+												"validity": "120 days",
+												"unit_rate": "39095000",
+												"unit_rate_per_unit": "178",
+												"total_amt_inr": " 23,45,70,000",
+												"spares for 2 years": " 50,000",
+												"grandtotal": " 23,46,20,000",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 23,46,20,000",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": " 27,68,51,600",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": " 23,46,20,000",
+												"Per Diem rate for Supervision for Erection and commissioning": " ",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+											{
+												"offername": "Reverse Auction Offer",
+												"qtn_ref": "Reverse Auction",
+												"date": "15-04-2019",
+												"validity": "120 days",
+												"unit_rate": "35166666",
+												"unit_rate_per_kg": "160",
+												"total_amt_inr": " 21,09,99,996",
+												"spares for 2 years": " ",
+												"Packing, Marking, Forwarding & Freight": [
+													"Included",
+													" "
+												],
+												"Inspection / Testing Charges": [
+													"Included",
+													" "
+												],
+												"Documentation Charges": [
+													"Included",
+													" "
+												],
+												"Total Basic Price including packing, marking & forwarding": " 21,09,99,996",
+												"RNOD": " ",
+												"Custom Duty & Cess": "NA",
+												"SGST": "",
+												"IGST": "18%",
+												"UGST": "",
+												"Shipment charges from EXW to ISRO Mahendragiri": "By TPL",
+												"Total Basic Price including packing, marking & forwarding, Transportation including Taxes": "",
+												"Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes": "",
+												"Per Diem rate for Supervision for Erection and commissioning": "7500",
+												"PriceBasis": "Ex-Works Nashik",
+												"Point of Delivery": "Ex-Works Nashik",
+												"Delivery Period": "Receipt of order, Approved MDS – 0 date; Duration : Milestone *To + 6 Weeks : Design and Drawing preparation & approval from CCOE-PESO officeTo + 12 Weeks : Material procurementTo + 24 Weeks : Manufacturing, NDT clearanceTo + 26 Weeks : Surface preparation, primer painting To + 27 Weeks : Dispatch of 1st consignment ( 6 Pieces )  To + 31 Weeks : Dispatch of 2nd consignment ( 6 Pieces )  ",
+												"Payment Terms": "10% Total Contracts Price released after: a) Corporate Guarantee for 10% of Total Contract Price. b) Correct Proforma invoice. c) Corporate Performance Guarantee (10% of Total Contract Price) within 15 days from PO date. d) Unconditional acceptance of Purchase Order. 10% Total Contract Price released after design and drawing approval and Corporate Guarantee submission. 20% Total Contracts Price released within 30 days upon receipt of major materials (Plates) and Corporate Guarantee. 30% of Total Contract Price payable within 30 days after dispatch. 10% of Total Contract Price payable within 30 days upon successful Hydrotest at site. 15% of Total Contract Price payable within 30 days upon successful NDT at site. 5% of Total Contract Price payable within 30 days upon handing over of Tank, submission of as-built Drawings, and Final Document Dossier. Payments released upon completion of approved milestones through NEFT/RTGS/Bank to Bank transfer, with certified invoices referencing TPL job no. OG-500047-ISRO-SIET. Commercial Invoices consigned to M/s Tata Projects Limited, Floor 2, Transocean House, Lake Boulevard Road, Hiranandani Business Park, Powai, Mumbai-400 076, India. Bank Guarantees per TPL formats sent to TPL, RO Mumbai at Powai.",
+												"Liquidated Damages": "0.5% (Half percent) of Total Contract Price, subject to a maximum of 5% (Five percent) of the Total Contract Price, for each calendar week of delay or part thereof. ",
+												"Warranty / Defect Liability Period": "Warranty for the performance of all the Ordered items/packages under the Contract, against any manufacturing defects, for the period of 18 (Eighteen) months from the date of issue of certificate of completion and final acceptance in writing by TPL and/or ISRO or 36 (Thirty-Six) months from the date of last supply at project site, whichever is earlier.  During this period, all the relevant cost towards repair and/or replacement of defective parts/items shall be borne by Supplier.  Any part / item repaired and/or replaced shall be under a further warranty for a period of 12 months from the date of acceptance of such repaired and/or replaced part/ item. ",
+												"CPBG": "Corporate Guarantee shall be provided valid until the expiry of Defect Liability Period with further claim period validity of Six (06) months.",
+												"Contact Person": "Mr.Prashant Bachhav / Mr.Saket Mathur",
+												"Contact No.": "Mr.Prashant Bachhav, Mob No:9860252880/ Mr.Saket Mathur ,Mob No:7095557701",
+												"Order can be given to……...": "M/s Artson Engineering Ltd",
+												"Techncially Approved": "Technically Accepted",
+												"Approved Vendor": "Yes"
+											},
+
+
+										]
+									},
+
+
 								]
-							}
+							},
 						]
 					};
 
@@ -454,7 +653,26 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						let curr_sectionvbox = Scrollhbox.getItems()[i];
 
 						curr_sectionvbox.addItem(new sap.m.VBox(`${"vboxsuppnameloc" + (i + 1)}`));
-						curr_sectionvbox.addItem(new sap.m.VBox(`${"hbmiddlesection" + (i + 1)}`));
+						curr_sectionvbox.addItem(new sap.m.HBox(`${"hbmiddlesection" + (i + 1)}`));
+						curr_sectionvbox.addItem(new sap.m.VBox(`${"vbox_last_section" + (i + 1)}`));
+
+
+						//3rd vbox final one
+						var vbox_last_section = curr_sectionvbox.getItems()[2];
+
+						var combobox = new sap.m.ComboBox(`${"combobox" + (i + 1)}`);
+						vbox_last_section.addItem(combobox);
+
+						var hboxcombo = new sap.m.HBox(`${"hboxcombo"+(i+1)}`);
+						vbox_last_section.addItem(hboxcombo);
+
+						var last_hcombobox = vbox_last_section.getItems()[1];
+
+						// for (let l = 0; l < DataGiven.items[0].bidders.length; l++) {
+						// 	var 
+
+						// }
+
 						//vbox1
 						let vboxsuppnameloc = curr_sectionvbox.getItems()[0];
 
@@ -472,205 +690,376 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						vboxsuppnameloc.addStyleClass("v11spaceBetweenclass");
 
 
-						//vbox2
-
-						let hbmiddlesection = curr_sectionvbox.getItems()[1];
-
-						let vbmiddlesection = hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection"+generateUniqueId()}`));
-
-						vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + (i + 1)}`));
-
-						let vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
-
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].qtn_ref}`,
-						}));
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].date}`
-						}));
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].validity}`
-						}));
-						vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + (i + 1)}`, {
-							text: ""
-						}));
-						vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
-
-
-						/////////
-						vbmiddlesection.addItem(new sap.m.Label(`${"original_offer" + (i + 1)}`, {
-							text: `${DataGiven.items[0].bidders[i].offers[0].offername}`,
-							design: "Bold"
-						}));
-
-						var oTable = new sap.m.Table({
-							id: `${"offer"+generateUniqueId()}`,
-							class: "tableBorder",
-							growing: true,
-							growingThreshold: 20,
-							width: "100%",
-							fixedLayout: false
-						});
-
-						vbmiddlesection.addItem(oTable);
-
-						// Define columns
+						//Hbox middle
 						debugger
-						var oColumn1 = new sap.m.Column({
-							id: `${"unit_rate" + generateUniqueId()}`,
-							header: new sap.m.Text({ text: "unit rate(INR)", wrapping: false })
-						});
+						var hbmiddlesection = curr_sectionvbox.getItems()[1];
 
-						var oColumn2 = new sap.m.Column({
-							id: `${"unit_rate_per" + generateUniqueId()}`,
-							header: new sap.m.Text({ text: "unit rate/KG", wrapping: false })
-						});
+						//Loop for Vboxs
+						for (let k = 0; k < DataGiven.items[0].bidders[i].offers.length; k++) {
+							debugger
+							hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`));
 
-						var oColumn3 = new sap.m.Column({
-							id: `${"total_amt_offer" + generateUniqueId()}`,
-							header: new sap.m.Text({ text: "Total Amount (INR)", wrapping: false })
-						});
+							var vbmiddlesection = hbmiddlesection.getItems()[k];
 
-						// Add columns to the table
-						oTable.addColumn(oColumn1);
-						oTable.addColumn(oColumn2);
-						oTable.addColumn(oColumn3);
+							vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + generateUniqueId()}`));
 
-						for (let j = 0; j < DataGiven.items.length; j++) {
-							var oItem = new sap.m.ColumnListItem({
-								id: `${"item1data"+generateUniqueId()}`,
+							var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
+
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].qtn_ref}`,
+							}));
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].date}`
+							}));
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].validity}`
+							}));
+							vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
+								text: ""
+							}));
+							vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
+
+
+							/////////
+							// var innerHbox = new sap.m.HBox(`${"innerHBox"+generateUniqueId()}`);
+
+							// vbmiddlesection.addItem(innerHbox);
+
+							// var hboxitems = vbmiddlesection.getItems()[1];
+
+							var inner_vbox = new sap.m.VBox(`${"innervbox" + generateUniqueId()}`);
+							vbmiddlesection.addItem(inner_vbox);
+							// hboxitems.addItem(inner_vbox);
+
+							inner_vbox.addItem(new sap.m.Label(`${"original_offer" + generateUniqueId()}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].offername}`,
+								design: "Bold"
+							}));
+
+							var oTable = new sap.m.Table({
+								id: `${"offer" + generateUniqueId()}`,
+								class: "tableBorder",
+								growing: true,
+								growingThreshold: 20,
+								width: "100%",
+								fixedLayout: false
+							});
+
+							inner_vbox.addItem(oTable);
+
+							// Define columns
+							debugger
+							var oColumn1 = new sap.m.Column({
+								id: `${"unit_rate" + generateUniqueId()}`,
+								header: new sap.m.Text({ text: "unit rate(INR)", wrapping: false })
+							});
+
+							var oColumn2 = new sap.m.Column({
+								id: `${"unit_rate_per" + generateUniqueId()}`,
+								header: new sap.m.Text({ text: "unit rate/KG", wrapping: false })
+							});
+
+							var oColumn3 = new sap.m.Column({
+								id: `${"total_amt_offer" + generateUniqueId()}`,
+								header: new sap.m.Text({ text: "Total Amount (INR)", wrapping: false })
+							});
+
+							// Add columns to the table
+							oTable.addColumn(oColumn1);
+							oTable.addColumn(oColumn2);
+							oTable.addColumn(oColumn3);
+
+							for (let j = 0; j < DataGiven.items.length; j++) {
+								var oItem = new sap.m.ColumnListItem({
+									id: `${"item1data" + generateUniqueId()}`,
+									cells: [
+										new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[k].unit_rate}` }),
+										new sap.m.Text({ text: "178" }),
+										new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[k].total_amt_inr}` })
+									]
+								});
+								oTable.addItem(oItem);
+
+							}
+							var oItem1 = new sap.m.ColumnListItem({
+								id: `${"blankspace" + generateUniqueId()}`,
 								cells: [
-									new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[0].unit_rate}` }),
-									new sap.m.Text({ text: "178" }),
-									new sap.m.Text({ text: `${DataGiven.items[j].bidders[i].offers[0].total_amt_inr}` })
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" })
 								]
 							});
-							oTable.addItem(oItem);
+
+							oTable.addItem(oItem1);
+							var oItem2 = new sap.m.ColumnListItem({
+								id: `${"spare" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["spares for 2 years"]}` })
+								]
+							});
+
+							oTable.addItem(oItem2);
+							var oItem3 = new sap.m.ColumnListItem({
+								id: `${"grandtotal" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].grandtotal}` })
+								]
+							});
+
+							oTable.addItem(oItem3);
+							var oItem4 = new sap.m.ColumnListItem({
+								id: `${"parkingmarking" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Packing, Marking, Forwarding & Freight"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem4);
+							var oItem5 = new sap.m.ColumnListItem({
+								id: `${"inspection" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Inspection / Testing Charges"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem5);
+							var oItem6 = new sap.m.ColumnListItem({
+								id: `${"documentation" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Documentation Charges"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem6);
+							var oItem7 = new sap.m.ColumnListItem({
+								id: `${"totalbasicpricing" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Total Basic Price including packing, marking & forwarding"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem7);
+							var oItem8 = new sap.m.ColumnListItem({
+								id: `${"rnod" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].RNOD}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem8);
+							var oItem9 = new sap.m.ColumnListItem({
+								id: `${"customduty" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Custom Duty & Cess"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem9);
+							var oItem10 = new sap.m.ColumnListItem({
+								id: `${"sgst" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].SGST}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem10);
+							var oItem11 = new sap.m.ColumnListItem({
+								id: `${"igst" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].IGST}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${(Number(DataGiven.items[0].bidders[i].offers[k].IGST)) * (Number(DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"])) / 100}` }),
+								]
+							});
+
+							oTable.addItem(oItem11);
+							var oItem12 = new sap.m.ColumnListItem({
+								id: `${"ugst" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k].UGST}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${(Number(DataGiven.items[0].bidders[i].offers[k].UGST)) * (Number(DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"])) / 100}` }),
+								]
+							});
+
+							oTable.addItem(oItem12);
+							var oItem13 = new sap.m.ColumnListItem({
+								id: `${"shipment" + generateUniqueId()}`,
+								cells: [
+
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Shipment charges from EXW to ISRO Mahendragiri"]}` }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+								]
+							});
+
+							oTable.addItem(oItem13);
+							var oItem14 = new sap.m.ColumnListItem({
+								id: `${"totalincludingtaxes" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Total Basic Price including packing, marking & forwarding, Transportation including Taxes"]}` })
+								]
+							});
+							oTable.addItem(oItem14);
+							var oItem14 = new sap.m.ColumnListItem({
+								id: `${"total_excluding_taxes" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes"]}` })
+								]
+							});
+							oTable.addItem(oItem14);
+							var oItem15 = new sap.m.ColumnListItem({
+								id: `${"perdiemrate" + generateUniqueId()}`,
+								cells: [
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: "" }),
+									new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[k]["Per Diem rate for Supervision for Erection and commissioning"]}` })
+								]
+							});
+							oTable.addItem(oItem15);
+
+							debugger
+							var combobox_item = vbox_last_section.getItems()[0]
+
+							var item = new sap.ui.core.Item(`${"item1" + (generateUniqueId())}`, {
+								text: `${DataGiven.items[0].bidders[i].offers[k].offername}`
+							})
+
+							combobox_item.addItem(item);
+
+							last_hcombobox.addItem(new sap.m.VBox(`${"offer"+generateUniqueId()}`));
+
+							var chvbox = last_hcombobox.getItems()[k];
+
+							chvbox.addStyleClass("spacebetweenclass");
+
+							debugger
+							//Price Basis
+							chvbox.addItem(new sap.m.Text(`${"pricebasis"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k].PriceBasis}`
+							}));
+
+							//Point of Delivery
+							chvbox.addItem(new sap.m.Text(`${"pointofdelivery"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Point of Delivery"]}`
+							}));
+							debugger
+							//Delivery Period
+							chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[2].addContent(new sap.m.Text(`${"deliveryperiod"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Delivery Period"]}`
+							}));
+
+
+							//Payment Terms
+							chvbox.addItem(new sap.m.ScrollContainer(`${"paymenttermsScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[3].addContent(new sap.m.Text(`${"paymentterms"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Payment Terms"]}`
+							}));
+
+							//Liquidated Damages
+							chvbox.addItem(new sap.m.ScrollContainer(`${"liquidedScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[4].addContent(new sap.m.Text(`${"liquided"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Liquidated Damages"]}`
+							}));
+
+							//Warranty / Defect Liability Period
+							chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[5].addContent(new sap.m.Text(`${"warranty"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Warranty / Defect Liability Period"]}`
+							}));
+
+							//CPBG
+							chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll"+generateUniqueId()}`,{
+								vertical:true,
+								width:"500px",
+								height:"100px"
+							}))
+
+							chvbox.getItems()[6].addContent(new sap.m.Text(`${"cpbg"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k].CPBG	}`
+							}));
+
+							//Contact Person
+							chvbox.addItem(new sap.m.Text(`${"contactperson"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Contact Person"]}`
+							}));
+
+							//Contact NO
+							chvbox.addItem(new sap.m.Text(`${"contactno"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Contact No."]}`
+							}));
+							
+							//Order can be given to……...
+							chvbox.addItem(new sap.m.Text(`${"ordercanbe"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Order can be given to……..."]}`
+							}));
+							
+							//Techncially Approved
+							chvbox.addItem(new sap.m.Text(`${"technicallyapproved"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Techncially Approved"]}`
+							}));
+							
+							//Approved Vendor
+							chvbox.addItem(new sap.m.Text(`${"approvedvendor"+generateUniqueId()}`,{
+								text:`${DataGiven.items[0].bidders[i].offers[k]["Approved Vendor"]}`
+							}));
+							
+
+
 
 						}
-						var oItem1 = new sap.m.ColumnListItem({
-							id: `${"blankspace"+generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" })
-							]
-						});
-
-						oTable.addItem(oItem1);
-						var oItem2 = new sap.m.ColumnListItem({
-							id: `${"spare"+generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["spares for 2 years"]}` })
-							]
-						});
-
-						oTable.addItem(oItem2);
-						var oItem3 = new sap.m.ColumnListItem({
-							id: `${"grandtotal"+generateUniqueId()}`,
-							cells: [
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].grandtotal}` })
-							]
-						});
-
-						oTable.addItem(oItem3);
-						var oItem4 = new sap.m.ColumnListItem({
-							id: `${"parkingmarking"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Packing, Marking, Forwarding & Freight"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem4);
-						var oItem5 = new sap.m.ColumnListItem({
-							id: `${"inspection"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Inspection / Testing Charges"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem5);
-						var oItem6 = new sap.m.ColumnListItem({
-							id: `${"documentation"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Documentation Charges"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem6);
-						var oItem7 = new sap.m.ColumnListItem({
-							id: `${"totalbasicpricing"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Total Basic Price including packing, marking & forwarding"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem7);
-						var oItem8 = new sap.m.ColumnListItem({
-							id: `${"rnod"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].RNOD}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem8);
-						var oItem9 = new sap.m.ColumnListItem({
-							id: `${"customduty"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0]["Custom Duty & Cess"]}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem9);
-						var oItem10 = new sap.m.ColumnListItem({
-							id: `${"sgst"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].SGST}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: "" }),
-							]
-						});
-
-						oTable.addItem(oItem10);
-						var oItem11 = new sap.m.ColumnListItem({
-							id: `${"igst"+generateUniqueId()}`,
-							cells: [
-
-								new sap.m.Text({ text: `${DataGiven.items[0].bidders[i].offers[0].IGST}` }),
-								new sap.m.Text({ text: "" }),
-								new sap.m.Text({ text: `${(DataGiven.items[0].bidders[i].offers[0].IGST)*(DataGiven.items[0].bidders[i].offers[0].Tota)}` }),
-							]
-						});
-
-						oTable.addItem(oItem11);
-
-
-
-
-
 
 
 

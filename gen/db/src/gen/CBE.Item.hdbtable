@@ -1,6 +1,7 @@
 COLUMN TABLE CBE_Item (
   itemno INTEGER,
-  itemname NVARCHAR(5000) NOT NULL,
+  itemname NVARCHAR(5000),
+  PAN_Number NVARCHAR(5000) NOT NULL,
   indent NVARCHAR(5000),
   client NVARCHAR(5000),
   project NVARCHAR(5000),
@@ -11,7 +12,7 @@ COLUMN TABLE CBE_Item (
   design_pressure_bar NVARCHAR(5000),
   weights NVARCHAR(5000),
   quantity NVARCHAR(5000),
-  PRIMARY KEY(itemname)
+  PRIMARY KEY(PAN_Number)
 ) WITH ASSOCIATIONS (
   MANY TO MANY JOIN CBE_Supplier AS supplier_rel ON (supplier_rel.itemno = itemno)
 )
