@@ -12,7 +12,7 @@
                 <EntitySet Name="supplier" EntityType="Catalogcbeservice.supplier">
                     <NavigationPropertyBinding Path="supoffer_rel" Target="Supp_offer"/>
                 </EntitySet>
-                <EntitySet Name="Item" EntityType="Catalogcbeservice.Item">
+                <EntitySet Name="PAN_Details" EntityType="Catalogcbeservice.PAN_Details">
                     <NavigationPropertyBinding Path="supplier_rel" Target="supplier"/>
                 </EntitySet>
                 <EntitySet Name="Supp_offer" EntityType="Catalogcbeservice.Supp_offer"/>
@@ -39,7 +39,7 @@
                 <Property Name="approved_vendor" Type="Edm.String"/>
                 <NavigationProperty Name="supoffer_rel" Type="Collection(Catalogcbeservice.Supp_offer)"/>
             </EntityType>
-            <EntityType Name="Item">
+            <EntityType Name="PAN_Details">
                 <Key>
                     <PropertyRef Name="itemno"/>
                 </Key>
@@ -131,40 +131,40 @@
             <Annotations Target="Catalogcbeservice.supplier/approved_vendor">
                 <Annotation Term="Common.Label" String="Approved Vendor"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/itemno">
-                <Annotation Term="Common.Label" String="Item No."/>
+            <Annotations Target="Catalogcbeservice.PAN_Details/itemno">
+                <Annotation Term="Common.Label" String="PAN_Details No."/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/itemname">
+            <Annotations Target="Catalogcbeservice.PAN_Details/itemname">
                 <Annotation Term="Common.Label" String="Items Desc"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/indent">
+            <Annotations Target="Catalogcbeservice.PAN_Details/indent">
                 <Annotation Term="Common.Label" String="Indent"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/client">
+            <Annotations Target="Catalogcbeservice.PAN_Details/client">
                 <Annotation Term="Common.Label" String="Client"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/project">
+            <Annotations Target="Catalogcbeservice.PAN_Details/project">
                 <Annotation Term="Common.Label" String="Project"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/capacity_each">
+            <Annotations Target="Catalogcbeservice.PAN_Details/capacity_each">
                 <Annotation Term="Common.Label" String="Capacity each(Cu mtr)"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/dia_mm">
+            <Annotations Target="Catalogcbeservice.PAN_Details/dia_mm">
                 <Annotation Term="Common.Label" String="Dia mm"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/tl_to_tl_length">
+            <Annotations Target="Catalogcbeservice.PAN_Details/tl_to_tl_length">
                 <Annotation Term="Common.Label" String="TL to TL length"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/moc">
+            <Annotations Target="Catalogcbeservice.PAN_Details/moc">
                 <Annotation Term="Common.Label" String="MOC"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/design_pressure_bar">
+            <Annotations Target="Catalogcbeservice.PAN_Details/design_pressure_bar">
                 <Annotation Term="Common.Label" String="Design Pressure bar"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/weights">
+            <Annotations Target="Catalogcbeservice.PAN_Details/weights">
                 <Annotation Term="Common.Label" String="Weights(kgs)"/>
             </Annotations>
-            <Annotations Target="Catalogcbeservice.Item/quantity">
+            <Annotations Target="Catalogcbeservice.PAN_Details/quantity">
                 <Annotation Term="Common.Label" String="Qty No."/>
             </Annotations>
             <Annotations Target="Catalogcbeservice.Supp_offer/offers">

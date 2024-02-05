@@ -18,7 +18,7 @@
                             <form:FormElement id="12">
                                 <form:fields>
                                     <HBox id="hb11">
-                                        <Label id="Item1" text="Item : "></Label>
+                                        <Label id="Item1" text="PAN_Details : "></Label>
                                         <Text id="itemname" text="{itemname}"></Text>
                                     </HBox>
                                 </form:fields>
@@ -51,14 +51,14 @@
                     </form:FormContainer>
                 </form:formContainers>
             </form:Form>
-            <Table id="myTable14" items="{/Item}" growing="true" fixedLayout="false">
+            <Table id="myTable14" items="{/PAN_Details}" growing="true" fixedLayout="false">
                 <!--  Define columns and bindings for the table  -->
                 <columns>
                     <Column id="col1">
                         <Text id="t1" text="MTO Sr.NO" />
                     </Column>
                     <Column id="col2">
-                        <Text id="t2" text="Item Description" />
+                        <Text id="t2" text="PAN_Details Description" />
                     </Column>
                     <Column id="col3">
                         <Text id="t3" text="Capacity each(mtr)" />
@@ -119,7 +119,7 @@
                                     <form:FormElement id="1s2">
                                         <form:fields>
                                             <HBox id="hb1s1">
-                                                <Label id="Itjem1" text="Item : "></Label>
+                                                <Label id="Itjem1" text="PAN_Details : "></Label>
                                                 <Text id="itemdname" text="Artson"></Text>
                                             </HBox>
                                         </form:fields>
@@ -128,7 +128,7 @@
                             </form:FormContainer>
                         </form:formContainers>
                     </form:Form>
-                    <Table id="myTable" items="{/Item}" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                    <Table id="myTable" items="{/PAN_Details}" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
                         <!--  Define columns and bindings for the table  -->
                         <columns>
                             <Column id="col221">
@@ -151,7 +151,7 @@
                     </Table>
                 </VBox>
 
-                <Table id="myTable1" items="{/Item}" growing="true" growingThreshold="20" fixedLayout="false">
+                <Table id="myTable1" items="{/PAN_Details}" growing="true" growingThreshold="20" fixedLayout="false">
                     <!--  Define columns and bindings for the table  -->
                     <columns>
                         <Column id="co1l1">
@@ -172,7 +172,7 @@
                         </ColumnListItem>
                     </items>
                 </Table>
-                <Table id="m1yTable1" items="{/Item}" growing="true" growingThreshold="20" fixedLayout="false">
+                <Table id="m1yTable1" items="{/PAN_Details}" growing="true" growingThreshold="20" fixedLayout="false">
                     <!--  Define columns and bindings for the table  -->
                     <columns>
                         <Column id="c4o1l1">

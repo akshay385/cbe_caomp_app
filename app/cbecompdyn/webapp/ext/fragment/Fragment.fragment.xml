@@ -2,9 +2,9 @@
 	xmlns="sap.m"
 	xmlns:macros="sap.fe.macros">
 	<HBox id="mainhbox">
-		<VBox id="leftSectionvbox">
-			<HBox id="item_supplier" justifyContent="SpaceBetween" width="30vw">
-				<VBox id="items" class="spacebetweenclass" alignItems="Start">
+		<VBox id="leftSectionvbox" class="rightPadding" width="30vw">
+			<HBox id="item_supplier" justifyContent="SpaceBetween" >
+				<VBox id="items" class="spacebetweenclass" width="80%" alignItems="Start">
 					<HBox id="hindent">
 						<Label design="Bold" id="indentttheader" text="Indent:"></Label>
 						<Text id="indentvalue" text=""></Text>
@@ -27,7 +27,7 @@
 				</VBox>
 			</HBox>
 			<HBox id="demoxdemoe121" justifyContent="Center">
-				<HBox id="dexmodemotest" height="40px" alignItems="Center">
+				<HBox id="dexmodemotest" height="50px" alignItems="Center">
 					<Label id="titxle12" text="Cylindrical Data " design="Bold"/>
 				</HBox>
 			</HBox>
@@ -36,7 +36,7 @@
 				<columns>
 
 					<Column id="col2">
-						<Text id="item_desc" text="Item Desc" tooltip="Item Desc" wrapping="false" />
+						<Text id="item_desc" text="PAN_Details Desc" tooltip="Item Desc" wrapping="false" />
 					</Column>
 					<Column id="col3">
 						<Text id="cap_each" text="Cap each" tooltip="Capacity each(in mtr)" wrapping="false" />

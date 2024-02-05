@@ -105,7 +105,7 @@
           "target": "ItemList"
         },
         {
-          "pattern": "Item({key}):?query:",
+          "pattern": "PAN_Details({key}):?query:",
           "name": "ItemObjectPage",
           "target": "ItemObjectPage"
         }
@@ -117,10 +117,10 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/Item",
+              "contextPath": "/PAN_Details",
               "variantManagement": "Page",
               "navigation": {
-                "Item": {
+                "PAN_Details": {
                   "detail": {
                     "route": "ItemObjectPage"
                   }
@@ -136,7 +136,7 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Item",
+              "contextPath": "/PAN_Details",
               "content": {
                 "body": {
                   "sections": {

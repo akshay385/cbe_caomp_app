@@ -10,7 +10,7 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
         {
             appId: 'cbecomp',
             componentId: 'supplierObjectPage',
-            contextPath: '/Item/supplier_rel'
+            contextPath: '/PAN_Details/supplier_rel'
         },
         CustomPageDefinitions
     );

@@ -10,7 +10,7 @@ sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
         {
             appId: 'cbe.cbecompdyn',
             componentId: 'ItemList',
-            contextPath: '/Item'
+            contextPath: '/PAN_Details'
         },
         CustomPageDefinitions
     );

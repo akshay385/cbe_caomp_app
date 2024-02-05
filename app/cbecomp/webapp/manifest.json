@@ -112,12 +112,12 @@
           "target": "ItemList"
         },
         {
-          "pattern": "Item({key}):?query:",
+          "pattern": "PAN_Details({key}):?query:",
           "name": "ItemObjectPage",
           "target": "ItemObjectPage"
         },
         {
-          "pattern": "Item({key})/supplier_rel({key2}):?query:",
+          "pattern": "PAN_Details({key})/supplier_rel({key2}):?query:",
           "name": "supplierObjectPage",
           "target": "supplierObjectPage"
         }
@@ -129,10 +129,10 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/Item",
+              "contextPath": "/PAN_Details",
               "variantManagement": "Page",
               "navigation": {
-                "Item": {
+                "PAN_Details": {
                   "detail": {
                     "route": "ItemObjectPage"
                   }
@@ -149,7 +149,7 @@
             "settings": {
               "allowDeepLinking":true,
               "editableHeaderContent": false,
-              "contextPath": "/Item",
+              "contextPath": "/PAN_Details",
               "navigation": {
                 "supplier_rel": {
                   "detail": {
@@ -180,7 +180,7 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Item/supplier_rel"
+              "contextPath": "/PAN_Details/supplier_rel"
             }
           }
         }

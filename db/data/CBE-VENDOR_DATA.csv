@@ -1,0 +1,12 @@
+vendor_code,PAN_Number,Vendor_Name,Vendor_Location,Technically_Approved
+VENDOR001,Doc989018291,Artson Engineering Ltd,Location A,Yes
+VENDOR002,Doc989018291,Walchandnagar Industries Limited,Location B,Yes
+VENDOR003,Doc989018291,Acoustics India Pvt Ltd,Location C,No
+VENDOR004,Doc989018291,Bharat Heavy Electricals Limited,Location D,Yes
+VENDOR005,Doc989018291,ASP Water and Power Projects Pvt Ltd,Location E,Yes
+VENDOR006,Doc989018291,Pune Engineering & Testing,Location F,Yes
+VENDOR007,Doc989018291,The KCP Limited,Location G,Yes
+VENDOR008,Doc989018291,BGR Energy Systems Limited,Location H,Yes
+VENDOR009,Doc989018291,New Bidder Ltd,Location I,Yes
+VENDOR010,Doc989018291,New Bidder Ltd,Location I,Yes
+VENDOR010,Doc989018292,New Bidder Ltd,Location I,Yes

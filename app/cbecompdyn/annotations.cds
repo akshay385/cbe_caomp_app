@@ -1,6 +1,6 @@
 using Catalogcbeservice as service from '../../srv/service';
 
-annotate service.Item with @(
+annotate service.PAN_Details with @(
     UI.FieldGroup #GeneratedGroup1 : {
         $Type : 'UI.FieldGroupType',
         Data : [
