@@ -1,0 +1,18 @@
+VIEW Catalogcbeservice_Vendor_details AS SELECT DISTINCT
+  V_1.Proposed_Vendor_Code AS vendor_code,
+  Pr_0.ProjectId,
+  Pr_0.PAN_Number AS proj_pan_number,
+  V_1.Proposed_Vendor_Code AS Proposed_Vendor_Code,
+  V_1.PAN_Number AS PAN_Number,
+  V_1.Awarded_Vendor AS Awarded_Vendor,
+  V_1.Vendor_Name AS Vendor_Name,
+  V_1.Vendor_Location AS Vendor_Location,
+  V_1.Technically_Approved AS Technically_Approved,
+  V_1.Client_Approved AS Client_Approved,
+  V_1.Original_quote AS Original_quote,
+  V_1.Final_Quote AS Final_Quote,
+  V_1.Order_amount_OR_Split_order_amount AS Order_amount_OR_Split_order_amount,
+  V_1.Discount_Amount AS Discount_Amount,
+  V_1.Discount_percentage AS Discount_percentage,
+  V_1."RANK" AS "RANK"
+FROM (Catalogcbeservice_Projects AS Pr_0 INNER JOIN Catalogcbeservice_Vendors AS V_1 ON Pr_0.PAN_Number = V_1.PAN_Number)

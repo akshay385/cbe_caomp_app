@@ -1,0 +1,206 @@
+{
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "cbecomp",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.12.1",
+            "toolsId": "549e32aa-929b-40d9-afee-0e359016dd22"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "odata/v4/catalogcbeservice/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "CBE_Compare-display": {
+                    "semanticObject": "CBE_Compare",
+                    "action": "display",
+                    "title": "{{flpTitle}}",
+                    "signature": {
+                        "parameters": {
+                            "PAN_Number": {
+                                "required": true
+                            }
+                        },
+                        "additionalParameters": "allowed"
+                    }
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.120.4",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "cbecomp.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "ItemList",
+                    "target": "ItemList"
+                },
+                {
+                    "pattern": "PAN_Details({key}):?query:",
+                    "name": "ItemObjectPage",
+                    "target": "ItemObjectPage"
+                },
+                {
+                    "pattern": "PAN_Details({key})/supplier_rel({key2}):?query:",
+                    "name": "supplierObjectPage",
+                    "target": "supplierObjectPage"
+                }
+            ],
+            "targets": {
+                "ItemList": {
+                    "type": "Component",
+                    "id": "ItemList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "contextPath": "/PAN_Details",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "PAN_Details": {
+                                    "detail": {
+                                        "route": "ItemObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ItemObjectPage": {
+                    "type": "Component",
+                    "id": "ItemObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "allowDeepLinking": true,
+                            "editableHeaderContent": false,
+                            "contextPath": "/PAN_Details",
+                            "navigation": {
+                                "supplier_rel": {
+                                    "detail": {
+                                        "route": "supplierObjectPage",
+                                        "allowDeepLinking": true
+                                    }
+                                }
+                            },
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "Fragment": {
+                                            "template": "cbecomp.ext.fragment.Fragment",
+                                            "type": "XMLFragment",
+                                            "title": "Commercial Bid Evaluation - Air Storage Tanks - 6 Nos"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "supplierObjectPage": {
+                    "type": "Component",
+                    "id": "supplierObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/PAN_Details/supplier_rel"
+                        }
+                    }
+                }
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ObjectPage.ObjectPageController#cbecomp::ItemObjectPage": {
+                        "controllerName": "cbecomp.ext.controller.ObjPage"
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "cbecomparisionapprouter"
+    }
+}

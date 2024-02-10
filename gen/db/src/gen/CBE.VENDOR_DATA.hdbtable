@@ -1,0 +1,10 @@
+COLUMN TABLE CBE_VENDOR_DATA (
+  vendor_code NVARCHAR(5000) NOT NULL,
+  PAN_Number NVARCHAR(5000) NOT NULL,
+  Vendor_Name NVARCHAR(5000),
+  Vendor_Location NVARCHAR(5000),
+  Technically_Approved NVARCHAR(5000),
+  PRIMARY KEY(vendor_code, PAN_Number)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN CBE_PAN_PRICE_DETAILS AS bids ON (bids.vendor_code = vendor_code AND bids.PAN_Number = PAN_Number)
+)

@@ -1,0 +1,1 @@
+using Catalogcbeservice as service from '../../srv/service';

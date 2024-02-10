@@ -1,0 +1,18 @@
+VIEW Catalogcbeservice_PAN_PRICE_DETAILS AS SELECT
+  PAN_PRICE_DETAILS_0.PAN_Number,
+  PAN_PRICE_DETAILS_0.vendor_code,
+  PAN_PRICE_DETAILS_0.Item_Code,
+  PAN_PRICE_DETAILS_0.Item_Short_Description,
+  PAN_PRICE_DETAILS_0.Quantity,
+  PAN_PRICE_DETAILS_0.capactity_each,
+  PAN_PRICE_DETAILS_0.dia,
+  PAN_PRICE_DETAILS_0.tl_tl_len,
+  PAN_PRICE_DETAILS_0.moc,
+  PAN_PRICE_DETAILS_0.design_pb,
+  PAN_PRICE_DETAILS_0.weights,
+  PAN_PRICE_DETAILS_0.Amount,
+  PAN_PRICE_DETAILS_0.Unit_Price
+FROM CBE_PAN_PRICE_DETAILS AS PAN_PRICE_DETAILS_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN Catalogcbeservice_OFFER AS offers ON (offers.vendor_code = vendor_code AND offers.PAN_Number = PAN_Number AND offers.Item_Code = Item_Code)
+)

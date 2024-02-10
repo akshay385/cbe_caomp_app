@@ -1,0 +1,16 @@
+COLUMN TABLE CBE_PAN_vendor_data_proj (
+  Proposed_Vendor_Code NVARCHAR(5000) NOT NULL,
+  PAN_Number NVARCHAR(5000) NOT NULL,
+  Awarded_Vendor NVARCHAR(5000),
+  Vendor_Name NVARCHAR(5000),
+  Vendor_Location NVARCHAR(5000),
+  Technically_Approved NVARCHAR(5000),
+  Client_Approved NVARCHAR(5000),
+  Original_quote NVARCHAR(5000),
+  Final_Quote NVARCHAR(5000),
+  Order_amount_OR_Split_order_amount NVARCHAR(5000),
+  Discount_Amount NVARCHAR(5000),
+  Discount_percentage NVARCHAR(5000),
+  "RANK" NVARCHAR(5000),
+  PRIMARY KEY(Proposed_Vendor_Code, PAN_Number)
+)

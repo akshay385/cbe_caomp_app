@@ -1,0 +1,95 @@
+.v3spaceBetweenclass{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top:40px;
+}
+
+.v11spaceBetweenclass{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.spacebetweenclass{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.vbmiddlesectionclass{
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* #cbe\.cbecompdyn\:\:ItemObjectPage--fe\:\:CustomSubSection\:\:Fragment-innerGrid{
+    width: 110% !important;
+} */
+
+.BorderClass{
+    border: 1px solid #0000004b;
+    padding-left: 2%;
+    padding-top: 0.5%;
+}
+
+#__title3-_actionsToolbar{
+    visibility: hidden;
+}
+
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment{
+    margin-left: -3% !important;
+    width: 110% !important;
+}
+
+.tableBorder {
+    /* border-right: 1px solid #696464; */
+    border-top: 1px solid #696464;
+}
+
+.customVBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customVBox .sapMLabel {
+    text-align: center;
+}
+
+.rightPadding{
+    padding-right: 1%;
+}
+
+.labelHeightClass{
+    height: auto;
+}
+
+/* #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment
+{
+    margin-top: -48px;
+} */
+
+.custompayment{
+    padding-top: 74px;
+}
+.customliquidated{
+    padding-top: 78px;
+}
+.customwarrantydefect{
+    padding-top: 80px;
+}
+.customcbpg{
+    padding-top: 77px;
+    padding-bottom: 77px;
+}
+
+.custtechnically{
+    margin-top: -10px;
+}
+
+.customlaststyleclassrsection{
+    padding-top: 10px;
+}

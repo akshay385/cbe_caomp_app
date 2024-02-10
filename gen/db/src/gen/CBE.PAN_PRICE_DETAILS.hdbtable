@@ -1,0 +1,18 @@
+COLUMN TABLE CBE_PAN_PRICE_DETAILS (
+  PAN_Number NVARCHAR(5000) NOT NULL,
+  vendor_code NVARCHAR(5000) NOT NULL,
+  Item_Code NVARCHAR(5000) NOT NULL,
+  Item_Short_Description NVARCHAR(5000),
+  Quantity NVARCHAR(5000),
+  capactity_each NVARCHAR(5000),
+  dia NVARCHAR(5000),
+  tl_tl_len NVARCHAR(5000),
+  moc NVARCHAR(5000),
+  design_pb NVARCHAR(5000),
+  weights NVARCHAR(5000),
+  Amount DECIMAL,
+  Unit_Price DECIMAL,
+  PRIMARY KEY(PAN_Number, vendor_code, Item_Code)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN CBE_OFFER AS offers ON (offers.vendor_code = vendor_code AND offers.PAN_Number = PAN_Number AND offers.Item_Code = Item_Code)
+)

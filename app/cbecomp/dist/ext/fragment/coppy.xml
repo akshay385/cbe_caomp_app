@@ -1,0 +1,208 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:test="sap.ui.mdc"
+    xmlns:macros="sap.fe.macros"
+    xmlns:macro="sap.fe.macros.table"
+    xmlns:uxap="sap.uxap">
+
+    <HBox id="hb1">
+        <VBox id="vb1">
+            <form:Form id="form1" editable="false">
+                <form:layout>
+                    <form:ResponsiveGridLayout id="resp1" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                </form:layout>
+                <form:formContainers>
+                    <form:FormContainer id="f1" ariaLabelledBy="Title">
+                        <form:formElements>
+                            <form:FormElement id="12">
+                                <form:fields>
+                                    <HBox id="hb11">
+                                        <Label id="Item1" text="PAN_Details : "></Label>
+                                        <Text id="itemname" text="{itemname}"></Text>
+                                    </HBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement id="41">
+                                <form:fields>
+                                    <HBox id="hb12">
+                                        <Label id="indent" text="Indent : "></Label>
+                                        <Text id="indentname" text="{indent}"></Text>
+                                    </HBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement id="411">
+                                <form:fields>
+                                    <HBox id="hb13">
+                                        <Label id="Project" text="Project : "></Label>
+                                        <Text id="Projectname" text="{project}"></Text>
+                                    </HBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement id="te">
+                                <form:fields>
+                                    <HBox id="hb14">
+                                        <Label id="client" text="Client : "></Label>
+                                        <Text id="clientname" text="{client}"></Text>
+                                    </HBox>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                    </form:FormContainer>
+                </form:formContainers>
+            </form:Form>
+            <Table id="myTable14" items="{/PAN_Details}" growing="true" fixedLayout="false">
+                <!--  Define columns and bindings for the table  -->
+                <columns>
+                    <Column id="col1">
+                        <Text id="t1" text="MTO Sr.NO" />
+                    </Column>
+                    <Column id="col2">
+                        <Text id="t2" text="PAN_Details Description" />
+                    </Column>
+                    <Column id="col3">
+                        <Text id="t3" text="Capacity each(mtr)" />
+                    </Column>
+                    <Column id="col4">
+                        <Text id="t4" text="Dia mm" />
+                    </Column>
+                    <Column id="col5">
+                        <Text id="t5" text="TL to TL Length" />
+                    </Column>
+
+                    <Column id="col6">
+                        <Text id="t6" text="MOC" />
+                    </Column>
+                    <Column id="col7">
+                        <Text id="t7" text="Design Pressure Bar" />
+                    </Column>
+                    <Column id="col8">
+                        <Text id="t8" text="Weight  (kgs)" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="item1">
+                        <cells>
+                            <Text id="tc1" text="{itemno}" />
+                            <Text id="tc2" text="{itemname}" />
+                            <Text id="tc3" text="{capacity_each}" />
+                            <Text id="tc4" text="{dia_mm}" />
+                            <Text id="tc5" text="{tl_to_tl_length}" />
+                            <Text id="tc6" text="{moc}" />
+                            <Text id="tc7" text="{design_pressure_bar}" />
+                            <Text id="tc8" text="{weights}" />
+
+                            <!--  Bind other properties accordingly  -->
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+        <ScrollContainer width="90vw" height="100vh" horizontal="true" vertical="false" id="scrollContainer">
+            <HBox id="secondSection" width="100vw" wrap="NoWrap">
+                <!-- Add your controls for the second section here -->
+
+
+                <!-- Add more controls as needed -->
+                <!-- <test:Table id = "testtab">
+                
+                </test:Table>
+                <macros:Table id="tab22"></macros:Table> -->
+                <VBox id="sectionform1">
+                    <form:Form id="sectionform112" editable="false">
+                        <form:layout>
+                            <form:ResponsiveGridLayout id="resp11" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                        </form:layout>
+                        <form:formContainers>
+                            <form:FormContainer id="fg1" ariaLabelledBy="Title">
+                                <form:formElements>
+                                    <form:FormElement id="1s2">
+                                        <form:fields>
+                                            <HBox id="hb1s1">
+                                                <Label id="Itjem1" text="PAN_Details : "></Label>
+                                                <Text id="itemdname" text="Artson"></Text>
+                                            </HBox>
+                                        </form:fields>
+                                    </form:FormElement>
+                                </form:formElements>
+                            </form:FormContainer>
+                        </form:formContainers>
+                    </form:Form>
+                    <Table id="myTable" items="{/PAN_Details}" growing="true" growingThreshold="20" width="100%" fixedLayout="false">
+                        <!--  Define columns and bindings for the table  -->
+                        <columns>
+                            <Column id="col221">
+                                <Text id="t331" text="Column 1"/>
+                            </Column>
+                            <Column id="col22">
+                                <Text id="t332" text="Column 2"/>
+                            </Column>
+                            <!--  Add more columns if needed  -->
+                        </columns>
+                        <items>
+                            <ColumnListItem id="item">
+                                <cells>
+                                    <Text id="t23" text="{itemno}"/>
+                                    <Text id="tab2" text="{itemname}"/>
+                                    <!--  Bind other properties accordingly  -->
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+
+                <Table id="myTable1" items="{/PAN_Details}" growing="true" growingThreshold="20" fixedLayout="false">
+                    <!--  Define columns and bindings for the table  -->
+                    <columns>
+                        <Column id="co1l1">
+                            <Text id="1t1" text="Column 1"/>
+                        </Column>
+                        <Column id="c1ol22">
+                            <Text id="1t2" text="Column 2"/>
+                        </Column>
+                        <!--  Add more columns if needed  -->
+                    </columns>
+                    <items>
+                        <ColumnListItem id="1item">
+                            <cells>
+                                <Text id="1t23" text="{itemno}"/>
+                                <Text id="1tab2" text="{itemname}"/>
+                                <!--  Bind other properties accordingly  -->
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <Table id="m1yTable1" items="{/PAN_Details}" growing="true" growingThreshold="20" fixedLayout="false">
+                    <!--  Define columns and bindings for the table  -->
+                    <columns>
+                        <Column id="c4o1l1">
+                            <Text id="15t1" text="Column 1"/>
+                        </Column>
+                        <Column id="c1o4l22">
+                            <Text id="1st2" text="Column 2"/>
+                        </Column>
+                        <!--  Add more columns if needed  -->
+                    </columns>
+                    <items>
+                        <ColumnListItem id="1isdtem">
+                            <cells>
+                                <Text id="1tg23" text="{itemno}"/>
+                                <Text id="1tsab2" text="{itemname}"/>
+                                <!--  Bind other properties accordingly  -->
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </HBox>
+
+            <!-- <HBox id="hb22">
+                <Label id="label222" text="Contrsdsadfjhdskjfhjdsdsfjhsdjfsdkfhdkjshfjkdshkjfhdskjfhjksdhfjkdshfjkdsfkhdsfjkhsdjkhfdshjfdsjhfkjsdhfjkdhsjkfsdhhfkdshjfhdjksfhjkdshfdjskfhkdssadsadsadol 2"/>
+
+            </HBox> -->
+
+        </ScrollContainer>
+
+
+
+    </HBox>
+</core:FragmentDefinition>

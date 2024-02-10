@@ -1,0 +1,7 @@
+VIEW Catalogcbeservice_PAN_Details AS SELECT
+  PAN_Details_0.PAN_Number,
+  PAN_Details_0.Project_Description
+FROM CBE_PAN_Details AS PAN_Details_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN Catalogcbeservice_VENDOR_DATA AS vendors ON (vendors.PAN_Number = PAN_Number)
+)

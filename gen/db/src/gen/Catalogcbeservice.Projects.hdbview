@@ -1,0 +1,4 @@
+VIEW Catalogcbeservice_Projects AS SELECT
+  PAN_proj_0.ProjectId,
+  PAN_proj_0.PAN_Number
+FROM CBE_PAN_proj AS PAN_proj_0

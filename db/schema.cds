@@ -79,3 +79,137 @@ entity OFFER {
         technically_approved                : String;
         approved_vendor                     : String;
 }
+
+/////////////////////////////////////////////////////
+
+entity PAN_proj {
+
+    key ProjectId  : String;
+    key PAN_Number : String;
+
+
+}
+
+
+entity PAN_Details_proj {
+    key PAN_Number                                   : String;
+        SBG                                          : String;
+        SBU                                          : String;
+        BUORPurchasing_Group                         : String;
+        Plant_Code                                   : String;
+        Project_Description                          : String;
+        PR_NumberBKTsBKT                             : String;
+        Subject_of_ProposalOROrder                   : String;
+        Previous_PAN_References                      : String;
+        Split_OrderORNo_of_vendors                   : String;
+        SOP_Type                                     : String;
+        Order_Type_OR_Document_tyFuuidpe             : String;
+        Asset_Type                                   : String;
+        Nature_of_Transaction                        : String;
+        Order_Location_OR_Plant                      : String;
+        Base_line_spend                              : String;
+        Project_CurrencyORBase_Currency              : String;
+        Order_CurrencyORBid_currency                 : String;
+        Final_proposed_Value                         : String;
+        Order_Value_BKTIn_Project_CurrencyBKT        : String;
+        Order_Value_BKTIn_Bid_CurrencyBKT            : String;
+        Savings_achieved_btw_initial_and_final_quote : String;
+        Savings_against_base_line_spend_of_RFP       : String;
+        Number_of_Vendors_Shortlisted_for_RFP        : String;
+        Number_of_Vendors_Technically_Qualified      : String;
+        Required_at_Site_Date                        : String;
+        RFP_Number                                   : String;
+        RFP_Publish_Date                             : String;
+        Time_Taken_for_FinalizationDASHIn_DAYS       : String;
+        Vendor_Final_Quotation_Date                  : String;
+        Vendor_Final_Quotation_Amount                : String;
+        status                                       : String;
+        created_by                                   : String;
+        task_id                                      : String;
+        type                                         : String;
+        status_a                                     : String;
+        justification                                : LargeString;
+        Comments                                     : LargeString;
+        submitted_by                                 : String;
+        submitted_date                               : String;
+
+}
+
+
+entity PAN_vendor_data_proj {
+    key Proposed_Vendor_Code               : String; //disp
+    key PAN_Number                         : String;
+        Awarded_Vendor                     : String;
+        Vendor_Name                        : String; //disp
+        Vendor_Location                    : String;
+        Technically_Approved               : String;
+        Client_Approved                    : String;
+        Original_quote                     : String; //disp
+        Final_Quote                        : String; //disp
+        Order_amount_OR_Split_order_amount : String;
+        Discount_Amount                    : String;
+        Discount_percentage                : String;
+        Rank                               : String;
+
+}
+
+
+entity PAN_PRICE_DETAILS_proj {
+    key Proposed_Vendor_Code             : String;
+    key PAN_Number                       : String;
+    key Item_Code                        : String;
+        HSN_OR_SAC_Code                  : String;
+        Item_Short_Description           : String;
+        UOM                              : String;
+        Quantity                         : String;
+        Unit_Price                       : String;
+        Amount                           : String;
+        Indian_Tax_PER                   : String;
+        Quantity_Over_Delivery_Tolerance : String;
+
+}
+
+entity PAN_vendor_response_proj {
+
+    key Proposed_Vendor_Code                                                         : String;
+    key PAN_Number                                                                   : String;
+        Proposed_Vendor_Name                                                         : String;
+        Supplier_Origin_State                                                        : String;
+        Destination_State_BKTShipDASHto_LocationBKT                                  : String;
+        Vendor_GST_Number                                                            : String;
+        Vendor_CE_Score                                                              : String;
+        Vendor_CE_Date                                                               : String;
+        Vendor_PE_Score                                                              : String;
+        Vendor_PE_Date                                                               : String;
+        Vendor_Contact_PersonDASH1                                                   : String;
+        Vendor_Contact_PersonDASH2                                                   : String;
+        Technical_Committee_who_cleared_the_proposal                                 : String;
+        Commercial_Committee_who_cleared_the_proposal                                : String;
+        Vendor_References_to_be_displayed_in_Order                                   : String;
+        Shortlisted_Vendors_Response_summary                                         : String;
+        Incoterms                                                                    : String;
+        //Terms_and_Conditions_Compared_with
+        Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC            : String;
+        Details_of_deviated_or_better_terms_agreed_with_the_Vendor                   : String;
+        Market_Scenario_and_Demand                                                   : String;
+        Companys_Position_and_Market_dynamics_of_this_purchase                       : String;
+        Should_Be_Cost_estimated                                                     : String;
+        Highlights_of_this_proposal_and_Price_Justification_for_this_proposal        : String;
+        Price_Escalation_Agreed_if_any                                               : String;
+        Particulars_of_any_Free_Service_OR_Supply_Guarantees_OR_Warrant_yfrom_Vendor : String;
+        Transportation                                                               : String;
+        Logistics_Cost                                                               : String;
+        Delivery_Schedule                                                            : String;
+        Tax_Details                                                                  : String;
+        Additional_Remarks                                                           : String;
+        ABG                                                                          : String;
+        ABG_Value                                                                    : String;
+        CPBG                                                                         : String;
+        CPBG_Value                                                                   : String;
+        Scope_and_Responsibilities                                                   : LargeString;
+        Commercial_Terms                                                             : LargeString;
+        Compliance_Terms                                                             : LargeString;
+        Others                                                                       : LargeString;
+
+
+}

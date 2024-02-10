@@ -1,0 +1,14 @@
+COLUMN TABLE CBE_PAN_PRICE_DETAILS_proj (
+  Proposed_Vendor_Code NVARCHAR(5000) NOT NULL,
+  PAN_Number NVARCHAR(5000) NOT NULL,
+  Item_Code NVARCHAR(5000) NOT NULL,
+  HSN_OR_SAC_Code NVARCHAR(5000),
+  Item_Short_Description NVARCHAR(5000),
+  UOM NVARCHAR(5000),
+  Quantity NVARCHAR(5000),
+  Unit_Price NVARCHAR(5000),
+  Amount NVARCHAR(5000),
+  Indian_Tax_PER NVARCHAR(5000),
+  Quantity_Over_Delivery_Tolerance NVARCHAR(5000),
+  PRIMARY KEY(Proposed_Vendor_Code, PAN_Number, Item_Code)
+)

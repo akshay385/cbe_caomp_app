@@ -1,0 +1,14 @@
+VIEW Catalogcbeservice_Item_details AS SELECT DISTINCT
+  Pr_0.ProjectId,
+  I_1.Proposed_Vendor_Code AS Proposed_Vendor_Code,
+  I_1.PAN_Number AS PAN_Number,
+  I_1.Item_Code AS Item_Code,
+  I_1.HSN_OR_SAC_Code AS HSN_OR_SAC_Code,
+  I_1.Item_Short_Description AS Item_Short_Description,
+  I_1.UOM AS UOM,
+  I_1.Quantity AS Quantity,
+  I_1.Unit_Price AS Unit_Price,
+  I_1.Amount AS Amount,
+  I_1.Indian_Tax_PER AS Indian_Tax_PER,
+  I_1.Quantity_Over_Delivery_Tolerance AS Quantity_Over_Delivery_Tolerance
+FROM (Catalogcbeservice_Projects AS Pr_0 INNER JOIN Catalogcbeservice_Items AS I_1 ON Pr_0.PAN_Number = I_1.PAN_Number)

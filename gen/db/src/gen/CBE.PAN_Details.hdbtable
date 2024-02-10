@@ -1,0 +1,7 @@
+COLUMN TABLE CBE_PAN_Details (
+  PAN_Number NVARCHAR(5000) NOT NULL,
+  Project_Description NVARCHAR(5000),
+  PRIMARY KEY(PAN_Number)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN CBE_VENDOR_DATA AS vendors ON (vendors.PAN_Number = PAN_Number)
+)

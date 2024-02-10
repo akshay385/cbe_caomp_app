@@ -1,0 +1,10 @@
+VIEW Catalogcbeservice_VENDOR_DATA AS SELECT
+  VENDOR_DATA_0.vendor_code,
+  VENDOR_DATA_0.PAN_Number,
+  VENDOR_DATA_0.Vendor_Name,
+  VENDOR_DATA_0.Vendor_Location,
+  VENDOR_DATA_0.Technically_Approved
+FROM CBE_VENDOR_DATA AS VENDOR_DATA_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN Catalogcbeservice_PAN_PRICE_DETAILS AS bids ON (bids.vendor_code = vendor_code AND bids.PAN_Number = PAN_Number)
+)

@@ -1,0 +1,2085 @@
+{
+  "namespace": "CBE",
+  "definitions": {
+    "CBE.PAN_Details": {
+      "kind": "entity",
+      "elements": {
+        "PAN_Number": {
+          "@Common.Label": "Pan Number",
+          "key": true,
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        },
+        "vendors": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "CBE.VENDOR_DATA",
+          "on": [
+            {
+              "ref": [
+                "vendors",
+                "PAN_Number"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "CBE.VENDOR_DATA": {
+      "kind": "entity",
+      "elements": {
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Vendor_Location": {
+          "type": "cds.String"
+        },
+        "Technically_Approved": {
+          "type": "cds.String"
+        },
+        "bids": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "CBE.PAN_PRICE_DETAILS",
+          "on": [
+            {
+              "ref": [
+                "bids",
+                "vendor_code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "vendor_code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "bids",
+                "PAN_Number"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "CBE.PAN_PRICE_DETAILS": {
+      "kind": "entity",
+      "elements": {
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        },
+        "capactity_each": {
+          "type": "cds.String"
+        },
+        "dia": {
+          "type": "cds.String"
+        },
+        "tl_tl_len": {
+          "type": "cds.String"
+        },
+        "moc": {
+          "type": "cds.String"
+        },
+        "design_pb": {
+          "type": "cds.String"
+        },
+        "weights": {
+          "type": "cds.String"
+        },
+        "Amount": {
+          "type": "cds.Decimal"
+        },
+        "Unit_Price": {
+          "type": "cds.Decimal"
+        },
+        "offers": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "CBE.OFFER",
+          "on": [
+            {
+              "ref": [
+                "offers",
+                "vendor_code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "vendor_code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "offers",
+                "PAN_Number"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "offers",
+                "Item_Code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Item_Code"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "CBE.OFFER": {
+      "kind": "entity",
+      "elements": {
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "offer_id": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "offer_name": {
+          "type": "cds.String"
+        },
+        "qtn_ref": {
+          "type": "cds.String"
+        },
+        "date": {
+          "type": "cds.String"
+        },
+        "validity": {
+          "type": "cds.String"
+        },
+        "unit_rate": {
+          "type": "cds.String"
+        },
+        "unit_rate_per_unit": {
+          "type": "cds.String"
+        },
+        "total_amt_inr": {
+          "type": "cds.String"
+        },
+        "spares_for_2_years": {
+          "type": "cds.String"
+        },
+        "grandtotal": {
+          "type": "cds.String"
+        },
+        "packing_marking_forwarding": {
+          "type": "cds.String"
+        },
+        "inspection_testing_charges": {
+          "type": "cds.String"
+        },
+        "documentation_charges": {
+          "type": "cds.String"
+        },
+        "total_basic_price_including_packing": {
+          "type": "cds.String"
+        },
+        "rnod": {
+          "type": "cds.String"
+        },
+        "custom_duty_cess": {
+          "type": "cds.String"
+        },
+        "sgst": {
+          "type": "cds.String"
+        },
+        "igst": {
+          "type": "cds.String"
+        },
+        "ugst": {
+          "type": "cds.String"
+        },
+        "shipment_charges": {
+          "type": "cds.String"
+        },
+        "total_basic_price_with_taxes": {
+          "type": "cds.String"
+        },
+        "total_basic_price_without_taxes": {
+          "type": "cds.String"
+        },
+        "per_diem_rate_for_supervision": {
+          "type": "cds.String"
+        },
+        "price_basis": {
+          "type": "cds.String"
+        },
+        "point_of_delivery": {
+          "type": "cds.String"
+        },
+        "delivery_period": {
+          "type": "cds.String"
+        },
+        "payment_terms": {
+          "type": "cds.String"
+        },
+        "liquidated_damages": {
+          "type": "cds.String"
+        },
+        "warranty_defect_liability_period": {
+          "type": "cds.String"
+        },
+        "cpbg": {
+          "type": "cds.String"
+        },
+        "contact_person": {
+          "type": "cds.String"
+        },
+        "contact_number": {
+          "type": "cds.String"
+        },
+        "order_given_to": {
+          "type": "cds.String"
+        },
+        "technically_approved": {
+          "type": "cds.String"
+        },
+        "approved_vendor": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "CBE.PAN_proj": {
+      "kind": "entity",
+      "elements": {
+        "ProjectId": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "CBE.PAN_Details_proj": {
+      "kind": "entity",
+      "elements": {
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "SBG": {
+          "type": "cds.String"
+        },
+        "SBU": {
+          "type": "cds.String"
+        },
+        "BUORPurchasing_Group": {
+          "type": "cds.String"
+        },
+        "Plant_Code": {
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        },
+        "PR_NumberBKTsBKT": {
+          "type": "cds.String"
+        },
+        "Subject_of_ProposalOROrder": {
+          "type": "cds.String"
+        },
+        "Previous_PAN_References": {
+          "type": "cds.String"
+        },
+        "Split_OrderORNo_of_vendors": {
+          "type": "cds.String"
+        },
+        "SOP_Type": {
+          "type": "cds.String"
+        },
+        "Order_Type_OR_Document_tyFuuidpe": {
+          "type": "cds.String"
+        },
+        "Asset_Type": {
+          "type": "cds.String"
+        },
+        "Nature_of_Transaction": {
+          "type": "cds.String"
+        },
+        "Order_Location_OR_Plant": {
+          "type": "cds.String"
+        },
+        "Base_line_spend": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
+          "type": "cds.String"
+        },
+        "Final_proposed_Value": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Savings_achieved_btw_initial_and_final_quote": {
+          "type": "cds.String"
+        },
+        "Savings_against_base_line_spend_of_RFP": {
+          "type": "cds.String"
+        },
+        "Number_of_Vendors_Shortlisted_for_RFP": {
+          "type": "cds.String"
+        },
+        "Number_of_Vendors_Technically_Qualified": {
+          "type": "cds.String"
+        },
+        "Required_at_Site_Date": {
+          "type": "cds.String"
+        },
+        "RFP_Number": {
+          "type": "cds.String"
+        },
+        "RFP_Publish_Date": {
+          "type": "cds.String"
+        },
+        "Time_Taken_for_FinalizationDASHIn_DAYS": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "status": {
+          "type": "cds.String"
+        },
+        "created_by": {
+          "type": "cds.String"
+        },
+        "task_id": {
+          "type": "cds.String"
+        },
+        "type": {
+          "type": "cds.String"
+        },
+        "status_a": {
+          "type": "cds.String"
+        },
+        "justification": {
+          "type": "cds.LargeString"
+        },
+        "Comments": {
+          "type": "cds.LargeString"
+        },
+        "submitted_by": {
+          "type": "cds.String"
+        },
+        "submitted_date": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "CBE.PAN_vendor_data_proj": {
+      "kind": "entity",
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Awarded_Vendor": {
+          "type": "cds.String"
+        },
+        "Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Vendor_Location": {
+          "type": "cds.String"
+        },
+        "Technically_Approved": {
+          "type": "cds.String"
+        },
+        "Client_Approved": {
+          "type": "cds.String"
+        },
+        "Original_quote": {
+          "type": "cds.String"
+        },
+        "Final_Quote": {
+          "type": "cds.String"
+        },
+        "Order_amount_OR_Split_order_amount": {
+          "type": "cds.String"
+        },
+        "Discount_Amount": {
+          "type": "cds.String"
+        },
+        "Discount_percentage": {
+          "type": "cds.String"
+        },
+        "Rank": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "CBE.PAN_PRICE_DETAILS_proj": {
+      "kind": "entity",
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "HSN_OR_SAC_Code": {
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "UOM": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        },
+        "Unit_Price": {
+          "type": "cds.String"
+        },
+        "Amount": {
+          "type": "cds.String"
+        },
+        "Indian_Tax_PER": {
+          "type": "cds.String"
+        },
+        "Quantity_Over_Delivery_Tolerance": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "CBE.PAN_vendor_response_proj": {
+      "kind": "entity",
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Proposed_Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Supplier_Origin_State": {
+          "type": "cds.String"
+        },
+        "Destination_State_BKTShipDASHto_LocationBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_GST_Number": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH1": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH2": {
+          "type": "cds.String"
+        },
+        "Technical_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Commercial_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Vendor_References_to_be_displayed_in_Order": {
+          "type": "cds.String"
+        },
+        "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Incoterms": {
+          "type": "cds.String"
+        },
+        "Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC": {
+          "type": "cds.String"
+        },
+        "Details_of_deviated_or_better_terms_agreed_with_the_Vendor": {
+          "type": "cds.String"
+        },
+        "Market_Scenario_and_Demand": {
+          "type": "cds.String"
+        },
+        "Companys_Position_and_Market_dynamics_of_this_purchase": {
+          "type": "cds.String"
+        },
+        "Should_Be_Cost_estimated": {
+          "type": "cds.String"
+        },
+        "Highlights_of_this_proposal_and_Price_Justification_for_this_proposal": {
+          "type": "cds.String"
+        },
+        "Price_Escalation_Agreed_if_any": {
+          "type": "cds.String"
+        },
+        "Particulars_of_any_Free_Service_OR_Supply_Guarantees_OR_Warrant_yfrom_Vendor": {
+          "type": "cds.String"
+        },
+        "Transportation": {
+          "type": "cds.String"
+        },
+        "Logistics_Cost": {
+          "type": "cds.String"
+        },
+        "Delivery_Schedule": {
+          "type": "cds.String"
+        },
+        "Tax_Details": {
+          "type": "cds.String"
+        },
+        "Additional_Remarks": {
+          "type": "cds.String"
+        },
+        "ABG": {
+          "type": "cds.String"
+        },
+        "ABG_Value": {
+          "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
+        },
+        "CPBG_Value": {
+          "type": "cds.String"
+        },
+        "Scope_and_Responsibilities": {
+          "type": "cds.LargeString"
+        },
+        "Commercial_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Compliance_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Others": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "Catalogcbeservice": {
+      "@source": "srv/service.cds",
+      "kind": "service"
+    },
+    "Catalogcbeservice.VENDOR_DATA": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.VENDOR_DATA"
+          ]
+        }
+      },
+      "elements": {
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Vendor_Location": {
+          "type": "cds.String"
+        },
+        "Technically_Approved": {
+          "type": "cds.String"
+        },
+        "bids": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Catalogcbeservice.PAN_PRICE_DETAILS",
+          "on": [
+            {
+              "ref": [
+                "bids",
+                "vendor_code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "vendor_code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "bids",
+                "PAN_Number"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Catalogcbeservice.PAN_Details": {
+      "kind": "entity",
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "PAN_Number"
+          }
+        }
+      ],
+      "@UI.FieldGroup#GeneratedGroup1.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup1.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "itemno"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "itemname"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "indent"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "client"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "project"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "capacity_each"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "dia_mm"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "tl_to_tl_length"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "moc"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "design_pressure_bar"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "weights"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "quantity"
+          }
+        }
+      ],
+      "@UI.Facets": [],
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_Details"
+          ]
+        }
+      },
+      "elements": {
+        "PAN_Number": {
+          "@Common.Label": "Pan Number",
+          "key": true,
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        },
+        "vendors": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Catalogcbeservice.VENDOR_DATA",
+          "on": [
+            {
+              "ref": [
+                "vendors",
+                "PAN_Number"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Catalogcbeservice.PAN_PRICE_DETAILS": {
+      "kind": "entity",
+      "@cds.redirection.target": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_PRICE_DETAILS"
+          ]
+        }
+      },
+      "elements": {
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        },
+        "capactity_each": {
+          "type": "cds.String"
+        },
+        "dia": {
+          "type": "cds.String"
+        },
+        "tl_tl_len": {
+          "type": "cds.String"
+        },
+        "moc": {
+          "type": "cds.String"
+        },
+        "design_pb": {
+          "type": "cds.String"
+        },
+        "weights": {
+          "type": "cds.String"
+        },
+        "Amount": {
+          "type": "cds.Decimal"
+        },
+        "Unit_Price": {
+          "type": "cds.Decimal"
+        },
+        "offers": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "Catalogcbeservice.OFFER",
+          "on": [
+            {
+              "ref": [
+                "offers",
+                "vendor_code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "vendor_code"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "offers",
+                "PAN_Number"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "offers",
+                "Item_Code"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Item_Code"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Catalogcbeservice.list_items": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CBE.PAN_PRICE_DETAILS"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "Item_Code"
+              ]
+            },
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            },
+            {
+              "ref": [
+                "Item_Short_Description"
+              ]
+            },
+            {
+              "ref": [
+                "capactity_each"
+              ]
+            },
+            {
+              "ref": [
+                "dia"
+              ]
+            },
+            {
+              "ref": [
+                "tl_tl_len"
+              ]
+            },
+            {
+              "ref": [
+                "moc"
+              ]
+            },
+            {
+              "ref": [
+                "design_pb"
+              ]
+            },
+            {
+              "ref": [
+                "weights"
+              ]
+            },
+            {
+              "ref": [
+                "Quantity"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Item_Code": {
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "capactity_each": {
+          "type": "cds.String"
+        },
+        "dia": {
+          "type": "cds.String"
+        },
+        "tl_tl_len": {
+          "type": "cds.String"
+        },
+        "moc": {
+          "type": "cds.String"
+        },
+        "design_pb": {
+          "type": "cds.String"
+        },
+        "weights": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.no_of_items": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CBE.PAN_PRICE_DETAILS"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "Item_Code"
+              ]
+            },
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            },
+            {
+              "ref": [
+                "Item_Short_Description"
+              ]
+            },
+            {
+              "ref": [
+                "capactity_each"
+              ]
+            },
+            {
+              "ref": [
+                "dia"
+              ]
+            },
+            {
+              "ref": [
+                "tl_tl_len"
+              ]
+            },
+            {
+              "ref": [
+                "moc"
+              ]
+            },
+            {
+              "ref": [
+                "design_pb"
+              ]
+            },
+            {
+              "ref": [
+                "weights"
+              ]
+            },
+            {
+              "ref": [
+                "Quantity"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Item_Code": {
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "capactity_each": {
+          "type": "cds.String"
+        },
+        "dia": {
+          "type": "cds.String"
+        },
+        "tl_tl_len": {
+          "type": "cds.String"
+        },
+        "moc": {
+          "type": "cds.String"
+        },
+        "design_pb": {
+          "type": "cds.String"
+        },
+        "weights": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.list_of_items": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CBE.PAN_PRICE_DETAILS"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "Item_Code"
+              ]
+            },
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            },
+            "in",
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "CBE.PAN_Details"
+                  ]
+                },
+                "columns": [
+                  {
+                    "ref": [
+                      "PAN_Number"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Item_Code": {
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.items_with_vendor": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CBE.PAN_PRICE_DETAILS"
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "Item_Code"
+              ]
+            },
+            {
+              "ref": [
+                "vendor_code"
+              ]
+            },
+            {
+              "ref": [
+                "PAN_Number"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.OFFER": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.OFFER"
+          ]
+        }
+      },
+      "elements": {
+        "vendor_code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "offer_id": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "offer_name": {
+          "type": "cds.String"
+        },
+        "qtn_ref": {
+          "type": "cds.String"
+        },
+        "date": {
+          "type": "cds.String"
+        },
+        "validity": {
+          "type": "cds.String"
+        },
+        "unit_rate": {
+          "type": "cds.String"
+        },
+        "unit_rate_per_unit": {
+          "type": "cds.String"
+        },
+        "total_amt_inr": {
+          "type": "cds.String"
+        },
+        "spares_for_2_years": {
+          "type": "cds.String"
+        },
+        "grandtotal": {
+          "type": "cds.String"
+        },
+        "packing_marking_forwarding": {
+          "type": "cds.String"
+        },
+        "inspection_testing_charges": {
+          "type": "cds.String"
+        },
+        "documentation_charges": {
+          "type": "cds.String"
+        },
+        "total_basic_price_including_packing": {
+          "type": "cds.String"
+        },
+        "rnod": {
+          "type": "cds.String"
+        },
+        "custom_duty_cess": {
+          "type": "cds.String"
+        },
+        "sgst": {
+          "type": "cds.String"
+        },
+        "igst": {
+          "type": "cds.String"
+        },
+        "ugst": {
+          "type": "cds.String"
+        },
+        "shipment_charges": {
+          "type": "cds.String"
+        },
+        "total_basic_price_with_taxes": {
+          "type": "cds.String"
+        },
+        "total_basic_price_without_taxes": {
+          "type": "cds.String"
+        },
+        "per_diem_rate_for_supervision": {
+          "type": "cds.String"
+        },
+        "price_basis": {
+          "type": "cds.String"
+        },
+        "point_of_delivery": {
+          "type": "cds.String"
+        },
+        "delivery_period": {
+          "type": "cds.String"
+        },
+        "payment_terms": {
+          "type": "cds.String"
+        },
+        "liquidated_damages": {
+          "type": "cds.String"
+        },
+        "warranty_defect_liability_period": {
+          "type": "cds.String"
+        },
+        "cpbg": {
+          "type": "cds.String"
+        },
+        "contact_person": {
+          "type": "cds.String"
+        },
+        "contact_number": {
+          "type": "cds.String"
+        },
+        "order_given_to": {
+          "type": "cds.String"
+        },
+        "technically_approved": {
+          "type": "cds.String"
+        },
+        "approved_vendor": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.Projects": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_proj"
+          ]
+        }
+      },
+      "elements": {
+        "ProjectId": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.Items": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_PRICE_DETAILS_proj"
+          ]
+        }
+      },
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "HSN_OR_SAC_Code": {
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "UOM": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        },
+        "Unit_Price": {
+          "type": "cds.String"
+        },
+        "Amount": {
+          "type": "cds.String"
+        },
+        "Indian_Tax_PER": {
+          "type": "cds.String"
+        },
+        "Quantity_Over_Delivery_Tolerance": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.Vendors": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_vendor_data_proj"
+          ]
+        }
+      },
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Awarded_Vendor": {
+          "type": "cds.String"
+        },
+        "Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Vendor_Location": {
+          "type": "cds.String"
+        },
+        "Technically_Approved": {
+          "type": "cds.String"
+        },
+        "Client_Approved": {
+          "type": "cds.String"
+        },
+        "Original_quote": {
+          "type": "cds.String"
+        },
+        "Final_Quote": {
+          "type": "cds.String"
+        },
+        "Order_amount_OR_Split_order_amount": {
+          "type": "cds.String"
+        },
+        "Discount_Amount": {
+          "type": "cds.String"
+        },
+        "Discount_percentage": {
+          "type": "cds.String"
+        },
+        "Rank": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.PAN_Info": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_Details_proj"
+          ]
+        }
+      },
+      "elements": {
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "SBG": {
+          "type": "cds.String"
+        },
+        "SBU": {
+          "type": "cds.String"
+        },
+        "BUORPurchasing_Group": {
+          "type": "cds.String"
+        },
+        "Plant_Code": {
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        },
+        "PR_NumberBKTsBKT": {
+          "type": "cds.String"
+        },
+        "Subject_of_ProposalOROrder": {
+          "type": "cds.String"
+        },
+        "Previous_PAN_References": {
+          "type": "cds.String"
+        },
+        "Split_OrderORNo_of_vendors": {
+          "type": "cds.String"
+        },
+        "SOP_Type": {
+          "type": "cds.String"
+        },
+        "Order_Type_OR_Document_tyFuuidpe": {
+          "type": "cds.String"
+        },
+        "Asset_Type": {
+          "type": "cds.String"
+        },
+        "Nature_of_Transaction": {
+          "type": "cds.String"
+        },
+        "Order_Location_OR_Plant": {
+          "type": "cds.String"
+        },
+        "Base_line_spend": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
+          "type": "cds.String"
+        },
+        "Final_proposed_Value": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Savings_achieved_btw_initial_and_final_quote": {
+          "type": "cds.String"
+        },
+        "Savings_against_base_line_spend_of_RFP": {
+          "type": "cds.String"
+        },
+        "Number_of_Vendors_Shortlisted_for_RFP": {
+          "type": "cds.String"
+        },
+        "Number_of_Vendors_Technically_Qualified": {
+          "type": "cds.String"
+        },
+        "Required_at_Site_Date": {
+          "type": "cds.String"
+        },
+        "RFP_Number": {
+          "type": "cds.String"
+        },
+        "RFP_Publish_Date": {
+          "type": "cds.String"
+        },
+        "Time_Taken_for_FinalizationDASHIn_DAYS": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "status": {
+          "type": "cds.String"
+        },
+        "created_by": {
+          "type": "cds.String"
+        },
+        "task_id": {
+          "type": "cds.String"
+        },
+        "type": {
+          "type": "cds.String"
+        },
+        "status_a": {
+          "type": "cds.String"
+        },
+        "justification": {
+          "type": "cds.LargeString"
+        },
+        "Comments": {
+          "type": "cds.LargeString"
+        },
+        "submitted_by": {
+          "type": "cds.String"
+        },
+        "submitted_date": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.PAN_vendor_reponse_details": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_vendor_response_proj"
+          ]
+        }
+      },
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Proposed_Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Supplier_Origin_State": {
+          "type": "cds.String"
+        },
+        "Destination_State_BKTShipDASHto_LocationBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_GST_Number": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH1": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH2": {
+          "type": "cds.String"
+        },
+        "Technical_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Commercial_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Vendor_References_to_be_displayed_in_Order": {
+          "type": "cds.String"
+        },
+        "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Incoterms": {
+          "type": "cds.String"
+        },
+        "Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC": {
+          "type": "cds.String"
+        },
+        "Details_of_deviated_or_better_terms_agreed_with_the_Vendor": {
+          "type": "cds.String"
+        },
+        "Market_Scenario_and_Demand": {
+          "type": "cds.String"
+        },
+        "Companys_Position_and_Market_dynamics_of_this_purchase": {
+          "type": "cds.String"
+        },
+        "Should_Be_Cost_estimated": {
+          "type": "cds.String"
+        },
+        "Highlights_of_this_proposal_and_Price_Justification_for_this_proposal": {
+          "type": "cds.String"
+        },
+        "Price_Escalation_Agreed_if_any": {
+          "type": "cds.String"
+        },
+        "Particulars_of_any_Free_Service_OR_Supply_Guarantees_OR_Warrant_yfrom_Vendor": {
+          "type": "cds.String"
+        },
+        "Transportation": {
+          "type": "cds.String"
+        },
+        "Logistics_Cost": {
+          "type": "cds.String"
+        },
+        "Delivery_Schedule": {
+          "type": "cds.String"
+        },
+        "Tax_Details": {
+          "type": "cds.String"
+        },
+        "Additional_Remarks": {
+          "type": "cds.String"
+        },
+        "ABG": {
+          "type": "cds.String"
+        },
+        "ABG_Value": {
+          "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
+        },
+        "CPBG_Value": {
+          "type": "cds.String"
+        },
+        "Scope_and_Responsibilities": {
+          "type": "cds.LargeString"
+        },
+        "Commercial_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Compliance_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Others": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "Catalogcbeservice.Project_Details": {
+      "kind": "entity",
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "ProjectId",
+          "Value": {
+            "=": "ProjectId"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Project_Description",
+          "Value": {
+            "=": "Project_Description"
+          }
+        }
+      ],
+      "@UI.CreateHidden": true,
+      "@UI.DeleteHidden": true,
+      "@UI.FieldGroup#GeneratedGroup1.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup1.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "ProjectId",
+          "Value": {
+            "=": "ProjectId"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Project_Description",
+          "Value": {
+            "=": "Project_Description"
+          }
+        }
+      ],
+      "@UI.Facets": [],
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "inner",
+            "args": [
+              {
+                "ref": [
+                  "Catalogcbeservice.Projects"
+                ],
+                "as": "Pr"
+              },
+              {
+                "ref": [
+                  "Catalogcbeservice.PAN_Info"
+                ],
+                "as": "Pa"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "Pr",
+                  "PAN_Number"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "Pa",
+                  "PAN_Number"
+                ]
+              }
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "key": true,
+              "ref": [
+                "Pr",
+                "ProjectId"
+              ]
+            },
+            {
+              "ref": [
+                "Pa",
+                "Project_Description"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectId": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.Vendor_details": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "inner",
+            "args": [
+              {
+                "ref": [
+                  "Catalogcbeservice.Projects"
+                ],
+                "as": "Pr"
+              },
+              {
+                "ref": [
+                  "Catalogcbeservice.Vendors"
+                ],
+                "as": "V"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "Pr",
+                  "PAN_Number"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "V",
+                  "PAN_Number"
+                ]
+              }
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "V",
+                "Proposed_Vendor_Code"
+              ],
+              "as": "vendor_code",
+              "cast": {
+                "type": "cds.String"
+              }
+            },
+            {
+              "ref": [
+                "Pr",
+                "ProjectId"
+              ]
+            },
+            {
+              "ref": [
+                "Pr",
+                "PAN_Number"
+              ],
+              "as": "proj_pan_number",
+              "cast": {
+                "type": "cds.String"
+              }
+            },
+            {
+              "ref": [
+                "V"
+              ],
+              "inline": [
+                "*"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "vendor_code": {
+          "type": "cds.String"
+        },
+        "ProjectId": {
+          "type": "cds.String"
+        },
+        "proj_pan_number": {
+          "type": "cds.String"
+        },
+        "Proposed_Vendor_Code": {
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "type": "cds.String"
+        },
+        "Awarded_Vendor": {
+          "type": "cds.String"
+        },
+        "Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Vendor_Location": {
+          "type": "cds.String"
+        },
+        "Technically_Approved": {
+          "type": "cds.String"
+        },
+        "Client_Approved": {
+          "type": "cds.String"
+        },
+        "Original_quote": {
+          "type": "cds.String"
+        },
+        "Final_Quote": {
+          "type": "cds.String"
+        },
+        "Order_amount_OR_Split_order_amount": {
+          "type": "cds.String"
+        },
+        "Discount_Amount": {
+          "type": "cds.String"
+        },
+        "Discount_percentage": {
+          "type": "cds.String"
+        },
+        "Rank": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.Item_details": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "inner",
+            "args": [
+              {
+                "ref": [
+                  "Catalogcbeservice.Projects"
+                ],
+                "as": "Pr"
+              },
+              {
+                "ref": [
+                  "Catalogcbeservice.Items"
+                ],
+                "as": "I"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "Pr",
+                  "PAN_Number"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "I",
+                  "PAN_Number"
+                ]
+              }
+            ]
+          },
+          "distinct": true,
+          "columns": [
+            {
+              "ref": [
+                "Pr",
+                "ProjectId"
+              ]
+            },
+            {
+              "ref": [
+                "I"
+              ],
+              "inline": [
+                "*"
+              ]
+            }
+          ]
+        }
+      },
+      "elements": {
+        "ProjectId": {
+          "type": "cds.String"
+        },
+        "Proposed_Vendor_Code": {
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "type": "cds.String"
+        },
+        "HSN_OR_SAC_Code": {
+          "type": "cds.String"
+        },
+        "Item_Short_Description": {
+          "type": "cds.String"
+        },
+        "UOM": {
+          "type": "cds.String"
+        },
+        "Quantity": {
+          "type": "cds.String"
+        },
+        "Unit_Price": {
+          "type": "cds.String"
+        },
+        "Amount": {
+          "type": "cds.String"
+        },
+        "Indian_Tax_PER": {
+          "type": "cds.String"
+        },
+        "Quantity_Over_Delivery_Tolerance": {
+          "type": "cds.String"
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v4.5.0",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

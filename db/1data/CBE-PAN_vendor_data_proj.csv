@@ -1,0 +1,8 @@
+Proposed_Vendor_Code,PAN_Number,Awarded_Vendor,Vendor_Name,Vendor_Location,Technically_Approved,Client_Approved,Original_quote,Final_Quote,Order_amount_OR_Split_order_amount,Discount_Amount,Discount_percentage,Rank
+VENDOR001,ABCDE1234F,VENDOR001,Vendor 1,Location 1,Yes,Yes,1000,900,1500,100,10%,1
+VENDOR001,LMNOP9012Q,VENDOR001,Vendor 1,Location 1,Yes,Yes,1000,900,1500,100,10%,1
+VENDOR002,FGHIJ5678K,VENDOR002,Vendor 2,Location 2,Yes,Yes,2000,1800,2500,200,8%,2
+VENDOR002,RSTUV3456W,VENDOR002,Vendor 2,Location 2,Yes,Yes,2000,1800,2500,200,8%,2
+VENDOR003,LMNOP9012Q,VENDOR003,Vendor 3,Location 3,Yes,No,3000,2700,3500,300,7%,3
+VENDOR004,RSTUV3456W,VENDOR004,Vendor 4,Location 4,Yes,Yes,4000,3600,4500,400,10%,4
+VENDOR005,XYZAB6789C,VENDOR005,Vendor 5,Location 5,Yes,Yes,5000,4500,5500,500,9%,5
