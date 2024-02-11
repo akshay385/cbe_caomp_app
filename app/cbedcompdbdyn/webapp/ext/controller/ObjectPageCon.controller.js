@@ -452,39 +452,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										text: "Total Amount",
 										design: "Bold"
 									}))
-									colheader.addItem(new sap.ui.core.Icon({
-										src: "sap-icon://expand",
-										color: "darkblue",
-										hoverColor: "red",
-										activeColor: "darkgreen",
-										size: "12px",
-										width: "20px",
-										press: function (oEvent) {
-
-											debugger
-											let oParentTable = oEvent.getSource().getParent().getParent().getParent();
-											if (oParentTable.getColumns()[0].getVisible() == true) {
-												oParentTable.getColumns()[0].setVisible(false);
-												oParentTable.getColumns()[1].setVisible(false);
-											}
-											else {
-												oParentTable.getColumns()[0].setVisible(true);
-												oParentTable.getColumns()[1].setVisible(true);
-											}
-											for (let i = 0; i < oParentTable.getItems().length; i++) {
-												if (oParentTable.getItems()[i].getCells()[0].getVisible() == true) {
-													oParentTable.getItems()[i].getCells()[0].setVisible(false)
-													oParentTable.getItems()[i].getCells()[1].setVisible(false)
-
-												}
-												else {
-													oParentTable.getItems()[i].getCells()[0].setVisible(true)
-													oParentTable.getItems()[i].getCells()[1].setVisible(true)
-												}
-
-											}
-										}
-									}))
+									
 
 									//end of total amount 
 
@@ -880,6 +848,35 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							for (let i = 0; i < hbmiddlesection.getItems().length - 1; i++) {
 								hbmiddlesection.getItems()[i].setVisible(false);
 							}
+
+							//geting final status 
+							let status_lastsection = hbmiddlesection.getItems()[hbmiddlesection.getItems().length - 1];
+							status_lastsection.getItems()[1].getItems()[1].getColumns()[2].getHeader().addItem(new sap.ui.core.Icon(`${"total_amount_icon"+generateUniqueId()}`,{
+								src: "sap-icon://expand",
+								color: "darkblue",
+								hoverColor: "red",
+								activeColor: "darkgreen",
+								size: "12px",
+								width: "20px",
+								press:function (oEvent) {
+									debugger
+									var hboxlist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getParent().getItems();
+
+									for (let i = 0; i < hboxlist.length - 1; i++) {
+										if (hboxlist[i].getVisible()==true) {
+											hboxlist[i].setVisible(false);
+											oEvent.getSource().setSrc("sap-icon://expand");
+										}
+										else{
+											hboxlist[i].setVisible(true);
+											oEvent.getSource().setSrc("sap-icon://collapse");
+										}
+										
+									}
+								}
+							}))
+							debugger
+
 
 
 						}  //end of for-loop
