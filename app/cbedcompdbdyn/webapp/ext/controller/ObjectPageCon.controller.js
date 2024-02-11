@@ -425,12 +425,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 									var oColumn1 = new sap.m.Column({
 										id: `${"unit_rate" + generateUniqueId()}`,
-										header: new sap.m.Text({ text: "Unit Rate", wrapping: false })
+										header: new sap.m.Text({ text: "Unit Rate", design: "Bold", wrapping: false })
 									});
 
 									var oColumn2 = new sap.m.Column({
 										id: `${"unit_rate_per" + generateUniqueId()}`,
-										header: new sap.m.Text({ text: "Rate per Unit", wrapping: false })
+										header: new sap.m.Label({ text: "Rate per Unit", design: "Bold", wrapping: false })
 									});
 
 									debugger
@@ -452,7 +452,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										text: "Total Amount",
 										design: "Bold"
 									}))
-
 									colheader.addItem(new sap.ui.core.Icon({
 										src: "sap-icon://expand",
 										color: "darkblue",
@@ -820,9 +819,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										text: `${vendorresponse_selecteditem[0]?.CPBG ?? ' '}`
 									}));
 
-									const inputString = vendorresponse_selecteditem[0].Vendor_Contact_PersonDASH1;
-									var regex = /name\s*:(.*?)\s*email/;
-									var match = inputString.match(regex);
+									const inputString = vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? '';
+									if (inputString) {
+										var regex = /name\s*:(.*?)\s*email/;
+										var match = inputString.match(regex);
+									}
+
 									var contactPerson = match ? match[1].trim() : null;
 
 									debugger
@@ -873,18 +875,25 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 								debugger
 							} while (k < vendorslist.length);
 							//end of do-while loop
+							debugger
+
+							for (let i = 0; i < hbmiddlesection.getItems().length - 1; i++) {
+								hbmiddlesection.getItems()[i].setVisible(false);
+							}
+
+
 						}  //end of for-loop
 
 
 
 						//under testing
-						var iconTotalPricingB = omainHBox.getItems()[0].getItems()[3].getItems()[5].getItems()[1];
-						var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
-						var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
+						// var iconTotalPricingB = omainHBox.getItems()[0].getItems()[3].getItems()[5].getItems()[1];
+						// var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
+						// var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
 
-						iconTotalPricingB.firePress();
-						iconTotalPricingD.firePress();
-						iconTotalPricingG.firePress();
+						// iconTotalPricingB.firePress();
+						// iconTotalPricingD.firePress();
+						// iconTotalPricingG.firePress();
 
 						debugger
 						//left section and respective fields
