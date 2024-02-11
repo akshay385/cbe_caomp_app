@@ -14,6 +14,7 @@ sap.ui.define([
                 oEvent.getSource().getParent().getParent().getItems()[9].setVisible(false)
                 oEvent.getSource().getParent().getParent().getItems()[10].setVisible(false)
                 oEvent.getSource().getParent().getParent().getItems()[11].setVisible(false)
+                oEvent.getSource().setSrc("sap-icon://navigation-right-arrow");
             }
             else {
                 oEvent.getSource().getParent().getParent().getItems()[7].setVisible(true)
@@ -21,6 +22,7 @@ sap.ui.define([
                 oEvent.getSource().getParent().getParent().getItems()[9].setVisible(true)
                 oEvent.getSource().getParent().getParent().getItems()[10].setVisible(true)
                 oEvent.getSource().getParent().getParent().getItems()[11].setVisible(true)
+                oEvent.getSource().setSrc("sap-icon://navigation-up-arrow");
             }
 
             var listofsections = hBox.getItems()[1].getContent()[0].getItems();
@@ -59,6 +61,12 @@ sap.ui.define([
                 }
 
             }
+            if (oEvent.getSource().getSrc()=="sap-icon://navigation-down-arrow") {
+                oEvent.getSource().setSrc("sap-icon://navigation-right-arrow")
+            }
+            else{
+                oEvent.getSource().setSrc("sap-icon://navigation-down-arrow")
+            }
 
             for (let i = 16; i < leftitems.length; i++) {
                 if (leftitems[i].getVisible() == true) {
@@ -80,12 +88,14 @@ sap.ui.define([
                 oEvent.getSource().getParent().getParent().getItems()[2].setVisible(false)
                 oEvent.getSource().getParent().getParent().getItems()[3].setVisible(false)
                 oEvent.getSource().getParent().getParent().getItems()[4].setVisible(false)
+                oEvent.getSource().setSrc("sap-icon://navigation-right-arrow");
 
             }
             else {
                 oEvent.getSource().getParent().getParent().getItems()[2].setVisible(true)
                 oEvent.getSource().getParent().getParent().getItems()[3].setVisible(true)
                 oEvent.getSource().getParent().getParent().getItems()[4].setVisible(true)
+                oEvent.getSource().setSrc("sap-icon://navigation-up-arrow");
 
             }
 

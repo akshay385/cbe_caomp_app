@@ -147,6 +147,19 @@
                       "type": "XMLFragment"
                     }
                   }
+                },
+                "header": {
+                  "facets": {
+                    "HeaderFragment": {
+                      "template": "cbedcompdbdyn.ext.fragment.HeaderFragment",
+                      "templateEdit": "cbedcompdbdyn.ext.fragment.Fragment",
+                      "stashed": false,
+                      "requestGroupId": "Heroes",
+                      "flexSettings": {
+                        "designtime": "Default"
+                      }
+                    }
+                  }
                 }
               }
             }

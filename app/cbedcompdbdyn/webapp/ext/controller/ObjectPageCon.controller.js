@@ -342,7 +342,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							// 	var 
 
 							// }
-
+							/////////////////////////////////////////////////////
 							//vbox1
 							let vboxsuppnameloc = curr_sectionvbox.getItems()[0];
 
@@ -360,7 +360,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							debugger
 							vboxsuppnameloc.addStyleClass("v11spaceBetweenclass");
 
-
+							/////////////////////////////////////////////////////////////////////////////////////////////////////////
 							//Hbox middle
 
 							var hbmiddlesection = curr_sectionvbox.getItems()[1];
@@ -733,15 +733,17 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 									combobox_item.addItem(item);
 
+									combobox_item.setValue(`${matchedObject?.status_a ?? ''}`);
+
 									last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`));
 
 									var chvbox = last_hcombobox.getItems()[iterator];
 									iterator++;
 
 									debugger
-									if (combobox_item.getValue() != vendorslist[k]?.PAN_Number ?? ' ') {
-										chvbox.setVisible(false)
-									}
+									// if (combobox_item.getValue() != vendorslist[k]?.PAN_Number ?? ' ') {
+									// 	chvbox.setVisible(false)
+									// }
 
 									chvbox.addStyleClass("spacebetweenclass");
 
@@ -868,67 +870,68 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 								}
 								k++;
+								debugger
 							} while (k < vendorslist.length);
+							//end of do-while loop
+						}  //end of for-loop
+
+
+
+						//under testing
+						var iconTotalPricingB = omainHBox.getItems()[0].getItems()[3].getItems()[5].getItems()[1];
+						var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
+						var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
+
+						iconTotalPricingB.firePress();
+						iconTotalPricingD.firePress();
+						iconTotalPricingG.firePress();
+
+						debugger
+						//left section and respective fields
+						// omainHBox.getItems()[0].getItems()[3].getItems()[2].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[3].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[4].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[7].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[8].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[9].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[10].setVisible(false);
+						// omainHBox.getItems()[0].getItems()[3].getItems()[11].setVisible(false);
+
+						// var listofsections = omainHBox.getItems()[1].getContent()[0].getItems();
+						// for (let i = 0; i < listofsections.length; i++) {
+
+						// 	var oTablesection = listofsections[i].getItems()[1].getItems()[0].mAggregations.items[1].mAggregations.items[1];
+						// 	// listofsections[i].getItems()[3].setVisible(false);
+						// 	debugger
+						// 	let len = oTablesection.getItems().length
+						// 	for (let j = (len - 4); j >= (len - 8); j--) {
+
+						// 		oTablesection.getItems()[j].setVisible(false)
+
+						// 	}
+
+						// }
+
+						// //left last section under price details and its respective
+						// var leftsectionlastvbox = omainHBox.getItems()[0].getItems()[3].getItems();
+						// for (let i = 16; i < leftsectionlastvbox.length; i++) {
+						// 	leftsectionlastvbox[i].setVisible(false);
+						// }
+						// leftsectionlastvbox[15].getItems()[0].setVisible(false);
 
 
 
 
-							//under testing
-							var iconTotalPricingB = omainHBox.getItems()[0].getItems()[3].getItems()[5].getItems()[1];
-							var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
-							var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
 
-							// iconTotalPricingB.firePress();
-							// iconTotalPricingD.firePress();
-							// iconTotalPricingG.firePress();
+						sap.ui.core.BusyIndicator.hide();
+						// let rightsectionpri = omainHBox.getItems()[1].getContent()[0].getItems();
+						// // omainHBox.getItems()[1].getContent()[0].getItems()
+						// for (let i = 0; i < rightsectionpri.length; i++) {
+						// 	rightsectionpri.getItems()[2].setVisible(false);
 
-							debugger
-							//left section and respective fields
-							// omainHBox.getItems()[0].getItems()[3].getItems()[2].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[3].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[4].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[7].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[8].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[9].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[10].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[11].setVisible(false);
-
-							// var listofsections = omainHBox.getItems()[1].getContent()[0].getItems();
-							// for (let i = 0; i < listofsections.length; i++) {
-
-							// 	var oTablesection = listofsections[i].getItems()[1].getItems()[0].mAggregations.items[1].mAggregations.items[1];
-							// 	// listofsections[i].getItems()[3].setVisible(false);
-							// 	debugger
-							// 	let len = oTablesection.getItems().length
-							// 	for (let j = (len - 4); j >= (len - 8); j--) {
-
-							// 		oTablesection.getItems()[j].setVisible(false)
-
-							// 	}
-
-							// }
-
-							// //left last section under price details and its respective
-							// var leftsectionlastvbox = omainHBox.getItems()[0].getItems()[3].getItems();
-							// for (let i = 16; i < leftsectionlastvbox.length; i++) {
-							// 	leftsectionlastvbox[i].setVisible(false);
-							// }
-							// leftsectionlastvbox[15].getItems()[0].setVisible(false);
-
-
-
-
-
-							sap.ui.core.BusyIndicator.hide();
-							// let rightsectionpri = omainHBox.getItems()[1].getContent()[0].getItems();
-							// // omainHBox.getItems()[1].getContent()[0].getItems()
-							// for (let i = 0; i < rightsectionpri.length; i++) {
-							// 	rightsectionpri.getItems()[2].setVisible(false);
-
-							// }
-
-						}
-					} catch (error) {
+						// }
+					}
+					catch (error) {
 						debugger
 						MessageToast.show(error)
 					}

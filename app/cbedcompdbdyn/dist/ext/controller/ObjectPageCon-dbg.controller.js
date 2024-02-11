@@ -873,7 +873,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 
 
-
+							//under testing
 							var iconTotalPricingB = omainHBox.getItems()[0].getItems()[3].getItems()[5].getItems()[1];
 							var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
 							var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
