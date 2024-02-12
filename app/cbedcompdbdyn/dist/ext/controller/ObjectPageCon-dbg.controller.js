@@ -18,8 +18,11 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 			routing: {
 				onAfterBinding: async function (oBindingContext) {
 					try {
-
 						debugger
+						// let testheaderbutton1 = this.base.getView().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::ObjectPage-OPHeaderContent");
+						// testheaderbutton1.addContent(new sap.ui.core.Icon("icon111",{
+						// 	src:"sap-icon://expand"
+						// }))
 						function generateUniqueId() {
 							// Generate a random number
 							var randomNumber = Math.floor(Math.random() * 1000000);
@@ -172,10 +175,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									if (vbox_omainhbox.getWidth() == "30%") {
 										itemstable.setFixedLayout(false);
 										vbox_omainhbox.setWidth("70%");
+										oEvent.getSource().setSrc("sap-icon://collapse");
 									}
 									else {
 										itemstable.setFixedLayout(true);
-										vbox_omainhbox.setWidth("30%")
+										vbox_omainhbox.setWidth("30%");
+										oEvent.getSource().setSrc("sap-icon://expand");
 									}
 
 								}
@@ -315,6 +320,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 							//3rd vbox final one
 							var vbox_last_section = curr_sectionvbox.getItems()[2];
+							vbox_last_section.setVisible(false);
 
 							var combobox = new sap.m.ComboBox(`${"combobox" + (i + 1)}`, {
 								change: function (oEvent) {
@@ -452,7 +458,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										text: "Total Amount",
 										design: "Bold"
 									}))
-									
+
 
 									//end of total amount 
 
@@ -547,6 +553,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem3);
 									var oItem4 = new sap.m.ColumnListItem({
 										id: `${"parkingmarking" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.packing_marking_forwarding ?? ' '}` }),
@@ -558,6 +565,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem4);
 									var oItem5 = new sap.m.ColumnListItem({
 										id: `${"inspection" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.inspection_testing_charges ?? ' '}` }),
@@ -569,6 +577,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem5);
 									var oItem6 = new sap.m.ColumnListItem({
 										id: `${"documentation" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.documentation_charges ?? ' '}` }),
@@ -604,6 +613,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem8);
 									var oItem9 = new sap.m.ColumnListItem({
 										id: `${"customduty" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.custom_duty_cess ?? ' '}` }),
@@ -615,6 +625,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem9);
 									var oItem10 = new sap.m.ColumnListItem({
 										id: `${"sgst" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.sgst ?? ' '}` }),
@@ -626,6 +637,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem10);
 									var oItem11 = new sap.m.ColumnListItem({
 										id: `${"igst" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.igst ?? ' '}` }),
@@ -637,6 +649,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem11);
 									var oItem12 = new sap.m.ColumnListItem({
 										id: `${"ugst" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.ugst ?? " "}` }),
@@ -648,6 +661,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									oTable.addItem(oItem12);
 									var oItem13 = new sap.m.ColumnListItem({
 										id: `${"shipment" + generateUniqueId()}`,
+										visible: false,
 										cells: [
 
 											new sap.m.Text({ text: `${vendorslist[k]?.shipment_charges ?? ' '}` }),
@@ -846,32 +860,35 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							debugger
 
 							for (let i = 0; i < hbmiddlesection.getItems().length - 1; i++) {
+								debugger
 								hbmiddlesection.getItems()[i].setVisible(false);
+								hbmiddlesection.getParent().getItems()[2].getItems()[1].getItems()[i].setVisible(false);
+								// lastitemchvbox.getItems()
 							}
 
 							//geting final status 
 							let status_lastsection = hbmiddlesection.getItems()[hbmiddlesection.getItems().length - 1];
-							status_lastsection.getItems()[1].getItems()[1].getColumns()[2].getHeader().addItem(new sap.ui.core.Icon(`${"total_amount_icon"+generateUniqueId()}`,{
+							status_lastsection.getItems()[1].getItems()[1].getColumns()[2].getHeader().addItem(new sap.ui.core.Icon(`${"total_amount_icon" + generateUniqueId()}`, {
 								src: "sap-icon://expand",
 								color: "darkblue",
 								hoverColor: "red",
 								activeColor: "darkgreen",
 								size: "12px",
 								width: "20px",
-								press:function (oEvent) {
+								press: function (oEvent) {
 									debugger
 									var hboxlist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getParent().getItems();
 
 									for (let i = 0; i < hboxlist.length - 1; i++) {
-										if (hboxlist[i].getVisible()==true) {
+										if (hboxlist[i].getVisible() == true) {
 											hboxlist[i].setVisible(false);
 											oEvent.getSource().setSrc("sap-icon://expand");
 										}
-										else{
+										else {
 											hboxlist[i].setVisible(true);
 											oEvent.getSource().setSrc("sap-icon://collapse");
 										}
-										
+
 									}
 								}
 							}))

@@ -18,7 +18,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 			routing: {
 				onAfterBinding: async function (oBindingContext) {
 					try {
-
 						debugger
 						// let testheaderbutton1 = this.base.getView().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::ObjectPage-OPHeaderContent");
 						// testheaderbutton1.addContent(new sap.ui.core.Icon("icon111",{
