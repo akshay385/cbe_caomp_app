@@ -68,42 +68,42 @@
 			<VBox id="leftbelowtable" class="v3spaceBetweenclass" alignItems="End">
 				<Label id="sparesfor2" text="Spares for 2 Years operation" />
 				<Label design="Bold" id="grandtotal" text=" Grand Total" />
-				<Label id="pmff" text="Packing, Marking, Forwarding and Freight" />
-				<Label id="inspection_testing_charges" text="Inspection / Testing Charges" />
-				<Label id="doc_charges" text="Documentation Charges" />
+				<Label id="pmff" text="Packing, Marking, Forwarding and Freight" visible="false"/>
+				<Label id="inspection_testing_charges" text="Inspection / Testing Charges" visible="false"/>
+				<Label id="doc_charges" text="Documentation Charges" visible="false"/>
 				<HBox id="hboxtotal_basic_pricing" alignItems="End">
 					<Label design="Bold" id="total_basic_pricing" text="Total Basic Price including packing, marking..." tooltip="Total Basic Price including packing, marking and forwarding" />
-					<core:Icon id="icon1" src="sap-icon://navigation-up-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_forwaring" size="13px"></core:Icon>
+					<core:Icon id="icon1" src="sap-icon://navigation-right-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_forwaring" size="13px"></core:Icon>
 				</HBox>
 				<Label design="Bold" id="rnod" text="RNOD" />
-				<Label id="custom_duty" text="Custom Duty and Cess" />
-				<Label id="sgst" text="SGST" />
-				<Label id="igst" text="IGST" />
-				<Label id="ugst" text="UGST" />
-				<Label id="shipmentcharges" text="Shipment charges from EXW to ISRO Mahendragiri " />
+				<Label id="custom_duty" text="Custom Duty and Cess" visible="false"/>
+				<Label id="sgst" text="SGST" visible="false"/>
+				<Label id="igst" text="IGST" visible="false"/>
+				<Label id="ugst" text="UGST" visible="false"/>
+				<Label id="shipmentcharges" text="Shipment charges from EXW to ISRO Mahendragiri " visible="false"/>
 				<HBox id="total_including_tax" alignItems="End">
 					<Label design="Bold" id="newItemID1" text="Total Basic Price including packing,..." tooltip="Total Basic Price including packing, marking and forwarding, Transportation including Taxes" />
-					<core:Icon id="icon2" src="sap-icon://navigation-up-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_includingtax" size="13px"></core:Icon>
+					<core:Icon id="icon2" src="sap-icon://navigation-right-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_includingtax" size="13px"></core:Icon>
 				</HBox>
 				<Label design="Bold" id="total_excluding_taxes" text="Total Basic Price including packing, marking and....." tooltip="Total Basic Price including packing, marking and forwarding, Transportation excluding Taxes" />
 				<!-- <Label design="Bold" id="2ndsparesfor2years" text= "Spares for 2 Years operation" /> -->
 				<Label design="Bold" id="per_diem" text="Per Diem rate for Supervision for Erection and commissioning" />
 				<HBox id="hpricebasis" height="15px" alignItems="End">
 					<Label design="Bold" id="moreid" text=" View more..." />
-					<core:Icon id="icon3" src="sap-icon://navigation-down-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_priccebasis" size="13px"></core:Icon>
+					<core:Icon id="icon3" src="sap-icon://navigation-right-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_priccebasis" size="13px"></core:Icon>
 				</HBox>
-				<Label id="pricesbasis" text="PriceBasis" />
-				<Label id="point_of_delivery" text="Point of Delivery" />
-				<Label id="del_period" text="Delivery Period"  />
-				<Label id="payment_terms" text="Payment Terms" class="custompayment" />
-				<Label id="liq_dam" text="Liquidated Damages" class="customliquidated" />
-				<Label id="warranty" text="Warranty / Defect Liability Period" class="customwarrantydefect" />
-				<Label id="cpbg" text="CPBG"  class="customcbpg"/>
-				<Label id="contact_per" text="Contact Person" />
-				<Label id="contact_no" text="Contact No." />
-				<Label id="ordercanbe" text=" Order can be given to……..." />
-				<Label id="tech_approved" text=" Techncially Approved " class="custtechnically" />
-				<Label id="approvedvendor" text="Approved Vendor" class="custtechnically" />
+				<Label id="pricesbasis" text="PriceBasis" visible="false"/>
+				<Label id="point_of_delivery" text="Point of Delivery" visible="false"/>
+				<Label id="del_period" text="Delivery Period" visible="false"/>
+				<Label id="payment_terms" text="Payment Terms" class="custompayment" visible="false"/>
+				<Label id="liq_dam" text="Liquidated Damages" class="customliquidated" visible="false"/>
+				<Label id="warranty" text="Warranty / Defect Liability Period" class="customwarrantydefect" visible="false"/>
+				<Label id="cpbg" text="CPBG" class="customcbpg" visible="false"/>
+				<Label id="contact_per" text="Contact Person" visible="false"/>
+				<Label id="contact_no" text="Contact No." visible="false"/>
+				<Label id="ordercanbe" text=" Order can be given to……..." visible="false"/>
+				<Label id="tech_approved" text=" Techncially Approved " class="custtechnically" visible="false"/>
+				<Label id="approvedvendor" text="Approved Vendor" class="custtechnically" visible="false"/>
 
 			</VBox>
 
