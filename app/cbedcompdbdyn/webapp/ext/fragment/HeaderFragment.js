@@ -105,48 +105,92 @@ sap.ui.define([
 
             for (let i = 0; i < table.getItems().length; i++) {
                 table_items.push({
-                    mta_no:(i+1),
+                    mta_no: (i + 1),
                     item_desc: table.getItems()[i].getCells()[0].getText(),
-                    cap_each: table.getItems()[i].getCells()[1].getText(),
-                    dia: table.getItems()[i].getCells()[2].getText(),
-                    tl_tl: table.getItems()[i].getCells()[3].getText(),
-                    moc: table.getItems()[i].getCells()[4].getText(),
-                    dpb: table.getItems()[i].getCells()[5].getText(),
-                    weights: table.getItems()[i].getCells()[6].getText(),
-                    quantity: table.getItems()[i].getCells()[7].getText(),
+                    tag_no: table.getItems()[i].getCells()[1].getText(),
+                    types_of_vessel: table.getItems()[i].getCells()[2].getText(),
+                    cap_each: table.getItems()[i].getCells()[3].getText(),
+                    dia: table.getItems()[i].getCells()[4].getText(),
+                    tl_tl: table.getItems()[i].getCells()[5].getText(),
+                    moc: table.getItems()[i].getCells()[6].getText(),
+                    dpb: table.getItems()[i].getCells()[7].getText(),
+                    weights: table.getItems()[i].getCells()[8].getText(),
+                    quantity: table.getItems()[i].getCells()[9].getText(),
                 })
 
             }
             var data = [
-                { a:"Commercial Bid Evaluation"},
-                { a:"item",b:'Air Storage Tanks - 6 Nos.'},
-                { a:"indent",b:'Awaited'},
-                { a:"project",b:project_desc,i:" "},
-                { a:"Client",b:'ISRO -TWT'},
-                { a:"",b:''},
-                { a:"",b:'',f:"Cylindrical Data"},
-                { a:"MTO Sr.NO ",b:'Items Description',e:"Capacity Each ( Cu Mtr )",f:"Dia mm",g:"TL to TL Length (mm)",h:"MOC",i:"Design Pressure bar",j:"Weights",k:"Quantity"},
-               ];
+                { a: "Commercial Bid Evaluation" },
+                { a: "item", b: 'Air Storage Tanks - 6 Nos.' },
+                { a: "indent", b: 'Awaited' },
+                { a: "project", b: project_desc, i: " " },
+                { a: "Client", b: 'ISRO -TWT' },
+                { a: "", b: '' },
+                { a: "", b: '', f: "Cylindrical Data" },
+                { a: "MTO Sr.NO ", b: 'Items Description', c: "Tag No", d: "Type of Vessel", e: "Capacity Each ( Cu Mtr )", f: "Dia mm", g: "TL to TL Length (mm)", h: "MOC", i: "Design Pressure bar", j: "Weights", k: "Quantity" },
+                { a: "", b: '' },
+            ];
 
-               for (let i = 0; i < table_items.length; i++) {
-                    data.push({
-                        a:table_items[i].mta_no,
-                        b:table_items[i].item_desc,
-                        // c:table_items[i].,
-                        // d:table_items[i].mta_no,
-                        e:table_items[i].cap_each,
-                        f:table_items[i].dia,
-                        g:table_items[i].tl_tl,
-                        h:table_items[i].moc,
-                        i:table_items[i].dpb,
-                        j:table_items[i].weights,
-                        k:table_items[i].quantity,
-                    })
-                
-               }
-            //     var udata = [];
-            //    udata.push(data);
-             
+
+            for (let i = 0; i < table_items.length; i++) {
+                data.push({
+                    a: table_items[i].mta_no,
+                    b: table_items[i].item_desc,
+                    c: table_items[i].tag_no,
+                    d: table_items[i].types_of_vessel,
+                    e: table_items[i].cap_each,
+                    f: table_items[i].dia,
+                    g: table_items[i].tl_tl,
+                    h: table_items[i].moc,
+                    i: table_items[i].dpb,
+                    j: table_items[i].weights,
+                    k: table_items[i].quantity,
+                })
+
+            }
+            var new_data = [
+            { a: "", b: '' },
+            { a: "3", b: 'Spares for 2 Years operation' },
+            { a: " ", b: 'Grand Total' },
+            { a: "4", b: 'Packing, Marking, Forwarding & Freight' },
+            { a: "5", b: 'Inspection / Testing Charges' },
+            { a: "B.3", b: 'Documentation Charges' },
+            { a: "3", b: 'Total Basic Price including packing, marking & forwarding' },
+            { a: "C", b: 'RNOD' },
+            { a: "D.1", b: 'Custom Duty & Cess' },
+            { a: "D.2", b: 'SGST' },
+            { a: "D.3", b: 'IGST' },
+            { a: "D.4", b: 'UGST' },
+            { a: "D.6", b: 'Shipment charges from EXW to ISRO Mahendragiri', h: "L/S" },
+            { a: "D", b: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes' },
+            { b: 'Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes' },
+            { a: "E", b: 'Spares for 2 Years operation' },
+            { a: "F", b: 'Per Diem rate for Supervision for Erection and commissioning' },
+            { a: "G.1", b: 'PriceBasic' },
+            { a: "G.2", b: 'Point of delivery' },
+            { a: "G.3", b: 'Delivery Period' },
+            { a: "G.5", b: 'Liquidated Damages' },
+            { a: "G.6", b: 'Warranty / Defect Liability Period' },
+            { a: "G.7", b: 'CPBG' },
+            // {a:"G.8" ,b:'CPBG'}, 
+            { a: "G.9", b: 'Contact person' },
+            { a: "G.10", b: 'Contact No' },
+            { a: "G.11", b: 'Order can be given to ..' },
+            { a: "G.12", b: 'Technical approved' },
+            { a: "G.13", b: 'Approved vendor' },]
+
+            var updatedata = data.concat(new_data);
+
+            
+
+
+
+
+
+
+
+
+
             debugger
             // Update the columns array to match the columns in your Excel spreadsheet
             var oSpreadsheet = new sap.ui.export.Spreadsheet({
@@ -171,7 +215,7 @@ sap.ui.define([
                     hierarchyLevel: 'level'
                 },
                 // Pass the parsed data array to the dataSource property
-                dataSource: [data],
+                dataSource: updatedata,
                 fileName: 'cbe_comp.xlsx' // Adjust the filename if needed
             });
 
