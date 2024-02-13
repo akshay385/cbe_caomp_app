@@ -121,11 +121,11 @@ sap.ui.define([
             }
             var data = [
                 { a: "Commercial Bid Evaluation" },
-                { a: "item", b: 'Air Storage Tanks - 6 Nos.' },
-                { a: "indent", b: 'Awaited' },
-                { a: "project", b: project_desc, i: " " },
-                { a: "Client", b: 'ISRO -TWT' },
-                { a: "", b: '' },
+                { a: "item", b: 'Air Storage Tanks - 6 Nos.',k:'Supplier' },
+                { a: "indent", b: 'Awaited' ,k:'Location'},
+                { a: "project", b: project_desc, i: " ",k:'Qtn. Ref.' },
+                { a: "Client", b: 'ISRO -TWT' ,k:'Date'},
+                { a: "", b: '',k:'Validity' },
                 { a: "", b: '', f: "Cylindrical Data" },
                 { a: "MTO Sr.NO ", b: 'Items Description', c: "Tag No", d: "Type of Vessel", e: "Capacity Each ( Cu Mtr )", f: "Dia mm", g: "TL to TL Length (mm)", h: "MOC", i: "Design Pressure bar", j: "Weights", k: "Quantity" },
                 { a: "", b: '' },
@@ -180,8 +180,61 @@ sap.ui.define([
             { a: "G.13", b: 'Approved vendor' },]
 
             var updatedata = data.concat(new_data);
+            var rightsectiondata = [];
 
-            
+            var list_of_sections = mainhbox.getItems()[1].getContent()[0].getItems();
+
+            for (let i = 0; i < list_of_sections.length; i++) {
+                debugger
+                let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getText();
+                let venodor_location =list_of_sections[i].getItems()[0].getItems()[1].getText();
+
+                let list_of_status = list_of_sections[i].getItems()[1].getItems();
+                let arr=[];
+                for (let j = 0; j < list_of_status.length; j++) {
+                    let qnt_ref = list_of_status[j].getItems()[0].getItems()[0].getText();
+                    let rdate = list_of_status[j].getItems()[0].getItems()[1].getText();
+                    let validity = list_of_status[j].getItems()[0].getItems()[2].getText();
+                    let pan_status_name = list_of_status[j].getItems()[1].getItems()[0].getText();
+                    arr = [
+                        {l:qnt_ref},
+                        {l:rdate},
+                        {l:validity},
+                        {m:pan_status_name},
+                    ]
+
+                    for (let k = 0; k < table_items.length; k++) {
+                        arr.push({
+                            l : list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[0].getText(),
+                            m : list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[1].getText(),
+                            n : list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getText(),
+                        });  
+                    }
+                    let items_table = list_of_status[j].getItems()[1].getItems()[1].getItems();
+                    let tablelen = table_items.length;
+                    let aftertable = [
+                        {n:items_table[tablelen+1].getCells()[2].getText()},
+                        {n:items_table[tablelen+2].getCells()[2].getText()},
+                        {l:items_table[tablelen+3].getCells()[0].getText(),n:items_table[tablelen+3].getCells()[2].getText()},
+                        {l:items_table[tablelen+4].getCells()[0].getText(),n:items_table[tablelen+4].getCells()[2].getText()},
+                        {l:items_table[tablelen+5].getCells()[0].getText(),n:items_table[tablelen+5].getCells()[2].getText()},
+                        {n:items_table[tablelen+6].getCells()[2].getText()},
+                        {n:items_table[tablelen+7].getCells()[2].getText()},
+                        {l:items_table[tablelen+8].getCells()[0].getText()},
+                        {l:items_table[tablelen+9].getCells()[0].getText(),n:items_table[tablelen+9].getCells()[2].getText()},//sgst
+                        {l:items_table[tablelen+10].getCells()[0].getText(),n:items_table[tablelen+10].getCells()[2].getText()},//igst
+                        {l:items_table[tablelen+11].getCells()[0].getText(),n:items_table[tablelen+11].getCells()[2].getText()},//ugst
+                        {l:items_table[tablelen+12].getCells()[0].getText()},//shipment
+                        {n:items_table[tablelen+13].getCells()[2].getText()},//including tax
+                        {n:items_table[tablelen+14].getCells()[2].getText()},//excluding tax
+                        {n:items_table[tablelen+15].getCells()[2].getText()},//perdeim 
+                    ]
+                    
+                    arr = arr.concat(aftertable);
+                    debugger
+                }
+                
+            }
 
 
 
