@@ -115,7 +115,7 @@
 
 
 		</VBox>
-		<ScrollContainer id="rightScrollcontainer" width="100%" horizontal= "true">
+		<ScrollContainer id="rightScrollcontainer" class="scroll-container" width="100%" horizontal= "true">
 			<HBox id="rightHboxcontainer" width="70vw" wrap="NoWrap">
 
 			</HBox>

@@ -745,13 +745,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									debugger
 									//Price Basis
 									chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.PriceBasis ?? 'test'}`,
+										text: `${vendorslist[k]?.PriceBasis ?? ' '}`,
 
 									}));
 
 									//Point of Delivery
 									chvbox.addItem(new sap.m.Text(`${"pointofdelivery" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.point_of_delivery ?? 'test'}`,
+										text: `${vendorslist[k]?.point_of_delivery ?? ' '}`,
 										// height:"15px"
 									}));
 
@@ -892,18 +892,25 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 								press: function (oEvent) {
 									debugger
 									var hboxlist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getParent().getItems();
-
-									for (let i = 0; i < hboxlist.length - 1; i++) {
-										if (hboxlist[i].getVisible() == true) {
-											hboxlist[i].setVisible(false);
-											oEvent.getSource().setSrc("sap-icon://expand");
-										}
-										else {
-											hboxlist[i].setVisible(true);
-											oEvent.getSource().setSrc("sap-icon://collapse");
-										}
+									if (hboxlist.length == 1) {
+										MessageToast.show('No More Status');
 
 									}
+									else {
+										for (let i = 0; i < hboxlist.length - 1; i++) {
+											if (hboxlist[i].getVisible() == true) {
+												hboxlist[i].setVisible(false);
+												oEvent.getSource().setSrc("sap-icon://expand");
+											}
+											else {
+												hboxlist[i].setVisible(true);
+												oEvent.getSource().setSrc("sap-icon://collapse");
+											}
+
+										}
+									}
+
+
 								}
 							}))
 							debugger

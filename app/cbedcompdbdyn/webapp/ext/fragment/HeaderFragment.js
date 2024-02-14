@@ -8,7 +8,7 @@ sap.ui.define([
     var EdmType = exportLibrary.EdmType;
     return {
         onRowExpand: function (oEvent) {
-            debugger
+
             // MessageToast.show("Custom handler invoked.");
             if (oEvent.getSource().getPressed() == true) {
                 oEvent.getSource().setText("Vendorlist-CollapseAll");
@@ -50,7 +50,7 @@ sap.ui.define([
 
         },
         onColumnExpand: function (oEvent) {
-            debugger
+
             // MessageToast.show("Custom handler invoked.");
 
             var sectionslist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].getSubSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[1].mAggregations.content[0].mAggregations.items;
@@ -87,8 +87,8 @@ sap.ui.define([
             }
 
         },
-        onExportExcel: function (oEvent) {
-            debugger;
+        onExportExcel: async function (oEvent) {
+            ;
             // Parse the data from Excel into an array
             var data = [];
 
@@ -190,7 +190,7 @@ sap.ui.define([
             for (let i = 0; i < list_of_sections.length; i++) {
                 // for (let i = 0; i < 1; i++) {
 
-                debugger
+
                 let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getText();
                 let venodor_location = list_of_sections[i].getItems()[0].getItems()[1].getText();
 
@@ -299,7 +299,7 @@ sap.ui.define([
                 }
 
 
-                debugger
+
                 vendor = vendor.concat(finalArray);
 
                 updatvendor.push(vendor);
@@ -347,8 +347,23 @@ sap.ui.define([
 
             let oColumns = [];
             for (let i = 0; i < cnt; i++) {
-                oColumns.push({ label: `${i + 1}`, property: `${i + 1}`, type: EdmType.String });
+                if (cnt == 1) {
+                    oColumns.push({ label: ` `, property: `${i + 1}`, type: EdmType.String, width: '100' });
+                }
+                else {
+                    oColumns.push({ label: ` `, property: `${i + 1}`, type: EdmType.String });
+                }
+
             }
+
+            debugger
+            let func = 'getExcelData';
+            let testdata = 'ABC';
+            let oFunction = oEvent.getSource().getModel().bindContext("/getExcelData(...)");
+            let jsoondata = JSON.stringify(mergedArray);
+            oFunction.setParameter('data', jsoondata);
+            oFunction.execute();
+            console.log();
 
             debugger
             // Update the columns array to match the columns in your Excel spreadsheet
@@ -391,6 +406,7 @@ sap.ui.define([
                     MessageToast.show("Export failed: " + reason);
                 });
         }
+
 
 
 

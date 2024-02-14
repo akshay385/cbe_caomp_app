@@ -2075,6 +2075,17 @@
           "type": "cds.String"
         }
       }
+    },
+    "Catalogcbeservice.getExcelData": {
+      "kind": "function",
+      "params": {
+        "data": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
     }
   },
   "meta": {

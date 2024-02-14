@@ -39,6 +39,12 @@
 						<Column id="col2">
 							<Text id="item_desc" text="Item Desc" tooltip="Item Desc" wrapping="false" />
 						</Column>
+						<Column id="col10">
+							<Text id="tag_no" text="Tag No" tooltip="Tag No" wrapping="false" />
+						</Column>
+						<Column id="col11">
+							<Text id="type_of_vessel" text="Type of Vessel" tooltip="Type of Vessel" wrapping="false" />
+						</Column>
 						<Column id="col3">
 							<Text id="cap_each" text="Capacity Each" tooltip="Capacity each(in mtr)" wrapping="false" />
 						</Column>

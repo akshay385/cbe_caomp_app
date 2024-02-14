@@ -214,6 +214,20 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							})
 							columnlist.addCell(itemdesc);
 
+							let tag_no = new sap.m.Text(`${"tag_no" + (i + 1)}`, {
+								text: `${list_of_items[i]?.tag_no ?? ' '}`,
+								tooltip: `${list_of_items[i]?.tag_no ?? ' '}`,
+								wrapping: false
+							})
+							columnlist.addCell(tag_no);
+
+							let types_of_vessel = new sap.m.Text(`${"types_of_vessel" + (i + 1)}`, {
+								text: `${list_of_items[i]?.types_of_vessel ?? ' '}`,
+								tooltip: `${list_of_items[i]?.types_of_vessel ?? ' '}`,
+								wrapping: false
+							})
+							columnlist.addCell(types_of_vessel);
+
 							let capacity_each_in_cu_mtr = new sap.m.Text(`${"capacity_each_in_cu_mtr" + (i + 1)}`, {
 								text: `${list_of_items[i]?.capactity_each ?? ' '}`,
 								tooltip: `${list_of_items[i]?.capactity_each ?? ' '}`,

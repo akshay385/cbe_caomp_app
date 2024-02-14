@@ -93,6 +93,8 @@ service Catalogcbeservice {
         inner join Items as I
             on Pr.PAN_Number = I.PAN_Number;
 
+    function getExcelData(data:String) returns String;
+
     
 
 

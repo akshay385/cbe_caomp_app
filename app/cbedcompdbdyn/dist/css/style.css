@@ -93,3 +93,13 @@
 .customlaststyleclassrsection{
     padding-top: 10px;
 }
+
+/* header */
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:HeaderContentContainer{
+    justify-content: end;
+}
+
+.iconpadding{
+    padding-top: 7px;
+    padding-left: 7px;
+}

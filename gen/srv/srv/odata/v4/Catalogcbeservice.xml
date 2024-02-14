@@ -34,6 +34,7 @@
         <EntitySet Name="Project_Details" EntityType="Catalogcbeservice.Project_Details"/>
         <EntitySet Name="Vendor_details" EntityType="Catalogcbeservice.Vendor_details"/>
         <EntitySet Name="Item_details" EntityType="Catalogcbeservice.Item_details"/>
+        <FunctionImport Name="getExcelData" Function="Catalogcbeservice.getExcelData"/>
       </EntityContainer>
       <EntityType Name="VENDOR_DATA">
         <Key>
@@ -333,6 +334,10 @@
         <Property Name="Indian_Tax_PER" Type="Edm.String"/>
         <Property Name="Quantity_Over_Delivery_Tolerance" Type="Edm.String"/>
       </EntityType>
+      <Function Name="getExcelData" IsBound="false" IsComposable="false">
+        <Parameter Name="data" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
       <Annotations Target="Catalogcbeservice.PAN_Details">
         <Annotation Term="UI.LineItem">
           <Collection>
