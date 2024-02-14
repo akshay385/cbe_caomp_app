@@ -120,147 +120,258 @@ sap.ui.define([
 
             }
             var data = [
-                { a: "Commercial Bid Evaluation" },
-                { a: "item", b: 'Air Storage Tanks - 6 Nos.',k:'Supplier' },
-                { a: "indent", b: 'Awaited' ,k:'Location'},
-                { a: "project", b: project_desc, i: " ",k:'Qtn. Ref.' },
-                { a: "Client", b: 'ISRO -TWT' ,k:'Date'},
-                { a: "", b: '',k:'Validity' },
-                { a: "", b: '', f: "Cylindrical Data" },
-                { a: "MTO Sr.NO ", b: 'Items Description', c: "Tag No", d: "Type of Vessel", e: "Capacity Each ( Cu Mtr )", f: "Dia mm", g: "TL to TL Length (mm)", h: "MOC", i: "Design Pressure bar", j: "Weights", k: "Quantity" },
-                { a: "", b: '' },
+                { 1: "Commercial Bid Evaluation" },
+                { 1: "", 2: '', 11: 'Supplier' },
+                { 1: "", 2: '', 11: 'Location' },
+                { 1: "Project", 2: project_desc, 9: " ", 11: 'Qtn. Ref.' },
+                { 1: "", 2: '', 11: 'Date' },
+                { 1: "", 2: '', 11: 'Validity' },
+                { 1: "", 2: '', 6: "Cylindrical Data" },
+                { 1: "MTO Sr.NO ", 2: 'Items Description', 3: "Tag No", 4: "Type of Vessel", 5: "Capacity Each ( Cu Mtr )", 6: "Dia mm", 7: "TL to TL Length (mm)", 8: "MOC", 9: "Design Pressure bar", 10: "Weights", 11: "Quantity" },
             ];
 
 
             for (let i = 0; i < table_items.length; i++) {
                 data.push({
-                    a: table_items[i].mta_no,
-                    b: table_items[i].item_desc,
-                    c: table_items[i].tag_no,
-                    d: table_items[i].types_of_vessel,
-                    e: table_items[i].cap_each,
-                    f: table_items[i].dia,
-                    g: table_items[i].tl_tl,
-                    h: table_items[i].moc,
-                    i: table_items[i].dpb,
-                    j: table_items[i].weights,
-                    k: table_items[i].quantity,
+                    1: table_items[i].mta_no,
+                    2: table_items[i].item_desc,
+                    3: table_items[i].tag_no,
+                    4: table_items[i].types_of_vessel,
+                    5: table_items[i].cap_each,
+                    6: table_items[i].dia,
+                    7: table_items[i].tl_tl,
+                    8: table_items[i].moc,
+                    9: table_items[i].dpb,
+                    10: table_items[i].weights,
+                    11: table_items[i].quantity,
                 })
 
             }
             var new_data = [
-            { a: "", b: '' },
-            { a: "3", b: 'Spares for 2 Years operation' },
-            { a: " ", b: 'Grand Total' },
-            { a: "4", b: 'Packing, Marking, Forwarding & Freight' },
-            { a: "5", b: 'Inspection / Testing Charges' },
-            { a: "B.3", b: 'Documentation Charges' },
-            { a: "3", b: 'Total Basic Price including packing, marking & forwarding' },
-            { a: "C", b: 'RNOD' },
-            { a: "D.1", b: 'Custom Duty & Cess' },
-            { a: "D.2", b: 'SGST' },
-            { a: "D.3", b: 'IGST' },
-            { a: "D.4", b: 'UGST' },
-            { a: "D.6", b: 'Shipment charges from EXW to ISRO Mahendragiri', h: "L/S" },
-            { a: "D", b: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes' },
-            { b: 'Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes' },
-            { a: "E", b: 'Spares for 2 Years operation' },
-            { a: "F", b: 'Per Diem rate for Supervision for Erection and commissioning' },
-            { a: "G.1", b: 'PriceBasic' },
-            { a: "G.2", b: 'Point of delivery' },
-            { a: "G.3", b: 'Delivery Period' },
-            { a: "G.5", b: 'Liquidated Damages' },
-            { a: "G.6", b: 'Warranty / Defect Liability Period' },
-            { a: "G.7", b: 'CPBG' },
-            // {a:"G.8" ,b:'CPBG'}, 
-            { a: "G.9", b: 'Contact person' },
-            { a: "G.10", b: 'Contact No' },
-            { a: "G.11", b: 'Order can be given to ..' },
-            { a: "G.12", b: 'Technical approved' },
-            { a: "G.13", b: 'Approved vendor' },]
+                { 1: "", 2: '' },
+                { 1: "3", 2: 'Spares for 2 Years operation' },
+                { 1: " ", 2: 'Grand Total' },
+                { 1: "4", 2: 'Packing, Marking, Forwarding & Freight' },
+                { 1: "5", 2: 'Inspection / Testing Charges' },
+                { 1: "B.3", 2: 'Documentation Charges' },
+                { 1: "3", 2: 'Total Basic Price including packing, marking & forwarding' },
+                { 1: "C", 2: 'RNOD' },
+                { 1: "D.1", 2: 'Custom Duty & Cess' },
+                { 1: "D.2", 2: 'SGST' },
+                { 1: "D.3", 2: 'IGST' },
+                { 1: "D.4", 2: 'UGST' },
+                { 1: "D.6", 2: 'Shipment charges from EXW to ISRO Mahendragiri' },
+                { 1: "D", 2: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes' },
+                { 2: 'Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes' },
+                { 1: "F", 2: 'Per Diem rate for Supervision for Erection and commissioning' },
+                { 1: "G.1", 2: 'PriceBasic' },
+                { 1: "G.2", 2: 'Point of delivery' },
+                { 1: "G.3", 2: 'Delivery Period' },
+                { 1: "G.4", 2: 'Payment Terms' },
+                { 1: "G.5", 2: 'Liquidated Damages' },
+                { 1: "G.6", 2: 'Warranty / Defect Liability Period' },
+                { 1: "G.7", 2: 'CPBG' },
+                // {1:"G.8" ,2:'CPBG'}, 
+                { 1: "G.9", 2: 'Contact person' },
+                { 1: "G.10", 2: 'Contact No' },
+                { 1: "G.11", 2: 'Order can be given to ..' },
+                { 1: "G.12", 2: 'Technical approved' },
+                { 1: "G.13", 2: 'Approved vendor' },
+            ]
 
-            var updatedata = data.concat(new_data);
+            var leftsection = data.concat(new_data);
             var rightsectiondata = [];
 
             var list_of_sections = mainhbox.getItems()[1].getContent()[0].getItems();
 
+            let vendor = [];
+            let updatvendor = [];
+            let cnt = 12;
             for (let i = 0; i < list_of_sections.length; i++) {
+                // for (let i = 0; i < 1; i++) {
+
                 debugger
                 let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getText();
-                let venodor_location =list_of_sections[i].getItems()[0].getItems()[1].getText();
+                let venodor_location = list_of_sections[i].getItems()[0].getItems()[1].getText();
 
                 let list_of_status = list_of_sections[i].getItems()[1].getItems();
-                let arr=[];
+                let arr = [];
+                vendor = [
+                    { [cnt]: '' },
+                    { [cnt]: vendor_name },
+                    { [cnt]: venodor_location }
+                ];
+
+                // for (let j = 0; j < list_of_status.length; j++) {
+
+                let updatarr = [];
+
+                let pricesbasishbox = list_of_sections[i].getItems()[2].getItems()[1].getItems();
+
                 for (let j = 0; j < list_of_status.length; j++) {
+
                     let qnt_ref = list_of_status[j].getItems()[0].getItems()[0].getText();
                     let rdate = list_of_status[j].getItems()[0].getItems()[1].getText();
                     let validity = list_of_status[j].getItems()[0].getItems()[2].getText();
                     let pan_status_name = list_of_status[j].getItems()[1].getItems()[0].getText();
-                    arr = [
-                        {l:qnt_ref},
-                        {l:rdate},
-                        {l:validity},
-                        {m:pan_status_name},
-                    ]
+
+
+                    let keyl = cnt;//12
+                    let keym = (cnt + 1)//13
+                    let keyn = (cnt + 2)//14
+
+                    cnt = cnt + 3;
+
+                    let arr = [
+                        { [keyl]: qnt_ref },
+                        { [keyl]: rdate },
+                        { [keyl]: validity },
+                        { [keym]: pan_status_name },
+                        { [keyl]: 'Unit Rate', [keym]: 'Rate per unit', [keyn]: 'Total Amount' }
+                    ];
 
                     for (let k = 0; k < table_items.length; k++) {
                         arr.push({
-                            l : list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[0].getText(),
-                            m : list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[1].getText(),
-                            n : list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getText(),
-                        });  
+                            [keyl]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[0].getText(),
+                            [keym]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[1].getText(),
+                            [keyn]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getText(),
+                        });
                     }
+
                     let items_table = list_of_status[j].getItems()[1].getItems()[1].getItems();
                     let tablelen = table_items.length;
+
                     let aftertable = [
-                        {n:items_table[tablelen+1].getCells()[2].getText()},
-                        {n:items_table[tablelen+2].getCells()[2].getText()},
-                        {l:items_table[tablelen+3].getCells()[0].getText(),n:items_table[tablelen+3].getCells()[2].getText()},
-                        {l:items_table[tablelen+4].getCells()[0].getText(),n:items_table[tablelen+4].getCells()[2].getText()},
-                        {l:items_table[tablelen+5].getCells()[0].getText(),n:items_table[tablelen+5].getCells()[2].getText()},
-                        {n:items_table[tablelen+6].getCells()[2].getText()},
-                        {n:items_table[tablelen+7].getCells()[2].getText()},
-                        {l:items_table[tablelen+8].getCells()[0].getText()},
-                        {l:items_table[tablelen+9].getCells()[0].getText(),n:items_table[tablelen+9].getCells()[2].getText()},//sgst
-                        {l:items_table[tablelen+10].getCells()[0].getText(),n:items_table[tablelen+10].getCells()[2].getText()},//igst
-                        {l:items_table[tablelen+11].getCells()[0].getText(),n:items_table[tablelen+11].getCells()[2].getText()},//ugst
-                        {l:items_table[tablelen+12].getCells()[0].getText()},//shipment
-                        {n:items_table[tablelen+13].getCells()[2].getText()},//including tax
-                        {n:items_table[tablelen+14].getCells()[2].getText()},//excluding tax
-                        {n:items_table[tablelen+15].getCells()[2].getText()},//perdeim 
-                    ]
-                    
+                        { [keyl]: "" },
+                        { [keyn]: items_table[tablelen + 1].getCells()[2].getText() },
+                        { [keyn]: items_table[tablelen + 2].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 3].getCells()[0].getText(), [keyn]: items_table[tablelen + 3].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 4].getCells()[0].getText(), [keyn]: items_table[tablelen + 4].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 5].getCells()[0].getText(), [keyn]: items_table[tablelen + 5].getCells()[2].getText() },
+                        { [keyn]: items_table[tablelen + 6].getCells()[2].getText() },
+                        { [keyn]: items_table[tablelen + 7].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 8].getCells()[0].getText() },
+                        { [keyl]: items_table[tablelen + 9].getCells()[0].getText(), [keyn]: items_table[tablelen + 9].getCells()[2].getText() }, // sgst
+                        { [keyl]: items_table[tablelen + 10].getCells()[0].getText(), [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // igst
+                        { [keyl]: items_table[tablelen + 11].getCells()[0].getText(), [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // ugst
+                        { [keyl]: items_table[tablelen + 12].getCells()[0].getText() }, // shipment
+                        { [keyn]: items_table[tablelen + 13].getCells()[2].getText() }, // including tax
+                        { [keyn]: items_table[tablelen + 14].getCells()[2].getText() }, // excluding tax
+                        { [keyn]: items_table[tablelen + 15].getCells()[2].getText() }, // perdeim
+                        { [keyl]: pricesbasishbox[j].getItems()[0].getText() }, // pricebasis
+                        { [keyl]: pricesbasishbox[j].getItems()[1].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[2].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[3].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[4].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[5].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[6].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[7].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[8].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[9].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[10].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[11].getText() },
+                    ];
+
                     arr = arr.concat(aftertable);
-                    debugger
+
+
+                    updatarr.push(arr);
+
                 }
-                
+                // Check if all subarrays in updatarr have the same length
+                const lengths = updatarr.map(subarr => subarr.length);
+                const isSameLength = lengths.every((val, i, arr) => val === arr[0]);
+
+                let finalArray = []
+                if (isSameLength) {
+                    // Merge objects from all arrays in updatarr
+                    // let finalArray = [];
+                    for (let i = 0; i < updatarr[0].length; i++) {
+                        let mergedObject = {};
+                        for (let j = 0; j < updatarr.length; j++) {
+                            Object.assign(mergedObject, updatarr[j][i]);
+                        }
+                        finalArray.push(mergedObject);
+                    }
+                    console.log(finalArray);
+                } else {
+                    console.log("Arrays in updatarr have different lengths. Unable to merge.");
+                }
+
+
+                debugger
+                vendor = vendor.concat(finalArray);
+
+                updatvendor.push(vendor);
+            }
+            let finalArray1 = []
+            const lengths1 = updatvendor.map(subarr => subarr.length);
+            const isSameLength1 = lengths1.every((val, i, arr) => val === arr[0]);
+            if (isSameLength1) {
+                // Merge objects from all arrays in updatarr
+                // let finalArray = [];
+                for (let i = 0; i < updatvendor[0].length; i++) {
+                    let mergedObject = {};
+                    for (let j = 0; j < updatvendor.length; j++) {
+                        Object.assign(mergedObject, updatvendor[j][i]);
+                    }
+                    finalArray1.push(mergedObject);
+                }
+                console.log(finalArray1);
+            } else {
+                console.log("Arrays in updatarr have different lengths. Unable to merge.");
+            }
+
+            console.log(finalArray1);
+
+            // leftsection,finalArray1
+
+            let mergedArray = [];
+            if (leftsection.length === finalArray1.length) {
+
+
+                // Iterate over the arrays simultaneously
+                for (let i = 0; i < leftsection.length; i++) {
+                    // Merge objects from both arrays
+                    let mergedObject = Object.assign({}, leftsection[i], finalArray1[i]);
+                    mergedArray.push(mergedObject);
+                }
+
+                console.log(mergedArray);
+            } else {
+                console.log("Arrays have different lengths. Unable to merge.");
             }
 
 
 
 
-
-
-
-
+            let oColumns = [];
+            for (let i = 0; i < cnt; i++) {
+                oColumns.push({ label: `${i + 1}`, property: `${i + 1}`, type: EdmType.String });
+            }
 
             debugger
             // Update the columns array to match the columns in your Excel spreadsheet
             var oSpreadsheet = new sap.ui.export.Spreadsheet({
                 workbook: {
-                    columns: [
-                        { label: ' ', property: 'a', type: EdmType.String },
-                        { label: 'B', property: 'b', type: EdmType.String },
-                        { label: 'C', property: 'c', type: EdmType.String },
-                        { label: 'D', property: 'd', type: EdmType.String },
-                        { label: 'E', property: 'e', type: EdmType.String },
-                        { label: 'F', property: 'f', type: EdmType.String },
-                        { label: 'G', property: 'g', type: EdmType.String },
-                        { label: 'H', property: 'h', type: EdmType.String },
-                        { label: 'I', property: 'i', type: EdmType.String },
-                        { label: 'J', property: 'j', type: EdmType.String },
-                        { label: 'K', property: 'k', type: EdmType.String },
-                    ],
+                    // columns: [
+                    //     { label: ' ', property: '1', type: EdmType.String },
+                    //     { label: 'B', property: '2', type: EdmType.String },
+                    //     { label: 'C', property: '3', type: EdmType.String },
+                    //     { label: 'D', property: '4', type: EdmType.String },
+                    //     { label: 'E', property: '5', type: EdmType.String },
+                    //     { label: 'F', property: '6', type: EdmType.String },
+                    //     { label: 'G', property: '7', type: EdmType.String },
+                    //     { label: 'H', property: '8', type: EdmType.String },
+                    //     { label: 'I', property: '9', type: EdmType.String },
+                    //     { label: 'J', property: '10', type: EdmType.String },
+                    //     { label: 'K', property: '11', type: EdmType.String },
+                    //     // { label: 'K', property: 'l0', type: EdmType.String },
+                    //     // { label: 'K', property: 'm0', type: EdmType.String },
+                    //     // { label: 'K', property: 'n0', type: EdmType.String },
+                    //     // { label: 'K', property: 'o', type: EdmType.String },
+                    // ],
+                    columns: oColumns,
                     context: {
                         application: 'SAP UI5 Export Sample',
                         author: 'Sample'
@@ -268,7 +379,7 @@ sap.ui.define([
                     hierarchyLevel: 'level'
                 },
                 // Pass the parsed data array to the dataSource property
-                dataSource: updatedata,
+                dataSource: mergedArray,
                 fileName: 'cbe_comp.xlsx' // Adjust the filename if needed
             });
 
