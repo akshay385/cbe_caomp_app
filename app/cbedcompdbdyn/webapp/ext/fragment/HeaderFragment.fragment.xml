@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
 	<HBox id="headervbox1" justifyContent="End">
-		<ToggleButton id="rowexpand" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" text="Row-ExpandAll" press="handler.onRowExpand" />
-		<ToggleButton id="columnexpand" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" text="Column-ExpandAll" press="handler.onColumnExpand" />
+		<ToggleButton id="rowexpand" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" text="VendorList-ExpandAll" press="handler.onRowExpand" />
+		<ToggleButton id="columnexpand" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" text="ItemList-ExpandAll" press="handler.onColumnExpand" />
 		<core:Icon id="exportexcelid" src="sap-icon://excel-attachment" class="iconpadding" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" press="handler.onExportExcel"></core:Icon>
 	</HBox>
 </core:FragmentDefinition>

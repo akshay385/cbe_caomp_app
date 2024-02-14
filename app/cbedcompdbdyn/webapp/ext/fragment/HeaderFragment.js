@@ -11,7 +11,7 @@ sap.ui.define([
             debugger
             // MessageToast.show("Custom handler invoked.");
             if (oEvent.getSource().getPressed() == true) {
-                oEvent.getSource().setText("Row-CollapseAll");
+                oEvent.getSource().setText("Vendorlist-CollapseAll");
                 let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
                 if (totat_basicpricing.getSrc() == "sap-icon://navigation-right-arrow") {
                     totat_basicpricing.firePress();
@@ -28,7 +28,7 @@ sap.ui.define([
                 }
             }
             else {
-                oEvent.getSource().setText("Row-ExpandAll");
+                oEvent.getSource().setText("VendorList-ExpandAll");
                 let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
                 if (totat_basicpricing.getSrc() == "sap-icon://navigation-up-arrow") {
                     totat_basicpricing.firePress();
@@ -57,7 +57,7 @@ sap.ui.define([
 
             var cylindrical_icon = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[0].mAggregations.items[1].mAggregations.items[0].mAggregations.items[1];
             if (oEvent.getSource().getPressed() == true) {
-                oEvent.getSource().setText("Column-CollapseAll");
+                oEvent.getSource().setText("ItemList-CollapseAll");
 
                 if (cylindrical_icon.getSrc() == "sap-icon://expand") {
                     cylindrical_icon.firePress();
@@ -72,7 +72,7 @@ sap.ui.define([
                 }
             }
             else {
-                oEvent.getSource().setText("Column-ExpandAll");
+                oEvent.getSource().setText("ItemList-ExpandAll");
                 if (cylindrical_icon.getSrc() == "sap-icon://collapse") {
                     cylindrical_icon.firePress();
                 }
