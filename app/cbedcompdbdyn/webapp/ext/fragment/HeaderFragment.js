@@ -357,13 +357,13 @@ sap.ui.define([
             }
 
             debugger
-            let func = 'getExcelData';
-            let testdata = 'ABC';
-            let oFunction = oEvent.getSource().getModel().bindContext("/getExcelData(...)");
-            let jsoondata = JSON.stringify(mergedArray);
-            oFunction.setParameter('data', jsoondata);
-            oFunction.execute();
-            console.log();
+            // let func = 'getExcelData';
+            // let testdata = 'ABC';
+            // let oFunction = oEvent.getSource().getModel().bindContext("/getExcelData(...)");
+            // let jsoondata = JSON.stringify(mergedArray);
+            // oFunction.setParameter('data', jsoondata);
+            // oFunction.execute();
+            // console.log();
 
             debugger
             // Update the columns array to match the columns in your Excel spreadsheet

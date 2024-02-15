@@ -37,3 +37,13 @@ annotate service.Project_Details with @(
     },
     UI.Facets : []
 );
+annotate service.Project_Details with @(
+    UI.HeaderInfo : {
+        Title : {
+            $Type : 'UI.DataField',
+            Value : Project_Description,
+        },
+        TypeName : '',
+        TypeNamePlural : '',
+    }
+);
