@@ -172,15 +172,42 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 								press: function (oEvent) {
 									debugger
 									var vbox_omainhbox = omainHBox.getItems()[0];
+									let total_basic_pricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--total_basic_pricing");
+									let temp_total_basic_pricing;
+									let total_including_tax = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--newItemID1");
+									let temp_total_including_tax;
+
+
+
 									if (vbox_omainhbox.getWidth() == "30%") {
 										itemstable.setFixedLayout(false);
-										vbox_omainhbox.setWidth("70%");
+										vbox_omainhbox.setWidth("80%");
 										oEvent.getSource().setSrc("sap-icon://collapse");
+										//
+										// temp_total_basic_pricing = total_basic_pricing.getText();
+										// total_basic_pricing.setText(total_basic_pricing.getTooltip());
+										// total_basic_pricing.setTooltip(temp_total_basic_pricing);
+
+										// //
+										// temp_total_including_tax = total_including_tax.getText();
+										// total_including_tax.setText(total_including_tax.getTooltip());
+										// total_including_tax.setTooltip(temp_total_including_tax);
+
 									}
 									else {
 										itemstable.setFixedLayout(true);
 										vbox_omainhbox.setWidth("30%");
 										oEvent.getSource().setSrc("sap-icon://expand");
+										//
+										// temp_total_basic_pricing = total_basic_pricing.getTooltip();
+										// total_basic_pricing.setText(total_basic_pricing.getTooltip());
+										// total_basic_pricing.setTooltip(temp_total_basic_pricing);
+
+										// //
+										// temp_total_including_tax = total_including_tax.getTooltip();
+										// total_including_tax.setText(total_including_tax.getTooltip());
+										// total_including_tax.setTooltip(temp_total_including_tax);
+
 									}
 
 								}
@@ -493,12 +520,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									debugger
 									// Iterate over uniqueItems
 									for (let i = 0; i < uniqueItems.length; i++) {
+
 										const currentItem = uniqueItems[i];
 										const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
 
 										if (foundItem) {
 											// Found item, create ColumnListItem with data
-											const total_amount_value = Number(foundItem.Amount ?? 0) * Number(foundItem.Quantity ?? 0);
+											var AmtWithoutCommas = foundItem.Amount.replace(/,/g, '') ?? 0;
+											var quantityWithoutCommas = foundItem.Quantity.replace(/,/g, '') ?? 0;
+
+											const total_amount_value = Number(AmtWithoutCommas ?? 0) * Number(quantityWithoutCommas ?? 0);
 											const total_amount_display = `${total_amount_value} ${foundItem.Unit_Price ?? ' '}`;
 
 											grandTotalAmount += total_amount_value;
@@ -507,7 +538,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 											const oItem = new sap.m.ColumnListItem({
 												id: `${"item1data" + generateUniqueId()}`,
 												cells: [
-													new sap.m.Text({ text: `${foundItem.Amount ?? ' '} ${foundItem.Unit_Price}` }),
+													new sap.m.Text({ text: `${AmtWithoutCommas ?? ' '} ${foundItem.Unit_Price}` }),
 													new sap.m.Text({ text: `${foundItem.unit_rate_per_unit ?? ' '}` }),
 													new sap.m.Text({ text: total_amount_display }),
 												]
@@ -745,13 +776,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									debugger
 									//Price Basis
 									chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.PriceBasis ?? ' '}`,
+										// text: `${vendorslist[k]?.PriceBasis ?? ' '}`,
+										text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
 
 									}));
+									chvbox.getItems()[0].addStyleClass("pricebasispadding");
 
 									//Point of Delivery
 									chvbox.addItem(new sap.m.Text(`${"pointofdelivery" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.point_of_delivery ?? ' '}`,
+										// text: `${vendorslist[k]?.point_of_delivery ?? ' '}`,
+										text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
 										// height:"15px"
 									}));
 
@@ -761,9 +795,11 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										// width: "500px",
 										height: "100px"
 									}))
+									chvbox.getItems()[1].addStyleClass("deliveryperiodpadding");
 
 									chvbox.getItems()[2].addContent(new sap.m.Text(`${"deliveryperiod" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.delivery_period ?? ' '}`
+										// text: `${vendorslist[k]?.delivery_period ?? ' '}`
+										text: `${vendorslist[k]?.CPBG ?? ' '}`
 										// text: `${vendorresponse_selecteditem[0].Scope_and_Responsibilities ?? ' '}`
 									}));
 
@@ -776,7 +812,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									}))
 
 									chvbox.getItems()[3].addContent(new sap.m.Text(`${"paymentterms" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.payment_terms ?? ' '}`
+										// text: `${vendorslist[k]?.payment_terms ?? ' '}`
+										text: `${vendorslist[k]?.CPBG ?? ' '}`
 										// text: `${vendorresponse_selecteditem[0].Scope_and_Responsibilities ?? ' '}`
 									}));
 
@@ -788,7 +825,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									}))
 
 									chvbox.getItems()[4].addContent(new sap.m.Text(`${"liquided" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.liquidated_damages ?? ' '}`
+										// text: `${vendorslist[k]?.liquidated_damages ?? ' '}`
+										text: `${vendorslist[k]?.CPBG ?? ' '}`
 										// text: `${vendorresponse_selecteditem[0].Scope_and_Responsibilities ?? ' '}`
 									}));
 
@@ -800,7 +838,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									}))
 
 									chvbox.getItems()[5].addContent(new sap.m.Text(`${"warranty" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.warranty_defect_liability_period ?? ' '}`
+										// text: `${vendorslist[k]?.warranty_defect_liability_period ?? ' '}`
+										text: `${vendorslist[k]?.CPBG ?? ' '}`
 										// text: `${vendorresponse_selecteditem[0].Scope_and_Responsibilities ?? ' '}`
 									}));
 
@@ -812,7 +851,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									}))
 
 									chvbox.getItems()[6].addContent(new sap.m.Text(`${"cpbg" + generateUniqueId()}`, {
-										text: `${vendorresponse_selecteditem[0]?.CPBG ?? ' '}`
+										// text: `${vendorresponse_selecteditem[0]?.CPBG ?? ' '}`
+										text: `${vendorslist[k]?.CPBG ?? ' '}`
 									}));
 
 									const inputString = vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? '';

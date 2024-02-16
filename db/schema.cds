@@ -151,6 +151,9 @@ entity PAN_vendor_data_proj {
         Discount_percentage                : String;
         Rank                               : String;
 
+        //testing
+        CPBG:String
+
 }
 
 

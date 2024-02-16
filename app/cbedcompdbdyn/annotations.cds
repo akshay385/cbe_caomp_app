@@ -1,49 +1,51 @@
 using Catalogcbeservice as service from '../../srv/service';
 
-annotate service.Project_Details with @(
-    UI.LineItem : [
-        {
-            $Type : 'UI.DataField',
-            Label : 'ProjectId',
-            Value : ProjectId,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'Project_Description',
-            Value : Project_Description,
-        },
-    ]
-);
+annotate service.Project_Details with @(UI.LineItem: [
+    {
+        $Type: 'UI.DataField',
+        Label: 'ProjectId',
+        Value: ProjectId,
+    },
+    {
+        $Type: 'UI.DataField',
+        Label: 'Project_Description',
+        Value: Project_Description,
+    },
+]);
 
 annotate service.Project_Details with @UI.CreateHidden;
 annotate service.Project_Details with @UI.DeleteHidden;
 
 
 annotate service.Project_Details with @(
-    UI.FieldGroup #GeneratedGroup1 : {
-        $Type : 'UI.FieldGroupType',
+    UI.FieldGroup #GeneratedGroup1: {
+        $Type: 'UI.FieldGroupType',
         Data : [
             {
-                $Type : 'UI.DataField',
-                Label : 'ProjectId',
-                Value : ProjectId,
+                $Type: 'UI.DataField',
+                Label: 'ProjectId',
+                Value: ProjectId,
             },
             {
-                $Type : 'UI.DataField',
-                Label : 'Project_Description',
-                Value : Project_Description,
+                $Type: 'UI.DataField',
+                Label: 'Project_Description',
+                Value: Project_Description,
             },
         ],
     },
-    UI.Facets : []
+    UI.Facets                     : []
 );
-annotate service.Project_Details with @(
-    UI.HeaderInfo : {
-        Title : {
-            $Type : 'UI.DataField',
-            Value : Project_Description,
-        },
-        TypeName : '',
-        TypeNamePlural : '',
-    }
-);
+
+
+annotate service.Project_Details with @(UI.HeaderInfo: {
+    Title      : {
+        $Type: 'UI.DataField',
+        Value: Project_Description,
+    },
+    Description: {
+        $Type: 'UI.DataField',
+        Value: ProjectId,
+    },
+    TypeName : '',
+    TypeNamePlural : '',
+});
