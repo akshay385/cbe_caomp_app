@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core"
 	xmlns="sap.m"
 	xmlns:macros="sap.fe.macros">
-	<HBox id="mainhbox1">
+	<HBox id="mainhbox1" class="custcolorclass">
 		<VBox id="leftSectionvbox1" class="rightPadding" width="30%">
 			<HBox id="item_supplier1" justifyContent="SpaceBetween">
 				<VBox id="items1" class="spacebetweenclass" width="80%" alignItems="Start">
@@ -34,9 +34,9 @@
 			<HBox id="tablesHbox"  width = "auto">
 				<Table id="itemstable1" growing="true" fixedLayout="true" width="100%">
 					<!--  Define columns and bindings for the table  -->
-					<columns>
+					<columns >
 
-						<Column id="col2">
+						<Column class="custcolorclass" id="col2">
 							<Text id="item_desc" text="Item Desc" tooltip="Item Desc" wrapping="false" />
 						</Column>
 						<Column id="col10">
