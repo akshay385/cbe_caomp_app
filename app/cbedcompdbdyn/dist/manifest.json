@@ -124,6 +124,7 @@
                             "navigation": {
                                 "Project_Details": {
                                     "detail": {
+                                        "allowDeepLinking": true,
                                         "route": "Project_DetailsObjectPage"
                                     }
                                 }

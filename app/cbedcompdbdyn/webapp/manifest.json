@@ -32,7 +32,9 @@
           "action": "display",
           "title": "{{flpTitle}}",
           "signature": {
-            "parameters": {},
+            "parameters": {
+              
+            },
             "additionalParameters": "allowed"
           }
         }
@@ -124,6 +126,7 @@
               "navigation": {
                 "Project_Details": {
                   "detail": {
+                    "allowDeepLinking":true,
                     "route": "Project_DetailsObjectPage"
                   }
                 }

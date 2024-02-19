@@ -49,3 +49,5 @@ annotate service.Project_Details with @(UI.HeaderInfo: {
     TypeName : '',
     TypeNamePlural : '',
 });
+
+annotate service.Project_Details with @Common.SemanticKey : [ ProjectId];

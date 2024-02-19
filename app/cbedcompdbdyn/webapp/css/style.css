@@ -139,19 +139,58 @@
 }
 
 
-.custcolor{
+.custcolor {
     background: greenyellow;
 }
 
-.pricebasispadding{
+.pricebasispadding {
     padding-top: 3px;
 }
 
-.deliveryperiodpadding{
+.deliveryperiodpadding {
     padding-top: 4px;
 }
 
 
-.custcolorclass{
-    background: lightcyan;
+.custcolorclass {
+    border: solid 1px black ;
+    /* background-color: rgb(193, 193, 246); */
+}
+
+/* mainhBox  */
+.custBackgroundcolor{
+ 
+    background: whitesmoke;
+}
+
+/* Style for title */
+.titleStyleClass{
+    
+    color: black
+    /* filter: drop-shadow(2px 4px 6px black); */
+}
+
+
+
+/* background color of fragment */
+.ui-helper-clearfix {
+    /* background-color: rgb(74, 74, 82) !important; */
+    background: radial-gradient(black, transparent);
+}
+
+/* header title */
+.sapFDynamicPageTitle,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:ObjectPage-OPHeaderContent{
+    background: #8ec6ff !important;
+}
+
+
+/* top header */
+#__title1,#__title0{
+    color: white !important;
+    filter: drop-shadow(2px 4px 6px black) !important;
+}
+
+#__label1{
+    color: white !important;
 }

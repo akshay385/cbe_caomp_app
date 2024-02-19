@@ -205,6 +205,7 @@
         <Property Name="Discount_Amount" Type="Edm.String"/>
         <Property Name="Discount_percentage" Type="Edm.String"/>
         <Property Name="Rank" Type="Edm.String"/>
+        <Property Name="CPBG" Type="Edm.String"/>
       </EntityType>
       <EntityType Name="PAN_Info">
         <Key>
@@ -319,6 +320,7 @@
         <Property Name="Discount_Amount" Type="Edm.String"/>
         <Property Name="Discount_percentage" Type="Edm.String"/>
         <Property Name="Rank" Type="Edm.String"/>
+        <Property Name="CPBG" Type="Edm.String"/>
       </EntityType>
       <EntityType Name="Item_details">
         <Property Name="ProjectId" Type="Edm.String"/>
@@ -430,6 +432,27 @@
         </Annotation>
         <Annotation Term="UI.Facets">
           <Collection/>
+        </Annotation>
+        <Annotation Term="UI.HeaderInfo">
+          <Record Type="UI.HeaderInfoType">
+            <PropertyValue Property="Title">
+              <Record Type="UI.DataField">
+                <PropertyValue Property="Value" Path="Project_Description"/>
+              </Record>
+            </PropertyValue>
+            <PropertyValue Property="Description">
+              <Record Type="UI.DataField">
+                <PropertyValue Property="Value" Path="ProjectId"/>
+              </Record>
+            </PropertyValue>
+            <PropertyValue Property="TypeName" String=""/>
+            <PropertyValue Property="TypeNamePlural" String=""/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Common.SemanticKey">
+          <Collection>
+            <PropertyPath>ProjectId</PropertyPath>
+          </Collection>
         </Annotation>
       </Annotations>
       <Annotations Target="Catalogcbeservice.EntityContainer/Project_Details">

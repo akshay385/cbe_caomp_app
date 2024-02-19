@@ -149,6 +149,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 						});
 
 						var omainHBox = this.getView().getContent()[0].getSections()[0].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent();
+
+						debugger
+						let lefttablecolms = omainHBox.getItems()[0].getItems()[2].getItems()[0].getColumns();
+						for (let i = 0; i < lefttablecolms.length; i++) {
+							lefttablecolms[i].setStyleClass("custcolorclass");
+						}
+
+
 						// omainHBox.refreshAggregation();
 						// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[1].setText(`${DataGiven.Indent}`);
 						omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[0].setVisible(false);
@@ -398,11 +406,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierName" + (i + 1)}`, {
 								text: `${vendorslist[i].Vendor_Name ? vendorslist[i].Vendor_Name : ' '}`
 							}));
+							vboxsuppnameloc.getItems()[0].addStyleClass('titleStyleClass');
 
 							//Location
 							vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierLocation" + (i + 1)}`, {
 								text: `${vendorslist[i].Vendor_Location ? vendorslist[i].Vendor_Location : ' '}`
 							}));
+
+							vboxsuppnameloc.getItems()[1].addStyleClass('titleStyleClass');
 
 							debugger
 							vboxsuppnameloc.addStyleClass("v11spaceBetweenclass");
@@ -430,13 +441,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
 
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.qtn_ref ?? ' '}`,
+										text: `${vendorslist[k]?.qtn_ref ?? 'NA'}`,
 									}));
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.date ?? ' '}`
+										text: `${vendorslist[k]?.date ?? 'NA'}`
 									}));
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.validity ?? ' '}`
+										text: `${vendorslist[k]?.validity ?? 'NA'}`
 									}));
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
 										text: ""
@@ -472,18 +483,21 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 									var oColumn1 = new sap.m.Column({
 										id: `${"unit_rate" + generateUniqueId()}`,
-										header: new sap.m.Text({ text: "Unit Rate", design: "Bold", wrapping: false })
+										header: new sap.m.Label({ text: "Unit Rate", design: "Bold", wrapping: false }),
+										styleClass:'custcolorclass'
 									});
 
 									var oColumn2 = new sap.m.Column({
 										id: `${"unit_rate_per" + generateUniqueId()}`,
-										header: new sap.m.Label({ text: "Rate per Unit", design: "Bold", wrapping: false })
+										header: new sap.m.Label({ text: "Rate per Unit", design: "Bold", wrapping: false }),
+										styleClass:'custcolorclass'
 									});
 
 									debugger
 									var oColumn3 = new sap.m.Column({
 										id: `${"total_amt_offer" + generateUniqueId()}`,
 										header: new sap.m.HBox(),
+										styleClass:'custcolorclass'
 
 									});
 
@@ -1002,6 +1016,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 						// 	leftsectionlastvbox[i].setVisible(false);
 						// }
 						// leftsectionlastvbox[15].getItems()[0].setVisible(false);
+
+						let righthboxxontainer = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer");
 
 
 

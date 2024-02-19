@@ -8,10 +8,10 @@ sap.ui.define([
     var EdmType = exportLibrary.EdmType;
     return {
         onRowExpand: function (oEvent) {
-            debugger
+
             // MessageToast.show("Custom handler invoked.");
             if (oEvent.getSource().getPressed() == true) {
-                oEvent.getSource().setText("Vendorlist-CollapseAll");
+                oEvent.getSource().setText("ItemList-CollapseAll");
                 let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
                 if (totat_basicpricing.getSrc() == "sap-icon://navigation-right-arrow") {
                     totat_basicpricing.firePress();
@@ -28,7 +28,7 @@ sap.ui.define([
                 }
             }
             else {
-                oEvent.getSource().setText("VendorList-ExpandAll");
+                oEvent.getSource().setText("ItemList-ExpandAll");
                 let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
                 if (totat_basicpricing.getSrc() == "sap-icon://navigation-up-arrow") {
                     totat_basicpricing.firePress();
@@ -45,19 +45,16 @@ sap.ui.define([
                 }
             }
 
-
-
-
         },
         onColumnExpand: function (oEvent) {
-            debugger
+
             // MessageToast.show("Custom handler invoked.");
 
             var sectionslist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].getSubSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[1].mAggregations.content[0].mAggregations.items;
 
             var cylindrical_icon = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[0].mAggregations.items[1].mAggregations.items[0].mAggregations.items[1];
             if (oEvent.getSource().getPressed() == true) {
-                oEvent.getSource().setText("ItemList-CollapseAll");
+                oEvent.getSource().setText("VendorList-CollapseAll");
 
                 if (cylindrical_icon.getSrc() == "sap-icon://expand") {
                     cylindrical_icon.firePress();
@@ -72,7 +69,7 @@ sap.ui.define([
                 }
             }
             else {
-                oEvent.getSource().setText("ItemList-ExpandAll");
+                oEvent.getSource().setText("VendorList-ExpandAll");
                 if (cylindrical_icon.getSrc() == "sap-icon://collapse") {
                     cylindrical_icon.firePress();
                 }
@@ -88,7 +85,7 @@ sap.ui.define([
 
         },
         onExportExcel: async function (oEvent) {
-            debugger;
+            ;
             // Parse the data from Excel into an array
             var data = [];
 
@@ -190,7 +187,7 @@ sap.ui.define([
             for (let i = 0; i < list_of_sections.length; i++) {
                 // for (let i = 0; i < 1; i++) {
 
-                debugger
+
                 let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getText();
                 let venodor_location = list_of_sections[i].getItems()[0].getItems()[1].getText();
 
@@ -299,7 +296,7 @@ sap.ui.define([
                 }
 
 
-                debugger
+
                 vendor = vendor.concat(finalArray);
 
                 updatvendor.push(vendor);
@@ -347,12 +344,23 @@ sap.ui.define([
 
             let oColumns = [];
             for (let i = 0; i < cnt; i++) {
-                oColumns.push({ label: `${i + 1}`, property: `${i + 1}`, type: EdmType.String });
+                if (cnt == 1) {
+                    oColumns.push({ label: ` `, property: `${i + 1}`, type: EdmType.String, width: '100' });
+                }
+                else {
+                    oColumns.push({ label: ` `, property: `${i + 1}`, type: EdmType.String });
+                }
+
             }
 
-            // let oFunction = oEvent.getSource().getModel().bindContext("getExcelData(...)");
-            // oFunction.setParameter('data', "mergedArray");
-            // await oFunction.execute();
+            debugger
+            // let func = 'getExcelData';
+            // let testdata = 'ABC';
+            // let oFunction = oEvent.getSource().getModel().bindContext("/getExcelData(...)");
+            // let jsoondata = JSON.stringify(mergedArray);
+            // oFunction.setParameter('data', jsoondata);
+            // oFunction.execute();
+            // console.log();
 
             debugger
             // Update the columns array to match the columns in your Excel spreadsheet

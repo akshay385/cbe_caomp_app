@@ -11,5 +11,6 @@ VIEW Catalogcbeservice_Vendors AS SELECT
   PAN_vendor_data_proj_0.Order_amount_OR_Split_order_amount,
   PAN_vendor_data_proj_0.Discount_Amount,
   PAN_vendor_data_proj_0.Discount_percentage,
-  PAN_vendor_data_proj_0."RANK"
+  PAN_vendor_data_proj_0."RANK",
+  PAN_vendor_data_proj_0.CPBG
 FROM CBE_PAN_vendor_data_proj AS PAN_vendor_data_proj_0

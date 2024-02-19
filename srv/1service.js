@@ -74,11 +74,26 @@ module.exports = cds.service.impl(async function () {
             await DELETE.from(PAN_Info);
             await INSERT.into(PAN_Info).entries(pan_details.value);
 
-            const proj_details = await c4re.get("/odata/v4/pan-approval/PAN_proj_APR");//proj
+            // const proj_details = await c4re.get("/odata/v4/pan-approval/PAN_proj_APR");//proj
+            
+
+            const pan_proj = [];
+            if (pan_details.value) {
+                pan_details.value.forEach(ele => {
+                    pan_proj.push({
+                        ProjectId:`${ele.ProjectId || 'NA'}`,
+                        PAN_Number:`${ele.PAN_Number || 'NA'}`
+                    })
+                });
+            }
+
             await DELETE.from(Projects);
             var tabledata = await SELECT.from(Projects);
-            await INSERT.into(Projects).entries(proj_details.value);
+            await INSERT.into(Projects).entries(pan_proj);
             var tabledata = await SELECT.from(Project_Details);
+
+
+
 
             console.log();
 

@@ -490,6 +490,9 @@
         },
         "Rank": {
           "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
         }
       }
     },
@@ -1492,6 +1495,9 @@
         },
         "Rank": {
           "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
         }
       }
     },
@@ -1794,6 +1800,21 @@
         }
       ],
       "@UI.Facets": [],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "Project_Description"
+      },
+      "@UI.HeaderInfo.Description.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Description.Value": {
+        "=": "ProjectId"
+      },
+      "@UI.HeaderInfo.TypeName": "",
+      "@UI.HeaderInfo.TypeNamePlural": "",
+      "@Common.SemanticKey": [
+        {
+          "=": "ProjectId"
+        }
+      ],
       "query": {
         "SELECT": {
           "from": {
@@ -1978,6 +1999,9 @@
           "type": "cds.String"
         },
         "Rank": {
+          "type": "cds.String"
+        },
+        "CPBG": {
           "type": "cds.String"
         }
       }
