@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core"
 	xmlns="sap.m"
 	xmlns:macros="sap.fe.macros">
-	<HBox id="mainhbox1" class="custBackgroundcolor">
+	<HBox id="mainhbox1" >
 		<VBox id="leftSectionvbox1" class="rightPadding" width="30%">
 			<HBox id="item_supplier1" justifyContent="SpaceBetween">
 				<VBox id="items1" class="spacebetweenclass" width="80%" alignItems="Start">
@@ -116,7 +116,7 @@
 
 		</VBox>
 		<ScrollContainer id="rightScrollcontainer" class="scroll-container" width="100%" horizontal= "true">
-			<HBox id="rightHboxcontainer" width="70vw" wrap="NoWrap">
+			<HBox id="rightHboxcontainer" class="custBackgroundcolor" width="70vw" wrap="NoWrap">
 
 			</HBox>
 		</ScrollContainer>

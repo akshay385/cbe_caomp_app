@@ -114,6 +114,7 @@
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: dark gray light gray;
+    background: whitesmoke;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -186,7 +187,7 @@
 
 
 /* top header */
-#__title1,#__title0{
+#__title1,#__title0,#__title2{
     color: white !important;
     filter: drop-shadow(2px 4px 6px black) !important;
 }
