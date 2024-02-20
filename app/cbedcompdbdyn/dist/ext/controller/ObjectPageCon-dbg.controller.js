@@ -366,6 +366,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							curr_sectionvbox.addItem(new sap.m.HBox(`${"hbmiddlesection" + (i + 1)}`));
 							curr_sectionvbox.addItem(new sap.m.VBox(`${"vbox_last_section" + (i + 1)}`));
 
+							// curr_sectionvbox.getItems()[0].addStyleClass("section_header");
+
 
 							//3rd vbox final one
 							var vbox_last_section = curr_sectionvbox.getItems()[2];
@@ -406,11 +408,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierName" + (i + 1)}`, {
 								text: `${vendorslist[i].Vendor_Name ? vendorslist[i].Vendor_Name : ' '}`
 							}));
+							vboxsuppnameloc.getItems()[0].addStyleClass('titleStyleClass');
 
 							//Location
 							vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierLocation" + (i + 1)}`, {
 								text: `${vendorslist[i].Vendor_Location ? vendorslist[i].Vendor_Location : ' '}`
 							}));
+
+							vboxsuppnameloc.getItems()[1].addStyleClass('titleStyleClass');
 
 							debugger
 							vboxsuppnameloc.addStyleClass("v11spaceBetweenclass");
@@ -438,13 +443,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
 
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.qtn_ref ?? ' '}`,
+										text: `${vendorslist[k]?.qtn_ref ?? 'NA'}`,
 									}));
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.date ?? ' '}`
+										text: `${vendorslist[k]?.date ?? 'NA'}`
 									}));
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
-										text: `${vendorslist[k]?.validity ?? ' '}`
+										text: `${vendorslist[k]?.validity ?? 'NA'}`
 									}));
 									vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
 										text: ""

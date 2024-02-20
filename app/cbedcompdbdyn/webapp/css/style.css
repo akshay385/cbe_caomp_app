@@ -32,7 +32,13 @@
 .BorderClass {
     border: 1px solid #0000004b;
     padding-left: 2%;
+    padding-right: 2%;
     padding-top: 0.5%;
+    /* align-items: center; */
+}
+
+.alignmentVendorClass{
+    align-items: center;
 }
 
 #__title3-_actionsToolbar {
@@ -159,8 +165,23 @@
 }
 
 /* mainhBox  */
+.mainHboxClass{
+    /* background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; */
+}
+
+.section_header{
+    /* background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    padding-right: 20px; */
+}
+
+/* scrollbox */
 .custBackgroundcolor{
- 
     background: whitesmoke;
 }
 
@@ -183,11 +204,17 @@
 .sapFDynamicPageTitle,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:ObjectPage-OPHeaderContent{
     background: #8ec6ff !important;
+    height: 65px;
 }
 
 
 /* top header */
-#__title1,#__title0,#__title2{
+/* #__title1,#__title0,#__title2{
+    color: white !important;
+    filter: drop-shadow(2px 4px 6px black) !important;
+} */
+
+.sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainInner .sapFDynamicPageTitleMainHeading .sapFDynamicPageTitleMainHeadingInner .sapMTitle:not(.sapUICompVarMngmtTitle){
     color: white !important;
     filter: drop-shadow(2px 4px 6px black) !important;
 }
@@ -195,3 +222,49 @@
 #__label1{
     color: white !important;
 }
+
+
+/* ksfjkdsljfldskjfkldsjfkljdlksfjlkdsf                 favourable */
+/* CSS */
+/* .main-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.left-section {
+    border-right: 1px solid #ccc;
+}
+
+.right-section {
+    background-color: #fff;
+}
+
+.section-header {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.section-header-text {
+    color: #333;
+}
+
+.label-style {
+    font-weight: bold;
+    color: #444;
+}
+
+.text-style {
+    color: #666;
+}
+
+.section-header-text {
+    font-weight: bold;
+    color: #333;
+} */
+
+
+/* #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSection\:\:Fragment,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment
+{
+    height: 100% !important;
+} */

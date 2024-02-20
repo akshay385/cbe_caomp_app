@@ -18,7 +18,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 			routing: {
 				onAfterBinding: async function (oBindingContext) {
 					try {
-						debugger
+						 
 						// let testheaderbutton1 = this.base.getView().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::ObjectPage-OPHeaderContent");
 						// testheaderbutton1.addContent(new sap.ui.core.Icon("icon111",{
 						// 	src:"sap-icon://expand"
@@ -150,7 +150,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 						var omainHBox = this.getView().getContent()[0].getSections()[0].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent();
 
-						debugger
+						 
 						let lefttablecolms = omainHBox.getItems()[0].getItems()[2].getItems()[0].getColumns();
 						for (let i = 0; i < lefttablecolms.length; i++) {
 							lefttablecolms[i].setStyleClass("custcolorclass");
@@ -178,7 +178,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 								size: "12px",
 								width: "20px",
 								press: function (oEvent) {
-									debugger
+									 
 									var vbox_omainhbox = omainHBox.getItems()[0];
 									let total_basic_pricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--total_basic_pricing");
 									let temp_total_basic_pricing;
@@ -359,12 +359,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							Scrollhbox.addItem(new sap.m.VBox(`${"sectionvbox" + (i + 1)}`))
 							let curr_sectionvbox = Scrollhbox.getItems()[classitemiter];
 							classitemiter++;
-							debugger
+							 
 							curr_sectionvbox.addStyleClass("BorderClass");
 
 							curr_sectionvbox.addItem(new sap.m.VBox(`${"vboxsuppnameloc" + (i + 1)}`));
 							curr_sectionvbox.addItem(new sap.m.HBox(`${"hbmiddlesection" + (i + 1)}`));
 							curr_sectionvbox.addItem(new sap.m.VBox(`${"vbox_last_section" + (i + 1)}`));
+
+							// curr_sectionvbox.getItems()[0].addStyleClass("section_header");
 
 
 							//3rd vbox final one
@@ -387,7 +389,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							});
 							vbox_last_section.addItem(combobox);
 
-							debugger
+							 
 							var hboxcombo = new sap.m.HBox(`${"hboxcombo" + (i + 1)}`);
 							vbox_last_section.addItem(hboxcombo);
 
@@ -400,6 +402,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 							/////////////////////////////////////////////////////
 							//vbox1
 							let vboxsuppnameloc = curr_sectionvbox.getItems()[0];
+							vboxsuppnameloc.addStyleClass("alignmentVendorClass")
 
 
 							//Supplier
@@ -415,15 +418,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 							vboxsuppnameloc.getItems()[1].addStyleClass('titleStyleClass');
 
-							debugger
+							 
 							vboxsuppnameloc.addStyleClass("v11spaceBetweenclass");
 
 							/////////////////////////////////////////////////////////////////////////////////////////////////////////
 							//Hbox middle
 
 							var hbmiddlesection = curr_sectionvbox.getItems()[1];
+							hbmiddlesection.addStyleClass("alignmentVendorClass");
 
-							debugger
+							 
 							let k = 0;
 							let iterator = 0;
 							do {
@@ -459,7 +463,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									});
 									vbmiddlesection.addItem(inner_vbox);
 
-									debugger
+									 
 									let matchedObject = pan_info.find(item => item.PAN_Number === vendorslist[k].PAN_Number);
 
 									inner_vbox.addItem(new sap.m.Label(`${"original_offer" + generateUniqueId()}`, {
@@ -476,7 +480,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										fixedLayout: true
 									});
 
-									debugger
+									 
 									oTable.addStyleClass("tableBorder");
 
 									inner_vbox.addItem(oTable);
@@ -493,7 +497,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										styleClass:'custcolorclass'
 									});
 
-									debugger
+									 
 									var oColumn3 = new sap.m.Column({
 										id: `${"total_amt_offer" + generateUniqueId()}`,
 										header: new sap.m.HBox(),
@@ -531,7 +535,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
 									);
 
-									debugger
+									 
 									// Iterate over uniqueItems
 									for (let i = 0; i < uniqueItems.length; i++) {
 
@@ -574,7 +578,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 										}
 									}
 									////////////////////////////////////////////////////////////////////////////////
-									debugger
+									 
 									const vendorresponse_selecteditem = vendor_response_deatils.filter(item =>
 										item.PAN_Number === vendorslist[k].PAN_Number &&
 										item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
@@ -760,7 +764,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									});
 									oTable.addItem(oItem15);
 
-									debugger
+									 
 									var combobox_item = vbox_last_section.getItems()[0]
 
 									// combobox_item.setValue(`${total_offers_of_vendor[total_offers_of_vendor.length - 1].offer_name}`);
@@ -780,14 +784,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 									var chvbox = last_hcombobox.getItems()[iterator];
 									iterator++;
 
-									debugger
+									 
 									// if (combobox_item.getValue() != vendorslist[k]?.PAN_Number ?? ' ') {
 									// 	chvbox.setVisible(false)
 									// }
 
 									chvbox.addStyleClass("spacebetweenclass");
 
-									debugger
+									 
 									//Price Basis
 									chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
 										// text: `${vendorslist[k]?.PriceBasis ?? ' '}`,
@@ -877,7 +881,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 									var contactPerson = match ? match[1].trim() : null;
 
-									debugger
+									 
 									//Contact Person
 									chvbox.addItem(new sap.m.Text(`${"contactperson" + generateUniqueId()}`, {
 										text: `${contactPerson ?? 'testContact'}`,
@@ -922,13 +926,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 								}
 								k++;
-								debugger
+								 
 							} while (k < vendorslist.length);
 							//end of do-while loop
-							debugger
+							 
 
 							for (let i = 0; i < hbmiddlesection.getItems().length - 1; i++) {
-								debugger
+								 
 								hbmiddlesection.getItems()[i].setVisible(false);
 								hbmiddlesection.getParent().getItems()[2].getItems()[1].getItems()[i].setVisible(false);
 								// lastitemchvbox.getItems()
@@ -944,7 +948,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 								size: "12px",
 								width: "20px",
 								press: function (oEvent) {
-									debugger
+									 
 									var hboxlist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getParent().getItems();
 									if (hboxlist.length == 1) {
 										MessageToast.show('No More Status');
@@ -967,7 +971,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 								}
 							}))
-							debugger
+							 
 
 
 
@@ -984,7 +988,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 						// iconTotalPricingD.firePress();
 						// iconTotalPricingG.firePress();
 
-						debugger
+						 
 						//left section and respective fields
 						// omainHBox.getItems()[0].getItems()[3].getItems()[2].setVisible(false);
 						// omainHBox.getItems()[0].getItems()[3].getItems()[3].setVisible(false);
@@ -1000,7 +1004,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 						// 	var oTablesection = listofsections[i].getItems()[1].getItems()[0].mAggregations.items[1].mAggregations.items[1];
 						// 	// listofsections[i].getItems()[3].setVisible(false);
-						// 	debugger
+						// 	 
 						// 	let len = oTablesection.getItems().length
 						// 	for (let j = (len - 4); j >= (len - 8); j--) {
 
@@ -1019,6 +1023,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 
 						let righthboxxontainer = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer");
 
+						 debugger
+						let lastvendor = righthboxxontainer.getItems()[righthboxxontainer.getItems().length - 1];
+
 
 
 
@@ -1032,7 +1039,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast'], fun
 						// }
 					}
 					catch (error) {
-						debugger
+						 
 						MessageToast.show(error)
 					}
 				}

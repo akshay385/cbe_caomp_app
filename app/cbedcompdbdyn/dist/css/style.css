@@ -114,6 +114,7 @@
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: dark gray light gray;
+    background: whitesmoke;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -153,13 +154,44 @@
 
 
 .custcolorclass {
-
-    border: solid 1px black;
+    border: solid 1px black ;
     /* background-color: rgb(193, 193, 246); */
 }
 
+/* mainhBox  */
+.mainHboxClass{
+    /* background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; */
+}
+
+.section_header{
+    /* background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    padding-right: 20px; */
+}
+
+/* scrollbox */
+.custBackgroundcolor{
+    background: whitesmoke;
+}
+
+/* Style for title */
+.titleStyleClass{
+    
+    color: black
+    /* filter: drop-shadow(2px 4px 6px black); */
+}
+
+
+
+/* background color of fragment */
 .ui-helper-clearfix {
-    /* background-color: rgb(193, 193, 246) !important; */
+    /* background-color: rgb(74, 74, 82) !important; */
+    background: radial-gradient(black, transparent);
 }
 
 /* header title */
@@ -168,7 +200,57 @@
     background: #8ec6ff !important;
 }
 
-#__title1{
+
+/* top header */
+/* #__title1,#__title0,#__title2{
+    color: white !important;
+    filter: drop-shadow(2px 4px 6px black) !important;
+} */
+
+.sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainInner .sapFDynamicPageTitleMainHeading .sapFDynamicPageTitleMainHeadingInner .sapMTitle:not(.sapUICompVarMngmtTitle){
     color: white !important;
     filter: drop-shadow(2px 4px 6px black) !important;
 }
+
+#__label1{
+    color: white !important;
+}
+
+
+/* ksfjkdsljfldskjfkldsjfkljdlksfjlkdsf                 favourable */
+/* CSS */
+/* .main-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.left-section {
+    border-right: 1px solid #ccc;
+}
+
+.right-section {
+    background-color: #fff;
+}
+
+.section-header {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.section-header-text {
+    color: #333;
+}
+
+.label-style {
+    font-weight: bold;
+    color: #444;
+}
+
+.text-style {
+    color: #666;
+}
+
+.section-header-text {
+    font-weight: bold;
+    color: #333;
+} */
