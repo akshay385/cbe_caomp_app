@@ -2,6 +2,6 @@
 	<HBox id="headervbox1" justifyContent="End">
 		<ToggleButton id="rowexpand" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" text="ItemList-ExpandAll" press="handler.onRowExpand" />
 		<ToggleButton id="columnexpand" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" text="VendorList-ExpandAll" press="handler.onColumnExpand" />
-		<core:Icon id="exportexcelid" src="sap-icon://excel-attachment" class="iconpadding" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" press="handler.onExportExcel"></core:Icon>
+		<core:Icon id="exportexcelid" src="sap-icon://excel-attachment" class="iconpadding" tooltip='Export as excel' core:require="{ handler: 'cbedcompdbdyn/ext/fragment/HeaderFragment'}" press="handler.onExportExcel"></core:Icon>
 	</HBox>
 </core:FragmentDefinition>

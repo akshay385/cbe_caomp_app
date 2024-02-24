@@ -32,9 +32,7 @@
           "action": "display",
           "title": "{{flpTitle}}",
           "signature": {
-            "parameters": {
-              
-            },
+            "parameters": {},
             "additionalParameters": "allowed"
           }
         }
@@ -126,7 +124,7 @@
               "navigation": {
                 "Project_Details": {
                   "detail": {
-                    "allowDeepLinking":true,
+                    "allowDeepLinking": true,
                     "route": "Project_DetailsObjectPage"
                   }
                 }
@@ -161,6 +159,14 @@
                       "flexSettings": {
                         "designtime": "Default"
                       }
+                    }
+                  },
+                  "actions": {
+                    "custbutton": {
+                      "press": "cbedcompdbdyn.ext.controller.Headerbutton.onpress",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Test"
                     }
                   }
                 }

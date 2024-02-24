@@ -1,0 +1,54 @@
+Proposed_Vendor_Code,PAN_Number,Item_Code,idd,name,value
+VENDOR001,ABCDE1234F,ITEM001,UUID1,Spares for 2 Years operation,500
+VENDOR001,ABCDE1234F,ITEM001,UUID2,"Packing, Marking, Forwarding & Freight",Packing1
+VENDOR001,ABCDE1234F,ITEM001,UUID223,"Packing Value",1
+VENDOR001,ABCDE1234F,ITEM001,UUID3,Inspection / Testing Charges,Inspection1
+VENDOR001,ABCDE1234F,ITEM001,UUID4,Documentation Charges,Document1
+VENDOR001,ABCDE1234F,ITEM001,UUID5,RNOD,RNOD1
+VENDOR001,ABCDE1234F,ITEM001,UUID6,Custom Duty & Cess,Custom1
+VENDOR001,ABCDE1234F,ITEM001,UUID7,SGST,10
+VENDOR001,ABCDE1234F,ITEM001,UUID8,IGST,10
+VENDOR001,ABCDE1234F,ITEM001,UUID9,UGST,10
+VENDOR001,ABCDE1234F,ITEM001,UUID10,Shipment charges from EXW to ISRO Mahendragiri,Shipment1
+VENDOR001,ABCDE1234F,ITEM001,UUID11,Per Diem rate for Supervision for Erection and commissioning,PerDiem1
+VENDOR001,ABCDE1234F,ITEM001,UUID12,PriceBasis,PriceBasis1
+VENDOR001,ABCDE1234F,ITEM001,UUID13,Point of Delivery,PointofDelivery1
+VENDOR001,ABCDE1234F,ITEM001,UUID14,Delivery Period,DeliveryPeriod1
+VENDOR001,ABCDE1234F,ITEM001,UUID15,Payment Terms,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna. Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet"
+VENDOR001,ABCDE1234F,ITEM001,UUID16,Liquidated Damages,LiquidatedDamages1
+VENDOR001,ABCDE1234F,ITEM001,UUID17,Warranty / Defect Liability Period,Warranty1
+VENDOR001,ABCDE1234F,ITEM001,UUID18,CPBG,CPBG1
+VENDOR001,ABCDE1234F,ITEM001,UUID19,Contact Person,ContactPerson1
+VENDOR001,ABCDE1234F,ITEM001,UUID20,Contact No.,ContactNo1
+VENDOR001,ABCDE1234F,ITEM001,UUID21,Order can be given to,OrderCanBeGivenTo1
+VENDOR001,ABCDE1234F,ITEM001,UUID22,Techncially Approved,TechnciallyApproved1
+VENDOR001,ABCDE1234F,ITEM001,UUID23,Approved Vendor,ApprovedVendor1
+
+
+
+
+VENDOR002,ABCDE1234F,ITEM001,UUID1,Spares for 2 Years operation,1
+VENDOR002,ABCDE1234F,ITEM001,UUID2,"Packing, Marking, Forwarding & Freight",Packing1
+VENDOR002,ABCDE1234F,ITEM001,UUID223,"Packing Value",1
+VENDOR002,ABCDE1234F,ITEM001,UUID3,Inspection / Testing Charges,Inspection1
+VENDOR002,ABCDE1234F,ITEM001,UUID4,Documentation Charges,Document1
+VENDOR002,ABCDE1234F,ITEM001,UUID5,RNOD,RNOD1
+VENDOR002,ABCDE1234F,ITEM001,UUID6,Custom Duty & Cess,Custom1
+VENDOR002,ABCDE1234F,ITEM001,UUID7,SGST,10
+VENDOR002,ABCDE1234F,ITEM001,UUID8,IGST,10
+VENDOR002,ABCDE1234F,ITEM001,UUID9,UGST,10
+VENDOR002,ABCDE1234F,ITEM001,UUID10,Shipment charges from EXW to ISRO Mahendragiri,Shipment1
+VENDOR002,ABCDE1234F,ITEM001,UUID11,Per Diem rate for Supervision for Erection and commissioning,PerDiem1
+VENDOR002,ABCDE1234F,ITEM001,UUID12,PriceBasis,PriceBasis1
+VENDOR002,ABCDE1234F,ITEM001,UUID13,Point of Delivery,PointofDelivery1
+VENDOR002,ABCDE1234F,ITEM001,UUID14,Delivery Period,DeliveryPeriod1
+VENDOR002,ABCDE1234F,ITEM001,UUID15,Payment Terms,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna. Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet"
+VENDOR002,ABCDE1234F,ITEM001,UUID16,Liquidated Damages,LiquidatedDamages1
+VENDOR002,ABCDE1234F,ITEM001,UUID17,Warranty / Defect Liability Period,Warranty1
+VENDOR002,ABCDE1234F,ITEM001,UUID18,CPBG,CPBG1
+VENDOR002,ABCDE1234F,ITEM001,UUID19,Contact Person,ContactPerson1
+VENDOR002,ABCDE1234F,ITEM001,UUID20,Contact No.,ContactNo1
+VENDOR002,ABCDE1234F,ITEM001,UUID21,Order can be given to,OrderCanBeGivenTo1
+VENDOR002,ABCDE1234F,ITEM001,UUID22,Techncially Approved,TechnciallyApproved1
+VENDOR002,ABCDE1234F,ITEM001,UUID23,Approved Vendor,ApprovedVendor1
+

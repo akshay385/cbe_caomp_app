@@ -150,9 +150,8 @@ entity PAN_vendor_data_proj {
         Discount_Amount                    : String;
         Discount_percentage                : String;
         Rank                               : String;
-
         //testing
-        CPBG:String
+        CPBG                               : String
 
 }
 
@@ -167,6 +166,7 @@ entity PAN_PRICE_DETAILS_proj {
         Quantity                         : String;
         Unit_Price                       : String;
         Amount                           : String;
+        extendedPrice                    : String;
         Indian_Tax_PER                   : String;
         Quantity_Over_Delivery_Tolerance : String;
 
@@ -215,4 +215,23 @@ entity PAN_vendor_response_proj {
         Others                                                                       : LargeString;
 
 
+}
+
+entity vendorTaxDetails {
+    key Proposed_Vendor_Code : String;
+    key PAN_Number           : String;
+    key Item_Code            : String;
+    key idd                  : UUID;
+        name                 : String;
+        value                : String;
+}
+
+entity PAN_WEB_EVENT {
+    key idd                         : String;
+    key PAN_Number                  : String;
+        eventNo                     : String;
+        number                      : String;
+        date                        : String;
+        numberOfVendorsParticipated : String;
+        l1AmountObtained            : String;
 }
