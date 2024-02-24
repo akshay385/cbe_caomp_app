@@ -2061,15 +2061,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// height:"25px"
 											}));
 
+											debugger
 											//Techncially Approved
 											chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
-												text: `${valuesMap["Technically Approved"] ?? ' '}`,
+												text: `${vendorslist[k].Technically_Approved ?? ' '}`,
 												// height:"25px"
 											}));
 
 											//Approved Vendor
 											chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
-												text: `${valuesMap["Approved Vendor"] ?? ' '}`,
+												text: `${vendorslist[k].Awarded_Vendor ?? ' '}`,
 												// height:"25px"
 											}));
 
