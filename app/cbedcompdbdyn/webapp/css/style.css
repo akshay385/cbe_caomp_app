@@ -319,3 +319,9 @@
     /* height: 35px; */
     padding-bottom: 13px;
 }
+
+.columnStyleClass{
+    background: greenyellow !important ;
+    /* color: white !important; */
+    /* background-color: white !important; */
+}

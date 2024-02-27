@@ -643,7 +643,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									size: "12px",
 									width: "20px",
 									press: function (oEvent) {
-										debugger
+										 
 
 										var vbox_omainhbox = omainHBox.getItems()[0];
 										let total_basic_pricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--total_basic_pricing");
@@ -706,7 +706,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							let tag_no_iterator = 1;
 							for (let i = 0; i < uniqueItems.length; i++) {
 
-								debugger
+								 
 
 								itemstable.addItem(new sap.m.ColumnListItem(`${"collistitem" + (i + 1)}`));
 								let columnlist = itemstable.getItems()[i];
@@ -825,12 +825,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 							for (let itm = 0; itm < itemstable.getItems().length; itm++) {
-								// debugger
+								//  
 								let current_item_cells = itemstable.getItems()[itm].getCells();
 								for (let cell = 0; cell < current_item_cells.length; cell++) {
-									// debugger
+									//  
 									if (current_item_cells[cell].getText().trim() == '') {
-										// debugger
+										//  
 										counter_item[cell] += 1;
 									}
 								}
@@ -838,7 +838,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							for (let key in counter_item) {
 								if (counter_item[key] == itemstable.getItems().length) {
-									debugger
+									 
 									itemstable.getColumns()[key].setVisible(false);
 								}
 								// console.log(`Key: ${key}, Value: ${counter_item[key]}`);
@@ -883,7 +883,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							let classitemiter = 0;
 
-							debugger
+							 
 							for (let i = 0; i < vendorslist.length; i++) {
 
 								const vendorId = vendorslist[i].vendor_code;
@@ -1535,9 +1535,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								// } while (k < vendorslist.length);
 
 								//modified
-								debugger
+								 
 								do {
-									debugger
+									 
 
 									if (vendorslist[k].ProjectId == project_id[1] && vendorslist[k].Proposed_Vendor_Code == vendorslist[i].Proposed_Vendor_Code) {
 
@@ -1639,9 +1639,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// oTable.addColumn(oColumn2);
 												oTable.addColumn(oColumn3);
 
+												 
+												
+
 												//Total amount expand property
 
-												debugger
+												 
 												var colheader = oTable.getColumns()[1].getHeader()
 
 												colheader.addItem(new sap.m.Label({
@@ -1670,7 +1673,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												let tax_value = '';
 
 												function formatCurrency(amount, currencyCode) {
-													debugger
+													 
 													let formattedAmount = '';
 													switch (currencyCode) {
 														case 'INR':
@@ -1683,7 +1686,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													return formattedAmount;
 												}
 
-												debugger
+												 
 												// Iterate over uniqueItems
 												for (let i = 0; i < uniqueItems.length; i++) {
 
@@ -1693,7 +1696,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
 
 													if (foundItem || itemMatchingPrjVenPan.length) {
-														debugger
+														 
 														// Found item, create ColumnListItem with data
 														var AmtWithoutCommas = itemMatchingPrjVenPan[0].Amount?.replace(/,/g, '') ?? 0;
 														var quantityWithoutCommas = itemMatchingPrjVenPan[0].Quantity?.replace(/,/g, '') ?? 0;
@@ -1917,6 +1920,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 												oTable.addItem(oItem10);
 
+												
+
 												// alert(oTable.getItems().length);
 
 
@@ -2006,6 +2011,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													]
 												});
 												oTable.addItem(oItem15);
+												if (vendorslist[k].Rank == '1') {
+													debugger
+													debugger
+												   oTable.getColumns()[0].setStyleClass("columnStyleClass");
+												   oTable.getColumns()[1].setStyleClass("columnStyleClass");
+												   oTable.getItems()[oTable.getItems().length - 5].addStyleClass("columnStyleClass")
+											   }
 
 
 												oTable.getItems()[oTable.getItems().length - 5].addStyleClass("taxCell")
@@ -2169,7 +2181,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													// height:"25px"
 												}));
 
-												
+
 
 												//Approved Vendor
 												chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
@@ -2270,7 +2282,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 											// 	//Total amount expand property
 
-											// 	debugger
+											// 	 
 											// 	var colheader = oTable.getColumns()[1].getHeader()
 
 											// 	colheader.addItem(new sap.m.Label({
@@ -2299,7 +2311,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											// 	let tax_value = '';
 
 											// 	function formatCurrency(amount, currencyCode) {
-											// 		debugger
+											// 		 
 											// 		let formattedAmount = '';
 											// 		switch (currencyCode) {
 											// 			case 'INR':
@@ -2321,7 +2333,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											// 		const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
 
 											// 		if (foundItem || itemMatchingPrjVenPan.length) {
-											// 			debugger
+											// 			 
 											// 			// Found item, create ColumnListItem with data
 											// 			var AmtWithoutCommas = itemMatchingPrjVenPan[0].Amount?.replace(/,/g, '') ?? 0;
 											// 			var quantityWithoutCommas = itemMatchingPrjVenPan[0].Quantity?.replace(/,/g, '') ?? 0;
@@ -2870,7 +2882,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							}  //end of for-loop
 
 
-							debugger
+							 
 							//Every time to reinitialize page
 
 							let total_incluing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon2");
@@ -2879,7 +2891,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							// var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
 
 							let leftsecion_under_spares = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--leftbelowtable");
-							debugger
+							 
 							leftsecion_under_spares.getItems()[2].setVisible(false);
 							leftsecion_under_spares.getItems()[3].setVisible(false);
 							leftsecion_under_spares.getItems()[4].setVisible(false);
@@ -2904,7 +2916,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							// iconTotalPricingG.firePress();
 
-							debugger
+							 
 							// //left section and respective fields
 							// omainHBox.getItems()[0].getItems()[3].getItems()[2].setVisible(false);
 							// omainHBox.getItems()[0].getItems()[3].getItems()[3].setVisible(false);
