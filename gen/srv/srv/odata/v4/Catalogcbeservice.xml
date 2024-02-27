@@ -31,6 +31,8 @@
         <EntitySet Name="Vendors" EntityType="Catalogcbeservice.Vendors"/>
         <EntitySet Name="PAN_Info" EntityType="Catalogcbeservice.PAN_Info"/>
         <EntitySet Name="PAN_vendor_reponse_details" EntityType="Catalogcbeservice.PAN_vendor_reponse_details"/>
+        <EntitySet Name="vendorTaxDetails" EntityType="Catalogcbeservice.vendorTaxDetails"/>
+        <EntitySet Name="PanWebEvent" EntityType="Catalogcbeservice.PanWebEvent"/>
         <EntitySet Name="Project_Details" EntityType="Catalogcbeservice.Project_Details"/>
         <EntitySet Name="Vendor_details" EntityType="Catalogcbeservice.Vendor_details"/>
         <EntitySet Name="Item_details" EntityType="Catalogcbeservice.Item_details"/>
@@ -184,6 +186,7 @@
         <Property Name="Quantity" Type="Edm.String"/>
         <Property Name="Unit_Price" Type="Edm.String"/>
         <Property Name="Amount" Type="Edm.String"/>
+        <Property Name="extendedPrice" Type="Edm.String"/>
         <Property Name="Indian_Tax_PER" Type="Edm.String"/>
         <Property Name="Quantity_Over_Delivery_Tolerance" Type="Edm.String"/>
       </EntityType>
@@ -296,6 +299,33 @@
         <Property Name="Compliance_Terms" Type="Edm.String"/>
         <Property Name="Others" Type="Edm.String"/>
       </EntityType>
+      <EntityType Name="vendorTaxDetails">
+        <Key>
+          <PropertyRef Name="Proposed_Vendor_Code"/>
+          <PropertyRef Name="PAN_Number"/>
+          <PropertyRef Name="Item_Code"/>
+          <PropertyRef Name="idd"/>
+        </Key>
+        <Property Name="Proposed_Vendor_Code" Type="Edm.String" Nullable="false"/>
+        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
+        <Property Name="Item_Code" Type="Edm.String" Nullable="false"/>
+        <Property Name="idd" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="name" Type="Edm.String"/>
+        <Property Name="value" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="PanWebEvent">
+        <Key>
+          <PropertyRef Name="idd"/>
+          <PropertyRef Name="PAN_Number"/>
+        </Key>
+        <Property Name="idd" Type="Edm.String" Nullable="false"/>
+        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
+        <Property Name="eventNo" Type="Edm.String"/>
+        <Property Name="number" Type="Edm.String"/>
+        <Property Name="date" Type="Edm.String"/>
+        <Property Name="numberOfVendorsParticipated" Type="Edm.String"/>
+        <Property Name="l1AmountObtained" Type="Edm.String"/>
+      </EntityType>
       <EntityType Name="Project_Details">
         <Key>
           <PropertyRef Name="ProjectId"/>
@@ -333,6 +363,7 @@
         <Property Name="Quantity" Type="Edm.String"/>
         <Property Name="Unit_Price" Type="Edm.String"/>
         <Property Name="Amount" Type="Edm.String"/>
+        <Property Name="extendedPrice" Type="Edm.String"/>
         <Property Name="Indian_Tax_PER" Type="Edm.String"/>
         <Property Name="Quantity_Over_Delivery_Tolerance" Type="Edm.String"/>
       </EntityType>
@@ -399,6 +430,9 @@
       <Annotations Target="Catalogcbeservice.PAN_Details/PAN_Number">
         <Annotation Term="Common.Label" String="Pan Number"/>
       </Annotations>
+      <Annotations Target="Catalogcbeservice.vendorTaxDetails/idd">
+        <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+      </Annotations>
       <Annotations Target="Catalogcbeservice.Project_Details">
         <Annotation Term="UI.LineItem">
           <Collection>
@@ -445,7 +479,7 @@
                 <PropertyValue Property="Value" Path="ProjectId"/>
               </Record>
             </PropertyValue>
-            <PropertyValue Property="TypeName" String=""/>
+            <PropertyValue Property="TypeName" String="Comparative statement"/>
             <PropertyValue Property="TypeNamePlural" String=""/>
           </Record>
         </Annotation>

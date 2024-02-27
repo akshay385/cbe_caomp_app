@@ -9,19 +9,24 @@ sap.ui.define([
             // MessageToast.show("Custom handler invoked.");
             var hBox = oEvent.getSource().getParent().getParent().getParent().getParent();
             if (oEvent.getSource().getParent().getParent().getItems()[7].getVisible() == true) {
+                oEvent.getSource().getParent().getParent().getItems()[2].setVisible(false)//freight
+                oEvent.getSource().getParent().getParent().getItems()[3].setVisible(false)
+                oEvent.getSource().getParent().getParent().getItems()[4].setVisible(false)
+                oEvent.getSource().getParent().getParent().getItems()[5].setVisible(false)
+                oEvent.getSource().getParent().getParent().getItems()[6].setVisible(false)
                 oEvent.getSource().getParent().getParent().getItems()[7].setVisible(false)
-                oEvent.getSource().getParent().getParent().getItems()[8].setVisible(false)
-                oEvent.getSource().getParent().getParent().getItems()[9].setVisible(false)
-                oEvent.getSource().getParent().getParent().getItems()[10].setVisible(false)
-                oEvent.getSource().getParent().getParent().getItems()[11].setVisible(false)
+                oEvent.getSource().getParent().getParent().getItems()[8].setVisible(false)//Shipment
+                // oEvent.getSource().getParent().getParent().getItems()[].setVisible(false)
                 oEvent.getSource().setSrc("sap-icon://navigation-right-arrow");
             }
             else {
+                oEvent.getSource().getParent().getParent().getItems()[2].setVisible(true)
+                oEvent.getSource().getParent().getParent().getItems()[3].setVisible(true)
+                oEvent.getSource().getParent().getParent().getItems()[4].setVisible(true)
+                oEvent.getSource().getParent().getParent().getItems()[5].setVisible(true)
+                oEvent.getSource().getParent().getParent().getItems()[6].setVisible(true)
                 oEvent.getSource().getParent().getParent().getItems()[7].setVisible(true)
                 oEvent.getSource().getParent().getParent().getItems()[8].setVisible(true)
-                oEvent.getSource().getParent().getParent().getItems()[9].setVisible(true)
-                oEvent.getSource().getParent().getParent().getItems()[10].setVisible(true)
-                oEvent.getSource().getParent().getParent().getItems()[11].setVisible(true)
                 oEvent.getSource().setSrc("sap-icon://navigation-up-arrow");
             }
 
@@ -30,7 +35,7 @@ sap.ui.define([
                 for (let k = 0; k < listofsections[i].getItems()[1].getItems().length; k++) {
                     var oTablesection = listofsections[i].getItems()[1].getItems()[k].mAggregations.items[1].mAggregations.items[1];
                     let len = oTablesection.getItems().length
-                    for (let j = (len - 4); j >= (len - 8); j--) {
+                    for (let j = (len - 4); j >= (len - 10); j--) {
                         if (oTablesection.getItems()[j].getVisible() == true) {
                             oTablesection.getItems()[j].setVisible(false)
                         }
@@ -68,7 +73,7 @@ sap.ui.define([
                 oEvent.getSource().setSrc("sap-icon://navigation-down-arrow")
             }
 
-            for (let i = 16; i < leftitems.length; i++) {
+            for (let i = 13; i < leftitems.length; i++) {
                 if (leftitems[i].getVisible() == true) {
                     leftitems[i].setVisible(false);
                     // oEvent.getSource().getParent().getItems()[0].setVisible(false);//Price details text
@@ -81,41 +86,41 @@ sap.ui.define([
             }
         },
         onPress_forwaring: function (oEvent) {
-            debugger
-            // MessageToast.show("Custom handler invoked.");
-            var hBox = oEvent.getSource().getParent().getParent().getParent().getParent();
-            if (oEvent.getSource().getParent().getParent().getItems()[2].getVisible() == true) {
-                oEvent.getSource().getParent().getParent().getItems()[2].setVisible(false)
-                oEvent.getSource().getParent().getParent().getItems()[3].setVisible(false)
-                oEvent.getSource().getParent().getParent().getItems()[4].setVisible(false)
-                oEvent.getSource().setSrc("sap-icon://navigation-right-arrow");
+            // debugger
+            // // MessageToast.show("Custom handler invoked.");
+            // var hBox = oEvent.getSource().getParent().getParent().getParent().getParent();
+            // if (oEvent.getSource().getParent().getParent().getItems()[2].getVisible() == true) {
+            //     oEvent.getSource().getParent().getParent().getItems()[2].setVisible(false)
+            //     oEvent.getSource().getParent().getParent().getItems()[3].setVisible(false)
+            //     oEvent.getSource().getParent().getParent().getItems()[4].setVisible(false)
+            //     oEvent.getSource().setSrc("sap-icon://navigation-right-arrow");
 
-            }
-            else {
-                oEvent.getSource().getParent().getParent().getItems()[2].setVisible(true)
-                oEvent.getSource().getParent().getParent().getItems()[3].setVisible(true)
-                oEvent.getSource().getParent().getParent().getItems()[4].setVisible(true)
-                oEvent.getSource().setSrc("sap-icon://navigation-up-arrow");
+            // }
+            // else {
+            //     oEvent.getSource().getParent().getParent().getItems()[2].setVisible(true)
+            //     oEvent.getSource().getParent().getParent().getItems()[3].setVisible(true)
+            //     oEvent.getSource().getParent().getParent().getItems()[4].setVisible(true)
+            //     oEvent.getSource().setSrc("sap-icon://navigation-up-arrow");
 
-            }
+            // }
 
-            var listofsections = hBox.getItems()[1].getContent()[0].getItems();
-            for (let i = 0; i < listofsections.length; i++) {
-                for (let k = 0; k < listofsections[i].getItems()[1].getItems().length; k++) {
-                    var oTablesection = listofsections[i].getItems()[1].getItems()[k].mAggregations.items[1].mAggregations.items[1];
-                    let len = oTablesection.getItems().length
-                    for (let j = (len - 11); j > (len - 14); j--) {
-                        if (oTablesection.getItems()[j].getVisible() == true) {
-                            oTablesection.getItems()[j].setVisible(false)
-                        }
-                        else {
-                            oTablesection.getItems()[j].setVisible(true)
-                        }
-                    }
+            // var listofsections = hBox.getItems()[1].getContent()[0].getItems();
+            // for (let i = 0; i < listofsections.length; i++) {
+            //     for (let k = 0; k < listofsections[i].getItems()[1].getItems().length; k++) {
+            //         var oTablesection = listofsections[i].getItems()[1].getItems()[k].mAggregations.items[1].mAggregations.items[1];
+            //         let len = oTablesection.getItems().length
+            //         for (let j = (len - 11); j > (len - 14); j--) {
+            //             if (oTablesection.getItems()[j].getVisible() == true) {
+            //                 oTablesection.getItems()[j].setVisible(false)
+            //             }
+            //             else {
+            //                 oTablesection.getItems()[j].setVisible(true)
+            //             }
+            //         }
 
-                }
+            //     }
 
-            }
+            // }
         }
     };
 });

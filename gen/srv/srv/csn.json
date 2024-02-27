@@ -529,6 +529,9 @@
         "Amount": {
           "type": "cds.String"
         },
+        "extendedPrice": {
+          "type": "cds.String"
+        },
         "Indian_Tax_PER": {
           "type": "cds.String"
         },
@@ -655,6 +658,61 @@
         },
         "Others": {
           "type": "cds.LargeString"
+        }
+      }
+    },
+    "CBE.vendorTaxDetails": {
+      "kind": "entity",
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "idd": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "value": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "CBE.PAN_WEB_EVENT": {
+      "kind": "entity",
+      "elements": {
+        "idd": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "eventNo": {
+          "type": "cds.String"
+        },
+        "number": {
+          "type": "cds.String"
+        },
+        "date": {
+          "type": "cds.String"
+        },
+        "numberOfVendorsParticipated": {
+          "type": "cds.String"
+        },
+        "l1AmountObtained": {
+          "type": "cds.String"
         }
       }
     },
@@ -1437,6 +1495,9 @@
         "Amount": {
           "type": "cds.String"
         },
+        "extendedPrice": {
+          "type": "cds.String"
+        },
         "Indian_Tax_PER": {
           "type": "cds.String"
         },
@@ -1762,6 +1823,75 @@
         }
       }
     },
+    "Catalogcbeservice.vendorTaxDetails": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.vendorTaxDetails"
+          ]
+        }
+      },
+      "elements": {
+        "Proposed_Vendor_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "Item_Code": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "idd": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "value": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.PanWebEvent": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.PAN_WEB_EVENT"
+          ]
+        }
+      },
+      "elements": {
+        "idd": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "eventNo": {
+          "type": "cds.String"
+        },
+        "number": {
+          "type": "cds.String"
+        },
+        "date": {
+          "type": "cds.String"
+        },
+        "numberOfVendorsParticipated": {
+          "type": "cds.String"
+        },
+        "l1AmountObtained": {
+          "type": "cds.String"
+        }
+      }
+    },
     "Catalogcbeservice.Project_Details": {
       "kind": "entity",
       "@UI.LineItem": [
@@ -1808,7 +1938,7 @@
       "@UI.HeaderInfo.Description.Value": {
         "=": "ProjectId"
       },
-      "@UI.HeaderInfo.TypeName": "",
+      "@UI.HeaderInfo.TypeName": "Comparative statement",
       "@UI.HeaderInfo.TypeNamePlural": "",
       "@Common.SemanticKey": [
         {
@@ -2090,6 +2220,9 @@
           "type": "cds.String"
         },
         "Amount": {
+          "type": "cds.String"
+        },
+        "extendedPrice": {
           "type": "cds.String"
         },
         "Indian_Tax_PER": {

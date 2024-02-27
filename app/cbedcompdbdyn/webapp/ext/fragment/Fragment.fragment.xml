@@ -63,8 +63,11 @@
 						<Column id="col8">
 							<Text id="t8" text="Weight" tooltip="Weight (in Kgs)" wrapping="false" />
 						</Column>
+						<Column id="col001">
+							<Text id="t9" text="UOM" tooltip="Unit of Measure" wrapping="false" />
+						</Column>
 						<Column id="col9">
-							<Text id="t9" text=" Quantity" tooltip="Quantity" wrapping="false" />
+							<Text id="10" text=" Quantity" tooltip="Quantity" wrapping="false" />
 						</Column>
 					</columns>
 
@@ -74,7 +77,7 @@
 			<VBox id="leftbelowtable" class="v3spaceBetweenclass" alignItems="End">
 				<Label id="sparesfor2" text="Spares for 2 Years operation" />
 				<Label design="Bold" id="grandtotal" text=" Grand Total" />
-				<Label id="pmff" text="Packing, Marking, Forwarding and Freight" visible="true"/>
+				<Label id="pmff" text="Freight" visible="true"/>
 				<Label id="inspection_testing_charges" text="Inspection / Testing Charges" visible="true"/>
 				<Label id="doc_charges" text="Documentation Charges" visible="true"/>
 				<!-- <HBox id="hboxtotal_basic_pricing" alignItems="End">
@@ -90,14 +93,14 @@
 				<Label id="shipmentcharges" text="Shipment charges from EXW to ISRO Mahendragiri " visible="true"/>
 				<HBox id="total_including_tax" alignItems="End">
 					<Label design="Bold" id="newItemID1" text="Total Basic Price including packing,..." tooltip="Total Basic Price including packing, marking and forwarding, Transportation including Taxes" />
-					<core:Icon id="icon2" src="sap-icon://navigation-right-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_includingtax" size="13px"></core:Icon>
+					<core:Icon id="icon2" src="sap-icon://navigation-up-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_includingtax" size="13px"></core:Icon>
 				</HBox>
 				<Label design="Bold" id="total_excluding_taxes" text="Total Basic Price including packing, marking and....." tooltip="Total Basic Price including packing, marking and forwarding, Transportation excluding Taxes" />
 				<!-- <Label design="Bold" id="2ndsparesfor2years" text= "Spares for 2 Years operation" /> -->
 				<Label design="Bold" id="per_diem" text="Per Diem rate for Supervision for Erection and commissioning" />
 				<HBox id="hpricebasis" height="15px" alignItems="End">
 					<Label design="Bold" id="moreid" text=" View more..." />
-					<core:Icon id="icon3" src="sap-icon://navigation-right-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_priccebasis" size="13px"></core:Icon>
+					<core:Icon id="icon3" src="sap-icon://navigation-down-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_priccebasis" size="13px"></core:Icon>
 				</HBox>
 				<!-- <Label id="pricesbasis" text="PriceBasis" visible="false"/> -->
 				<!-- <Label id="point_of_delivery" text="Point of Delivery" visible="false"/> -->

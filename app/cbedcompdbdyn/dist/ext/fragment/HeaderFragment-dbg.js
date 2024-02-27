@@ -11,11 +11,12 @@ sap.ui.define([
 
             // MessageToast.show("Custom handler invoked.");
             if (oEvent.getSource().getPressed() == true) {
+                debugger
                 oEvent.getSource().setText("ItemList-CollapseAll");
-                let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
-                if (totat_basicpricing.getSrc() == "sap-icon://navigation-right-arrow") {
-                    totat_basicpricing.firePress();
-                }
+                // let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
+                // if (totat_basicpricing.getSrc() == "sap-icon://navigation-right-arrow") {
+                //     totat_basicpricing.firePress();
+                // }
 
                 let total_incluing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon2");
                 if (total_incluing.getSrc() == "sap-icon://navigation-right-arrow") {
@@ -29,10 +30,10 @@ sap.ui.define([
             }
             else {
                 oEvent.getSource().setText("ItemList-ExpandAll");
-                let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
-                if (totat_basicpricing.getSrc() == "sap-icon://navigation-up-arrow") {
-                    totat_basicpricing.firePress();
-                }
+                // let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
+                // if (totat_basicpricing.getSrc() == "sap-icon://navigation-up-arrow") {
+                //     totat_basicpricing.firePress();
+                // }
 
                 let total_incluing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon2");
                 if (total_incluing.getSrc() == "sap-icon://navigation-up-arrow") {
@@ -61,7 +62,8 @@ sap.ui.define([
                 }
                 for (let i = 0; i < sectionslist.length; i++) {
                     let totalsectionvboxlen = sectionslist[0].getItems()[1].getItems().length
-                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].mAggregations.items[1].mAggregations.items[1].mAggregations.columns[2].mAggregations.header.mAggregations.items[1];
+                    debugger
+                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].mAggregations.items[1].mAggregations.items[1].mAggregations.columns[1].mAggregations.header.mAggregations.items[1];
                     if (sectionsicon.getSrc() == "sap-icon://expand") {
                         sectionsicon.firePress();
                     }
@@ -75,7 +77,7 @@ sap.ui.define([
                 }
                 for (let i = 0; i < sectionslist.length; i++) {
                     let totalsectionvboxlen = sectionslist[0].getItems()[1].getItems().length
-                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].mAggregations.items[1].mAggregations.items[1].mAggregations.columns[2].mAggregations.header.mAggregations.items[1];
+                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].mAggregations.items[1].mAggregations.items[1].mAggregations.columns[1].mAggregations.header.mAggregations.items[1];
                     if (sectionsicon.getSrc() == "sap-icon://collapse") {
                         sectionsicon.firePress();
                     }
@@ -85,7 +87,8 @@ sap.ui.define([
 
         },
         onExportExcel: async function (oEvent) {
-            ;
+
+            debugger
             // Parse the data from Excel into an array
             var data = [];
 
@@ -100,6 +103,7 @@ sap.ui.define([
             let table = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--itemstable1");
             let table_items = [];
 
+            debugger
             for (let i = 0; i < table.getItems().length; i++) {
                 table_items.push({
                     mta_no: (i + 1),
@@ -146,36 +150,37 @@ sap.ui.define([
             }
             var new_data = [
                 { 1: "", 2: '' },
-                { 1: "3", 2: 'Spares for 2 Years operation' },
-                { 1: " ", 2: 'Grand Total' },
-                { 1: "4", 2: 'Packing, Marking, Forwarding & Freight' },
-                { 1: "5", 2: 'Inspection / Testing Charges' },
-                { 1: "B.3", 2: 'Documentation Charges' },
-                { 1: "3", 2: 'Total Basic Price including packing, marking & forwarding' },
-                { 1: "C", 2: 'RNOD' },
-                { 1: "D.1", 2: 'Custom Duty & Cess' },
-                { 1: "D.2", 2: 'SGST' },
-                { 1: "D.3", 2: 'IGST' },
-                { 1: "D.4", 2: 'UGST' },
-                { 1: "D.6", 2: 'Shipment charges from EXW to ISRO Mahendragiri' },
-                { 1: "D", 2: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes' },
-                { 2: 'Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes' },
-                { 1: "F", 2: 'Per Diem rate for Supervision for Erection and commissioning' },
-                { 1: "G.1", 2: 'PriceBasic' },
-                { 1: "G.2", 2: 'Point of delivery' },
-                { 1: "G.3", 2: 'Delivery Period' },
-                { 1: "G.4", 2: 'Payment Terms' },
-                { 1: "G.5", 2: 'Liquidated Damages' },
-                { 1: "G.6", 2: 'Warranty / Defect Liability Period' },
-                { 1: "G.7", 2: 'CPBG' },
+                { 1: "3", 11: 'Spares for 2 Years operation' },
+                { 1: " ", 11: 'Grand Total' },
+                { 1: "4", 11: 'Freight' },
+                { 1: "5", 11: 'Inspection / Testing Charges' },
+                { 1: "B.3", 11: 'Documentation Charges' },
+                // { 1: "3", 10: 'Total Basic Price including packing, marking & forwarding' },
+                { 1: "C", 11: 'RNOD' },
+                { 1: "D.1", 11: 'Custom Duty & Cess' },
+                { 1: "D.2", 11: 'Tax' },
+                // { 1: "D.3", 10: 'IGST' },
+                // { 1: "D.4", 10: 'UGST' },
+                { 1: "D.6", 11: 'Shipment charges from EXW to ISRO Mahendragiri' },
+                { 1: "D", 11: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes' },
+                { 11: 'Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes' },
+                { 1: "F", 11: 'Per Diem rate for Supervision for Erection and commissioning' },
+                // { 1: "G.1", 10: 'PriceBasic' },
+                // { 1: "G.2", 10: 'Point of delivery' },
+                { 1: "G.3", 11: 'Scope and Responsibilities' },
+                { 1: "G.4", 11: 'Commercial Terms' },
+                { 1: "G.5", 11: 'Compliance Terms' },
+                { 1: "G.6", 11: 'Others' },
+                // { 1: "G.7", 2: 'CPBG' },
                 // {1:"G.8" ,2:'CPBG'}, 
-                { 1: "G.9", 2: 'Contact person' },
-                { 1: "G.10", 2: 'Contact No' },
-                { 1: "G.11", 2: 'Order can be given to ..' },
-                { 1: "G.12", 2: 'Technical approved' },
-                { 1: "G.13", 2: 'Approved vendor' },
+                { 1: "G.9", 11: 'Contact person' },
+                { 1: "G.10", 11: 'Contact No' },
+                { 1: "G.11", 11: 'Order can be given to ..' },
+                { 1: "G.12", 11: 'Technical approved' },
+                { 1: "G.13", 11: 'Approved vendor' },
             ]
 
+            debugger
             var leftsection = data.concat(new_data);
             var rightsectiondata = [];
 
@@ -247,26 +252,26 @@ sap.ui.define([
                         { [keyl]: items_table[tablelen + 5].getCells()[0].getText(), [keyn]: items_table[tablelen + 5].getCells()[2].getText() },
                         { [keyn]: items_table[tablelen + 6].getCells()[2].getText() },
                         { [keyn]: items_table[tablelen + 7].getCells()[2].getText() },
-                        { [keyl]: items_table[tablelen + 8].getCells()[0].getText() },
-                        { [keyl]: items_table[tablelen + 9].getCells()[0].getText(), [keyn]: items_table[tablelen + 9].getCells()[2].getText() }, // sgst
-                        { [keyl]: items_table[tablelen + 10].getCells()[0].getText(), [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // igst
-                        { [keyl]: items_table[tablelen + 11].getCells()[0].getText(), [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // ugst
-                        { [keyl]: items_table[tablelen + 12].getCells()[0].getText() }, // shipment
-                        { [keyn]: items_table[tablelen + 13].getCells()[2].getText() }, // including tax
-                        { [keyn]: items_table[tablelen + 14].getCells()[2].getText() }, // excluding tax
-                        { [keyn]: items_table[tablelen + 15].getCells()[2].getText() }, // perdeim
-                        { [keyl]: pricesbasishbox[j].getItems()[0].getText() }, // pricebasis
-                        { [keyl]: pricesbasishbox[j].getItems()[1].getText() },
+                        { [keyl]: items_table[tablelen + 8].getContent()[0].getText() },
+                        // { [keyl]: items_table[tablelen + 9].getCells()[0].getText(), [keyn]: items_table[tablelen + 9].getCells()[2].getText() }, // sgst
+                        // { [keyl]: items_table[tablelen + 10].getCells()[0].getText(), [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // igst
+                        // { [keyl]: items_table[tablelen + 11].getCells()[0].getText(), [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // ugst
+                        { [keyl]: items_table[tablelen + 9].getCells()[0].getText() }, // shipment     //Till here
+                        { [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // including tax
+                        { [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // excluding tax
+                        { [keyn]: items_table[tablelen + 12].getCells()[2].getText() }, // perdeim
+                        // { [keyl]: pricesbasishbox[j].getItems()[0].getText() }, // pricebasis
+                        // { [keyl]: pricesbasishbox[j].getItems()[1].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[0].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[1].getContent()[0].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[2].getContent()[0].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[3].getContent()[0].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[4].getContent()[0].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[5].getContent()[0].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[6].getContent()[0].getText() },
+                        // { [keyl]: pricesbasishbox[j].getItems()[6].getContent()[0].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[4].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[5].getText() },
+                        { [keyl]: pricesbasishbox[j].getItems()[6].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[7].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[8].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[9].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[10].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[11].getText() },
                     ];
 
                     arr = arr.concat(aftertable);

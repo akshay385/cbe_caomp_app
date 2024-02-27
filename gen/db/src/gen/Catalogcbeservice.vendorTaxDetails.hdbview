@@ -1,0 +1,8 @@
+VIEW Catalogcbeservice_vendorTaxDetails AS SELECT
+  vendorTaxDetails_0.Proposed_Vendor_Code,
+  vendorTaxDetails_0.PAN_Number,
+  vendorTaxDetails_0.Item_Code,
+  vendorTaxDetails_0.idd,
+  vendorTaxDetails_0.name,
+  vendorTaxDetails_0.value
+FROM CBE_vendorTaxDetails AS vendorTaxDetails_0

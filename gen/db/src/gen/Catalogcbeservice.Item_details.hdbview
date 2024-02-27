@@ -9,6 +9,7 @@ VIEW Catalogcbeservice_Item_details AS SELECT DISTINCT
   I_1.Quantity AS Quantity,
   I_1.Unit_Price AS Unit_Price,
   I_1.Amount AS Amount,
+  I_1.extendedPrice AS extendedPrice,
   I_1.Indian_Tax_PER AS Indian_Tax_PER,
   I_1.Quantity_Over_Delivery_Tolerance AS Quantity_Over_Delivery_Tolerance
 FROM (Catalogcbeservice_Projects AS Pr_0 INNER JOIN Catalogcbeservice_Items AS I_1 ON Pr_0.PAN_Number = I_1.PAN_Number)

@@ -38,16 +38,16 @@ annotate service.Project_Details with @(
 
 
 annotate service.Project_Details with @(UI.HeaderInfo: {
-    Title      : {
+    Title         : {
         $Type: 'UI.DataField',
         Value: Project_Description,
     },
-    Description: {
+    Description   : {
         $Type: 'UI.DataField',
         Value: ProjectId,
     },
-    TypeName : '',
-    TypeNamePlural : '',
+    TypeName      : 'Comparative statement',
+    TypeNamePlural: '',
 });
 
-annotate service.Project_Details with @Common.SemanticKey : [ ProjectId];
+annotate service.Project_Details with @Common.SemanticKey: [ProjectId];

@@ -10,7 +10,10 @@ module.exports = cds.service.impl(async function () {
         Items,
         Vendors,
         PAN_Info,
-        Project_Details } = this.entities;
+        Project_Details,
+        vendorTaxDetails,
+        PanWebEvent
+    } = this.entities;
 
     const c4re = await cds.connect.to("dbservice");
 
@@ -75,15 +78,18 @@ module.exports = cds.service.impl(async function () {
             await INSERT.into(PAN_Info).entries(pan_details.value);
 
             // const proj_details = await c4re.get("/odata/v4/pan-approval/PAN_proj_APR");//proj
-            
+
 
             const pan_proj = [];
             if (pan_details.value) {
                 pan_details.value.forEach(ele => {
-                    pan_proj.push({
-                        ProjectId:`${ele.ProjectId || 'NA'}`,
-                        PAN_Number:`${ele.PAN_Number || 'NA'}`
-                    })
+                    // if (ele.task_id.trim() !== '') {
+                        pan_proj.push({
+                            ProjectId: `${ele.ProjectId || 'NA'}`,
+                            PAN_Number: `${ele.PAN_Number || 'NA'}`
+                        })
+                    // }
+
                 });
             }
 
@@ -101,7 +107,7 @@ module.exports = cds.service.impl(async function () {
             await DELETE.from(Vendors);
             await INSERT.into(Vendors).entries(vendor_details.value);
 
-            
+
             const vendor_res_details = await c4re.get("/odata/v4/pan-approval/PAN_vendor_response_APR");//vendor
             await DELETE.from(PAN_vendor_reponse_details);
             await INSERT.into(PAN_vendor_reponse_details).entries(vendor_res_details.value);
@@ -111,6 +117,15 @@ module.exports = cds.service.impl(async function () {
             const item_details = await c4re.get("/odata/v4/pan-approval/PAN_PRICE_DETAILS_APR");//items
             await DELETE.from(Items);
             await INSERT.into(Items).entries(item_details.value);
+
+
+            const item_tax_details = await c4re.get("/odata/v4/pan-approval/vendorTaxDetails_APR");//items
+            await DELETE.from(vendorTaxDetails);
+            await INSERT.into(vendorTaxDetails).entries(item_tax_details.value);
+
+            const pan_web_event = await c4re.get("/odata/v4/pan-approval/PAN_WEB_EVENT_APR");//Pan web event
+            await DELETE.from(PanWebEvent);
+            await INSERT.into(PanWebEvent).entries(pan_web_event.value);
         } catch (error) {
             console.log(error);
         }

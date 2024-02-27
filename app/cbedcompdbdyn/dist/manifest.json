@@ -160,6 +160,14 @@
                                                 "designtime": "Default"
                                             }
                                         }
+                                    },
+                                    "actions": {
+                                        "custbutton": {
+                                            "press": "cbedcompdbdyn.ext.controller.Headerbutton.onpress",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "text": "Test"
+                                        }
                                     }
                                 }
                             }

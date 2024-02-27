@@ -1,0 +1,9 @@
+VIEW Catalogcbeservice_PanWebEvent AS SELECT
+  PAN_WEB_EVENT_0.idd,
+  PAN_WEB_EVENT_0.PAN_Number,
+  PAN_WEB_EVENT_0.eventNo,
+  PAN_WEB_EVENT_0."NUMBER",
+  PAN_WEB_EVENT_0."DATE",
+  PAN_WEB_EVENT_0.numberOfVendorsParticipated,
+  PAN_WEB_EVENT_0.l1AmountObtained
+FROM CBE_PAN_WEB_EVENT AS PAN_WEB_EVENT_0

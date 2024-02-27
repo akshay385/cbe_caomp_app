@@ -17,7 +17,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 					// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 					var oModel = this.base.getExtensionAPI().getModel();
-					debugger
+
 					let header_anchor = this.base.getView().mAggregations.content[0].mAggregations.headerTitle;
 
 					header_anchor.destroyActions();
@@ -27,7 +27,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 					// 		// MessageToast.show("Custom handler invoked.");
 					// 		if (oEvent.getSource().getPressed() == true) {
-					// 			debugger
+					// 			 
 					// 			oEvent.getSource().setText("ItemList-CollapseAll");
 					// 			let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");
 					// 			if (totat_basicpricing.getSrc() == "sap-icon://navigation-right-arrow") {
@@ -113,7 +113,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 					// 	src: 'sap-icon://excel-attachment',
 					// 	tooltip: 'Export as excel',
 					// 	press: async function (oEvent) {
-					// 		debugger
+					// 		 
 					// 		let EdmType = new sap.ui.export.EdmType();
 
 					// 		// Parse the data from Excel into an array
@@ -383,7 +383,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 					// 		}
 
-					// 		debugger
+					// 		 
 					// 		// let func = 'getExcelData';
 					// 		// let testdata = 'ABC';
 					// 		// let oFunction = oEvent.getSource().getModel().bindContext("/getExcelData(...)");
@@ -392,7 +392,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 					// 		// oFunction.execute();
 					// 		// console.log();
 
-					// 		debugger
+					// 		 
 					// 		// Update the columns array to match the columns in your Excel spreadsheet
 					// 		var oSpreadsheet = new sap.ui.export.Spreadsheet({
 					// 			workbook: {
@@ -643,6 +643,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									size: "12px",
 									width: "20px",
 									press: function (oEvent) {
+										debugger
 
 										var vbox_omainhbox = omainHBox.getItems()[0];
 										let total_basic_pricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--total_basic_pricing");
@@ -702,7 +703,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								}
 							});
 
+							let tag_no_iterator = 1;
 							for (let i = 0; i < uniqueItems.length; i++) {
+
+								debugger
 
 								itemstable.addItem(new sap.m.ColumnListItem(`${"collistitem" + (i + 1)}`));
 								let columnlist = itemstable.getItems()[i];
@@ -713,6 +717,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									wrapping: false
 								})
 								columnlist.addCell(itemdesc);
+
+
+
 
 								let tag_no = new sap.m.Text(`${"tag_no" + (i + 1)}`, {
 									text: `${list_of_items[i]?.tag_no ?? ' '}`,
@@ -769,6 +776,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									wrapping: false
 								})
 								columnlist.addCell(weights_in_kg);
+								//uom
+								let uom = new sap.m.Text(`${"uom" + (i + 1)}`, {
+									text: `${list_of_items[i]?.UOM ?? ' '}`,
+									tooltip: `${list_of_items[i]?.UOM ?? ' '}`,
+									wrapping: false
+								})
+								columnlist.addCell(uom);
 
 								let qty_no = new sap.m.Text(`${"qty_no" + (i + 1)}`, {
 									text: `${list_of_items[i]?.Quantity ?? ' '}`,
@@ -778,6 +792,68 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								columnlist.addCell(qty_no);
 
 							}
+
+
+
+
+
+
+
+
+
+
+							//dynamic generation of column
+							let counter_item = {
+								0: 0,
+								1: 0,
+								2: 0,
+								3: 0,
+								4: 0,
+								5: 0,
+								6: 0,
+								7: 0,
+								8: 0,
+								9: 0,
+								10: 0
+
+							};
+
+							for (let l = 0; l < itemstable.getColumns().length; l++) {
+								itemstable.getColumns()[l].setVisible(true);
+
+							}
+
+
+							for (let itm = 0; itm < itemstable.getItems().length; itm++) {
+								// debugger
+								let current_item_cells = itemstable.getItems()[itm].getCells();
+								for (let cell = 0; cell < current_item_cells.length; cell++) {
+									// debugger
+									if (current_item_cells[cell].getText().trim() == '') {
+										// debugger
+										counter_item[cell] += 1;
+									}
+								}
+							}
+
+							for (let key in counter_item) {
+								if (counter_item[key] == itemstable.getItems().length) {
+									debugger
+									itemstable.getColumns()[key].setVisible(false);
+								}
+								// console.log(`Key: ${key}, Value: ${counter_item[key]}`);
+							}
+
+							//end of dynamic generation of Columns
+
+
+
+
+
+
+
+
+
 
 							////////////////////////////////////////////////////////////////////////////////////////////////////////////
 							var Scrollhbox = omainHBox.getItems()[1].getContent()[0];
@@ -807,6 +883,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							let classitemiter = 0;
 
+							debugger
 							for (let i = 0; i < vendorslist.length; i++) {
 
 								const vendorId = vendorslist[i].vendor_code;
@@ -892,11 +969,11 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								var hbmiddlesection = curr_sectionvbox.getItems()[1];
 								hbmiddlesection.addStyleClass("alignmentVendorClass");
 
-								debugger
+
 								// let filteredWebEvent = pan_web_event.filter(item => item.number === vendorslist[i].PAN_Number);
 								// let filteredVendorList = vendorslist.filter(item => item.ProjectId === project_id[1] && item.Proposed_Vendor_Code === vendorslist[i].Proposed_Vendor_Code);
 
-								debugger
+
 								let k = 0;
 								let iterator = 0;
 
@@ -1098,8 +1175,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								// 				valuesMap[item.name] = item.value; // Store the value for the name
 								// 			}
 								// 		}
-								// 		debugger
-								// 		debugger
+								// 		 
+								// 		 
 
 								// 		var oItem1 = new sap.m.ColumnListItem({
 								// 			id: `${"blankspace" + generateUniqueId()}`,
@@ -1458,17 +1535,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								// } while (k < vendorslist.length);
 
 								//modified
+								debugger
 								do {
 									debugger
 
 									if (vendorslist[k].ProjectId == project_id[1] && vendorslist[k].Proposed_Vendor_Code == vendorslist[i].Proposed_Vendor_Code) {
 
 										let panNumber = vendorslist[k].PAN_Number;
-
-										// var obj = { a: 'test1', b: 'test2' };
-										// if (Object.values(pan_web_event).indexOf(panNumber) > -1) {
-										// 	console.log('has test1');
-										// }
 
 										function isPAN_NumberExists(PAN_Number) {
 											for (let i = 0; i < pan_web_event.length; i++) {
@@ -1479,612 +1552,1266 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											return false;
 										}
 										if (isPAN_NumberExists(panNumber)) {
-											debugger
-
-
-											hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`, {
-												// width: "500px"
-											}));
-
 											let filteredWebEvent = pan_web_event.filter(item => item.number === vendorslist[k].PAN_Number);
 
-											var itmlen = hbmiddlesection.getItems().length
-											var vbmiddlesection = hbmiddlesection.getItems()[itmlen - 1];
-											vbmiddlesection.addStyleClass("customVBox");
-
-											vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + generateUniqueId()}`));
-
-											var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
-
-											vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
-												text: `${filteredWebEvent[0]?.number ?? 'NA'}`,
-											}));
-											vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
-												text: `${filteredWebEvent[0]?.date ?? 'NA'}`
-											}));
-											vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
-												text: `${vendorslist[k]?.validity ?? 'NA'}`
-											}));
-											vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
-												text: ""
-											}));
-											vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
-
-											var inner_vbox = new sap.m.VBox(`${"innervbox" + generateUniqueId()}`, {
-												// width: "100%"
-												alignItems: "Center"
-											});
-											vbmiddlesection.addItem(inner_vbox);
-
-
-											let matchedObject = pan_info.find(item => item.PAN_Number === vendorslist[k].PAN_Number);
-
-											inner_vbox.addItem(new sap.m.Label(`${"original_offer" + generateUniqueId()}`, {
-												text: `${filteredWebEvent[0]?.eventNo ?? ' '}`,
-												design: "Bold"
-											}));
-
-											var oTable = new sap.m.Table({
-												id: `${"offer" + generateUniqueId()}`,
-												class: "tableBorder",
-												growing: true,
-												growingThreshold: 20,
-												width: "350px",
-												fixedLayout: true
-											});
-
-
-											oTable.addStyleClass("tableBorder");
-
-											inner_vbox.addItem(oTable);
-
-											var oColumn1 = new sap.m.Column({
-												id: `${"unit_rate" + generateUniqueId()}`,
-												header: new sap.m.Label({ text: "Unit Rate", design: "Bold", wrapping: false }),
-												// styleClass: 'custcolorclass'
-											});
-
-											var oColumn2 = new sap.m.Column({
-												id: `${"unit_rate_per" + generateUniqueId()}`,
-												header: new sap.m.Label({ text: "Rate per Unit", design: "Bold", wrapping: false }),
-												// styleClass: 'custcolorclass'
-											});
-
-
-											var oColumn3 = new sap.m.Column({
-												id: `${"total_amt_offer" + generateUniqueId()}`,
-												header: new sap.m.HBox(),
-												// styleClass: 'custcolorclass'
-
-											});
-
-											oTable.addColumn(oColumn1);
-											oTable.addColumn(oColumn2);
-											oTable.addColumn(oColumn3);
-
-											//Total amount expand property
-
-											var colheader = oTable.getColumns()[2].getHeader();
-
-											colheader.addItem(new sap.m.Label({
-												text: "Total Amount",
-												design: "Bold"
-											}))
-
-
-											//end of total amount 
-
-											var uniquelistitem = [];
-											var grandTotalAmount = 0
-											var grandTotalUnit = '';
-											let cnt = 0;
-											let processedOfferIds = new Set();
+											for (let webnt = 0; webnt < filteredWebEvent.length; webnt++) {
+												// if (isPAN_NumberExists(panNumber)) {
 
 
 
-											// Filter list_of_items based on PAN_Number and Proposed_Vendor_Code
-											const filteredItems = list_of_items.filter(item =>
-												item.PAN_Number === vendorslist[k].PAN_Number &&
-												item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
-											);
+												hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`, {
+													// width: "500px"
+												}));
 
-											let extendedprice = 0;
-											let tax_value = '';
 
-											// Iterate over uniqueItems
-											for (let i = 0; i < uniqueItems.length; i++) {
+
+												var itmlen = hbmiddlesection.getItems().length
+												var vbmiddlesection = hbmiddlesection.getItems()[itmlen - 1];
+												vbmiddlesection.addStyleClass("customVBox");
+
+												vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + generateUniqueId()}`));
+
+												var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
+
+												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
+													text: `${filteredWebEvent[webnt]?.number ?? 'NA'}`,
+												}));
+												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
+													text: `${filteredWebEvent[webnt]?.date ?? 'NA'}`
+												}));
+												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
+													text: `${vendorslist[k]?.validity ?? 'NA'}`
+												}));
+												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
+													text: ""
+												}));
+												vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
+
+												var inner_vbox = new sap.m.VBox(`${"innervbox" + generateUniqueId()}`, {
+													// width: "100%"
+													alignItems: "Center"
+												});
+												vbmiddlesection.addItem(inner_vbox);
+
+
+												let matchedObject = pan_info.find(item => item.PAN_Number === vendorslist[k].PAN_Number);
+
+												inner_vbox.addItem(new sap.m.Label(`${"original_offer" + generateUniqueId()}`, {
+													text: `${filteredWebEvent[webnt]?.eventNo ?? ' '}`,
+													design: "Bold"
+												}));
+
+												var oTable = new sap.m.Table({
+													id: `${"offer" + generateUniqueId()}`,
+													class: "tableBorder",
+													growing: true,
+													growingThreshold: 20,
+													width: "350px",
+													fixedLayout: true
+												});
+
+
+												oTable.addStyleClass("tableBorder");
+
+												inner_vbox.addItem(oTable);
+
+												var oColumn1 = new sap.m.Column({
+													id: `${"unit_rate" + generateUniqueId()}`,
+													header: new sap.m.Label({ text: "Unit Rate", design: "Bold", wrapping: false }),
+													// styleClass: 'custcolorclass'
+												});
+
+												// var oColumn2 = new sap.m.Column({
+												// 	id: `${"unit_rate_per" + generateUniqueId()}`,
+												// 	header: new sap.m.Label({ text: "Rate per Unit", design: "Bold", wrapping: false }),
+												// 	// styleClass: 'custcolorclass'
+												// });
+
+
+												var oColumn3 = new sap.m.Column({
+													id: `${"total_amt_offer" + generateUniqueId()}`,
+													header: new sap.m.HBox(),
+													// styleClass: 'custcolorclass'
+
+												});
+
+												oTable.addColumn(oColumn1);
+												// oTable.addColumn(oColumn2);
+												oTable.addColumn(oColumn3);
+
+												//Total amount expand property
+
 												debugger
+												var colheader = oTable.getColumns()[1].getHeader()
 
-												const currentItem = uniqueItems[i];
-												let itemMatchingPrjVenPan = list_of_items.filter(item => item.ProjectId == project_id[1] && item.Proposed_Vendor_Code == vendorslist[k].Proposed_Vendor_Code && item.Item_Code == uniqueItems[i].Item_Code && item.PAN_Number == panNumber)
-												const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
+												colheader.addItem(new sap.m.Label({
+													text: "Total Amount",
+													design: "Bold"
+												}))
 
-												if (foundItem || itemMatchingPrjVenPan.length) {
-													// Found item, create ColumnListItem with data
-													var AmtWithoutCommas = itemMatchingPrjVenPan[0].Amount.replace(/,/g, '') ?? 0;
-													var quantityWithoutCommas = itemMatchingPrjVenPan[0].Quantity.replace(/,/g, '') ?? 0;
-													let extendedPriceWithoutComms = itemMatchingPrjVenPan[0].extendedPrice.replace(/,/g, '') ?? 0;
 
-													extendedprice = extendedprice + parseFloat(extendedPriceWithoutComms ?? 0);
-													tax_value = tax_value + (itemMatchingPrjVenPan[0]?.Indian_Tax_PER ?? ' ') + '\n'
+												//end of total amount 
 
-													const total_amount_value = Number(AmtWithoutCommas ?? 0) * Number(quantityWithoutCommas ?? 0);
-													const total_amount_display = `${total_amount_value} ${itemMatchingPrjVenPan[0].Unit_Price ?? ' '}`;
+												var uniquelistitem = [];
+												var grandTotalAmount = 0
+												var grandTotalUnit = '';
+												let cnt = 0;
+												let processedOfferIds = new Set();
 
-													grandTotalAmount += total_amount_value;
-													grandTotalUnit = itemMatchingPrjVenPan[0].Unit_Price;
 
-													const oItem = new sap.m.ColumnListItem({
-														id: `${"item1data" + generateUniqueId()}`,
-														cells: [
-															new sap.m.Text({ text: `${AmtWithoutCommas ?? ' '} ${itemMatchingPrjVenPan[0].Unit_Price}` }),
-															new sap.m.Text({ text: `${itemMatchingPrjVenPan[0].unit_rate_per_unit ?? ' '}` }),
-															new sap.m.Text({ text: total_amount_display }),
-														]
-													});
 
-													oTable.addItem(oItem);
-												} else {
-													// Item not found, create empty row
-													const oItem = new sap.m.ColumnListItem({
-														id: `${"item1data" + generateUniqueId()}`,
-														cells: [
-															new sap.m.Text({ text: "" }),
-															new sap.m.Text({ text: "" }),
-															new sap.m.Text({ text: "" })
-														]
-													});
+												// Filter list_of_items based on PAN_Number and Proposed_Vendor_Code
+												const filteredItems = list_of_items.filter(item =>
+													item.PAN_Number === vendorslist[k].PAN_Number &&
+													item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+												);
 
-													oTable.addItem(oItem);
+												let extendedprice = 0;
+												let tax_value = '';
+
+												function formatCurrency(amount, currencyCode) {
+													debugger
+													let formattedAmount = '';
+													switch (currencyCode) {
+														case 'INR':
+															formattedAmount += parseFloat(amount).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+															break;
+														default:
+															formattedAmount += parseFloat(amount).toLocaleString('en-US', { maximumFractionDigits: 2 });
+															break;
+													}
+													return formattedAmount;
 												}
-											}
-											////////////////////////////////////////////////////////////////////////////////
-											debugger
-											debugger
-											const vendorresponse_selecteditem = vendor_response_deatils.filter(item =>
-												item.PAN_Number === vendorslist[k].PAN_Number &&
-												item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
-											);
 
-											//Tax Details
-											const tax_details_filtered = tax_details.filter(item =>
-												item.PAN_Number === vendorslist[k].PAN_Number &&
-												item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
-											);
+												debugger
+												// Iterate over uniqueItems
+												for (let i = 0; i < uniqueItems.length; i++) {
 
-											let valuesMap = {}; // Object to store values for specified names
 
-											const namesToCheck = [
-												'Spares for 2 Years operation',
-												'Packing, Marking, Forwarding & Freight',
-												'Inspection / Testing Charges',
-												'Documentation Charges',
-												'RNOD',
-												'Custom Duty & Cess',
-												'SGST',
-												'IGST',
-												'UGST',
-												'Shipment charges from EXW to ISRO Mahendragiri',
-												'Per Diem rate for Supervision for Erection and commissioning',
-												'PriceBasis',
-												'Point of Delivery',
-												'Delivery Period',
-												'Payment Terms',
-												'Liquidated Damages',
-												'Warranty / Defect Liability Period',
-												'CPBG',
-												'Contact Person',
-												'Contact No.',
-												'Order can be given to',
-												'Techncially Approved',
-												'Approved Vendor',//22
-												'Packing Value',//23
-												'Inspection Value',//24
-												'Document Value'//25
-											];
+													const currentItem = uniqueItems[i];
+													let itemMatchingPrjVenPan = list_of_items.filter(item => item.ProjectId == project_id[1] && item.Proposed_Vendor_Code == vendorslist[k].Proposed_Vendor_Code && item.Item_Code == uniqueItems[i].Item_Code && item.PAN_Number == panNumber)
+													const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
 
-											for (let i = 0; i < tax_details_filtered.length; i++) {
-												const item = tax_details_filtered[i];
-												if (namesToCheck.includes(item.name)) {
-													valuesMap[item.name] = item.value; // Store the value for the name
+													if (foundItem || itemMatchingPrjVenPan.length) {
+														debugger
+														// Found item, create ColumnListItem with data
+														var AmtWithoutCommas = itemMatchingPrjVenPan[0].Amount?.replace(/,/g, '') ?? 0;
+														var quantityWithoutCommas = itemMatchingPrjVenPan[0].Quantity?.replace(/,/g, '') ?? 0;
+														let extendedPriceWithoutComms = itemMatchingPrjVenPan[0].extendedPrice?.replace(/,/g, '') ?? 0;
+
+														extendedprice = extendedprice + parseFloat(extendedPriceWithoutComms ?? 0);
+														tax_value = tax_value + (itemMatchingPrjVenPan[0]?.Indian_Tax_PER ?? ' ') + '\n'
+
+														const total_amount_value = Number(AmtWithoutCommas ?? 0) * Number(quantityWithoutCommas ?? 0);
+														const total_amount_display = `${total_amount_value} ${itemMatchingPrjVenPan[0].Unit_Price ?? ' '}`;
+
+														grandTotalAmount += total_amount_value;
+														grandTotalUnit = itemMatchingPrjVenPan[0].Unit_Price;
+
+														const oItem = new sap.m.ColumnListItem({
+															id: `${"item1data" + generateUniqueId()}`,
+															cells: [
+																new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${itemMatchingPrjVenPan[0].Unit_Price}` }),
+																// new sap.m.Text({ text: `${itemMatchingPrjVenPan[0].unit_rate_per_unit ?? ' '}` }),
+																new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}` }),
+															]
+														});
+
+														oTable.addItem(oItem);
+													} else {
+														// Item not found, create empty row
+														const oItem = new sap.m.ColumnListItem({
+															id: `${"item1data" + generateUniqueId()}`,
+															cells: [
+																new sap.m.Text({ text: "" }),
+																// new sap.m.Text({ text: "" }),
+																new sap.m.Text({ text: "" })
+															]
+														});
+
+														oTable.addItem(oItem);
+													}
 												}
+												////////////////////////////////////////////////////////////////////////////////
+
+
+												const vendorresponse_selecteditem = vendor_response_deatils.filter(item =>
+													item.PAN_Number === vendorslist[k].PAN_Number &&
+													item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+												);
+
+												//Tax Details
+												const tax_details_filtered = tax_details.filter(item =>
+													item.PAN_Number === vendorslist[k].PAN_Number &&
+													item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+												);
+
+												let valuesMap = {}; // Object to store values for specified names
+
+												const namesToCheck = [
+													'Spares for 2 Years operation',
+													'Packing, Marking, Forwarding & Freight',
+													// 'Freight',
+													'Inspection / Testing Charges',
+													'Documentation Charges',
+													'RNOD',
+													'Custom Duty & Cess',
+													'SGST',
+													'IGST',
+													'UGST',
+													'Shipment charges from EXW to ISRO Mahendragiri',
+													'Per Diem rate for Supervision for Erection and commissioning',
+													'PriceBasis',
+													'Point of Delivery',
+													'Delivery Period',
+													'Payment Terms',
+													'Liquidated Damages',
+													'Warranty / Defect Liability Period',
+													'CPBG',
+													'Contact Person',
+													'Contact No.',
+													'Order can be given to',
+													'Techncially Approved',
+													'Approved Vendor',//22
+													'Freight',//23  //fetching from database
+													'Inspection Value',//24
+													'Document Value'//25
+												];
+
+												for (let i = 0; i < tax_details_filtered.length; i++) {
+													const item = tax_details_filtered[i];
+													if (namesToCheck.includes(item.name)) {
+														valuesMap[item.name] = item.value; // Store the value for the name
+													}
+												}
+
+
+
+												var oItem1 = new sap.m.ColumnListItem({
+													id: `${"blankspace" + generateUniqueId()}`,
+													cells: [
+														new sap.m.Text({ text: "" }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: "" })
+													]
+												});
+
+
+
+												oTable.addItem(oItem1);
+												var oItem2 = new sap.m.ColumnListItem({
+													id: `${"spare" + generateUniqueId()}`,
+													cells: [
+														new sap.m.Text({ text: "" }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: `${formatCurrency(valuesMap[namesToCheck[0]] ?? 0) + " " + grandTotalUnit ?? ' '}` })
+													]
+												});
+
+
+												let spares_2_value = grandTotalAmount + (parseFloat(valuesMap[namesToCheck[0]]) || 0)
+												oTable.addItem(oItem2);
+												var oItem3 = new sap.m.ColumnListItem({
+													id: `${"grandtotal" + generateUniqueId()}`,
+													cells: [
+														new sap.m.Text({ text: "" }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Label({ text: `${formatCurrency(spares_2_value) + " " + grandTotalUnit}`, design: "Bold" })
+													]
+												});
+
+												oTable.addItem(oItem3);
+												var oItem4 = new sap.m.ColumnListItem({
+													id: `${"parkingmarking" + generateUniqueId()}`,
+													visible: true,
+													cells: [
+
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[1]] ?? ' '}` }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: `${formatCurrency(valuesMap[namesToCheck[23]] ?? 0) + " " + grandTotalUnit}` }),
+													]
+												});
+
+												oTable.addItem(oItem4);
+												var oItem5 = new sap.m.ColumnListItem({
+													id: `${"inspection" + generateUniqueId()}`,
+													visible: true,
+													cells: [
+
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[2]] ?? ' '}` }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[24]] ?? ' '}` }),
+													]
+												});
+
+												oTable.addItem(oItem5);
+												var oItem6 = new sap.m.ColumnListItem({
+													id: `${"documentation" + generateUniqueId()}`,
+													visible: true,
+													cells: [
+
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[3]] ?? ' '}` }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[25]] ?? ' '}` }),
+													]
+												});
+
+												let totalchargesB = spares_2_value + (parseInt(valuesMap[namesToCheck[23]]) || 0) + (parseInt(valuesMap[namesToCheck[24]]) || 0) + (parseInt(valuesMap[namesToCheck[25]]) || 0)
+												oTable.addItem(oItem6);
+												// var oItem7 = new sap.m.ColumnListItem({
+												// 	id: `${"totalbasicpricing" + generateUniqueId()}`,
+												// 	cells: [
+
+
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Label({ text: `${totalchargesB + " " + grandTotalUnit}`, design: "Bold" })
+												// 		// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_including_packing ?? ' '}`, design: "Bold" }),
+												// 	]
+												// });
+
+												// oTable.addItem(oItem7);
+												var oItem8 = new sap.m.ColumnListItem({
+													id: `${"rnod" + generateUniqueId()}`,
+													cells: [
+
+														new sap.m.Label({ text: `${valuesMap[namesToCheck[4]] ?? ' '}`, design: "Bold" }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: "" }),
+													]
+												});
+
+												oTable.addItem(oItem8);
+												var oItem9 = new sap.m.ColumnListItem({
+													id: `${"customduty" + generateUniqueId()}`,
+													visible: true,
+													cells: [
+
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[5]] ?? ' '}` }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: "" }),
+													]
+												});
+
+												oTable.addItem(oItem9);
+
+												// var oItem10 = new sap.m.ColumnListItem({
+												// 	id: `${"tax" + generateUniqueId()}`,
+												// 	visible: true,
+												// 	cells: [
+
+												// 		new sap.m.Text({ text: "hellllllllllllskjdfhjkdshfsdkjfjhdskjfhkjdshfdsjkfhsdjkfhdskfjkdshfjkdshfjkdshfkhdslllllllllo",width:"300%",wrapping:false }),
+
+												// 	]
+												// });
+
+												// oTable.addItem(oItem10);
+												var oItem10 = new sap.m.CustomListItem({
+													id: `${"tax_field" + generateUniqueId()}`,
+													visible: true,
+													content: [
+														new sap.m.Text({ text: tax_value, width: "294px" })
+
+													]
+												});
+
+												oTable.addItem(oItem10);
+
+												// alert(oTable.getItems().length);
+
+
+												let sgst_amt = (parseFloat(valuesMap[namesToCheck[6]]) || 0) * totalchargesB / 100;
+												// var oItem10 = new sap.m.ColumnListItem({
+												// 	id: `${"sgst" + generateUniqueId()}`,
+												// 	visible: false,
+												// 	cells: [
+
+												// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[6]] ?? ' '}` }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: sgst_amt + " " + grandTotalUnit }),
+												// 	]
+												// });
+
+												let igst_amt = (parseFloat(valuesMap[namesToCheck[7]]) || 0) * totalchargesB / 100;
+												// oTable.addItem(oItem10);
+												// var oItem11 = new sap.m.ColumnListItem({
+												// 	id: `${"igst" + generateUniqueId()}`,
+												// 	visible: false,
+												// 	cells: [
+
+												// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[7]] ?? ' '}` }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: `${igst_amt + " " + grandTotalUnit}` }),
+												// 	]
+												// });
+
+												let ugst_amt = (parseFloat(valuesMap[namesToCheck[8]]) || 0) * totalchargesB / 100;
+												// oTable.addItem(oItem11);
+												// var oItem12 = new sap.m.ColumnListItem({
+												// 	id: `${"ugst" + generateUniqueId()}`,
+												// 	visible: false,
+												// 	cells: [
+
+												// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[8]] ?? " "}` }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: `${ugst_amt + " " + grandTotalUnit}` }),
+												// 	]
+												// });
+
+												// oTable.addItem(oItem12);
+												var oItem13 = new sap.m.ColumnListItem({
+													id: `${"shipment" + generateUniqueId()}`,
+													visible: true,
+													cells: [
+
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[9]] ?? ' '}` }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: "" }),
+													]
+												});
+												if (!extendedprice) {
+													extendedprice = 0;
+												}
+
+												let totalincludingtax = totalchargesB + sgst_amt + igst_amt + ugst_amt
+												oTable.addItem(oItem13);
+												var oItem14 = new sap.m.ColumnListItem({
+													id: `${"totalincludingtaxes" + generateUniqueId()}`,
+													cells: [
+														new sap.m.Text({ text: "" }),
+														// new sap.m.Text({ text: "" }),
+														// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_with_taxes ?? ' '}`, design: "Bold" })
+														// new sap.m.Label({ text: `${totalincludingtax + " " + grandTotalUnit}`, design: "Bold" })
+														new sap.m.Label({ text: `${formatCurrency(extendedprice ?? 0) + " " + grandTotalUnit}`, design: "Bold" })
+													]
+												});
+												oTable.addItem(oItem14);
+												var oItem14 = new sap.m.ColumnListItem({
+													id: `${"total_excluding_taxes" + generateUniqueId()}`,
+													cells: [
+														new sap.m.Text({ text: "" }),
+														// new sap.m.Text({ text: "" }),
+														// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_without_taxes ?? ' '}`, design: "Bold" })
+														// new sap.m.Label({ text: `${totalchargesB + " " + grandTotalUnit}`, design: "Bold" })
+														new sap.m.Label({ text: `${formatCurrency(extendedprice) + " " + grandTotalUnit}`, design: "Bold" })
+													]
+												});
+												oTable.addItem(oItem14);
+												var oItem15 = new sap.m.ColumnListItem({
+													id: `${"perdiemrate" + generateUniqueId()}`,
+													cells: [
+														new sap.m.Text({ text: `${valuesMap[namesToCheck[10]] ?? ' '}` }),
+														// new sap.m.Text({ text: "" }),
+														new sap.m.Text({ text: "" })
+													]
+												});
+												oTable.addItem(oItem15);
+
+
+												oTable.getItems()[oTable.getItems().length - 5].addStyleClass("taxCell")
+
+
+												var combobox_item = vbox_last_section.getItems()[0]
+
+												// combobox_item.setValue(`${total_offers_of_vendor[total_offers_of_vendor.length - 1].offer_name}`);
+
+
+
+												var item = new sap.ui.core.Item(`${"item1" + (generateUniqueId())}`, {
+													text: `${filteredWebEvent[webnt].eventNo ?? ' '}`
+												})
+
+												combobox_item.addItem(item);
+
+												combobox_item.setValue(`${filteredWebEvent[webnt].eventNo ?? ''}`);
+
+												last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`));
+
+												var chvbox = last_hcombobox.getItems()[iterator];
+												iterator++;
+
+
+												// if (combobox_item.getValue() != vendorslist[k]?.PAN_Number ?? ' ') {
+												// 	chvbox.setVisible(false)
+												// }
+
+												chvbox.addStyleClass("spacebetweenclass");
+
+
+												// //Price Basis
+												// chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
+												// 	text: `${valuesMap[namesToCheck[11]] ?? ' '}`,
+												// 	// text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
+
+												// }));
+												// chvbox.getItems()[0].addStyleClass("pricebasispadding");
+
+												// //Point of Delivery
+												// chvbox.addItem(new sap.m.Text(`${"pointofdelivery" + generateUniqueId()}`, {
+												// 	text: `${valuesMap[namesToCheck[12]] ?? ' '}`,
+												// 	// text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
+												// 	// height:"15px"
+												// }));
+
+
+												//Delivery Period
+												chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll" + generateUniqueId()}`, {
+													vertical: true,
+													width: "350px",
+													height: "100px"
+												}))
+												// chvbox.getItems()[1].addStyleClass("deliveryperiodpadding");
+
+												chvbox.getItems()[0].addContent(new sap.m.Text(`${"Scopedeliveryperiod" + generateUniqueId()}`, {
+													// text: `${valuesMap[namesToCheck[13]] ?? ' '}`
+													// text: `${vendorslist[k]?.CPBG ?? ' '}`
+													text: `${vendorresponse_selecteditem[0]?.Scope_and_Responsibilities ?? ' '}`
+												}));
+
+
+												//Payment Terms
+												chvbox.addItem(new sap.m.ScrollContainer(`${"CommercialpaymenttermsScroll" + generateUniqueId()}`, {
+													vertical: true,
+													// width: "100%",
+													height: "100px"
+												}))
+
+												chvbox.getItems()[1].addContent(new sap.m.Text(`${"Compliancepaymentterms" + generateUniqueId()}`, {
+													// text: `${valuesMap[namesToCheck[14]] ?? ' '}`
+													// text: `${vendorslist[k]?.CPBG ?? ' '}`
+													text: `${vendorresponse_selecteditem[0]?.Commercial_Terms ?? ' '}`
+												}));
+
+												//Liquidated Damages
+												chvbox.addItem(new sap.m.ScrollContainer(`${"OthersliquidedScroll" + generateUniqueId()}`, {
+													vertical: true,
+													// width: "500px",
+													height: "100px"
+												}))
+
+												chvbox.getItems()[2].addContent(new sap.m.Text(`${"Othersliquided" + generateUniqueId()}`, {
+													// text: `${valuesMap[namesToCheck[15]] ?? ' '}`
+													// text: `${vendorslist[k]?.CPBG ?? ' '}`
+													text: `${vendorresponse_selecteditem[0]?.Compliance_Terms ?? ' '}`
+												}));
+
+												//Warranty / Defect Liability Period
+												chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll" + generateUniqueId()}`, {
+													vertical: true,
+													// width: "500px",
+													height: "100px"
+												}))
+
+												chvbox.getItems()[3].addContent(new sap.m.Text(`${"warranty" + generateUniqueId()}`, {
+													// text: `${valuesMap[namesToCheck[16]] ?? ' '}`
+													// text: `${vendorslist[k]?.CPBG ?? ' '}`
+													text: `${vendorresponse_selecteditem[0]?.Others ?? ' '}`
+												}));
+
+												// //CPBG
+												// chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll" + generateUniqueId()}`, {
+												// 	vertical: true,
+												// 	// width: "500px",
+												// 	height: "100px"
+												// }))
+
+												// chvbox.getItems()[4].addContent(new sap.m.Text(`${"cpbg" + generateUniqueId()}`, {
+												// 	text: `${vendorresponse_selecteditem[0]?.CPBG ?? ' '}`
+												// 	// text: `${valuesMap["CPBG"] ?? ' '}`
+												// }));
+
+												const inputString = vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? '';
+												if (inputString) {
+													var regex = /name\s*:(.*?)\s*email/;
+													var match = inputString.match(regex);
+												}
+
+												var contactPerson = match ? match[1].trim() : null;
+
+
+												//Contact Person
+												chvbox.addItem(new sap.m.Text(`${"contactperson" + generateUniqueId()}`, {
+													// text: `${contactPerson ?? ' '}`,
+													text: `${vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? ' '}`,
+													// height:"100px"
+												}));
+												const regexPh1 = /ph1\s*:\s*(.*?)\s*ph2/;
+												const matchPh1 = inputString.match(regexPh1);
+												let phoneNumber1 = matchPh1 ? matchPh1[1].trim() : null;
+
+												// Extracting ph2
+												const regexPh2 = /ph2\s*:\s*(.*?)$/;
+												const matchPh2 = inputString.match(regexPh2);
+												let phoneNumber2 = matchPh2 ? matchPh2[1].trim() : null;
+												if (phoneNumber1 == null) {
+													phoneNumber1 = ' ';
+												}
+												if (phoneNumber2 == null) {
+													phoneNumber2 = ' ';
+												}
+
+												//Contact NO
+												chvbox.addItem(new sap.m.Text(`${"contactno" + generateUniqueId()}`, {
+													text: `${phoneNumber1 + " " + phoneNumber2 ?? ' '}`,
+													// height:"25px"
+												}));
+
+												//Order can be given to……...
+												chvbox.addItem(new sap.m.Text(`${"ordercanbe" + generateUniqueId()}`, {
+													text: `${valuesMap["Order can be give to"] ?? ' '}`,
+													// height:"25px"
+												}));
+
+
+												//Techncially Approved
+												chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
+													text: `${vendorslist[k].Technically_Approved ?? ' '}`,
+													// height:"25px"
+												}));
+
+												//Approved Vendor
+												chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
+													text: `${vendorslist[k].Awarded_Vendor ?? ' '}`,
+													// height:"25px"
+												}));
+
+												// chvbox.getItems()[chvbox.getItems().length - 4].addStyleClass("contactpersonpadding")
+
+												let lastitemchvbox = chvbox.getItems()[(chvbox.getItems().length - 1)];
+
+												lastitemchvbox.addStyleClass("customlaststyleclassrsection");
+												// }
+
 											}
-											debugger
-											debugger
-
-											var oItem1 = new sap.m.ColumnListItem({
-												id: `${"blankspace" + generateUniqueId()}`,
-												cells: [
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" })
-												]
-											});
-
-
-
-											oTable.addItem(oItem1);
-											var oItem2 = new sap.m.ColumnListItem({
-												id: `${"spare" + generateUniqueId()}`,
-												cells: [
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: `${(valuesMap[namesToCheck[0]] ?? 0) + " " + grandTotalUnit ?? ' '}` })
-												]
-											});
-
-
-											let spares_2_value = grandTotalAmount + (parseFloat(valuesMap[namesToCheck[0]]) || 0)
-											oTable.addItem(oItem2);
-											var oItem3 = new sap.m.ColumnListItem({
-												id: `${"grandtotal" + generateUniqueId()}`,
-												cells: [
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Label({ text: `${spares_2_value + " " + grandTotalUnit}`, design: "Bold" })
-												]
-											});
-
-											oTable.addItem(oItem3);
-											var oItem4 = new sap.m.ColumnListItem({
-												id: `${"parkingmarking" + generateUniqueId()}`,
-												visible: true,
-												cells: [
-
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[1]] ?? ' '}` }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[23]] ?? ' '}` }),
-												]
-											});
-
-											oTable.addItem(oItem4);
-											var oItem5 = new sap.m.ColumnListItem({
-												id: `${"inspection" + generateUniqueId()}`,
-												visible: true,
-												cells: [
-
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[2]] ?? ' '}` }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[24]] ?? ' '}` }),
-												]
-											});
-
-											oTable.addItem(oItem5);
-											var oItem6 = new sap.m.ColumnListItem({
-												id: `${"documentation" + generateUniqueId()}`,
-												visible: true,
-												cells: [
-
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[3]] ?? ' '}` }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[25]] ?? ' '}` }),
-												]
-											});
-
-											let totalchargesB = spares_2_value + (parseInt(valuesMap[namesToCheck[23]]) || 0) + (parseInt(valuesMap[namesToCheck[24]]) || 0) + (parseInt(valuesMap[namesToCheck[25]]) || 0)
-											oTable.addItem(oItem6);
-											// var oItem7 = new sap.m.ColumnListItem({
-											// 	id: `${"totalbasicpricing" + generateUniqueId()}`,
-											// 	cells: [
-
-
-											// 		new sap.m.Text({ text: "" }),
-											// 		new sap.m.Text({ text: "" }),
-											// 		new sap.m.Label({ text: `${totalchargesB + " " + grandTotalUnit}`, design: "Bold" })
-											// 		// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_including_packing ?? ' '}`, design: "Bold" }),
-											// 	]
-											// });
-
-											// oTable.addItem(oItem7);
-											var oItem8 = new sap.m.ColumnListItem({
-												id: `${"rnod" + generateUniqueId()}`,
-												cells: [
-
-													new sap.m.Label({ text: `${valuesMap[namesToCheck[4]] ?? ' '}`, design: "Bold" }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-												]
-											});
-
-											oTable.addItem(oItem8);
-											var oItem9 = new sap.m.ColumnListItem({
-												id: `${"customduty" + generateUniqueId()}`,
-												visible: true,
-												cells: [
-
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[5]] ?? ' '}` }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-												]
-											});
-
-											oTable.addItem(oItem9);
-
-											// var oItem10 = new sap.m.ColumnListItem({
-											// 	id: `${"tax" + generateUniqueId()}`,
-											// 	visible: true,
-											// 	cells: [
-
-											// 		new sap.m.Text({ text: "hellllllllllllskjdfhjkdshfsdkjfjhdskjfhkjdshfdsjkfhsdjkfhdskfjkdshfjkdshfjkdshfkhdslllllllllo",width:"300%",wrapping:false }),
-
-											// 	]
-											// });
-
-											// oTable.addItem(oItem10);
-											var oItem10 = new sap.m.CustomListItem({
-												id: `${"tax_field" + generateUniqueId()}`,
-												visible: true,
-												content: [
-													new sap.m.Text({ text: tax_value, width: "343px" })
-
-												]
-											});
-
-											oTable.addItem(oItem10);
-
-											// alert(oTable.getItems().length);
-											debugger
-
-											let sgst_amt = (parseFloat(valuesMap[namesToCheck[6]]) || 0) * totalchargesB / 100;
-											// var oItem10 = new sap.m.ColumnListItem({
-											// 	id: `${"sgst" + generateUniqueId()}`,
-											// 	visible: false,
-											// 	cells: [
-
-											// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[6]] ?? ' '}` }),
-											// 		new sap.m.Text({ text: "" }),
-											// 		new sap.m.Text({ text: sgst_amt + " " + grandTotalUnit }),
-											// 	]
-											// });
-
-											let igst_amt = (parseFloat(valuesMap[namesToCheck[7]]) || 0) * totalchargesB / 100;
-											// oTable.addItem(oItem10);
-											// var oItem11 = new sap.m.ColumnListItem({
-											// 	id: `${"igst" + generateUniqueId()}`,
-											// 	visible: false,
-											// 	cells: [
-
-											// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[7]] ?? ' '}` }),
-											// 		new sap.m.Text({ text: "" }),
-											// 		new sap.m.Text({ text: `${igst_amt + " " + grandTotalUnit}` }),
-											// 	]
-											// });
-
-											let ugst_amt = (parseFloat(valuesMap[namesToCheck[8]]) || 0) * totalchargesB / 100;
-											// oTable.addItem(oItem11);
-											// var oItem12 = new sap.m.ColumnListItem({
-											// 	id: `${"ugst" + generateUniqueId()}`,
-											// 	visible: false,
-											// 	cells: [
-
-											// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[8]] ?? " "}` }),
-											// 		new sap.m.Text({ text: "" }),
-											// 		new sap.m.Text({ text: `${ugst_amt + " " + grandTotalUnit}` }),
-											// 	]
-											// });
-
-											// oTable.addItem(oItem12);
-											var oItem13 = new sap.m.ColumnListItem({
-												id: `${"shipment" + generateUniqueId()}`,
-												visible: true,
-												cells: [
-
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[9]] ?? ' '}` }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-												]
-											});
-											if (!extendedprice) {
-												extendedprice = 0;
-											}
-
-											let totalincludingtax = totalchargesB + sgst_amt + igst_amt + ugst_amt
-											oTable.addItem(oItem13);
-											var oItem14 = new sap.m.ColumnListItem({
-												id: `${"totalincludingtaxes" + generateUniqueId()}`,
-												cells: [
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-													// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_with_taxes ?? ' '}`, design: "Bold" })
-													// new sap.m.Label({ text: `${totalincludingtax + " " + grandTotalUnit}`, design: "Bold" })
-													new sap.m.Label({ text: `${extendedprice + " " + grandTotalUnit}`, design: "Bold" })
-												]
-											});
-											oTable.addItem(oItem14);
-											var oItem14 = new sap.m.ColumnListItem({
-												id: `${"total_excluding_taxes" + generateUniqueId()}`,
-												cells: [
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" }),
-													// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_without_taxes ?? ' '}`, design: "Bold" })
-													// new sap.m.Label({ text: `${totalchargesB + " " + grandTotalUnit}`, design: "Bold" })
-													new sap.m.Label({ text: `${extendedprice + " " + grandTotalUnit}`, design: "Bold" })
-												]
-											});
-											oTable.addItem(oItem14);
-											var oItem15 = new sap.m.ColumnListItem({
-												id: `${"perdiemrate" + generateUniqueId()}`,
-												cells: [
-													new sap.m.Text({ text: `${valuesMap[namesToCheck[10]] ?? ' '}` }),
-													new sap.m.Text({ text: "" }),
-													new sap.m.Text({ text: "" })
-												]
-											});
-											oTable.addItem(oItem15);
-
-											debugger
-											oTable.getItems()[oTable.getItems().length - 5].addStyleClass("taxCell")
-
-
-											var combobox_item = vbox_last_section.getItems()[0]
-
-											// combobox_item.setValue(`${total_offers_of_vendor[total_offers_of_vendor.length - 1].offer_name}`);
-
-
-
-											var item = new sap.ui.core.Item(`${"item1" + (generateUniqueId())}`, {
-												text: `${filteredWebEvent[0].eventNo ?? ' '}`
-											})
-
-											combobox_item.addItem(item);
-
-											combobox_item.setValue(`${filteredWebEvent[0].eventNo ?? ''}`);
-
-											last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`));
-
-											var chvbox = last_hcombobox.getItems()[iterator];
-											iterator++;
-
-
-											// if (combobox_item.getValue() != vendorslist[k]?.PAN_Number ?? ' ') {
-											// 	chvbox.setVisible(false)
-											// }
-
-											chvbox.addStyleClass("spacebetweenclass");
-
-
-											// //Price Basis
-											// chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
-											// 	text: `${valuesMap[namesToCheck[11]] ?? ' '}`,
-											// 	// text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
-
-											// }));
-											// chvbox.getItems()[0].addStyleClass("pricebasispadding");
-
-											// //Point of Delivery
-											// chvbox.addItem(new sap.m.Text(`${"pointofdelivery" + generateUniqueId()}`, {
-											// 	text: `${valuesMap[namesToCheck[12]] ?? ' '}`,
-											// 	// text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
-											// 	// height:"15px"
-											// }));
-
-											debugger
-											//Delivery Period
-											chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll" + generateUniqueId()}`, {
-												vertical: true,
-												width: "350px",
-												height: "100px"
-											}))
-											// chvbox.getItems()[1].addStyleClass("deliveryperiodpadding");
-
-											chvbox.getItems()[0].addContent(new sap.m.Text(`${"Scopedeliveryperiod" + generateUniqueId()}`, {
-												// text: `${valuesMap[namesToCheck[13]] ?? ' '}`
-												// text: `${vendorslist[k]?.CPBG ?? ' '}`
-												text: `${vendorresponse_selecteditem[0]?.Scope_and_Responsibilities ?? ' '}`
-											}));
-
-
-											//Payment Terms
-											chvbox.addItem(new sap.m.ScrollContainer(`${"CommercialpaymenttermsScroll" + generateUniqueId()}`, {
-												vertical: true,
-												// width: "100%",
-												height: "100px"
-											}))
-
-											chvbox.getItems()[1].addContent(new sap.m.Text(`${"Compliancepaymentterms" + generateUniqueId()}`, {
-												// text: `${valuesMap[namesToCheck[14]] ?? ' '}`
-												// text: `${vendorslist[k]?.CPBG ?? ' '}`
-												text: `${vendorresponse_selecteditem[0]?.Commercial_Terms ?? ' '}`
-											}));
-
-											//Liquidated Damages
-											chvbox.addItem(new sap.m.ScrollContainer(`${"OthersliquidedScroll" + generateUniqueId()}`, {
-												vertical: true,
-												// width: "500px",
-												height: "100px"
-											}))
-
-											chvbox.getItems()[2].addContent(new sap.m.Text(`${"Othersliquided" + generateUniqueId()}`, {
-												// text: `${valuesMap[namesToCheck[15]] ?? ' '}`
-												// text: `${vendorslist[k]?.CPBG ?? ' '}`
-												text: `${vendorresponse_selecteditem[0]?.Compliance_Terms ?? ' '}`
-											}));
-
-											//Warranty / Defect Liability Period
-											chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll" + generateUniqueId()}`, {
-												vertical: true,
-												// width: "500px",
-												height: "100px"
-											}))
-
-											chvbox.getItems()[3].addContent(new sap.m.Text(`${"warranty" + generateUniqueId()}`, {
-												// text: `${valuesMap[namesToCheck[16]] ?? ' '}`
-												// text: `${vendorslist[k]?.CPBG ?? ' '}`
-												text: `${vendorresponse_selecteditem[0]?.Others ?? ' '}`
-											}));
-
-											// //CPBG
-											// chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll" + generateUniqueId()}`, {
-											// 	vertical: true,
-											// 	// width: "500px",
-											// 	height: "100px"
-											// }))
-
-											// chvbox.getItems()[4].addContent(new sap.m.Text(`${"cpbg" + generateUniqueId()}`, {
-											// 	text: `${vendorresponse_selecteditem[0]?.CPBG ?? ' '}`
-											// 	// text: `${valuesMap["CPBG"] ?? ' '}`
-											// }));
-
-											const inputString = vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? '';
-											if (inputString) {
-												var regex = /name\s*:(.*?)\s*email/;
-												var match = inputString.match(regex);
-											}
-
-											var contactPerson = match ? match[1].trim() : null;
-
-
-											//Contact Person
-											chvbox.addItem(new sap.m.Text(`${"contactperson" + generateUniqueId()}`, {
-												// text: `${contactPerson ?? ' '}`,
-												text: `${vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? ' '}`,
-												// height:"100px"
-											}));
-											const regexPh1 = /ph1\s*:\s*(.*?)\s*ph2/;
-											const matchPh1 = inputString.match(regexPh1);
-											const phoneNumber1 = matchPh1 ? matchPh1[1].trim() : null;
-
-											// Extracting ph2
-											const regexPh2 = /ph2\s*:\s*(.*?)$/;
-											const matchPh2 = inputString.match(regexPh2);
-											const phoneNumber2 = matchPh2 ? matchPh2[1].trim() : null;
-
-											//Contact NO
-											chvbox.addItem(new sap.m.Text(`${"contactno" + generateUniqueId()}`, {
-												text: `${phoneNumber1 + ", " + phoneNumber2 ?? ' '}`,
-												// height:"25px"
-											}));
-
-											//Order can be given to……...
-											chvbox.addItem(new sap.m.Text(`${"ordercanbe" + generateUniqueId()}`, {
-												text: `${valuesMap["Order can be give to"] ?? ' '}`,
-												// height:"25px"
-											}));
-
-											debugger
-											//Techncially Approved
-											chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
-												text: `${vendorslist[k].Technically_Approved ?? ' '}`,
-												// height:"25px"
-											}));
-
-											//Approved Vendor
-											chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
-												text: `${vendorslist[k].Awarded_Vendor ?? ' '}`,
-												// height:"25px"
-											}));
-
-											// chvbox.getItems()[chvbox.getItems().length - 4].addStyleClass("contactpersonpadding")
-
-											let lastitemchvbox = chvbox.getItems()[(chvbox.getItems().length - 1)];
-
-											lastitemchvbox.addStyleClass("customlaststyleclassrsection");
+
+
+
+											// 	hbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection" + generateUniqueId()}`, {
+											// 		// width: "500px"
+											// 	}));
+
+
+
+											// 	var itmlen = hbmiddlesection.getItems().length
+											// 	var vbmiddlesection = hbmiddlesection.getItems()[itmlen - 1];
+											// 	vbmiddlesection.addStyleClass("customVBox");
+
+											// 	vbmiddlesection.addItem(new sap.m.VBox(`${"vbmiddlesection_innervb" + generateUniqueId()}`));
+
+											// 	var vbmiddlesection_innervb = vbmiddlesection.getItems()[0];
+
+											// 	vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_qtn_ref" + generateUniqueId()}`, {
+											// 		text: `${filteredWebEvent[0]?.number ?? 'NA'}`,
+											// 	}));
+											// 	vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
+											// 		text: `${filteredWebEvent[0]?.date ?? 'NA'}`
+											// 	}));
+											// 	vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
+											// 		text: `${vendorslist[k]?.validity ?? 'NA'}`
+											// 	}));
+											// 	vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
+											// 		text: ""
+											// 	}));
+											// 	vbmiddlesection_innervb.addStyleClass("vbmiddlesectionclass");
+
+											// 	var inner_vbox = new sap.m.VBox(`${"innervbox" + generateUniqueId()}`, {
+											// 		// width: "100%"
+											// 		alignItems: "Center"
+											// 	});
+											// 	vbmiddlesection.addItem(inner_vbox);
+
+
+											// 	let matchedObject = pan_info.find(item => item.PAN_Number === vendorslist[k].PAN_Number);
+
+											// 	inner_vbox.addItem(new sap.m.Label(`${"original_offer" + generateUniqueId()}`, {
+											// 		text: `${filteredWebEvent[0]?.eventNo ?? ' '}`,
+											// 		design: "Bold"
+											// 	}));
+
+											// 	var oTable = new sap.m.Table({
+											// 		id: `${"offer" + generateUniqueId()}`,
+											// 		class: "tableBorder",
+											// 		growing: true,
+											// 		growingThreshold: 20,
+											// 		width: "350px",
+											// 		fixedLayout: true
+											// 	});
+
+
+											// 	oTable.addStyleClass("tableBorder");
+
+											// 	inner_vbox.addItem(oTable);
+
+											// 	var oColumn1 = new sap.m.Column({
+											// 		id: `${"unit_rate" + generateUniqueId()}`,
+											// 		header: new sap.m.Label({ text: "Unit Rate", design: "Bold", wrapping: false }),
+											// 		// styleClass: 'custcolorclass'
+											// 	});
+
+											// 	// var oColumn2 = new sap.m.Column({
+											// 	// 	id: `${"unit_rate_per" + generateUniqueId()}`,
+											// 	// 	header: new sap.m.Label({ text: "Rate per Unit", design: "Bold", wrapping: false }),
+											// 	// 	// styleClass: 'custcolorclass'
+											// 	// });
+
+
+											// 	var oColumn3 = new sap.m.Column({
+											// 		id: `${"total_amt_offer" + generateUniqueId()}`,
+											// 		header: new sap.m.HBox(),
+											// 		// styleClass: 'custcolorclass'
+
+											// 	});
+
+											// 	oTable.addColumn(oColumn1);
+											// 	// oTable.addColumn(oColumn2);
+											// 	oTable.addColumn(oColumn3);
+
+											// 	//Total amount expand property
+
+											// 	debugger
+											// 	var colheader = oTable.getColumns()[1].getHeader()
+
+											// 	colheader.addItem(new sap.m.Label({
+											// 		text: "Total Amount",
+											// 		design: "Bold"
+											// 	}))
+
+
+											// 	//end of total amount 
+
+											// 	var uniquelistitem = [];
+											// 	var grandTotalAmount = 0
+											// 	var grandTotalUnit = '';
+											// 	let cnt = 0;
+											// 	let processedOfferIds = new Set();
+
+
+
+											// 	// Filter list_of_items based on PAN_Number and Proposed_Vendor_Code
+											// 	const filteredItems = list_of_items.filter(item =>
+											// 		item.PAN_Number === vendorslist[k].PAN_Number &&
+											// 		item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+											// 	);
+
+											// 	let extendedprice = 0;
+											// 	let tax_value = '';
+
+											// 	function formatCurrency(amount, currencyCode) {
+											// 		debugger
+											// 		let formattedAmount = '';
+											// 		switch (currencyCode) {
+											// 			case 'INR':
+											// 				formattedAmount += parseFloat(amount).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+											// 				break;
+											// 			default:
+											// 				formattedAmount += parseFloat(amount).toLocaleString('en-US', { maximumFractionDigits: 2 });
+											// 				break;
+											// 		}
+											// 		return formattedAmount;
+											// 	}
+
+											// 	// Iterate over uniqueItems
+											// 	for (let i = 0; i < uniqueItems.length; i++) {
+
+
+											// 		const currentItem = uniqueItems[i];
+											// 		let itemMatchingPrjVenPan = list_of_items.filter(item => item.ProjectId == project_id[1] && item.Proposed_Vendor_Code == vendorslist[k].Proposed_Vendor_Code && item.Item_Code == uniqueItems[i].Item_Code && item.PAN_Number == panNumber)
+											// 		const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
+
+											// 		if (foundItem || itemMatchingPrjVenPan.length) {
+											// 			debugger
+											// 			// Found item, create ColumnListItem with data
+											// 			var AmtWithoutCommas = itemMatchingPrjVenPan[0].Amount?.replace(/,/g, '') ?? 0;
+											// 			var quantityWithoutCommas = itemMatchingPrjVenPan[0].Quantity?.replace(/,/g, '') ?? 0;
+											// 			let extendedPriceWithoutComms = itemMatchingPrjVenPan[0].extendedPrice?.replace(/,/g, '') ?? 0;
+
+											// 			extendedprice = extendedprice + parseFloat(extendedPriceWithoutComms ?? 0);
+											// 			tax_value = tax_value + (itemMatchingPrjVenPan[0]?.Indian_Tax_PER ?? ' ') + '\n'
+
+											// 			const total_amount_value = Number(AmtWithoutCommas ?? 0) * Number(quantityWithoutCommas ?? 0);
+											// 			const total_amount_display = `${total_amount_value} ${itemMatchingPrjVenPan[0].Unit_Price ?? ' '}`;
+
+											// 			grandTotalAmount += total_amount_value;
+											// 			grandTotalUnit = itemMatchingPrjVenPan[0].Unit_Price;
+
+											// 			const oItem = new sap.m.ColumnListItem({
+											// 				id: `${"item1data" + generateUniqueId()}`,
+											// 				cells: [
+											// 					new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${itemMatchingPrjVenPan[0].Unit_Price}` }),
+											// 					// new sap.m.Text({ text: `${itemMatchingPrjVenPan[0].unit_rate_per_unit ?? ' '}` }),
+											// 					new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}` }),
+											// 				]
+											// 			});
+
+											// 			oTable.addItem(oItem);
+											// 		} else {
+											// 			// Item not found, create empty row
+											// 			const oItem = new sap.m.ColumnListItem({
+											// 				id: `${"item1data" + generateUniqueId()}`,
+											// 				cells: [
+											// 					new sap.m.Text({ text: "" }),
+											// 					// new sap.m.Text({ text: "" }),
+											// 					new sap.m.Text({ text: "" })
+											// 				]
+											// 			});
+
+											// 			oTable.addItem(oItem);
+											// 		}
+											// 	}
+											// 	////////////////////////////////////////////////////////////////////////////////
+
+
+											// 	const vendorresponse_selecteditem = vendor_response_deatils.filter(item =>
+											// 		item.PAN_Number === vendorslist[k].PAN_Number &&
+											// 		item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+											// 	);
+
+											// 	//Tax Details
+											// 	const tax_details_filtered = tax_details.filter(item =>
+											// 		item.PAN_Number === vendorslist[k].PAN_Number &&
+											// 		item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+											// 	);
+
+											// 	let valuesMap = {}; // Object to store values for specified names
+
+											// 	const namesToCheck = [
+											// 		'Spares for 2 Years operation',
+											// 		'Packing, Marking, Forwarding & Freight',
+											// 		// 'Freight',
+											// 		'Inspection / Testing Charges',
+											// 		'Documentation Charges',
+											// 		'RNOD',
+											// 		'Custom Duty & Cess',
+											// 		'SGST',
+											// 		'IGST',
+											// 		'UGST',
+											// 		'Shipment charges from EXW to ISRO Mahendragiri',
+											// 		'Per Diem rate for Supervision for Erection and commissioning',
+											// 		'PriceBasis',
+											// 		'Point of Delivery',
+											// 		'Delivery Period',
+											// 		'Payment Terms',
+											// 		'Liquidated Damages',
+											// 		'Warranty / Defect Liability Period',
+											// 		'CPBG',
+											// 		'Contact Person',
+											// 		'Contact No.',
+											// 		'Order can be given to',
+											// 		'Techncially Approved',
+											// 		'Approved Vendor',//22
+											// 		'Freight',//23  //fetching from database
+											// 		'Inspection Value',//24
+											// 		'Document Value'//25
+											// 	];
+
+											// 	for (let i = 0; i < tax_details_filtered.length; i++) {
+											// 		const item = tax_details_filtered[i];
+											// 		if (namesToCheck.includes(item.name)) {
+											// 			valuesMap[item.name] = item.value; // Store the value for the name
+											// 		}
+											// 	}
+
+
+
+											// 	var oItem1 = new sap.m.ColumnListItem({
+											// 		id: `${"blankspace" + generateUniqueId()}`,
+											// 		cells: [
+											// 			new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: "" })
+											// 		]
+											// 	});
+
+
+
+											// 	oTable.addItem(oItem1);
+											// 	var oItem2 = new sap.m.ColumnListItem({
+											// 		id: `${"spare" + generateUniqueId()}`,
+											// 		cells: [
+											// 			new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: `${formatCurrency(valuesMap[namesToCheck[0]] ?? 0) + " " + grandTotalUnit ?? ' '}` })
+											// 		]
+											// 	});
+
+
+											// 	let spares_2_value = grandTotalAmount + (parseFloat(valuesMap[namesToCheck[0]]) || 0)
+											// 	oTable.addItem(oItem2);
+											// 	var oItem3 = new sap.m.ColumnListItem({
+											// 		id: `${"grandtotal" + generateUniqueId()}`,
+											// 		cells: [
+											// 			new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Label({ text: `${formatCurrency(spares_2_value) + " " + grandTotalUnit}`, design: "Bold" })
+											// 		]
+											// 	});
+
+											// 	oTable.addItem(oItem3);
+											// 	var oItem4 = new sap.m.ColumnListItem({
+											// 		id: `${"parkingmarking" + generateUniqueId()}`,
+											// 		visible: true,
+											// 		cells: [
+
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[1]] ?? ' '}` }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: `${formatCurrency(valuesMap[namesToCheck[23]] ?? 0) + " " + grandTotalUnit}` }),
+											// 		]
+											// 	});
+
+											// 	oTable.addItem(oItem4);
+											// 	var oItem5 = new sap.m.ColumnListItem({
+											// 		id: `${"inspection" + generateUniqueId()}`,
+											// 		visible: true,
+											// 		cells: [
+
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[2]] ?? ' '}` }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[24]] ?? ' '}` }),
+											// 		]
+											// 	});
+
+											// 	oTable.addItem(oItem5);
+											// 	var oItem6 = new sap.m.ColumnListItem({
+											// 		id: `${"documentation" + generateUniqueId()}`,
+											// 		visible: true,
+											// 		cells: [
+
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[3]] ?? ' '}` }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[25]] ?? ' '}` }),
+											// 		]
+											// 	});
+
+											// 	let totalchargesB = spares_2_value + (parseInt(valuesMap[namesToCheck[23]]) || 0) + (parseInt(valuesMap[namesToCheck[24]]) || 0) + (parseInt(valuesMap[namesToCheck[25]]) || 0)
+											// 	oTable.addItem(oItem6);
+											// 	// var oItem7 = new sap.m.ColumnListItem({
+											// 	// 	id: `${"totalbasicpricing" + generateUniqueId()}`,
+											// 	// 	cells: [
+
+
+											// 	// 		new sap.m.Text({ text: "" }),
+											// 	// 		new sap.m.Text({ text: "" }),
+											// 	// 		new sap.m.Label({ text: `${totalchargesB + " " + grandTotalUnit}`, design: "Bold" })
+											// 	// 		// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_including_packing ?? ' '}`, design: "Bold" }),
+											// 	// 	]
+											// 	// });
+
+											// 	// oTable.addItem(oItem7);
+											// 	var oItem8 = new sap.m.ColumnListItem({
+											// 		id: `${"rnod" + generateUniqueId()}`,
+											// 		cells: [
+
+											// 			new sap.m.Label({ text: `${valuesMap[namesToCheck[4]] ?? ' '}`, design: "Bold" }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: "" }),
+											// 		]
+											// 	});
+
+											// 	oTable.addItem(oItem8);
+											// 	var oItem9 = new sap.m.ColumnListItem({
+											// 		id: `${"customduty" + generateUniqueId()}`,
+											// 		visible: true,
+											// 		cells: [
+
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[5]] ?? ' '}` }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: "" }),
+											// 		]
+											// 	});
+
+											// 	oTable.addItem(oItem9);
+
+											// 	// var oItem10 = new sap.m.ColumnListItem({
+											// 	// 	id: `${"tax" + generateUniqueId()}`,
+											// 	// 	visible: true,
+											// 	// 	cells: [
+
+											// 	// 		new sap.m.Text({ text: "hellllllllllllskjdfhjkdshfsdkjfjhdskjfhkjdshfdsjkfhsdjkfhdskfjkdshfjkdshfjkdshfkhdslllllllllo",width:"300%",wrapping:false }),
+
+											// 	// 	]
+											// 	// });
+
+											// 	// oTable.addItem(oItem10);
+											// 	var oItem10 = new sap.m.CustomListItem({
+											// 		id: `${"tax_field" + generateUniqueId()}`,
+											// 		visible: true,
+											// 		content: [
+											// 			new sap.m.Text({ text: tax_value, width: "343px" })
+
+											// 		]
+											// 	});
+
+											// 	oTable.addItem(oItem10);
+
+											// 	// alert(oTable.getItems().length);
+
+
+											// 	let sgst_amt = (parseFloat(valuesMap[namesToCheck[6]]) || 0) * totalchargesB / 100;
+											// 	// var oItem10 = new sap.m.ColumnListItem({
+											// 	// 	id: `${"sgst" + generateUniqueId()}`,
+											// 	// 	visible: false,
+											// 	// 	cells: [
+
+											// 	// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[6]] ?? ' '}` }),
+											// 	// 		new sap.m.Text({ text: "" }),
+											// 	// 		new sap.m.Text({ text: sgst_amt + " " + grandTotalUnit }),
+											// 	// 	]
+											// 	// });
+
+											// 	let igst_amt = (parseFloat(valuesMap[namesToCheck[7]]) || 0) * totalchargesB / 100;
+											// 	// oTable.addItem(oItem10);
+											// 	// var oItem11 = new sap.m.ColumnListItem({
+											// 	// 	id: `${"igst" + generateUniqueId()}`,
+											// 	// 	visible: false,
+											// 	// 	cells: [
+
+											// 	// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[7]] ?? ' '}` }),
+											// 	// 		new sap.m.Text({ text: "" }),
+											// 	// 		new sap.m.Text({ text: `${igst_amt + " " + grandTotalUnit}` }),
+											// 	// 	]
+											// 	// });
+
+											// 	let ugst_amt = (parseFloat(valuesMap[namesToCheck[8]]) || 0) * totalchargesB / 100;
+											// 	// oTable.addItem(oItem11);
+											// 	// var oItem12 = new sap.m.ColumnListItem({
+											// 	// 	id: `${"ugst" + generateUniqueId()}`,
+											// 	// 	visible: false,
+											// 	// 	cells: [
+
+											// 	// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[8]] ?? " "}` }),
+											// 	// 		new sap.m.Text({ text: "" }),
+											// 	// 		new sap.m.Text({ text: `${ugst_amt + " " + grandTotalUnit}` }),
+											// 	// 	]
+											// 	// });
+
+											// 	// oTable.addItem(oItem12);
+											// 	var oItem13 = new sap.m.ColumnListItem({
+											// 		id: `${"shipment" + generateUniqueId()}`,
+											// 		visible: true,
+											// 		cells: [
+
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[9]] ?? ' '}` }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: "" }),
+											// 		]
+											// 	});
+											// 	if (!extendedprice) {
+											// 		extendedprice = 0;
+											// 	}
+
+											// 	let totalincludingtax = totalchargesB + sgst_amt + igst_amt + ugst_amt
+											// 	oTable.addItem(oItem13);
+											// 	var oItem14 = new sap.m.ColumnListItem({
+											// 		id: `${"totalincludingtaxes" + generateUniqueId()}`,
+											// 		cells: [
+											// 			new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_with_taxes ?? ' '}`, design: "Bold" })
+											// 			// new sap.m.Label({ text: `${totalincludingtax + " " + grandTotalUnit}`, design: "Bold" })
+											// 			new sap.m.Label({ text: `${formatCurrency(extendedprice ?? 0) + " " + grandTotalUnit}`, design: "Bold" })
+											// 		]
+											// 	});
+											// 	oTable.addItem(oItem14);
+											// 	var oItem14 = new sap.m.ColumnListItem({
+											// 		id: `${"total_excluding_taxes" + generateUniqueId()}`,
+											// 		cells: [
+											// 			new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			// new sap.m.Label({ text: `${vendorslist[k]?.total_basic_price_without_taxes ?? ' '}`, design: "Bold" })
+											// 			// new sap.m.Label({ text: `${totalchargesB + " " + grandTotalUnit}`, design: "Bold" })
+											// 			new sap.m.Label({ text: `${formatCurrency(extendedprice) + " " + grandTotalUnit}`, design: "Bold" })
+											// 		]
+											// 	});
+											// 	oTable.addItem(oItem14);
+											// 	var oItem15 = new sap.m.ColumnListItem({
+											// 		id: `${"perdiemrate" + generateUniqueId()}`,
+											// 		cells: [
+											// 			new sap.m.Text({ text: `${valuesMap[namesToCheck[10]] ?? ' '}` }),
+											// 			// new sap.m.Text({ text: "" }),
+											// 			new sap.m.Text({ text: "" })
+											// 		]
+											// 	});
+											// 	oTable.addItem(oItem15);
+
+
+											// 	oTable.getItems()[oTable.getItems().length - 5].addStyleClass("taxCell")
+
+
+											// 	var combobox_item = vbox_last_section.getItems()[0]
+
+											// 	// combobox_item.setValue(`${total_offers_of_vendor[total_offers_of_vendor.length - 1].offer_name}`);
+
+
+
+											// 	var item = new sap.ui.core.Item(`${"item1" + (generateUniqueId())}`, {
+											// 		text: `${filteredWebEvent[0].eventNo ?? ' '}`
+											// 	})
+
+											// 	combobox_item.addItem(item);
+
+											// 	combobox_item.setValue(`${filteredWebEvent[0].eventNo ?? ''}`);
+
+											// 	last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`));
+
+											// 	var chvbox = last_hcombobox.getItems()[iterator];
+											// 	iterator++;
+
+
+											// 	// if (combobox_item.getValue() != vendorslist[k]?.PAN_Number ?? ' ') {
+											// 	// 	chvbox.setVisible(false)
+											// 	// }
+
+											// 	chvbox.addStyleClass("spacebetweenclass");
+
+
+											// 	// //Price Basis
+											// 	// chvbox.addItem(new sap.m.Text(`${"pricebasis" + generateUniqueId()}`, {
+											// 	// 	text: `${valuesMap[namesToCheck[11]] ?? ' '}`,
+											// 	// 	// text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
+
+											// 	// }));
+											// 	// chvbox.getItems()[0].addStyleClass("pricebasispadding");
+
+											// 	// //Point of Delivery
+											// 	// chvbox.addItem(new sap.m.Text(`${"pointofdelivery" + generateUniqueId()}`, {
+											// 	// 	text: `${valuesMap[namesToCheck[12]] ?? ' '}`,
+											// 	// 	// text: `${vendorslist[k]?.Vendor_Name ?? ' '}`,
+											// 	// 	// height:"15px"
+											// 	// }));
+
+
+											// 	//Delivery Period
+											// 	chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll" + generateUniqueId()}`, {
+											// 		vertical: true,
+											// 		width: "350px",
+											// 		height: "100px"
+											// 	}))
+											// 	// chvbox.getItems()[1].addStyleClass("deliveryperiodpadding");
+
+											// 	chvbox.getItems()[0].addContent(new sap.m.Text(`${"Scopedeliveryperiod" + generateUniqueId()}`, {
+											// 		// text: `${valuesMap[namesToCheck[13]] ?? ' '}`
+											// 		// text: `${vendorslist[k]?.CPBG ?? ' '}`
+											// 		text: `${vendorresponse_selecteditem[0]?.Scope_and_Responsibilities ?? ' '}`
+											// 	}));
+
+
+											// 	//Payment Terms
+											// 	chvbox.addItem(new sap.m.ScrollContainer(`${"CommercialpaymenttermsScroll" + generateUniqueId()}`, {
+											// 		vertical: true,
+											// 		// width: "100%",
+											// 		height: "100px"
+											// 	}))
+
+											// 	chvbox.getItems()[1].addContent(new sap.m.Text(`${"Compliancepaymentterms" + generateUniqueId()}`, {
+											// 		// text: `${valuesMap[namesToCheck[14]] ?? ' '}`
+											// 		// text: `${vendorslist[k]?.CPBG ?? ' '}`
+											// 		text: `${vendorresponse_selecteditem[0]?.Commercial_Terms ?? ' '}`
+											// 	}));
+
+											// 	//Liquidated Damages
+											// 	chvbox.addItem(new sap.m.ScrollContainer(`${"OthersliquidedScroll" + generateUniqueId()}`, {
+											// 		vertical: true,
+											// 		// width: "500px",
+											// 		height: "100px"
+											// 	}))
+
+											// 	chvbox.getItems()[2].addContent(new sap.m.Text(`${"Othersliquided" + generateUniqueId()}`, {
+											// 		// text: `${valuesMap[namesToCheck[15]] ?? ' '}`
+											// 		// text: `${vendorslist[k]?.CPBG ?? ' '}`
+											// 		text: `${vendorresponse_selecteditem[0]?.Compliance_Terms ?? ' '}`
+											// 	}));
+
+											// 	//Warranty / Defect Liability Period
+											// 	chvbox.addItem(new sap.m.ScrollContainer(`${"warrantyScroll" + generateUniqueId()}`, {
+											// 		vertical: true,
+											// 		// width: "500px",
+											// 		height: "100px"
+											// 	}))
+
+											// 	chvbox.getItems()[3].addContent(new sap.m.Text(`${"warranty" + generateUniqueId()}`, {
+											// 		// text: `${valuesMap[namesToCheck[16]] ?? ' '}`
+											// 		// text: `${vendorslist[k]?.CPBG ?? ' '}`
+											// 		text: `${vendorresponse_selecteditem[0]?.Others ?? ' '}`
+											// 	}));
+
+											// 	// //CPBG
+											// 	// chvbox.addItem(new sap.m.ScrollContainer(`${"cpbgScroll" + generateUniqueId()}`, {
+											// 	// 	vertical: true,
+											// 	// 	// width: "500px",
+											// 	// 	height: "100px"
+											// 	// }))
+
+											// 	// chvbox.getItems()[4].addContent(new sap.m.Text(`${"cpbg" + generateUniqueId()}`, {
+											// 	// 	text: `${vendorresponse_selecteditem[0]?.CPBG ?? ' '}`
+											// 	// 	// text: `${valuesMap["CPBG"] ?? ' '}`
+											// 	// }));
+
+											// 	const inputString = vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? '';
+											// 	if (inputString) {
+											// 		var regex = /name\s*:(.*?)\s*email/;
+											// 		var match = inputString.match(regex);
+											// 	}
+
+											// 	var contactPerson = match ? match[1].trim() : null;
+
+
+											// 	//Contact Person
+											// 	chvbox.addItem(new sap.m.Text(`${"contactperson" + generateUniqueId()}`, {
+											// 		// text: `${contactPerson ?? ' '}`,
+											// 		text: `${vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? ' '}`,
+											// 		// height:"100px"
+											// 	}));
+											// 	const regexPh1 = /ph1\s*:\s*(.*?)\s*ph2/;
+											// 	const matchPh1 = inputString.match(regexPh1);
+											// 	let phoneNumber1 = matchPh1 ? matchPh1[1].trim() : null;
+
+											// 	// Extracting ph2
+											// 	const regexPh2 = /ph2\s*:\s*(.*?)$/;
+											// 	const matchPh2 = inputString.match(regexPh2);
+											// 	let phoneNumber2 = matchPh2 ? matchPh2[1].trim() : null;
+											// 	if (phoneNumber1 == null) {
+											// 		phoneNumber1 = ' ';
+											// 	}
+											// 	if (phoneNumber2 == null) {
+											// 		phoneNumber2 = ' ';
+											// 	}
+
+											// 	//Contact NO
+											// 	chvbox.addItem(new sap.m.Text(`${"contactno" + generateUniqueId()}`, {
+											// 		text: `${phoneNumber1 + " " + phoneNumber2 ?? ' '}`,
+											// 		// height:"25px"
+											// 	}));
+
+											// 	//Order can be given to……...
+											// 	chvbox.addItem(new sap.m.Text(`${"ordercanbe" + generateUniqueId()}`, {
+											// 		text: `${valuesMap["Order can be give to"] ?? ' '}`,
+											// 		// height:"25px"
+											// 	}));
+
+
+											// 	//Techncially Approved
+											// 	chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
+											// 		text: `${vendorslist[k].Technically_Approved ?? ' '}`,
+											// 		// height:"25px"
+											// 	}));
+
+											// 	//Approved Vendor
+											// 	chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
+											// 		text: `${vendorslist[k].Awarded_Vendor ?? ' '}`,
+											// 		// height:"25px"
+											// 	}));
+
+											// 	// chvbox.getItems()[chvbox.getItems().length - 4].addStyleClass("contactpersonpadding")
+
+											// 	let lastitemchvbox = chvbox.getItems()[(chvbox.getItems().length - 1)];
+
+											// 	lastitemchvbox.addStyleClass("customlaststyleclassrsection");
 										}
 									}
 									k++;
 
 								} while (k < vendorslist.length);
-								debugger
+
 								// end of do-while loop
 
 
@@ -2096,12 +2823,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									// lastitemchvbox.getItems()
 								}
 
-								debugger
-								debugger
+
+
 								// geting final status 
 								let status_lastsection = hbmiddlesection?.getItems()[hbmiddlesection?.getItems().length - 1];
 								if (status_lastsection) {
-									status_lastsection.getItems()[1].getItems()[1].getColumns()[2].getHeader().addItem(new sap.ui.core.Icon(`${"total_amount_icon" + generateUniqueId()}`, {
+									status_lastsection.getItems()[1].getItems()[1].getColumns()[1].getHeader().addItem(new sap.ui.core.Icon(`${"total_amount_icon" + generateUniqueId()}`, {
 										src: "sap-icon://expand",
 										color: "darkblue",
 										hoverColor: "red",
@@ -2141,18 +2868,42 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							}  //end of for-loop
 
 
+							debugger
+							//Every time to reinitialize page
 
-							//under testing
-							// var iconTotalPricingB = omainHBox.getItems()[0].getItems()[3].getItems()[5].getItems()[1];
+							let total_incluing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon2");
+							let viewmore_pricebasis = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon3");
 							// var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
 							// var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
 
-							// iconTotalPricingB.firePress();
-							// iconTotalPricingD.firePress();
+							let leftsecion_under_spares = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--leftbelowtable");
+							debugger
+							leftsecion_under_spares.getItems()[2].setVisible(false);
+							leftsecion_under_spares.getItems()[3].setVisible(false);
+							leftsecion_under_spares.getItems()[4].setVisible(false);
+							leftsecion_under_spares.getItems()[5].setVisible(false);
+							leftsecion_under_spares.getItems()[6].setVisible(false);
+							leftsecion_under_spares.getItems()[7].setVisible(false);
+							leftsecion_under_spares.getItems()[8].setVisible(false);
+							total_incluing.setSrc("sap-icon://navigation-right-arrow")
+
+
+							// total_incluing.firePress();
+
+							for (let i = 0; i < leftsecion_under_spares.getItems().length; i++) {
+								leftsecion_under_spares.getItems()[i].setVisible(true);
+
+							}
+							viewmore_pricebasis.setSrc("sap-icon://navigation-down-arrow");
+
+							viewmore_pricebasis.firePress();
+
+
+
 							// iconTotalPricingG.firePress();
 
-
-							//left section and respective fields
+							debugger
+							// //left section and respective fields
 							// omainHBox.getItems()[0].getItems()[3].getItems()[2].setVisible(false);
 							// omainHBox.getItems()[0].getItems()[3].getItems()[3].setVisible(false);
 							// omainHBox.getItems()[0].getItems()[3].getItems()[4].setVisible(false);
@@ -2167,9 +2918,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							// 	var oTablesection = listofsections[i].getItems()[1].getItems()[0].mAggregations.items[1].mAggregations.items[1];
 							// 	// listofsections[i].getItems()[3].setVisible(false);
-							// 	 
+
 							// 	let len = oTablesection.getItems().length
-							// 	for (let j = (len - 4); j >= (len - 8); j--) {
+							// 	for (let j = (len - 4); j >= (len - 10); j--) {
 
 							// 		oTablesection.getItems()[j].setVisible(false)
 
@@ -2179,15 +2930,15 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							// //left last section under price details and its respective
 							// var leftsectionlastvbox = omainHBox.getItems()[0].getItems()[3].getItems();
-							// for (let i = 16; i < leftsectionlastvbox.length; i++) {
+							// for (let i = 13; i < leftsectionlastvbox.length; i++) {
 							// 	leftsectionlastvbox[i].setVisible(false);
 							// }
-							// leftsectionlastvbox[15].getItems()[0].setVisible(false);
+							// // leftsectionlastvbox[15].getItems()[0].setVisible(false);
 
-							let righthboxxontainer = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer");
+							// let righthboxxontainer = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer");
 
-							debugger
-							let lastvendor = righthboxxontainer.getItems()[righthboxxontainer.getItems().length - 1];
+
+							// let lastvendor = righthboxxontainer.getItems()[righthboxxontainer.getItems().length - 1];
 
 
 

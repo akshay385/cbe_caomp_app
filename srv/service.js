@@ -83,10 +83,13 @@ module.exports = cds.service.impl(async function () {
             const pan_proj = [];
             if (pan_details.value) {
                 pan_details.value.forEach(ele => {
-                    pan_proj.push({
-                        ProjectId: `${ele.ProjectId || 'NA'}`,
-                        PAN_Number: `${ele.PAN_Number || 'NA'}`
-                    })
+                    // if (ele.task_id.trim() !== '') {
+                        pan_proj.push({
+                            ProjectId: `${ele.ProjectId || 'NA'}`,
+                            PAN_Number: `${ele.PAN_Number || 'NA'}`
+                        })
+                    // }
+
                 });
             }
 
