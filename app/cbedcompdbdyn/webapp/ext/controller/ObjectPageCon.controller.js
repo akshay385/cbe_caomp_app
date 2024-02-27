@@ -2169,6 +2169,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													// height:"25px"
 												}));
 
+												
+
 												//Approved Vendor
 												chvbox.addItem(new sap.m.Text(`${"approvedvendor" + generateUniqueId()}`, {
 													text: `${vendorslist[k].Awarded_Vendor ?? ' '}`,
