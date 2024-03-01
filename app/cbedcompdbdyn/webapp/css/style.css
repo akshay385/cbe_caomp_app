@@ -324,6 +324,7 @@
 
 .columnStyleClass{
     background: rgb(110, 193, 110);
+    color: white !important;
     /* background: rgba(207, 249, 144, 0.48); */
     /* background: rgb(185, 244, 170); */
     /* background:linear-gradient(to right, red , yellow); ; */

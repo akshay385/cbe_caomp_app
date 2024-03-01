@@ -2859,6 +2859,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											// 	let lastitemchvbox = chvbox.getItems()[(chvbox.getItems().length - 1)];
 
 											// 	lastitemchvbox.addStyleClass("customlaststyleclassrsection");
+											
 										}
 									}
 									k++;
