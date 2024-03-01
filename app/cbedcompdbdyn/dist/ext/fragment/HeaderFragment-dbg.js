@@ -8,9 +8,10 @@ sap.ui.define([
     var EdmType = exportLibrary.EdmType;
     return {
         onRowExpand: function (oEvent) {
+            debugger
 
             // MessageToast.show("Custom handler invoked.");
-            if (oEvent.getSource().getPressed() == true) {
+            if (oEvent.getSource().getText() == "ItemList-ExpandAll") {
                 debugger
                 oEvent.getSource().setText("ItemList-CollapseAll");
                 // let totat_basicpricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon1");

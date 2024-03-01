@@ -318,6 +318,9 @@
         "PAN_Number": {
           "key": true,
           "type": "cds.String"
+        },
+        "task_id": {
+          "type": "cds.String"
         }
       }
     },
@@ -326,7 +329,10 @@
       "elements": {
         "PAN_Number": {
           "key": true,
-          "type": "cds.String"
+          "type": "cds.String",
+          "default": {
+            "val": "def"
+          }
         },
         "SBG": {
           "type": "cds.String"
@@ -382,12 +388,6 @@
         "Final_proposed_Value": {
           "type": "cds.String"
         },
-        "Order_Value_BKTIn_Project_CurrencyBKT": {
-          "type": "cds.String"
-        },
-        "Order_Value_BKTIn_Bid_CurrencyBKT": {
-          "type": "cds.String"
-        },
         "Savings_achieved_btw_initial_and_final_quote": {
           "type": "cds.String"
         },
@@ -412,14 +412,11 @@
         "Time_Taken_for_FinalizationDASHIn_DAYS": {
           "type": "cds.String"
         },
-        "Vendor_Final_Quotation_Date": {
-          "type": "cds.String"
-        },
-        "Vendor_Final_Quotation_Amount": {
-          "type": "cds.String"
-        },
         "status": {
           "type": "cds.String"
+        },
+        "statusInd": {
+          "type": "cds.Integer"
         },
         "created_by": {
           "type": "cds.String"
@@ -433,8 +430,28 @@
         "status_a": {
           "type": "cds.String"
         },
-        "justification": {
-          "type": "cds.LargeString"
+        "switch_control": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": false
+          }
+        },
+        "ProjectId": {
+          "type": "cds.String"
+        },
+        "number_of_vendors_invited": {
+          "type": "cds.String"
+        },
+        "total_levels_of_approval": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Current_level_of_approval": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Sap_workitem_id": {
+          "type": "cds.String"
         },
         "Comments": {
           "type": "cds.LargeString"
@@ -490,9 +507,6 @@
         },
         "Rank": {
           "type": "cds.String"
-        },
-        "CPBG": {
-          "type": "cds.String"
         }
       }
     },
@@ -527,9 +541,6 @@
           "type": "cds.String"
         },
         "Amount": {
-          "type": "cds.String"
-        },
-        "extendedPrice": {
           "type": "cds.String"
         },
         "Indian_Tax_PER": {
@@ -591,6 +602,24 @@
           "type": "cds.String"
         },
         "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
           "type": "cds.String"
         },
         "Incoterms": {
@@ -1452,6 +1481,9 @@
         "PAN_Number": {
           "key": true,
           "type": "cds.String"
+        },
+        "task_id": {
+          "type": "cds.String"
         }
       }
     },
@@ -1493,9 +1525,6 @@
           "type": "cds.String"
         },
         "Amount": {
-          "type": "cds.String"
-        },
-        "extendedPrice": {
           "type": "cds.String"
         },
         "Indian_Tax_PER": {
@@ -1556,9 +1585,6 @@
         },
         "Rank": {
           "type": "cds.String"
-        },
-        "CPBG": {
-          "type": "cds.String"
         }
       }
     },
@@ -1574,7 +1600,10 @@
       "elements": {
         "PAN_Number": {
           "key": true,
-          "type": "cds.String"
+          "type": "cds.String",
+          "default": {
+            "val": "def"
+          }
         },
         "SBG": {
           "type": "cds.String"
@@ -1630,12 +1659,6 @@
         "Final_proposed_Value": {
           "type": "cds.String"
         },
-        "Order_Value_BKTIn_Project_CurrencyBKT": {
-          "type": "cds.String"
-        },
-        "Order_Value_BKTIn_Bid_CurrencyBKT": {
-          "type": "cds.String"
-        },
         "Savings_achieved_btw_initial_and_final_quote": {
           "type": "cds.String"
         },
@@ -1660,14 +1683,11 @@
         "Time_Taken_for_FinalizationDASHIn_DAYS": {
           "type": "cds.String"
         },
-        "Vendor_Final_Quotation_Date": {
-          "type": "cds.String"
-        },
-        "Vendor_Final_Quotation_Amount": {
-          "type": "cds.String"
-        },
         "status": {
           "type": "cds.String"
+        },
+        "statusInd": {
+          "type": "cds.Integer"
         },
         "created_by": {
           "type": "cds.String"
@@ -1681,8 +1701,28 @@
         "status_a": {
           "type": "cds.String"
         },
-        "justification": {
-          "type": "cds.LargeString"
+        "switch_control": {
+          "type": "cds.Boolean",
+          "default": {
+            "val": false
+          }
+        },
+        "ProjectId": {
+          "type": "cds.String"
+        },
+        "number_of_vendors_invited": {
+          "type": "cds.String"
+        },
+        "total_levels_of_approval": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Current_level_of_approval": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Sap_workitem_id": {
+          "type": "cds.String"
         },
         "Comments": {
           "type": "cds.LargeString"
@@ -1753,6 +1793,24 @@
           "type": "cds.String"
         },
         "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
           "type": "cds.String"
         },
         "Incoterms": {
@@ -1931,9 +1989,7 @@
       ],
       "@UI.Facets": [],
       "@UI.HeaderInfo.Title.$Type": "UI.DataField",
-      "@UI.HeaderInfo.Title.Value": {
-        "=": "Project_Description"
-      },
+      "@UI.HeaderInfo.Title.Value": "Comparative statement",
       "@UI.HeaderInfo.Description.$Type": "UI.DataField",
       "@UI.HeaderInfo.Description.Value": {
         "=": "ProjectId"
@@ -1993,6 +2049,18 @@
                 "Pa",
                 "Project_Description"
               ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Pr",
+                "task_id"
+              ]
+            },
+            "!=",
+            {
+              "val": "NA"
             }
           ]
         }
@@ -2130,9 +2198,6 @@
         },
         "Rank": {
           "type": "cds.String"
-        },
-        "CPBG": {
-          "type": "cds.String"
         }
       }
     },
@@ -2222,9 +2287,6 @@
         "Amount": {
           "type": "cds.String"
         },
-        "extendedPrice": {
-          "type": "cds.String"
-        },
         "Indian_Tax_PER": {
           "type": "cds.String"
         },
@@ -2237,6 +2299,17 @@
       "kind": "function",
       "params": {
         "data": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "Catalogcbeservice.cbeObjectPageData": {
+      "kind": "function",
+      "params": {
+        "projectId": {
           "type": "cds.String"
         }
       },

@@ -14,6 +14,5 @@ VIEW Catalogcbeservice_Vendor_details AS SELECT DISTINCT
   V_1.Order_amount_OR_Split_order_amount AS Order_amount_OR_Split_order_amount,
   V_1.Discount_Amount AS Discount_Amount,
   V_1.Discount_percentage AS Discount_percentage,
-  V_1."RANK" AS "RANK",
-  V_1.CPBG AS CPBG
+  V_1."RANK" AS "RANK"
 FROM (Catalogcbeservice_Projects AS Pr_0 INNER JOIN Catalogcbeservice_Vendors AS V_1 ON Pr_0.PAN_Number = V_1.PAN_Number)

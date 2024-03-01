@@ -37,6 +37,7 @@
         <EntitySet Name="Vendor_details" EntityType="Catalogcbeservice.Vendor_details"/>
         <EntitySet Name="Item_details" EntityType="Catalogcbeservice.Item_details"/>
         <FunctionImport Name="getExcelData" Function="Catalogcbeservice.getExcelData"/>
+        <FunctionImport Name="cbeObjectPageData" Function="Catalogcbeservice.cbeObjectPageData"/>
       </EntityContainer>
       <EntityType Name="VENDOR_DATA">
         <Key>
@@ -170,6 +171,7 @@
         </Key>
         <Property Name="ProjectId" Type="Edm.String" Nullable="false"/>
         <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
+        <Property Name="task_id" Type="Edm.String"/>
       </EntityType>
       <EntityType Name="Items">
         <Key>
@@ -186,7 +188,6 @@
         <Property Name="Quantity" Type="Edm.String"/>
         <Property Name="Unit_Price" Type="Edm.String"/>
         <Property Name="Amount" Type="Edm.String"/>
-        <Property Name="extendedPrice" Type="Edm.String"/>
         <Property Name="Indian_Tax_PER" Type="Edm.String"/>
         <Property Name="Quantity_Over_Delivery_Tolerance" Type="Edm.String"/>
       </EntityType>
@@ -208,13 +209,12 @@
         <Property Name="Discount_Amount" Type="Edm.String"/>
         <Property Name="Discount_percentage" Type="Edm.String"/>
         <Property Name="Rank" Type="Edm.String"/>
-        <Property Name="CPBG" Type="Edm.String"/>
       </EntityType>
       <EntityType Name="PAN_Info">
         <Key>
           <PropertyRef Name="PAN_Number"/>
         </Key>
-        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
+        <Property Name="PAN_Number" Type="Edm.String" Nullable="false" DefaultValue="def"/>
         <Property Name="SBG" Type="Edm.String"/>
         <Property Name="SBU" Type="Edm.String"/>
         <Property Name="BUORPurchasing_Group" Type="Edm.String"/>
@@ -233,8 +233,6 @@
         <Property Name="Project_CurrencyORBase_Currency" Type="Edm.String"/>
         <Property Name="Order_CurrencyORBid_currency" Type="Edm.String"/>
         <Property Name="Final_proposed_Value" Type="Edm.String"/>
-        <Property Name="Order_Value_BKTIn_Project_CurrencyBKT" Type="Edm.String"/>
-        <Property Name="Order_Value_BKTIn_Bid_CurrencyBKT" Type="Edm.String"/>
         <Property Name="Savings_achieved_btw_initial_and_final_quote" Type="Edm.String"/>
         <Property Name="Savings_against_base_line_spend_of_RFP" Type="Edm.String"/>
         <Property Name="Number_of_Vendors_Shortlisted_for_RFP" Type="Edm.String"/>
@@ -243,14 +241,18 @@
         <Property Name="RFP_Number" Type="Edm.String"/>
         <Property Name="RFP_Publish_Date" Type="Edm.String"/>
         <Property Name="Time_Taken_for_FinalizationDASHIn_DAYS" Type="Edm.String"/>
-        <Property Name="Vendor_Final_Quotation_Date" Type="Edm.String"/>
-        <Property Name="Vendor_Final_Quotation_Amount" Type="Edm.String"/>
         <Property Name="status" Type="Edm.String"/>
+        <Property Name="statusInd" Type="Edm.Int32"/>
         <Property Name="created_by" Type="Edm.String"/>
         <Property Name="task_id" Type="Edm.String"/>
         <Property Name="type" Type="Edm.String"/>
         <Property Name="status_a" Type="Edm.String"/>
-        <Property Name="justification" Type="Edm.String"/>
+        <Property Name="switch_control" Type="Edm.Boolean" DefaultValue="false"/>
+        <Property Name="ProjectId" Type="Edm.String"/>
+        <Property Name="number_of_vendors_invited" Type="Edm.String"/>
+        <Property Name="total_levels_of_approval" Type="Edm.String" MaxLength="2"/>
+        <Property Name="Current_level_of_approval" Type="Edm.String" MaxLength="2"/>
+        <Property Name="Sap_workitem_id" Type="Edm.String"/>
         <Property Name="Comments" Type="Edm.String"/>
         <Property Name="submitted_by" Type="Edm.String"/>
         <Property Name="submitted_date" Type="Edm.String"/>
@@ -276,6 +278,12 @@
         <Property Name="Commercial_Committee_who_cleared_the_proposal" Type="Edm.String"/>
         <Property Name="Vendor_References_to_be_displayed_in_Order" Type="Edm.String"/>
         <Property Name="Shortlisted_Vendors_Response_summary" Type="Edm.String"/>
+        <Property Name="Order_Value_BKTIn_Project_CurrencyBKT" Type="Edm.String"/>
+        <Property Name="Order_Value_BKTIn_Bid_CurrencyBKT" Type="Edm.String"/>
+        <Property Name="Vendor_Final_Quotation_Date" Type="Edm.String"/>
+        <Property Name="Vendor_Final_Quotation_Amount" Type="Edm.String"/>
+        <Property Name="Project_CurrencyORBase_Currency" Type="Edm.String"/>
+        <Property Name="Order_CurrencyORBid_currency" Type="Edm.String"/>
         <Property Name="Incoterms" Type="Edm.String"/>
         <Property Name="Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC" Type="Edm.String"/>
         <Property Name="Details_of_deviated_or_better_terms_agreed_with_the_Vendor" Type="Edm.String"/>
@@ -350,7 +358,6 @@
         <Property Name="Discount_Amount" Type="Edm.String"/>
         <Property Name="Discount_percentage" Type="Edm.String"/>
         <Property Name="Rank" Type="Edm.String"/>
-        <Property Name="CPBG" Type="Edm.String"/>
       </EntityType>
       <EntityType Name="Item_details">
         <Property Name="ProjectId" Type="Edm.String"/>
@@ -363,12 +370,15 @@
         <Property Name="Quantity" Type="Edm.String"/>
         <Property Name="Unit_Price" Type="Edm.String"/>
         <Property Name="Amount" Type="Edm.String"/>
-        <Property Name="extendedPrice" Type="Edm.String"/>
         <Property Name="Indian_Tax_PER" Type="Edm.String"/>
         <Property Name="Quantity_Over_Delivery_Tolerance" Type="Edm.String"/>
       </EntityType>
       <Function Name="getExcelData" IsBound="false" IsComposable="false">
         <Parameter Name="data" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="cbeObjectPageData" IsBound="false" IsComposable="false">
+        <Parameter Name="projectId" Type="Edm.String"/>
         <ReturnType Type="Edm.String"/>
       </Function>
       <Annotations Target="Catalogcbeservice.PAN_Details">
@@ -471,7 +481,7 @@
           <Record Type="UI.HeaderInfoType">
             <PropertyValue Property="Title">
               <Record Type="UI.DataField">
-                <PropertyValue Property="Value" Path="Project_Description"/>
+                <PropertyValue Property="Value" String="Comparative statement"/>
               </Record>
             </PropertyValue>
             <PropertyValue Property="Description">

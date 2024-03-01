@@ -4,6 +4,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 		'use strict';
 
 		var EdmType = exportLibrary.EdmType;
+		let flag = true;
 		return ControllerExtension.extend('cbedcompdbdyn.ext.controller.ObjectPageCon', {
 			// this section allows to extend lifecycle hooks or hooks provided by Fiori elements
 			override: {
@@ -467,151 +468,173 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							// var base_uri_value = this.base.getAppComponent().getManifestObject()._oBaseUri._string;
 							var base_uri_value = "";
 
-							//Project Info
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/Project_Details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							}
-							else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/Project_Details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							}
-
-							var project_details;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								project_details = results.value;
-							}).fail((err) => {
-								console.log(err);
-								MessageToast.show(err)
-							});
-
-							//list of items
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/Item_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							}
-							else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/Item_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							}
-
-							var list_of_items;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								list_of_items = results.value;
-							}).fail((err) => {
-								console.log(err);
-								MessageToast.show(err)
-							});
-
-							//vendo list
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							} else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							}
-
-							var vendor_list;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								vendor_list = results.value;
-							}).fail((err) => {
-								console.log(err);
-							});
-
-							//PAN Info
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/PAN_Info',
-									method: "GET",
-								}
-							} else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/PAN_Info',
-									method: "GET",
-								}
-							}
-
-							var pan_info;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								pan_info = results.value;
-							}).fail((err) => {
-								console.log(err);
-							});
-
-							//vendor Response
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/PAN_vendor_reponse_details',
-									method: "GET",
-								}
-							} else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/PAN_vendor_reponse_details',
-									method: "GET",
-								}
-							}
-
-							var vendor_response_deatils;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								vendor_response_deatils = results.value;
-							}).fail((err) => {
-								console.log(err);
-							});
 
 
-							// Item Tax Details
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/vendorTaxDetails',
-									method: "GET",
-								}
-							} else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/vendorTaxDetails',
-									method: "GET",
-								}
-							}
+							let funcName = 'cbeObjectPageData'
+							let oFunction = this.base.getView().getModel().bindContext(`/${funcName}(...)`)
+							oFunction.setParameter('projectId', project_id[1])
+							await oFunction.execute();
 
-							var tax_details;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								tax_details = results.value;
-							}).fail((err) => {
-								console.log(err);
-							});
+							let result = oFunction.getBoundContext().getValue();
 
 
-							// Item Tax Details
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/PanWebEvent',
-									method: "GET",
-								}
-							} else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/PanWebEvent',
-									method: "GET",
-								}
-							}
+							result = JSON.parse(result.value);
 
-							var pan_web_event;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								pan_web_event = results.value;
-							}).fail((err) => {
-								console.log(err);
-							});
+
+
+							// //Project Info
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/Project_Details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// }
+							// else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/Project_Details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var project_details;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	project_details = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// 	MessageToast.show(err)
+							// });
+
+							// //list of items
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/Item_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// }
+							// else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/Item_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var list_of_items;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	list_of_items = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// 	MessageToast.show(err)
+							// });
+
+							// //vendo list
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// } else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var vendor_list;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	vendor_list = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// });
+
+							// //PAN Info
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/PAN_Info',
+							// 		method: "GET",
+							// 	}
+							// } else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/PAN_Info',
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var pan_info;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	pan_info = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// });
+
+							// //vendor Response
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/PAN_vendor_reponse_details',
+							// 		method: "GET",
+							// 	}
+							// } else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/PAN_vendor_reponse_details',
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var vendor_response_deatils;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	vendor_response_deatils = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// });
+
+
+							// // Item Tax Details
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/vendorTaxDetails',
+							// 		method: "GET",
+							// 	}
+							// } else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/vendorTaxDetails',
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var tax_details;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	tax_details = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// });
+
+
+							// // Item Tax Details
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/PanWebEvent',
+							// 		method: "GET",
+							// 	}
+							// } else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/PanWebEvent',
+							// 		method: "GET",
+							// 	}
+							// }
+
+							// var pan_web_event;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	pan_web_event = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// });
+
+							var project_details = result[0][0];
+							var list_of_items = result[1];
+							var vendorslist = result[2];
+							var pan_info = result[3];
+							var vendor_response_deatils = result[4];
+							var tax_details = result[5];
+							var pan_web_event = result[6];
 
 							var omainHBox = this.getView().getContent()[0].getSections()[0].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent();
 
@@ -643,7 +666,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									size: "12px",
 									width: "20px",
 									press: function (oEvent) {
-										 
+
 
 										var vbox_omainhbox = omainHBox.getItems()[0];
 										let total_basic_pricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--total_basic_pricing");
@@ -683,6 +706,18 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											// total_including_tax.setTooltip(temp_total_including_tax);
 
 										}
+										debugger
+										let cnt = 0;
+										let oTable = itemstable.getColumns();
+										for (let i = 0; i < oTable.length; i++) {
+											if (oTable[i].getVisible() == true) {
+												cnt++;
+											}
+										}
+
+										if (cnt < 5) {
+											itemstable.setFixedLayout(true)
+										}
 
 									}
 								}))
@@ -706,7 +741,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							let tag_no_iterator = 1;
 							for (let i = 0; i < uniqueItems.length; i++) {
 
-								 
+
 
 								itemstable.addItem(new sap.m.ColumnListItem(`${"collistitem" + (i + 1)}`));
 								let columnlist = itemstable.getItems()[i];
@@ -838,7 +873,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							for (let key in counter_item) {
 								if (counter_item[key] == itemstable.getItems().length) {
-									 
+
 									itemstable.getColumns()[key].setVisible(false);
 								}
 								// console.log(`Key: ${key}, Value: ${counter_item[key]}`);
@@ -860,30 +895,30 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							Scrollhbox.destroyItems();
 
 							//vendor details
-							if (base_uri_value) {
-								var settings = {
-									url: base_uri_value + 'odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							} else {
-								var settings = {
-									url: '/odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
-									method: "GET",
-								}
-							}
+							// if (base_uri_value) {
+							// 	var settings = {
+							// 		url: base_uri_value + 'odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// } else {
+							// 	var settings = {
+							// 		url: '/odata/v4/catalogcbeservice/Vendor_details?$filter=ProjectId eq ' + `'${project_id[1]}'`,
+							// 		method: "GET",
+							// 	}
+							// }
 
-							var vendorslist;
-							await $.ajax(settings).done(async (results, textStatus, request) => {
-								vendorslist = results.value;
-							}).fail((err) => {
-								console.log(err);
-							});
+							// var vendorslist;
+							// await $.ajax(settings).done(async (results, textStatus, request) => {
+							// 	vendorslist = results.value;
+							// }).fail((err) => {
+							// 	console.log(err);
+							// });
 
 							let processedVendorIds = new Set();
 
 							let classitemiter = 0;
 
-							 
+
 							for (let i = 0; i < vendorslist.length; i++) {
 
 								const vendorId = vendorslist[i].vendor_code;
@@ -1535,9 +1570,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								// } while (k < vendorslist.length);
 
 								//modified
-								 
+
 								do {
-									 
+
 
 									if (vendorslist[k].ProjectId == project_id[1] && vendorslist[k].Proposed_Vendor_Code == vendorslist[i].Proposed_Vendor_Code) {
 
@@ -1639,12 +1674,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// oTable.addColumn(oColumn2);
 												oTable.addColumn(oColumn3);
 
-												 
-												
+
+
 
 												//Total amount expand property
 
-												 
+
 												var colheader = oTable.getColumns()[1].getHeader()
 
 												colheader.addItem(new sap.m.Label({
@@ -1673,7 +1708,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												let tax_value = '';
 
 												function formatCurrency(amount, currencyCode) {
-													 
+
 													let formattedAmount = '';
 													switch (currencyCode) {
 														case 'INR':
@@ -1686,7 +1721,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													return formattedAmount;
 												}
 
-												 
+												const vendorresponse_selecteditem = vendor_response_deatils.filter(item =>
+													item.PAN_Number === vendorslist[k].PAN_Number &&
+													item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
+												);
+
+
+
+												grandTotalUnit = vendorresponse_selecteditem[0]?.Order_CurrencyORBid_currency ?? 'NA';
+
+
 												// Iterate over uniqueItems
 												for (let i = 0; i < uniqueItems.length; i++) {
 
@@ -1696,7 +1740,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													const foundItem = filteredItems.find(item => item.Item_Code === currentItem.Item_Code);
 
 													if (foundItem || itemMatchingPrjVenPan.length) {
-														 
+
 														// Found item, create ColumnListItem with data
 														var AmtWithoutCommas = itemMatchingPrjVenPan[0].Amount?.replace(/,/g, '') ?? 0;
 														var quantityWithoutCommas = itemMatchingPrjVenPan[0].Quantity?.replace(/,/g, '') ?? 0;
@@ -1709,12 +1753,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 														const total_amount_display = `${total_amount_value} ${itemMatchingPrjVenPan[0].Unit_Price ?? ' '}`;
 
 														grandTotalAmount += total_amount_value;
-														grandTotalUnit = itemMatchingPrjVenPan[0].Unit_Price;
+														// grandTotalUnit = itemMatchingPrjVenPan[0].Unit_Price;
 
 														const oItem = new sap.m.ColumnListItem({
 															id: `${"item1data" + generateUniqueId()}`,
 															cells: [
-																new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${itemMatchingPrjVenPan[0].Unit_Price}` }),
+																new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}` }),
 																// new sap.m.Text({ text: `${itemMatchingPrjVenPan[0].unit_rate_per_unit ?? ' '}` }),
 																new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}` }),
 															]
@@ -1736,12 +1780,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													}
 												}
 												////////////////////////////////////////////////////////////////////////////////
-
-
-												const vendorresponse_selecteditem = vendor_response_deatils.filter(item =>
-													item.PAN_Number === vendorslist[k].PAN_Number &&
-													item.Proposed_Vendor_Code === vendorslist[k].Proposed_Vendor_Code
-												);
 
 												//Tax Details
 												const tax_details_filtered = tax_details.filter(item =>
@@ -1826,7 +1864,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												oTable.addItem(oItem3);
 												var oItem4 = new sap.m.ColumnListItem({
 													id: `${"parkingmarking" + generateUniqueId()}`,
-													visible: true,
+													visible: false,
 													cells: [
 
 														new sap.m.Text({ text: `${valuesMap[namesToCheck[1]] ?? ' '}` }),
@@ -1838,7 +1876,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												oTable.addItem(oItem4);
 												var oItem5 = new sap.m.ColumnListItem({
 													id: `${"inspection" + generateUniqueId()}`,
-													visible: true,
+													visible: false,
 													cells: [
 
 														new sap.m.Text({ text: `${valuesMap[namesToCheck[2]] ?? ' '}` }),
@@ -1850,7 +1888,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												oTable.addItem(oItem5);
 												var oItem6 = new sap.m.ColumnListItem({
 													id: `${"documentation" + generateUniqueId()}`,
-													visible: true,
+													visible: false,
 													cells: [
 
 														new sap.m.Text({ text: `${valuesMap[namesToCheck[3]] ?? ' '}` }),
@@ -1876,6 +1914,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// oTable.addItem(oItem7);
 												var oItem8 = new sap.m.ColumnListItem({
 													id: `${"rnod" + generateUniqueId()}`,
+													visible: false,
 													cells: [
 
 														new sap.m.Label({ text: `${valuesMap[namesToCheck[4]] ?? ' '}`, design: "Bold" }),
@@ -1887,7 +1926,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												oTable.addItem(oItem8);
 												var oItem9 = new sap.m.ColumnListItem({
 													id: `${"customduty" + generateUniqueId()}`,
-													visible: true,
+													visible: false,
 													cells: [
 
 														new sap.m.Text({ text: `${valuesMap[namesToCheck[5]] ?? ' '}` }),
@@ -1911,7 +1950,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// oTable.addItem(oItem10);
 												var oItem10 = new sap.m.CustomListItem({
 													id: `${"tax_field" + generateUniqueId()}`,
-													visible: true,
+													visible: false,
 													content: [
 														new sap.m.Text({ text: tax_value, width: "294px" })
 
@@ -1920,7 +1959,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 												oTable.addItem(oItem10);
 
-												
+
 
 												// alert(oTable.getItems().length);
 
@@ -1966,7 +2005,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// oTable.addItem(oItem12);
 												var oItem13 = new sap.m.ColumnListItem({
 													id: `${"shipment" + generateUniqueId()}`,
-													visible: true,
+													visible: false,
 													cells: [
 
 														new sap.m.Text({ text: `${valuesMap[namesToCheck[9]] ?? ' '}` }),
@@ -2012,12 +2051,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												});
 												oTable.addItem(oItem15);
 												if (vendorslist[k].Rank == '1') {
-													debugger
-													debugger
-												   oTable.getColumns()[0].setStyleClass("columnStyleClass");
-												   oTable.getColumns()[1].setStyleClass("columnStyleClass");
-												   oTable.getItems()[oTable.getItems().length - 5].addStyleClass("columnStyleClass")
-											   }
+
+
+													oTable.getColumns()[0].setStyleClass("columnStyleClass");
+													oTable.getColumns()[1].setStyleClass("columnStyleClass");
+													oTable.getItems()[oTable.getItems().length - 5].addStyleClass("columnStyleClass")
+												}
 
 
 												oTable.getItems()[oTable.getItems().length - 5].addStyleClass("taxCell")
@@ -2874,97 +2913,39 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 										}
 									}))
 								}
-
-
-
-
-
 							}  //end of for-loop
 
+							sap.ui.core.BusyIndicator.hide();
 
-							 
-							//Every time to reinitialize page
-
-							let total_incluing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon2");
-							let viewmore_pricebasis = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--icon3");
-							// var iconTotalPricingD = omainHBox.getItems()[0].getItems()[3].getItems()[12].getItems()[1];
-							// var iconTotalPricingG = omainHBox.getItems()[0].getItems()[3].getItems()[15].getItems()[1];
-
-							let leftsecion_under_spares = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--leftbelowtable");
-							 
-							leftsecion_under_spares.getItems()[2].setVisible(false);
-							leftsecion_under_spares.getItems()[3].setVisible(false);
-							leftsecion_under_spares.getItems()[4].setVisible(false);
-							leftsecion_under_spares.getItems()[5].setVisible(false);
-							leftsecion_under_spares.getItems()[6].setVisible(false);
-							leftsecion_under_spares.getItems()[7].setVisible(false);
-							leftsecion_under_spares.getItems()[8].setVisible(false);
-							total_incluing.setSrc("sap-icon://navigation-right-arrow")
+							let sect_under_spares = omainHBox.getItems()[0].getItems()[3].getItems();
+							for (let i = 2; i <= 8; i++) {
+								sect_under_spares[i].setVisible(false);
+							}
+							for (let i = 13; i < sect_under_spares.length; i++) {
+								sect_under_spares[i].setVisible(false);
+							}
+							if (sect_under_spares[9].getItems()[1].getSrc() == 'sap-icon://navigation-up-arrow') {
+								sect_under_spares[9].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
+							}
+							if (sect_under_spares[12].getItems()[1].getSrc() == 'sap-icon://navigation-down-arrow') {
+								sect_under_spares[12].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
+							}
 
 
-							// total_incluing.firePress();
+							debugger
+							let itemListButton = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::HeaderFacetCustomContainer::HeaderFragment--rowexpand");
+							// await itemListButton.firePress();
+							// await itemListButton.firePress();
 
-							for (let i = 0; i < leftsecion_under_spares.getItems().length; i++) {
-								leftsecion_under_spares.getItems()[i].setVisible(true);
+							debugger
+
+
+							let rightsectionpri = omainHBox.getItems()[1].getContent()[0].getItems();
+							// omainHBox.getItems()[1].getContent()[0].getItems()
+							for (let i = 0; i < rightsectionpri.length; i++) {
+								rightsectionpri[i].getItems()[2].setVisible(false);
 
 							}
-							viewmore_pricebasis.setSrc("sap-icon://navigation-down-arrow");
-
-							viewmore_pricebasis.firePress();
-
-
-
-							// iconTotalPricingG.firePress();
-
-							 
-							// //left section and respective fields
-							// omainHBox.getItems()[0].getItems()[3].getItems()[2].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[3].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[4].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[7].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[8].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[9].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[10].setVisible(false);
-							// omainHBox.getItems()[0].getItems()[3].getItems()[11].setVisible(false);
-
-							// var listofsections = omainHBox.getItems()[1].getContent()[0].getItems();
-							// for (let i = 0; i < listofsections.length; i++) {
-
-							// 	var oTablesection = listofsections[i].getItems()[1].getItems()[0].mAggregations.items[1].mAggregations.items[1];
-							// 	// listofsections[i].getItems()[3].setVisible(false);
-
-							// 	let len = oTablesection.getItems().length
-							// 	for (let j = (len - 4); j >= (len - 10); j--) {
-
-							// 		oTablesection.getItems()[j].setVisible(false)
-
-							// 	}
-
-							// }
-
-							// //left last section under price details and its respective
-							// var leftsectionlastvbox = omainHBox.getItems()[0].getItems()[3].getItems();
-							// for (let i = 13; i < leftsectionlastvbox.length; i++) {
-							// 	leftsectionlastvbox[i].setVisible(false);
-							// }
-							// // leftsectionlastvbox[15].getItems()[0].setVisible(false);
-
-							// let righthboxxontainer = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer");
-
-
-							// let lastvendor = righthboxxontainer.getItems()[righthboxxontainer.getItems().length - 1];
-
-
-
-
-
-							sap.ui.core.BusyIndicator.hide();
-							// let rightsectionpri = omainHBox.getItems()[1].getContent()[0].getItems();
-							// // omainHBox.getItems()[1].getContent()[0].getItems()
-							// for (let i = 0; i < rightsectionpri.length; i++) {
-							// 	rightsectionpri.getItems()[2].setVisible(false);
-
-							// }
 						}
 						catch (error) {
 

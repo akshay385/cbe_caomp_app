@@ -8,7 +8,6 @@ COLUMN TABLE CBE_PAN_PRICE_DETAILS_proj (
   Quantity NVARCHAR(5000),
   Unit_Price NVARCHAR(5000),
   Amount NVARCHAR(5000),
-  extendedPrice NVARCHAR(5000),
   Indian_Tax_PER NVARCHAR(5000),
   Quantity_Over_Delivery_Tolerance NVARCHAR(5000),
   PRIMARY KEY(Proposed_Vendor_Code, PAN_Number, Item_Code)

@@ -1,4 +1,5 @@
 VIEW Catalogcbeservice_Projects AS SELECT
   PAN_proj_0.ProjectId,
-  PAN_proj_0.PAN_Number
+  PAN_proj_0.PAN_Number,
+  PAN_proj_0.task_id
 FROM CBE_PAN_proj AS PAN_proj_0

@@ -1,4 +1,6 @@
 const cds = require('@sap/cds');
+const axios = require('axios');
+
 
 module.exports = cds.service.impl(async function () {
     let {
@@ -11,11 +13,59 @@ module.exports = cds.service.impl(async function () {
         Vendors,
         PAN_Info,
         Project_Details,
+        Item_details,
         vendorTaxDetails,
-        PanWebEvent
+        PanWebEvent,
+        Vendor_details
     } = this.entities;
 
     const c4re = await cds.connect.to("dbservice");
+
+    var vcap = JSON.parse(process.env.VCAP_SERVICES);
+    var panformDest;
+    // let auth = req?.headers?.authorization;
+    // console.log(auth);
+    vcap.destination.forEach((dest) => {
+        if (dest?.name != undefined && dest?.name == "main_db2-destination-service") {
+            panformDest = dest;
+        }
+    })
+
+    //development
+    //    panformDest =  vcap.destination[0]
+
+    var tokenurl = panformDest.credentials.url + "/oauth/token?grant_type=client_credentials";
+    var basicAuth = panformDest.credentials.clientid + ":" + panformDest.credentials.clientsecret;
+    var basicAuth = btoa(basicAuth);
+    var basicStr = "Basic " + basicAuth;
+
+
+    var axiosTokenResp = await axios.request({
+        url: tokenurl,
+        method: 'get',
+        headers: {
+            Authorization: basicStr
+        }
+    })
+    var accesstoken = axiosTokenResp.data.access_token;
+
+    var authDest = axiosTokenResp.data.token_type + " " + accesstoken;
+    // console.log(authDest);
+
+    var destinationurl = panformDest.credentials.uri + "/destination-configuration/v1/destinations/Dynamic_Iflow-srv-api"
+
+    var destinationResp = await axios.request({
+        url: destinationurl,
+        method: 'get',
+        headers: {
+            Authorization: authDest
+        }
+    })
+
+    var baseSrvUrl = destinationResp?.data?.destinationConfiguration?.URL;
+
+    c4re.destination.url = baseSrvUrl;
+    console.log()
 
 
     // this.before("READ", PAN_Details, async (req) => {
@@ -73,6 +123,7 @@ module.exports = cds.service.impl(async function () {
     this.before("READ", [Project_Details, Pan_Details, Items, Projects, Vendors, PAN_Info], async (req) => {
 
         try {
+
             const pan_details = await c4re.get("/odata/v4/pan-approval/PAN_Details_APR");//pan_details
             await DELETE.from(PAN_Info);
             await INSERT.into(PAN_Info).entries(pan_details.value);
@@ -84,10 +135,11 @@ module.exports = cds.service.impl(async function () {
             if (pan_details.value) {
                 pan_details.value.forEach(ele => {
                     // if (ele.task_id.trim() !== '') {
-                        pan_proj.push({
-                            ProjectId: `${ele.ProjectId || 'NA'}`,
-                            PAN_Number: `${ele.PAN_Number || 'NA'}`
-                        })
+                    pan_proj.push({
+                        ProjectId: `${ele.ProjectId || 'NA'}`,
+                        PAN_Number: `${ele.PAN_Number || 'NA'}`,
+                        task_id: `${ele.task_id || 'NA'}`
+                    })
                     // }
 
                 });
@@ -129,5 +181,24 @@ module.exports = cds.service.impl(async function () {
         } catch (error) {
             console.log(error);
         }
+    })
+
+    this.on("cbeObjectPageData", async (req) => {
+
+        let project_id = req.data.projectId;
+
+        let project_details = await SELECT.from(Project_Details).where({ ProjectId: project_id });
+        let list_of_items = await SELECT.from(Item_details).where({ ProjectId: project_id });
+        let vendor_list = await SELECT.from(Vendor_details).where({ ProjectId: project_id });
+        let pan_info = await SELECT.from(PAN_Info);
+        let vendor_response_deatils = await SELECT.from(PAN_vendor_reponse_details);
+        let tax_details = await SELECT.from(vendorTaxDetails);
+        let pan_web_event = await SELECT.from(PanWebEvent);
+
+        let result = [project_details,list_of_items,vendor_list,pan_info,vendor_response_deatils,tax_details,pan_web_event];
+
+        return JSON.stringify(result);
+
+        // console.log();
     })
 })

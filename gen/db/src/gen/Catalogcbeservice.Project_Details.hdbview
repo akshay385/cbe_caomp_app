@@ -2,3 +2,4 @@ VIEW Catalogcbeservice_Project_Details AS SELECT DISTINCT
   Pr_0.ProjectId,
   Pa_1.Project_Description
 FROM (Catalogcbeservice_Projects AS Pr_0 INNER JOIN Catalogcbeservice_PAN_Info AS Pa_1 ON Pr_0.PAN_Number = Pa_1.PAN_Number)
+WHERE Pr_0.task_id != 'NA'

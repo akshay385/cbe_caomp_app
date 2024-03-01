@@ -6,7 +6,7 @@
         "dbservice": {
           "kind": "rest",
           "credentials": {
-            "url": "https://tata-projects-limited-btp-dev-0or0hi20-dev-space-main-db2-srv.cfapps.eu10-004.hana.ondemand.com",
+            "url": "",
             "authentication": "BasicAuthentication",
             "username":"harshvardhans-v@tataprojects.com",
             "password":"Harsha@2001"

@@ -9,6 +9,7 @@ modules:
   requires:
   - name: uaa_cbe_main_app
   - name: cbe_main_app-db
+  - name: main_db2-destination-service
   provides:
   - name: srv-api
     properties:
@@ -121,6 +122,12 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
+- name: main_db2-destination-service
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service: destination
+    service-name: main_db2-destination-service
+    service-plan: lite
 - name: cbe_main_app-destination-service
   type: org.cloudfoundry.managed-service
   parameters:

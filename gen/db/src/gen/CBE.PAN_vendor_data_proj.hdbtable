@@ -12,6 +12,5 @@ COLUMN TABLE CBE_PAN_vendor_data_proj (
   Discount_Amount NVARCHAR(5000),
   Discount_percentage NVARCHAR(5000),
   "RANK" NVARCHAR(5000),
-  CPBG NVARCHAR(5000),
   PRIMARY KEY(Proposed_Vendor_Code, PAN_Number)
 )

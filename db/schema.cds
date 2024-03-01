@@ -86,13 +86,14 @@ entity PAN_proj {
 
     key ProjectId  : String;
     key PAN_Number : String;
+        task_id    : String;
 
 
 }
 
 
 entity PAN_Details_proj {
-    key PAN_Number                                   : String;
+    key PAN_Number                                   : String default 'def';
         SBG                                          : String;
         SBU                                          : String;
         BUORPurchasing_Group                         : String;
@@ -111,8 +112,6 @@ entity PAN_Details_proj {
         Project_CurrencyORBase_Currency              : String;
         Order_CurrencyORBid_currency                 : String;
         Final_proposed_Value                         : String;
-        Order_Value_BKTIn_Project_CurrencyBKT        : String;
-        Order_Value_BKTIn_Bid_CurrencyBKT            : String;
         Savings_achieved_btw_initial_and_final_quote : String;
         Savings_against_base_line_spend_of_RFP       : String;
         Number_of_Vendors_Shortlisted_for_RFP        : String;
@@ -121,14 +120,18 @@ entity PAN_Details_proj {
         RFP_Number                                   : String;
         RFP_Publish_Date                             : String;
         Time_Taken_for_FinalizationDASHIn_DAYS       : String;
-        Vendor_Final_Quotation_Date                  : String;
-        Vendor_Final_Quotation_Amount                : String;
         status                                       : String;
+        statusInd                                    : Integer; //used for criticality rep
         created_by                                   : String;
         task_id                                      : String;
         type                                         : String;
         status_a                                     : String;
-        justification                                : LargeString;
+        switch_control                               : Boolean default false;
+        ProjectId                                    : String;
+        number_of_vendors_invited                    : String;
+        total_levels_of_approval                     : String(2);
+        Current_level_of_approval                    : String(2);
+        Sap_workitem_id                              : String;
         Comments                                     : LargeString;
         submitted_by                                 : String;
         submitted_date                               : String;
@@ -150,8 +153,6 @@ entity PAN_vendor_data_proj {
         Discount_Amount                    : String;
         Discount_percentage                : String;
         Rank                               : String;
-        //testing
-        CPBG                               : String
 
 }
 
@@ -166,10 +167,8 @@ entity PAN_PRICE_DETAILS_proj {
         Quantity                         : String;
         Unit_Price                       : String;
         Amount                           : String;
-        extendedPrice                    : String;
         Indian_Tax_PER                   : String;
         Quantity_Over_Delivery_Tolerance : String;
-
 }
 
 entity PAN_vendor_response_proj {
@@ -190,8 +189,13 @@ entity PAN_vendor_response_proj {
         Commercial_Committee_who_cleared_the_proposal                                : String;
         Vendor_References_to_be_displayed_in_Order                                   : String;
         Shortlisted_Vendors_Response_summary                                         : String;
+        Order_Value_BKTIn_Project_CurrencyBKT                                        : String;
+        Order_Value_BKTIn_Bid_CurrencyBKT                                            : String;
+        Vendor_Final_Quotation_Date                                                  : String;
+        Vendor_Final_Quotation_Amount                                                : String;
+        Project_CurrencyORBase_Currency                                              : String;
+        Order_CurrencyORBid_currency                                                 : String;
         Incoterms                                                                    : String;
-        //Terms_and_Conditions_Compared_with
         Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC            : String;
         Details_of_deviated_or_better_terms_agreed_with_the_Vendor                   : String;
         Market_Scenario_and_Demand                                                   : String;
@@ -213,8 +217,6 @@ entity PAN_vendor_response_proj {
         Commercial_Terms                                                             : LargeString;
         Compliance_Terms                                                             : LargeString;
         Others                                                                       : LargeString;
-
-
 }
 
 entity vendorTaxDetails {

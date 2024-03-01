@@ -40,7 +40,7 @@ annotate service.Project_Details with @(
 annotate service.Project_Details with @(UI.HeaderInfo: {
     Title         : {
         $Type: 'UI.DataField',
-        Value: Project_Description,
+        Value: 'Comparative statement',
     },
     Description   : {
         $Type: 'UI.DataField',

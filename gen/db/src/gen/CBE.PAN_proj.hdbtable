@@ -1,5 +1,6 @@
 COLUMN TABLE CBE_PAN_proj (
   ProjectId NVARCHAR(5000) NOT NULL,
   PAN_Number NVARCHAR(5000) NOT NULL,
+  task_id NVARCHAR(5000),
   PRIMARY KEY(ProjectId, PAN_Number)
 )

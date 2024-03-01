@@ -73,7 +73,9 @@ service Catalogcbeservice {
                 Pa.Project_Description
         from Projects as Pr
         inner join PAN_Info as Pa
-            on Pr.PAN_Number = Pa.PAN_Number;
+            on Pr.PAN_Number = Pa.PAN_Number
+        where
+            Pr.task_id != 'NA';
 
     entity Vendor_details             as
         select distinct
@@ -94,7 +96,8 @@ service Catalogcbeservice {
         inner join Items as I
             on Pr.PAN_Number = I.PAN_Number;
 
-    function getExcelData(data : String) returns String;
+    function getExcelData(data : String)           returns String;
+    function cbeObjectPageData(projectId : String) returns String;
 
 
 }

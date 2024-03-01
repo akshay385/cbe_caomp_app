@@ -8,7 +8,6 @@ VIEW Catalogcbeservice_Items AS SELECT
   PAN_PRICE_DETAILS_proj_0.Quantity,
   PAN_PRICE_DETAILS_proj_0.Unit_Price,
   PAN_PRICE_DETAILS_proj_0.Amount,
-  PAN_PRICE_DETAILS_proj_0.extendedPrice,
   PAN_PRICE_DETAILS_proj_0.Indian_Tax_PER,
   PAN_PRICE_DETAILS_proj_0.Quantity_Over_Delivery_Tolerance
 FROM CBE_PAN_PRICE_DETAILS_proj AS PAN_PRICE_DETAILS_proj_0
