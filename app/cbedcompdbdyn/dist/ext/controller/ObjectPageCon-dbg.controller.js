@@ -706,6 +706,18 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											// total_including_tax.setTooltip(temp_total_including_tax);
 
 										}
+										debugger
+										let cnt = 0;
+										let oTable = itemstable.getColumns();
+										for (let i = 0; i < oTable.length; i++) {
+											if (oTable[i].getVisible() == true) {
+												cnt++;
+											}
+										}
+
+										if (cnt < 5) {
+											itemstable.setFixedLayout(true)
+										}
 
 									}
 								}))
@@ -2912,13 +2924,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							for (let i = 13; i < sect_under_spares.length; i++) {
 								sect_under_spares[i].setVisible(false);
 							}
-							if (sect_under_spares[9].getItems()[1].getSrc()=='sap-icon://navigation-up-arrow') {
+							if (sect_under_spares[9].getItems()[1].getSrc() == 'sap-icon://navigation-up-arrow') {
 								sect_under_spares[9].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
 							}
-							if (sect_under_spares[12].getItems()[1].getSrc()=='sap-icon://navigation-down-arrow') {
+							if (sect_under_spares[12].getItems()[1].getSrc() == 'sap-icon://navigation-down-arrow') {
 								sect_under_spares[12].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
 							}
-							
+
 
 							debugger
 							let itemListButton = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::HeaderFacetCustomContainer::HeaderFragment--rowexpand");
