@@ -1,9 +1,4 @@
-# CAP cbe_main_app
-node_modules/
-
-# Web IDE, App Studio
-.che/
-.gen/
+# CAP Sync_Project
 
 # MTA
 *_mta_build_tmp
@@ -27,5 +22,8 @@ mta_archives/
 
 # auto generated wildcard
 .env
+# auto generated wildcard
+db/.env
 # added by cds
 .cdsrc-private.json
+node_modules
