@@ -62,6 +62,7 @@ module.exports = cds.service.impl(async function () {
         }
     })
 
+    
     var baseSrvUrl = destinationResp?.data?.destinationConfiguration?.URL;
 
     c4re.destination.url = baseSrvUrl;
@@ -160,7 +161,7 @@ module.exports = cds.service.impl(async function () {
             await INSERT.into(Vendors).entries(vendor_details.value);
 
 
-            const vendor_res_details = await c4re.get("/odata/v4/pan-approval/PAN_vendor_response_APR");//vendor
+            const vendor_res_details = await c4re.get("/odata/v4/pan-approval/PAN_vendor_data_APR");//vendor
             await DELETE.from(PAN_vendor_reponse_details);
             await INSERT.into(PAN_vendor_reponse_details).entries(vendor_res_details.value);
 
@@ -198,6 +199,26 @@ module.exports = cds.service.impl(async function () {
         let result = [project_details,list_of_items,vendor_list,pan_info,vendor_response_deatils,tax_details,pan_web_event];
 
         return JSON.stringify(result);
+
+        // console.log();
+    })
+    var exchangeArray = []
+    this.on("storeVendorDetails", async (req) => {
+
+        let resultvar = req.data.result;
+       
+
+        // let result = [project_details,list_of_items,vendor_list,pan_info,vendor_response_deatils,tax_details,pan_web_event];
+        resultvar = JSON.parse(resultvar)
+        exchangeArray.push(resultvar)
+
+        // console.log();
+    })
+    this.on("getVendorDetails", async (req) => {
+
+
+
+        return JSON.stringify(exchangeArray);
 
         // console.log();
     })

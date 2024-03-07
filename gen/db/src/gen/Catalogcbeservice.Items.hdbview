@@ -1,8 +1,10 @@
 VIEW Catalogcbeservice_Items AS SELECT
+  PAN_PRICE_DETAILS_proj_0.pdkey,
   PAN_PRICE_DETAILS_proj_0.Proposed_Vendor_Code,
   PAN_PRICE_DETAILS_proj_0.PAN_Number,
   PAN_PRICE_DETAILS_proj_0.Item_Code,
   PAN_PRICE_DETAILS_proj_0.HSN_OR_SAC_Code,
+  PAN_PRICE_DETAILS_proj_0.extendedPrice,
   PAN_PRICE_DETAILS_proj_0.Item_Short_Description,
   PAN_PRICE_DETAILS_proj_0.UOM,
   PAN_PRICE_DETAILS_proj_0.Quantity,

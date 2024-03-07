@@ -1,3 +1,7 @@
+:root {
+    --green: #4fd4acd1;
+  }
+
 .v3spaceBetweenclass {
     display: flex;
     justify-content: space-between;
@@ -37,7 +41,7 @@
 }
 
 .alignmentVendorClass {
-    align-items: center;
+    align-items: center !important;
 }
 
 /* #__title3-_actionsToolbar {
@@ -50,17 +54,16 @@
 }
 
 .tableBorder {
-   
+
     border: 1px solid #696464;
     overflow: hidden;
     max-width: 300px !important;
+    
+    /* border-radius: 10px; */
 }
 
 .customVBox {
-    /* display: flex; */
-    /* flex-direction: column; */
     align-items: center;
-    /* max-width: 300px !important; *//
 }
 
 .customVBox .sapMLabel {
@@ -69,7 +72,7 @@
 
 .rightPadding {
     padding-right: 1%;
-    border-right:solid 1px black;
+    border-right: solid 1px black;
 }
 
 .labelHeightClass {
@@ -182,16 +185,28 @@
     padding-right: 20px; */
 }
 
+/* .colAlignmentAlass{
+    align-items: center;
+} */
+
 /* scrollbox */
 .custBackgroundcolor {
     background: whitesmoke;
 }
 
+.vendorTitle {
+    height: 17px !important;
+    max-width: 200px !important;
+    overflow: hidden !important;
+    text-align: start !important;
+}
+
 /* Style for title */
 .titleStyleClass {
 
-    color: black
-        /* filter: drop-shadow(2px 4px 6px black); */
+    color: black;
+
+    /* filter: drop-shadow(2px 4px 6px black); */
 }
 
 
@@ -206,7 +221,8 @@
 /* header title */
 .sapFDynamicPageTitle,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:ObjectPage-OPHeaderContent {
-    background: #8ec6ff !important;
+    /* background: #8ec6ff !important; */
+    background: #36454F !important;
     /* height: 70px; */
 }
 
@@ -304,12 +320,12 @@
 .taxCell {
     /* background: red !important;
     width: 500px !important; */
-    overflow-y: scroll !important;
+    /* overflow-y: scroll !important; */
     /* overflow-x: scroll !important; */
-    scrollbar-width: thin;
+    /* scrollbar-width: thin; */
     display: inline-flex !important;
     border-top: solid 1px rgb(224, 218, 218);
-    max-height: 50px;
+    height: 45px !important;
     padding-left: 5px;
     padding-top: 5px;
     padding-bottom: 7px;
@@ -322,12 +338,85 @@
     padding-bottom: 13px;
 }
 
-.columnStyleClass{
-    background: rgb(110, 193, 110);
-    /* background: rgba(207, 249, 144, 0.48); */
-    /* background: rgb(185, 244, 170); */
-    /* background:linear-gradient(to right, red , yellow); ; */
-    /* background: repeating-linear-gradient(45deg, greenyellow, transparent 100px) ; */
-    /* color: white !important; */
-    /* background-color: white !important; */
+.taxTextClass {
+    /* color: red; */
+    height: 40px;
+    overflow-y: scroll !important;
+    scrollbar-width: none;
+}
+
+.customColumnList {
+    /* background: red; */
+    height: 40px;
+    /* background: rgb(110, 193, 110); */
+    background: var(--green);
+    color: white !important;
+}
+
+
+.columnStyleClass {
+    /* background: rgb(110, 193, 110); */
+    background: var(--green);
+    color: white !important;
+
+}
+
+.hboxPopoverClass {
+    display: flex;
+    /* gap: 10px; */
+    border-collapse: collapse;
+    border-bottom: solid 1px;
+    padding: 5px;
+    /* border: solid 1px;
+    border-radius: 5px; */
+    background: inherit !important;
+    /* color: #696464; */
+}
+
+.hboxPopoverClass .sapMText,
+.hboxPopoverClass .sapMLabel {
+    /* border: 1px solid black; */
+    padding: 5px;
+    text-align: center;
+    background-color: transparent !important;
+    color: black !important;
+    
+}
+
+.PopOverClassBox>* {
+   
+    /* background: rgb(110, 193, 110) !important; */
+    background: var(--green) !important;
+   
+
+    /* color: white; */
+}
+
+
+/* Label Color Class */
+.labelColorClass {
+    color: black;
+    padding-right: 8px;
+    text-align: center;
+}
+
+/* Left vbox under spares */
+.v3spaceBetweenclass .sapMLabel {
+    color: black !important;
+}
+
+/* right vbox section label */
+.columnStyleClass .sapMLabel {
+    color: black !important;
+}
+
+.columnStyleClass .sapMText,
+.customColumnList .sapMText {
+    color: black !important;
+}
+
+
+/* left side header part */
+.section_header .sapMLabel {
+    color: black;
 }

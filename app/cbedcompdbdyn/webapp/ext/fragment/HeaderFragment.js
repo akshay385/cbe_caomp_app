@@ -93,6 +93,14 @@ sap.ui.define([
             // Parse the data from Excel into an array
             var data = [];
 
+            let oFunction = oEvent.getSource().getModel().bindContext("/getVendorDetails(...)");
+            await oFunction.execute();
+            let oContext1 = oFunction.getBoundContext();
+            let result1 = oContext1.getObject();
+            let funImp = JSON.parse(result1.value);
+
+            let cntfunitr = 0;
+
             // var oModel = new JSONModel(data);
             //mainhbiox
             var mainhbox = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--mainhbox1");
@@ -237,7 +245,7 @@ sap.ui.define([
                 // for (let i = 0; i < 1; i++) {
 
 
-                let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getText();
+                let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getTooltip();
                 let venodor_location = list_of_sections[i].getItems()[0].getItems()[1].getText();
 
                 let list_of_status = list_of_sections[i].getItems()[1].getItems();
@@ -273,38 +281,65 @@ sap.ui.define([
                         { [keyl]: rdate },
                         { [keyl]: validity },
                         { [keyl]: pan_status_name },
-                        { [keyl]: 'Unit Rate', [keym]: 'Total Amount' }
+                        { [keyl]: 'Unit Rate', [keym]: 'Quantity', [keyn]: 'Total Amount' }
                         // { [keyl]: 'Unit Rate', [keym]: 'Rate per unit', [keyn]: 'Total Amount' }
                     ];
+                    var temp_arr = [];
 
+
+
+                    debugger
                     for (let k = 0; k < table_items.length; k++) {
-                        arr.push({
-                            [keyl]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[0].getText(),
-                            [keym]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[1].getText(),
-                            // [keyn]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getText(),
-                        });
+                        debugger
+
+                        var last_cell = list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2];
+                        if (last_cell.getMetadata()._sClassName == 'sap.m.Text') {
+                            temp_arr.push({
+                                [keyl]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[0].getText(),
+                                [keym]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[1].getText(),
+                                [keyn]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getText(),
+                            });
+                        }
+                        else {
+                            debugger
+                            var vendorMultItem = funImp[cntfunitr];
+                            var thirdcellVar = list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getItems()[0].getText();
+
+                            for (let i = 0; i < vendorMultItem.length; i++) {
+                                thirdcellVar = thirdcellVar + `(Unit Rate : ${vendorMultItem[i].unit_rate}, Quantity : ${vendorMultItem[i].quantity}, Total Amount: ${vendorMultItem[i].quantity})\n`
+
+                            }
+                            temp_arr.push({
+                                [keyl]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[0].getText(),
+                                [keym]: list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[1].getText(),
+                                [keyn]: thirdcellVar,
+                            });
+
+                            cntfunitr++;
+                        }
                     }
+                    arr = arr.concat(temp_arr);
 
                     let items_table = list_of_status[j].getItems()[1].getItems()[1].getItems();
                     let tablelen = table_items.length;
 
                     let aftertable = [
                         { [keyl]: "" },
-                        { [keym]: items_table[tablelen + 1].getCells()[1].getText() },
-                        { [keym]: items_table[tablelen + 2].getCells()[1].getText() },
-                        { [keyl]: items_table[tablelen + 3].getCells()[0].getText(), [keym]: items_table[tablelen + 3].getCells()[1].getText() },
-                        { [keyl]: items_table[tablelen + 4].getCells()[0].getText(), [keym]: items_table[tablelen + 4].getCells()[1].getText() },
-                        { [keyl]: items_table[tablelen + 5].getCells()[0].getText(), [keym]: items_table[tablelen + 5].getCells()[1].getText() },
-                        { [keym]: items_table[tablelen + 6].getCells()[1].getText() },
-                        { [keym]: items_table[tablelen + 7].getCells()[1].getText() },
+                        { [keyn]: items_table[tablelen + 1].getCells()[2].getText() },
+                        { [keyn]: items_table[tablelen + 2].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 3].getCells()[0].getText(), [keyn]: items_table[tablelen + 3].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 4].getCells()[0].getText(), [keyn]: items_table[tablelen + 4].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 5].getCells()[0].getText(), [keyn]: items_table[tablelen + 5].getCells()[2].getText() },
+                        { [keyn]: items_table[tablelen + 6].getCells()[1].getText() },
+                        { [keyn]: items_table[tablelen + 7].getCells()[1].getText() },
                         { [keyl]: items_table[tablelen + 8].getContent()[0].getText() },
                         // { [keyl]: items_table[tablelen + 9].getCells()[0].getText(), [keyn]: items_table[tablelen + 9].getCells()[2].getText() }, // sgst
                         // { [keyl]: items_table[tablelen + 10].getCells()[0].getText(), [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // igst
                         // { [keyl]: items_table[tablelen + 11].getCells()[0].getText(), [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // ugst
                         { [keyl]: items_table[tablelen + 9].getCells()[0].getText() }, // shipment     //Till here
-                        { [keym]: items_table[tablelen + 10].getCells()[1].getText() }, // including tax
-                        { [keym]: items_table[tablelen + 11].getCells()[1].getText() }, // excluding tax
-                        { [keym]: items_table[tablelen + 12].getCells()[1].getText() }, // perdeim
+                        { [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // including tax
+                        { [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // excluding tax
+                        { [keyn]: items_table[tablelen + 12].getCells()[2].getText() }, // perdeim
                         // { [keyl]: pricesbasishbox[j].getItems()[0].getText() }, // pricebasis
                         // { [keyl]: pricesbasishbox[j].getItems()[1].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[0].getContent()[0].getText() },

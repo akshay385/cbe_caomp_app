@@ -98,6 +98,8 @@ service Catalogcbeservice {
 
     function getExcelData(data : String)           returns String;
     function cbeObjectPageData(projectId : String) returns String;
+    function storeVendorDetails(result : String) returns String;
+    function getVendorDetails() returns String;
 
 
 }

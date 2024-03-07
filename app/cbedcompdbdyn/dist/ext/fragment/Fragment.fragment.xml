@@ -28,7 +28,7 @@
 			</HBox>
 			<HBox id="demoxdemoe121" justifyContent="Center">
 				<HBox id="dexmodemotest" height="53px" alignItems="Center">
-					<Label id="titxle12" text="Cylindrical Data " design="Bold"/>
+					<Label id="titxle12" text="Expand" design="Bold"/>
 				</HBox>
 			</HBox>
 			<HBox id="tablesHbox"  width = "auto">

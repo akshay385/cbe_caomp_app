@@ -38,6 +38,8 @@
         <EntitySet Name="Item_details" EntityType="Catalogcbeservice.Item_details"/>
         <FunctionImport Name="getExcelData" Function="Catalogcbeservice.getExcelData"/>
         <FunctionImport Name="cbeObjectPageData" Function="Catalogcbeservice.cbeObjectPageData"/>
+        <FunctionImport Name="storeVendorDetails" Function="Catalogcbeservice.storeVendorDetails"/>
+        <FunctionImport Name="getVendorDetails" Function="Catalogcbeservice.getVendorDetails"/>
       </EntityContainer>
       <EntityType Name="VENDOR_DATA">
         <Key>
@@ -175,14 +177,14 @@
       </EntityType>
       <EntityType Name="Items">
         <Key>
-          <PropertyRef Name="Proposed_Vendor_Code"/>
-          <PropertyRef Name="PAN_Number"/>
-          <PropertyRef Name="Item_Code"/>
+          <PropertyRef Name="pdkey"/>
         </Key>
-        <Property Name="Proposed_Vendor_Code" Type="Edm.String" Nullable="false"/>
-        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
-        <Property Name="Item_Code" Type="Edm.String" Nullable="false"/>
+        <Property Name="pdkey" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="Proposed_Vendor_Code" Type="Edm.String"/>
+        <Property Name="PAN_Number" Type="Edm.String"/>
+        <Property Name="Item_Code" Type="Edm.String"/>
         <Property Name="HSN_OR_SAC_Code" Type="Edm.String"/>
+        <Property Name="extendedPrice" Type="Edm.String"/>
         <Property Name="Item_Short_Description" Type="Edm.String"/>
         <Property Name="UOM" Type="Edm.String"/>
         <Property Name="Quantity" Type="Edm.String"/>
@@ -361,10 +363,12 @@
       </EntityType>
       <EntityType Name="Item_details">
         <Property Name="ProjectId" Type="Edm.String"/>
+        <Property Name="pdkey" Type="Edm.Guid"/>
         <Property Name="Proposed_Vendor_Code" Type="Edm.String"/>
         <Property Name="PAN_Number" Type="Edm.String"/>
         <Property Name="Item_Code" Type="Edm.String"/>
         <Property Name="HSN_OR_SAC_Code" Type="Edm.String"/>
+        <Property Name="extendedPrice" Type="Edm.String"/>
         <Property Name="Item_Short_Description" Type="Edm.String"/>
         <Property Name="UOM" Type="Edm.String"/>
         <Property Name="Quantity" Type="Edm.String"/>
@@ -379,6 +383,13 @@
       </Function>
       <Function Name="cbeObjectPageData" IsBound="false" IsComposable="false">
         <Parameter Name="projectId" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="storeVendorDetails" IsBound="false" IsComposable="false">
+        <Parameter Name="result" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="getVendorDetails" IsBound="false" IsComposable="false">
         <ReturnType Type="Edm.String"/>
       </Function>
       <Annotations Target="Catalogcbeservice.PAN_Details">
@@ -439,6 +450,9 @@
       </Annotations>
       <Annotations Target="Catalogcbeservice.PAN_Details/PAN_Number">
         <Annotation Term="Common.Label" String="Pan Number"/>
+      </Annotations>
+      <Annotations Target="Catalogcbeservice.Items/pdkey">
+        <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
       </Annotations>
       <Annotations Target="Catalogcbeservice.vendorTaxDetails/idd">
         <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>

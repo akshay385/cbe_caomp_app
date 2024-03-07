@@ -157,18 +157,24 @@ entity PAN_vendor_data_proj {
 }
 
 
-entity PAN_PRICE_DETAILS_proj {
-    key Proposed_Vendor_Code             : String;
-    key PAN_Number                       : String;
-    key Item_Code                        : String;
-        HSN_OR_SAC_Code                  : String;
-        Item_Short_Description           : String;
-        UOM                              : String;
-        Quantity                         : String;
-        Unit_Price                       : String;
-        Amount                           : String;
-        Indian_Tax_PER                   : String;
-        Quantity_Over_Delivery_Tolerance : String;
+entity PAN_PRICE_DETAILS_proj 
+{
+  key pdkey:UUID;
+   Proposed_Vendor_Code : String; 
+    PAN_Number : String;
+   Item_Code : String;
+  
+    HSN_OR_SAC_Code : String;
+   
+   extendedPrice:String;
+   Item_Short_Description : String;
+   UOM : String;
+   Quantity : String;
+   Unit_Price : String;
+   Amount : String;
+   Indian_Tax_PER : String;
+   Quantity_Over_Delivery_Tolerance : String;
+//    pdtovend : Association to PAN_vendor_data on pdtovend.Proposed_Vendor_Code = Proposed_Vendor_Code;
 }
 
 entity PAN_vendor_response_proj {

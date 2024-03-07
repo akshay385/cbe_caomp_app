@@ -1,9 +1,11 @@
 VIEW Catalogcbeservice_Item_details AS SELECT DISTINCT
   Pr_0.ProjectId,
+  I_1.pdkey AS pdkey,
   I_1.Proposed_Vendor_Code AS Proposed_Vendor_Code,
   I_1.PAN_Number AS PAN_Number,
   I_1.Item_Code AS Item_Code,
   I_1.HSN_OR_SAC_Code AS HSN_OR_SAC_Code,
+  I_1.extendedPrice AS extendedPrice,
   I_1.Item_Short_Description AS Item_Short_Description,
   I_1.UOM AS UOM,
   I_1.Quantity AS Quantity,

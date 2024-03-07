@@ -513,19 +513,23 @@
     "CBE.PAN_PRICE_DETAILS_proj": {
       "kind": "entity",
       "elements": {
-        "Proposed_Vendor_Code": {
+        "pdkey": {
           "key": true,
+          "type": "cds.UUID"
+        },
+        "Proposed_Vendor_Code": {
           "type": "cds.String"
         },
         "PAN_Number": {
-          "key": true,
           "type": "cds.String"
         },
         "Item_Code": {
-          "key": true,
           "type": "cds.String"
         },
         "HSN_OR_SAC_Code": {
+          "type": "cds.String"
+        },
+        "extendedPrice": {
           "type": "cds.String"
         },
         "Item_Short_Description": {
@@ -1497,19 +1501,23 @@
         }
       },
       "elements": {
-        "Proposed_Vendor_Code": {
+        "pdkey": {
           "key": true,
+          "type": "cds.UUID"
+        },
+        "Proposed_Vendor_Code": {
           "type": "cds.String"
         },
         "PAN_Number": {
-          "key": true,
           "type": "cds.String"
         },
         "Item_Code": {
-          "key": true,
           "type": "cds.String"
         },
         "HSN_OR_SAC_Code": {
+          "type": "cds.String"
+        },
+        "extendedPrice": {
           "type": "cds.String"
         },
         "Item_Short_Description": {
@@ -2260,6 +2268,9 @@
         "ProjectId": {
           "type": "cds.String"
         },
+        "pdkey": {
+          "type": "cds.UUID"
+        },
         "Proposed_Vendor_Code": {
           "type": "cds.String"
         },
@@ -2270,6 +2281,9 @@
           "type": "cds.String"
         },
         "HSN_OR_SAC_Code": {
+          "type": "cds.String"
+        },
+        "extendedPrice": {
           "type": "cds.String"
         },
         "Item_Short_Description": {
@@ -2313,6 +2327,23 @@
           "type": "cds.String"
         }
       },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "Catalogcbeservice.storeVendorDetails": {
+      "kind": "function",
+      "params": {
+        "result": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "Catalogcbeservice.getVendorDetails": {
+      "kind": "function",
       "returns": {
         "type": "cds.String"
       }
