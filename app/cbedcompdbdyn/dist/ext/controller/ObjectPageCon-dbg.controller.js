@@ -1642,7 +1642,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																			]
 																		})
 
-																		
+
 																		resultarray.push(
 																			{
 																				"vendorcode": shortenedString,
@@ -1657,11 +1657,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																		hbox.addStyleClass("hboxPopoverClass")
 																		oContent.push(hbox)
 																	}
-																	var oModel = this.base.getExtensionAPI().getModel();
-																	var oFunction1 = oModel.bindContext("/storeVendorDetails(...)");
-																	var jsoondata = JSON.stringify(resultarray);
-																	oFunction1.setParameter('result', jsoondata);
-																	await oFunction1.execute();
+																	if (resultarray.length) {
+																		var oModel = this.base.getExtensionAPI().getModel();
+																		var oFunction1 = oModel.bindContext("/storeVendorDetails(...)");
+																		var jsoondata = JSON.stringify(resultarray);
+																		oFunction1.setParameter('result', jsoondata);
+																		await oFunction1.execute();
+																	}
+
 
 
 																	const oItem = new sap.m.ColumnListItem({

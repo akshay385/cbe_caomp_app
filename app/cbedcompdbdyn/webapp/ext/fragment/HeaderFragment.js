@@ -144,7 +144,7 @@ sap.ui.define([
             let colcnt = 2;
 
             for (let i = 0; i < table.getColumns().length; i++) {
-                debugger
+                // debugger
                 if (table.getColumns()[i].getVisible() == true) {
                     col_header[colcnt] = table.getColumns()[i].getHeader().getText();
                     colcnt++;
@@ -173,7 +173,7 @@ sap.ui.define([
                 let v_cnt = 2;
                 for (let j = 0; j < table.getColumns().length; j++) {
                     if (table.getColumns()[j].getVisible() == true) {
-                        debugger
+                        // debugger
                         v_item[v_cnt] = table.getItems()[i].getCells()[j].getText();
                         v_cnt++;
                     }
@@ -290,7 +290,7 @@ sap.ui.define([
 
                     debugger
                     for (let k = 0; k < table_items.length; k++) {
-                        debugger
+                     
 
                         var last_cell = list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2];
                         if (last_cell.getMetadata()._sClassName == 'sap.m.Text') {
@@ -306,7 +306,7 @@ sap.ui.define([
                             var thirdcellVar = list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2].getItems()[0].getText();
 
                             for (let i = 0; i < vendorMultItem.length; i++) {
-                                thirdcellVar = thirdcellVar + `(Unit Rate : ${vendorMultItem[i].unit_rate}, Quantity : ${vendorMultItem[i].quantity}, Total Amount: ${vendorMultItem[i].quantity})\n`
+                                thirdcellVar = thirdcellVar + `(Unit Rate : ${vendorMultItem[i].unit_rate}, Quantity : ${vendorMultItem[i].quantity}, Total Amount: ${vendorMultItem[i].total})\n`
 
                             }
                             temp_arr.push({

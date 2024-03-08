@@ -62,6 +62,7 @@ module.exports = cds.service.impl(async function () {
         }
     })
 
+    
     var baseSrvUrl = destinationResp?.data?.destinationConfiguration?.URL;
 
     c4re.destination.url = baseSrvUrl;
@@ -215,9 +216,10 @@ module.exports = cds.service.impl(async function () {
     })
     this.on("getVendorDetails", async (req) => {
 
+        let vendordata = JSON.stringify(exchangeArray);
+        exchangeArray = [];
 
-
-        return JSON.stringify(exchangeArray);
+        return vendordata;
 
         // console.log();
     })
