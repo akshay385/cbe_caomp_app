@@ -52,7 +52,9 @@ sap.ui.define([
 
             // MessageToast.show("Custom handler invoked.");
 
-            var sectionslist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].getSubSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[1].mAggregations.content[0].mAggregations.items;
+            debugger
+            // var sectionslist = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].getSubSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[1].mAggregations.content[0].mAggregations.items;
+            var sectionslist = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer").getItems();
 
             var cylindrical_icon = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[0].mAggregations.items[1].mAggregations.items[0].mAggregations.items[1];
             if (oEvent.getSource().getPressed() == true) {
@@ -62,10 +64,10 @@ sap.ui.define([
                     cylindrical_icon.firePress();
                 }
                 for (let i = 0; i < sectionslist.length; i++) {
-                    let totalsectionvboxlen = sectionslist[0].getItems()[1].getItems().length
+                    let totalsectionvboxlen = sectionslist[i].getItems()[1].getItems().length
                     debugger
-                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].mAggregations.items[1].mAggregations.items[1].mAggregations.columns[1].mAggregations.header.mAggregations.items[1];
-                    if (sectionsicon.getSrc() == "sap-icon://expand") {
+                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].getItems()[1].getItems()[1].getColumns()[2].getHeader().getItems()[1];
+                    if (sectionsicon && sectionsicon.getSrc() == "sap-icon://expand") {
                         sectionsicon.firePress();
                     }
 
@@ -77,9 +79,9 @@ sap.ui.define([
                     cylindrical_icon.firePress();
                 }
                 for (let i = 0; i < sectionslist.length; i++) {
-                    let totalsectionvboxlen = sectionslist[0].getItems()[1].getItems().length
-                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].mAggregations.items[1].mAggregations.items[1].mAggregations.columns[1].mAggregations.header.mAggregations.items[1];
-                    if (sectionsicon.getSrc() == "sap-icon://collapse") {
+                    let totalsectionvboxlen = sectionslist[i].getItems()[1].getItems().length
+                    var sectionsicon = sectionslist[i].getItems()[1].getItems()[totalsectionvboxlen - 1].getItems()[1].getItems()[1].getColumns()[2].getHeader().getItems()[1];
+                    if (sectionsicon && sectionsicon.getSrc() == "sap-icon://collapse") {
                         sectionsicon.firePress();
                     }
 
@@ -106,7 +108,8 @@ sap.ui.define([
             var mainhbox = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--mainhbox1");
 
             //project desc
-            let project_desc = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--projectvalue").getText();
+            // let project_desc = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--projectvalue").getText();
+            let subject_op = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--Sopvalue").getText();
 
 
             let table = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--itemstable1");
@@ -133,7 +136,7 @@ sap.ui.define([
                 { 2: "Commercial Bid Evaluation" },
                 { 1: "", 11: 'Supplier' },
                 { 1: "", 11: 'Location' },
-                { 1: "Project", 2: `${"Project: " + project_desc}`, 11: 'Qtn. Ref.' },
+                { 1: "Project", 2: `${"SOP: " + subject_op}`, 11: 'Qtn. Ref.' },
                 { 1: "", 11: 'Date' },
                 { 1: "", 11: 'Validity' },
                 { 1: "", },
@@ -290,7 +293,7 @@ sap.ui.define([
 
                     debugger
                     for (let k = 0; k < table_items.length; k++) {
-                     
+
 
                         var last_cell = list_of_status[j].getItems()[1].getItems()[1].getItems()[k].getCells()[2];
                         if (last_cell.getMetadata()._sClassName == 'sap.m.Text') {

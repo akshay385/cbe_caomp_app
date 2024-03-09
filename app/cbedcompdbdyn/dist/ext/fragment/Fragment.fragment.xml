@@ -4,21 +4,29 @@
 	<HBox id="mainhbox1" class="mainHboxClass">
 		<VBox id="leftSectionvbox1" class="rightPadding" width="30%">
 			<HBox id="item_supplier1" class="section_header sticky" justifyContent="SpaceBetween">
-				<VBox id="items1" class="spacebetweenclass" width="80%" alignItems="Start">
-					<HBox id="hindent">
-						<Label design="Bold" id="indentttheader" text="Indent:"></Label>
-						<Text id="indentvalue" text=""></Text>
+				<VBox id="items1"  width="80%" alignItems="Start">
+					<HBox id="hSop">
+						<Label design="Bold" id="sopheader" tooltip="Subject of ProposalOROrder" text="SOP :⠀"></Label>
+						<Text id="Sopvalue" text=""></Text>
 					</HBox>
-					<HBox id="hproject">
-						<Label design="Bold" id="projecttheader" text="Project:"></Label>
-						<Text id="projectvalue" text=""></Text>
-					</HBox>
-					<HBox id="hclient">
-						<Label design="Bold" id="clientheader" text="Client:"></Label>
-						<Text id="clientvalue" text=""></Text>
-					</HBox>
+					<!-- <VBox id="vendorDetailsTable" class="vendortable">
+						<HBox id="header" justifyContent="SpaceBetween">
+							<Label id="vendor" text="Vendor Name"></Label>
+							<Label id="awarderVendor" text="Awarded Vendor"></Label>
+						</HBox>
+					</VBox> -->
+					<Table id="vendorDetailsTable" width="100%">
+						<columns>
+							<Column id="vendorName" hAlign="Center">
+								<Label id="vendornamelabel" design="Bold"  text="Vendor Name"></Label>
+							</Column>
+							<Column id="awardedVendor">
+								<Label id="awardedVendorlabel" design="Bold"  text="Awarded Vendor"></Label>
+							</Column>
+						</columns>
+					</Table>
 				</VBox>
-				<VBox id="supplier_header" class="spacebetweenclass" alignItems="End">
+				<VBox id="supplier_header" class="supplierheaderClass" alignItems="End">
 					<Label design="Bold" class="labelHeightClass" id="supplierheader" text="Supplier :"/>
 					<Label design="Bold" id="locationheader" text="Location :"/>
 					<Label design="Bold" id="qtn_ref_header" text="Qtn. Ref. :"/>
@@ -26,7 +34,7 @@
 					<Label design="Bold" id="validityheader" text="Validity :"/>
 				</VBox>
 			</HBox>
-			<HBox id="demoxdemoe121" justifyContent="Center">
+			<HBox id="demoxdemoe121" visible="false" justifyContent="Center">
 				<HBox id="dexmodemotest" height="53px" alignItems="Center">
 					<Label id="titxle12" text="Expand" design="Bold"/>
 				</HBox>
@@ -38,6 +46,9 @@
 
 						<Column class="custcolorclass" id="col2">
 							<Text id="item_desc" text="Item Desc" tooltip="Item Desc" wrapping="false" />
+						</Column>
+						<Column id="plantcode">
+							<Text id="plantcodetext" text="Plant Code" tooltip="Plant Code" wrapping="false" />
 						</Column>
 						<Column id="col10">
 							<Text id="tag_no" text="Tag No" tooltip="Tag No" wrapping="false" />

@@ -1,6 +1,7 @@
 :root {
-    --green: #4fd4acd1;
-  }
+    /* --green: #4fd4acd1; */
+    --green: #4bbb8b;
+}
 
 .v3spaceBetweenclass {
     display: flex;
@@ -58,7 +59,7 @@
     border: 1px solid #696464;
     overflow: hidden;
     max-width: 300px !important;
-    
+
     /* border-radius: 10px; */
 }
 
@@ -349,15 +350,15 @@
     /* background: red; */
     height: 40px;
     /* background: rgb(110, 193, 110); */
-    background: var(--green);
-    color: white !important;
+    /* background: var(--green); */
+    /* color: white !important; */
 }
 
 
 .columnStyleClass {
     /* background: rgb(110, 193, 110); */
-    background: var(--green);
-    color: white !important;
+    /* background: var(--green); */
+    /* color: white !important; */
 
 }
 
@@ -380,14 +381,14 @@
     text-align: center;
     background-color: transparent !important;
     color: black !important;
-    
+
 }
 
 .PopOverClassBox>* {
-   
+
     /* background: rgb(110, 193, 110) !important; */
-    background: var(--green) !important;
-   
+    /* background: var(--green) !important; */
+
 
     /* color: white; */
 }
@@ -420,3 +421,38 @@
 .section_header .sapMLabel {
     color: black;
 }
+
+
+/* Column item present */
+.ItemPresentStyle {
+    background-color: var(--green) !important;
+    
+}
+
+.hboxScrollScope {
+    border: solid 1px;
+    scrollbar-width: thin;
+    width: 100% !important;
+}
+
+
+/* for all tables border */
+
+
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorDetailsTable {
+    height: 150px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    border: solid 1px black;
+    margin-bottom: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+.supplierheaderClass {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px;
+}
+

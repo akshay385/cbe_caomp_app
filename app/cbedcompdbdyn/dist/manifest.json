@@ -128,7 +128,8 @@
                                         "route": "Project_DetailsObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },

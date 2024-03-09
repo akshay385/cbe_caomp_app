@@ -232,17 +232,28 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							for (let i = 0; i < lefttablecolms.length; i++) {
 								lefttablecolms[i].setStyleClass("custcolorclass");
 							}
+							debugger
+
+							let project_id_trim = project_id[0];
+							let cleaned_project_id = project_id_trim.replace(/'/g, '');
+							let subject_op = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--Sopvalue")
+
+							let sop_value = pan_info.find(item => item.ProjectId == cleaned_project_id);
+
+							subject_op.setText(`${sop_value.Subject_of_ProposalOROrder}`);
+							subject_op.setTextAlign("End");
 
 
 							// omainHBox.refreshAggregation();
 							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[1].setText(`${DataGiven.Indent}`);
-							omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[0].setVisible(false);
+							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[0].setVisible(false);
 							//Project
-							omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1].getItems()[1].setText(`${" " + project_details[0]?.Project_Description ?? ' '}`);
-							omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1].getItems()[1].setTextAlign("End");
+							debugger
+							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1].getItems()[1].setText(`${"" + project_details?.Project_Description ?? ' '}`);
+							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1].getItems()[1].setTextAlign("End");
 							//indent
 							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[2].getItems()[1].setText(`${DataGiven.Client}`);
-							omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[2].getItems()[0].setVisible(false);
+							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[2].getItems()[0].setVisible(false);
 
 							var itemstable = omainHBox.getItems()[0].getItems()[2].getItems()[0];
 							var cylindricaldata_hbox = omainHBox.getItems()[0].getItems()[1].getItems()[0];
@@ -512,6 +523,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								})
 								columnlist.addCell(itemdesc);
 
+								debugger
+								let plant_code = pan_info.filter(item => item.PAN_Number == uniqueItems[i]?.PAN_Number);
+
+								let plantCode = new sap.m.Text(`${"plantcode" + (i + 1)}`, {
+									text: `${plant_code[0]?.Plant_Code ?? ' '}`,
+									tooltip: `${plant_code[0]?.Plant_Code ?? ' '}`,
+									wrapping: false
+								})
+								columnlist.addCell(plantCode);
+
 
 
 
@@ -626,7 +647,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								7: 0,
 								8: 0,
 								9: 0,
-								10: 0
+								10: 0,
+								11: 0
 
 							};
 
@@ -694,6 +716,11 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							let processedVendorIds = new Set();
 
 							let classitemiter = 0;
+
+
+							//Vendor Details Table
+							let vendor_table = omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1];
+							vendor_table.destroyItems();
 
 
 							for (let i = 0; i < vendorslist.length; i++) {
@@ -778,7 +805,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								}));
 
 
-
 								vboxsuppnameloc.getItems()[0].addStyleClass('vendorTitle');
 
 								// vboxsuppnameloc.getItems()[0]
@@ -787,6 +813,43 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierLocation" + (i + 1)}`, {
 									text: `${vendorslist[i].Vendor_Location ? vendorslist[i].Vendor_Location : ' '}`
 								}));
+
+								let awardvend = vendorslist[i]?.Awarded_Vendor;
+								if (awardvend == 'YES') {
+									vendor_table.addItem(new sap.m.ColumnListItem({
+										cells: [
+											new sap.m.Text({
+												text: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
+												wrapping: false,
+											}),
+											new sap.m.Text({
+												text: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
+												wrapping: false,
+												textAlign: 'Center'
+											}),
+										]
+									}).addStyleClass("ItemPresentStyle")
+									)
+								}
+								else {
+									vendor_table.addItem(new sap.m.ColumnListItem({
+										cells: [
+											new sap.m.Text({
+												text: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
+												wrapping: false,
+											}),
+											new sap.m.Text({
+												text: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
+												wrapping: false,
+												textAlign: 'Center'
+											}),
+										]
+									}))
+								}
 
 								console.log(vendorslist);
 
@@ -1371,7 +1434,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								do {
 
 
-									if (vendorslist[k].ProjectId == project_id[1] && vendorslist[k].Proposed_Vendor_Code == vendorslist[i].Proposed_Vendor_Code) {
+									if (vendorslist[k].ProjectId == cleaned_project_id && vendorslist[k].Proposed_Vendor_Code == vendorslist[i].Proposed_Vendor_Code) {
 
 										let panNumber = vendorslist[k].PAN_Number;
 
@@ -1412,8 +1475,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_date" + generateUniqueId()}`, {
 													text: `${filteredWebEvent[webnt]?.date ?? 'NA'}`
 												}));
+
+												debugger
+
+
 												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
 													text: `${vendorslist[k]?.validity ?? 'NA'}`
+													// text: `${plant_code[0].Plant_Code ?? 'NA'}`
 												}));
 												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
 													text: ""
@@ -1545,7 +1613,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 													const currentItem = uniqueItems[i];
-													let itemMatchingPrjVenPan = list_of_items.filter(item => item.ProjectId == project_id[1] && item.Proposed_Vendor_Code == vendorslist[k].Proposed_Vendor_Code && item.Item_Code == uniqueItems[i].Item_Code && item.PAN_Number == panNumber)
+													let itemMatchingPrjVenPan = list_of_items.filter(item => item.ProjectId == cleaned_project_id && item.Proposed_Vendor_Code == vendorslist[k].Proposed_Vendor_Code && item.Item_Code == uniqueItems[i].Item_Code && item.PAN_Number == panNumber)
 													let foundItem = filteredItems.filter(item => item.Item_Code === currentItem.Item_Code);
 
 													if (foundItem && itemMatchingPrjVenPan.length) {
@@ -1557,7 +1625,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 															extendedprice = extendedprice + parseFloat(extendedPriceWithoutComms ?? 0);
 															tax_value = tax_value + (itemMatchingPrjVenPan[0]?.Indian_Tax_PER ?? ' ') + '\n'
-
+															AmtWithoutCommas = AmtWithoutCommas == 'NaN' ? ' ' : AmtWithoutCommas;
 															const total_amount_value = Number(AmtWithoutCommas ?? 0) * Number(quantityWithoutCommas ?? 0);
 															const total_amount_display = `${total_amount_value} ${itemMatchingPrjVenPan[0].Unit_Price ?? ' '}`;
 
@@ -1578,6 +1646,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																// visible: false,
 																visible: true
 															});
+															if (vendorslist[k].Awarded_Vendor == 'YES') {
+																oItem.addStyleClass("ItemPresentStyle")
+															}
 															oTable.addItem(oItem);
 														}
 														else {
@@ -1702,6 +1773,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																		// visible: false,
 																		visible: true
 																	});
+																	if (vendorslist[k].Awarded_Vendor == 'YES') {
+																		oItem.addStyleClass("ItemPresentStyle")
+																	}
+																	oItem.addStyleClass("ItemPresentStyle")
 																	oTable.addItem(oItem);
 																	break;
 																}
@@ -2216,7 +2291,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 												combobox_item.setValue(`${filteredWebEvent[webnt].eventNo ?? ''}`);
 
-												last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`));
+												last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`,{
+													width:"100%"
+												}));
 
 												var chvbox = last_hcombobox.getItems()[iterator];
 												iterator++;
@@ -2248,9 +2325,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												//Delivery Period
 												chvbox.addItem(new sap.m.ScrollContainer(`${"deliveryperiodScroll" + generateUniqueId()}`, {
 													vertical: true,
-													width: "350px",
+													// width: "350px",
 													height: "100px"
-												}))
+												}).addStyleClass("hboxScrollScope"))
 												// chvbox.getItems()[1].addStyleClass("deliveryperiodpadding");
 
 												chvbox.getItems()[0].addContent(new sap.m.Text(`${"Scopedeliveryperiod" + generateUniqueId()}`, {
@@ -2265,7 +2342,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													vertical: true,
 													// width: "100%",
 													height: "100px"
-												}))
+												}).addStyleClass("hboxScrollScope"))
 
 												chvbox.getItems()[1].addContent(new sap.m.Text(`${"Compliancepaymentterms" + generateUniqueId()}`, {
 													// text: `${valuesMap[namesToCheck[14]] ?? ' '}`
@@ -2278,7 +2355,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													vertical: true,
 													// width: "500px",
 													height: "100px"
-												}))
+												}).addStyleClass("hboxScrollScope"))
 
 												chvbox.getItems()[2].addContent(new sap.m.Text(`${"Othersliquided" + generateUniqueId()}`, {
 													// text: `${valuesMap[namesToCheck[15]] ?? ' '}`
@@ -2291,7 +2368,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													vertical: true,
 													// width: "500px",
 													height: "100px"
-												}))
+												}).addStyleClass("hboxScrollScope"))
 
 												chvbox.getItems()[3].addContent(new sap.m.Text(`${"warranty" + generateUniqueId()}`, {
 													// text: `${valuesMap[namesToCheck[16]] ?? ' '}`
