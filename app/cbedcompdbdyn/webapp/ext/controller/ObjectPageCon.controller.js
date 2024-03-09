@@ -2294,6 +2294,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`,{
 													width:"100%"
 												}));
+												
 
 												var chvbox = last_hcombobox.getItems()[iterator];
 												iterator++;
