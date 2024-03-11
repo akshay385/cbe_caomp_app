@@ -166,7 +166,7 @@
 
 
 .custcolorclass {
-    border: solid 1px black;
+    /* border: solid 1px black; */
     /* background-color: rgb(193, 193, 246); */
 }
 
@@ -426,7 +426,7 @@
 /* Column item present */
 .ItemPresentStyle {
     background-color: var(--green) !important;
-    
+
 }
 
 .hboxScrollScope {
@@ -442,11 +442,16 @@
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorDetailsTable {
     height: 150px;
     overflow-y: scroll;
-    scrollbar-width: thin;
-    border: solid 1px black;
+    scrollbar-width: none;
+    /* border: solid 1px black; */
     margin-bottom: 20px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    /* border-top-left-radius: 5px; */
+    /* border-bottom-left-radius: 5px; */
+
+    border-collapse: collapse !important;
+    font-size: 0.9em !important;
+    font-family: sans-serif !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important;
 }
 
 
@@ -456,3 +461,36 @@
     gap: 10px;
 }
 
+
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorName,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--awardedVendor {
+    background-color: burlywood !important;
+}
+
+
+/* items table left section css */
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--itemstable1 {
+    border-collapse: collapse;
+    /* margin: 25px 0; */
+    font-size: 0.9em !important;
+    font-family: sans-serif;
+    /* min-width: 400px; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Items table header */
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col2,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--plantcode, 
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col10,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col11,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col3,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col4,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col5,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col6,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col7,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col8,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col001,
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col9
+{
+    background-color: burlywood !important;
+}

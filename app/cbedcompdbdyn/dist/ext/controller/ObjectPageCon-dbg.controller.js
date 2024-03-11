@@ -223,7 +223,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							var tax_details = result[5];
 							var pan_web_event = result[6];
 
-							debugger
+							vendorslist.sort((a, b) => {
+								// Assuming vendorname is a string property
+								return a.Vendor_Name.localeCompare(b.Vendor_Name);
+							});
+
+
 
 							var omainHBox = this.getView().getContent()[0].getSections()[0].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent();
 
@@ -232,7 +237,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							for (let i = 0; i < lefttablecolms.length; i++) {
 								lefttablecolms[i].setStyleClass("custcolorclass");
 							}
-							debugger
+
 
 							let project_id_trim = project_id[0];
 							let cleaned_project_id = project_id_trim.replace(/'/g, '');
@@ -248,7 +253,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[1].setText(`${DataGiven.Indent}`);
 							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[0].getItems()[0].setVisible(false);
 							//Project
-							debugger
+
 							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1].getItems()[1].setText(`${"" + project_details?.Project_Description ?? ' '}`);
 							// omainHBox.getItems()[0].getItems()[0].getItems()[0].getItems()[1].getItems()[1].setTextAlign("End");
 							//indent
@@ -423,7 +428,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							}, {});
 
 							console.log(groupedData);
-							debugger
+
 
 							let maxGroupKey = "";
 							let maxGroupLength = 0;
@@ -437,75 +442,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							}
 
 							let largestArray = groupedData[maxGroupKey]
-
-							// // Loop through the largest group's array
-							// console.log("Items in the largest group:");
-							// deb
-							// groupedData[maxGroupKey].forEach(item => {
-							// 	console.log(item);
-							// });
-
-							//  
-
-							// let target = [];
-							// let innerArray = [];
-							// let Item_Code;
-							// let Item_Codep;
-							// let Proposed_Vendor_Code;
-							// let Proposed_Vendor_Codep;
-							// let len = sortedData.length - 1;
-
-							// // SEPARATE DATA BY LEVEL
-							// sortedData.forEach((item, index) => {
-							// 	Item_Code = item.Item_Code;
-							// 	if (Item_Codep != undefined && Proposed_Vendor_Codep != undefined) {
-							// 		if (Item_Code !== Item_Codep && Proposed_Vendor_Code !== Proposed_Vendor_Codep) {
-							// 			target.push(innerArray);
-							// 			innerArray = [];
-							// 		}
-							// 	}
-							// 	innerArray.push(item);
-							// 	Item_Codep = item.Item_Code;
-							// 	Proposed_Vendor_Codep = item.Proposed_Vendor_Code;
-							// 	if (index == len) {
-							// 		target.push(innerArray);
-							// 	}
-							// });
-
-							// let sortedData = list_of_items.sort((d1, d2) => {
-							// 	if (d1.Item_Code !== d2.Item_Code) {
-							// 		return d1.Item_Code.localeCompare(d2.Item_Code);
-							// 	} else {
-							// 		return d1.Proposed_Vendor_Code.localeCompare(d2.Proposed_Vendor_Code);
-							// 	}
-							// });
-
-							// let groupedData = sortedData.reduce((acc, currentItem) => {
-							// 	let key = `${currentItem.Item_Code}-${currentItem.Proposed_Vendor_Code}`;
-							// 	if (!acc[key]) {
-							// 		acc[key] = [];
-							// 	}
-							// 	acc[key].push(currentItem);
-							// 	return acc;
-							// }, {});
-
-							// let maxGroupKey = "";
-							// let maxGroupLength = 0;
-
-							// // Find the group with the largest array
-							// for (let key in groupedData) {
-							// 	if (groupedData[key].length > maxGroupLength) {
-							// 		maxGroupLength = groupedData[key].length;
-							// 		maxGroupKey = key;
-							// 	}
-							// }
-
-							// uniqueItems = groupedData[maxGroupKey];
-
-
-
-
-
 
 							let tag_no_iterator = 1;
 
@@ -523,7 +459,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								})
 								columnlist.addCell(itemdesc);
 
-								debugger
+
 								let plant_code = pan_info.filter(item => item.PAN_Number == uniqueItems[i]?.PAN_Number);
 
 								let plantCode = new sap.m.Text(`${"plantcode" + (i + 1)}`, {
@@ -723,7 +659,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							vendor_table.destroyItems();
 
 
+
+							let flagForAwardedVendor = 0;
 							for (let i = 0; i < vendorslist.length; i++) {
+
 
 								const vendorId = vendorslist[i].vendor_code;
 
@@ -814,42 +753,6 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									text: `${vendorslist[i].Vendor_Location ? vendorslist[i].Vendor_Location : ' '}`
 								}));
 
-								let awardvend = vendorslist[i]?.Awarded_Vendor;
-								if (awardvend == 'YES') {
-									vendor_table.addItem(new sap.m.ColumnListItem({
-										cells: [
-											new sap.m.Text({
-												text: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
-												tooltip: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
-												wrapping: false,
-											}),
-											new sap.m.Text({
-												text: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
-												tooltip: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
-												wrapping: false,
-												textAlign: 'Center'
-											}),
-										]
-									}).addStyleClass("ItemPresentStyle")
-									)
-								}
-								else {
-									vendor_table.addItem(new sap.m.ColumnListItem({
-										cells: [
-											new sap.m.Text({
-												text: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
-												tooltip: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
-												wrapping: false,
-											}),
-											new sap.m.Text({
-												text: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
-												tooltip: `${vendorslist[i]?.Awarded_Vendor ?? ' '}`,
-												wrapping: false,
-												textAlign: 'Center'
-											}),
-										]
-									}))
-								}
 
 								console.log(vendorslist);
 
@@ -1430,6 +1333,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								// } while (k < vendorslist.length);
 
 								//modified
+								var awardVendorValue;
 
 								do {
 
@@ -1460,6 +1364,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 												// let qnty = list_of_items.filter
 
+												let awardvend = vendorslist[k]?.Awarded_Vendor;
+												if (awardvend == 'YES') {
+													debugger
+													console.log(vendorslist[k]?.Vendor_Location)
+													awardVendorValue = `${vendorslist[k]?.Vendor_Location}`;
+													flagForAwardedVendor++;
+												}
+
 
 												var itmlen = hbmiddlesection.getItems().length
 												var vbmiddlesection = hbmiddlesection.getItems()[itmlen - 1];
@@ -1476,7 +1388,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													text: `${filteredWebEvent[webnt]?.date ?? 'NA'}`
 												}));
 
-												debugger
+
 
 
 												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
@@ -1751,7 +1663,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																						activeColor: 'black',
 																						color: 'black',
 																						press: function (oEvent) {
-																							debugger
+
 																							let popover = new sap.m.Popover({
 																								showHeader: false,
 																								placement: sap.m.PlacementType.Bottom,
@@ -1823,7 +1735,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																// 					// 				}
 																// 					// 			}
 																// 					// 			let to_be_incremented = 0;
-																// 					// 			debugger
+																// 					// 			
 																// 					// 			for (let j = curr_index - 1; j >= 0; j--) {
 																// 					// 				if (Object.keys(total_rows[j].oModels).length === 0) {
 																// 					// 					// if (total_rows[j].getVisible() == true) {
@@ -2291,9 +2203,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 												combobox_item.setValue(`${filteredWebEvent[webnt].eventNo ?? ''}`);
 
-												last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`,{
-													width:"100%"
+												last_hcombobox.addItem(new sap.m.VBox(`${"offer" + generateUniqueId()}`, {
+													width: "100%"
 												}));
+
 
 												var chvbox = last_hcombobox.getItems()[iterator];
 												iterator++;
@@ -3131,6 +3044,27 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 										}
 									}))
 								}
+
+								console.log(flagForAwardedVendor)
+								if (flagForAwardedVendor) {
+									vendor_table.addItem(new sap.m.ColumnListItem({
+										cells: [
+											new sap.m.Text({
+												text: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Vendor_Name ?? ' '}`,
+												wrapping: false,
+											}),
+											new sap.m.Text({
+												text: `${awardVendorValue ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Vendor_Location ?? ' '}`,
+												wrapping: false,
+												textAlign: 'Center'
+											}),
+										]
+									}))
+									awardVendorValue = 0;
+								}
+								flagForAwardedVendor = 0;
 							}  //end of for-loop
 
 							sap.ui.core.BusyIndicator.hide();
@@ -3152,7 +3086,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 											if (Object.keys(lastCell.mAggregations).length != 0) {
-												debugger
+
 												// await lastCell.getItems()[1].firePress();
 												// lastCell.getItems()[1].setVisible(false);
 											}

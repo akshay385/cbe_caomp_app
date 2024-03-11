@@ -20,7 +20,7 @@
 							<Column id="vendorName" hAlign="Center">
 								<Label id="vendornamelabel" design="Bold"  text="Vendor Name"></Label>
 							</Column>
-							<Column id="awardedVendor">
+							<Column id="awardedVendor" hAlign="Center">
 								<Label id="awardedVendorlabel" design="Bold"  text="Awarded Vendor"></Label>
 							</Column>
 						</columns>
