@@ -813,7 +813,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												let awardvend = vendorslist[k]?.Awarded_Vendor;
 												if (awardvend == 'YES') {
 													debugger
-													console.log(vendorslist[k]?.Vendor_Location)
+													console.log(vendorslist[k]?.Proposed_Vendor_Code)
 													awardVendorValue = `${vendorslist[k]?.Vendor_Location}`;
 													flagForAwardedVendor++;
 												}
@@ -1701,6 +1701,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 								console.log(flagForAwardedVendor)
 								if (flagForAwardedVendor) {
+									debugger
 									vendor_table.addItem(new sap.m.ColumnListItem({
 										cells: [
 											new sap.m.Text({

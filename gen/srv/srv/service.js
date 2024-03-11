@@ -190,7 +190,8 @@ module.exports = cds.service.impl(async function () {
 
         let project_details = await SELECT.from(Project_Details).where({ ProjectId: project_id });
         let list_of_items = await SELECT.from(Item_details).where({ ProjectId: project_id });
-        let vendor_list = await SELECT.distinct().from(Vendor_details).where({ ProjectId: project_id });
+        // let vendor_list = await SELECT.distinct().from(Vendor_details).where({ ProjectId: project_id });
+        let vendor_list = await SELECT.from(Vendor_details).where({ ProjectId: project_id });
 
         let pan_info = await SELECT.from(PAN_Info);
         let vendor_response_deatils = await SELECT.from(PAN_vendor_reponse_details);
