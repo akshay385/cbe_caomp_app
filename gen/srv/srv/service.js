@@ -62,7 +62,7 @@ module.exports = cds.service.impl(async function () {
         }
     })
 
-    
+
     var baseSrvUrl = destinationResp?.data?.destinationConfiguration?.URL;
 
     c4re.destination.url = baseSrvUrl;
@@ -190,13 +190,14 @@ module.exports = cds.service.impl(async function () {
 
         let project_details = await SELECT.from(Project_Details).where({ ProjectId: project_id });
         let list_of_items = await SELECT.from(Item_details).where({ ProjectId: project_id });
-        let vendor_list = await SELECT.from(Vendor_details).where({ ProjectId: project_id });
+        let vendor_list = await SELECT.distinct().from(Vendor_details).where({ ProjectId: project_id });
+
         let pan_info = await SELECT.from(PAN_Info);
         let vendor_response_deatils = await SELECT.from(PAN_vendor_reponse_details);
         let tax_details = await SELECT.from(vendorTaxDetails);
         let pan_web_event = await SELECT.from(PanWebEvent);
 
-        let result = [project_details,list_of_items,vendor_list,pan_info,vendor_response_deatils,tax_details,pan_web_event];
+        let result = [project_details, list_of_items, vendor_list, pan_info, vendor_response_deatils, tax_details, pan_web_event];
 
         return JSON.stringify(result);
 
@@ -206,7 +207,7 @@ module.exports = cds.service.impl(async function () {
     this.on("storeVendorDetails", async (req) => {
 
         let resultvar = req.data.result;
-       
+
 
         // let result = [project_details,list_of_items,vendor_list,pan_info,vendor_response_deatils,tax_details,pan_web_event];
         resultvar = JSON.parse(resultvar)

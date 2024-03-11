@@ -1,6 +1,7 @@
 :root {
     /* --green: #4fd4acd1; */
-    --green: #4bbb8b;
+    /* --green: #4bbb8b; */
+    --green: #009879;
 }
 
 .v3spaceBetweenclass {
@@ -424,9 +425,14 @@
 
 
 /* Column item present */
-.ItemPresentStyle {
+.ItemPresentStyle  {
     background-color: var(--green) !important;
+    /* background-color: red !important; */
 
+}
+
+.ItemPresentStyle tr{
+    color: white !important;
 }
 
 .hboxScrollScope {
@@ -462,9 +468,18 @@
 }
 
 
+/* Vendor table left section */
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorName,
-#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--awardedVendor {
-    background-color: burlywood !important;
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--awardedVendor * {
+    background-color: #009879;
+    color: #ffffff;
+    /* position: sticky;   for sticky */
+    /* top: 0; */
+    /* z-index: 2 ; */
+}
+
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorName * {
+    color: #ffffff;
 }
 
 
@@ -480,7 +495,7 @@
 
 /* Items table header */
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col2,
-#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--plantcode, 
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--plantcode,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col10,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col11,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col3,
@@ -490,7 +505,7 @@
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col7,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col8,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col001,
-#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col9
-{
+#cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col9 {
     background-color: burlywood !important;
+    color: aliceblue !important;
 }

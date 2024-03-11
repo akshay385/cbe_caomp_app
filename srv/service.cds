@@ -78,7 +78,8 @@ service Catalogcbeservice {
             Pr.task_id != 'NA';
 
     entity Vendor_details             as
-        select distinct
+        select
+        //  distinct
             V.Proposed_Vendor_Code as vendor_code     : String,
             Pr.ProjectId,
             Pr.PAN_Number          as proj_pan_number : String,

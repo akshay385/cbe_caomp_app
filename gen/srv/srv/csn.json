@@ -329,10 +329,7 @@
       "elements": {
         "PAN_Number": {
           "key": true,
-          "type": "cds.String",
-          "default": {
-            "val": "def"
-          }
+          "type": "cds.String"
         },
         "SBG": {
           "type": "cds.String"
@@ -507,6 +504,132 @@
         },
         "Rank": {
           "type": "cds.String"
+        },
+        "Proposed_Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Supplier_Origin_State": {
+          "type": "cds.String"
+        },
+        "Destination_State_BKTShipDASHto_LocationBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_GST_Number": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH1": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH2": {
+          "type": "cds.String"
+        },
+        "Technical_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Commercial_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Vendor_References_to_be_displayed_in_Order": {
+          "type": "cds.String"
+        },
+        "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
+          "type": "cds.String"
+        },
+        "Incoterms": {
+          "type": "cds.String"
+        },
+        "Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC": {
+          "type": "cds.String"
+        },
+        "Details_of_deviated_or_better_terms_agreed_with_the_Vendor": {
+          "type": "cds.String"
+        },
+        "Market_Scenario_and_Demand": {
+          "type": "cds.String"
+        },
+        "Companys_Position_and_Market_dynamics_of_this_purchase": {
+          "type": "cds.String"
+        },
+        "Should_Be_Cost_estimated": {
+          "type": "cds.String"
+        },
+        "Highlights_of_this_proposal_and_Price_Justification_for_this_proposal": {
+          "type": "cds.String"
+        },
+        "Price_Escalation_Agreed_if_any": {
+          "type": "cds.String"
+        },
+        "Particulars_of_any_Free_Service_OR_Supply_Guarantees_OR_Warrant_yfrom_Vendor": {
+          "type": "cds.String"
+        },
+        "Transportation": {
+          "type": "cds.String"
+        },
+        "Logistics_Cost": {
+          "type": "cds.String"
+        },
+        "Delivery_Schedule": {
+          "type": "cds.String"
+        },
+        "Tax_Details": {
+          "type": "cds.String"
+        },
+        "Additional_Remarks": {
+          "type": "cds.String"
+        },
+        "ABG": {
+          "type": "cds.String"
+        },
+        "ABG_Value": {
+          "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
+        },
+        "CPBG_Value": {
+          "type": "cds.String"
+        },
+        "Scope_and_Responsibilities": {
+          "type": "cds.LargeString"
+        },
+        "Commercial_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Compliance_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Others": {
+          "type": "cds.LargeString"
         }
       }
     },
@@ -1593,6 +1716,132 @@
         },
         "Rank": {
           "type": "cds.String"
+        },
+        "Proposed_Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Supplier_Origin_State": {
+          "type": "cds.String"
+        },
+        "Destination_State_BKTShipDASHto_LocationBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_GST_Number": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH1": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH2": {
+          "type": "cds.String"
+        },
+        "Technical_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Commercial_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Vendor_References_to_be_displayed_in_Order": {
+          "type": "cds.String"
+        },
+        "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
+          "type": "cds.String"
+        },
+        "Incoterms": {
+          "type": "cds.String"
+        },
+        "Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC": {
+          "type": "cds.String"
+        },
+        "Details_of_deviated_or_better_terms_agreed_with_the_Vendor": {
+          "type": "cds.String"
+        },
+        "Market_Scenario_and_Demand": {
+          "type": "cds.String"
+        },
+        "Companys_Position_and_Market_dynamics_of_this_purchase": {
+          "type": "cds.String"
+        },
+        "Should_Be_Cost_estimated": {
+          "type": "cds.String"
+        },
+        "Highlights_of_this_proposal_and_Price_Justification_for_this_proposal": {
+          "type": "cds.String"
+        },
+        "Price_Escalation_Agreed_if_any": {
+          "type": "cds.String"
+        },
+        "Particulars_of_any_Free_Service_OR_Supply_Guarantees_OR_Warrant_yfrom_Vendor": {
+          "type": "cds.String"
+        },
+        "Transportation": {
+          "type": "cds.String"
+        },
+        "Logistics_Cost": {
+          "type": "cds.String"
+        },
+        "Delivery_Schedule": {
+          "type": "cds.String"
+        },
+        "Tax_Details": {
+          "type": "cds.String"
+        },
+        "Additional_Remarks": {
+          "type": "cds.String"
+        },
+        "ABG": {
+          "type": "cds.String"
+        },
+        "ABG_Value": {
+          "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
+        },
+        "CPBG_Value": {
+          "type": "cds.String"
+        },
+        "Scope_and_Responsibilities": {
+          "type": "cds.LargeString"
+        },
+        "Commercial_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Compliance_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Others": {
+          "type": "cds.LargeString"
         }
       }
     },
@@ -1608,10 +1857,7 @@
       "elements": {
         "PAN_Number": {
           "key": true,
-          "type": "cds.String",
-          "default": {
-            "val": "def"
-          }
+          "type": "cds.String"
         },
         "SBG": {
           "type": "cds.String"
@@ -2119,7 +2365,6 @@
               }
             ]
           },
-          "distinct": true,
           "columns": [
             {
               "ref": [
@@ -2206,6 +2451,132 @@
         },
         "Rank": {
           "type": "cds.String"
+        },
+        "Proposed_Vendor_Name": {
+          "type": "cds.String"
+        },
+        "Supplier_Origin_State": {
+          "type": "cds.String"
+        },
+        "Destination_State_BKTShipDASHto_LocationBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_GST_Number": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_CE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Score": {
+          "type": "cds.String"
+        },
+        "Vendor_PE_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH1": {
+          "type": "cds.String"
+        },
+        "Vendor_Contact_PersonDASH2": {
+          "type": "cds.String"
+        },
+        "Technical_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Commercial_Committee_who_cleared_the_proposal": {
+          "type": "cds.String"
+        },
+        "Vendor_References_to_be_displayed_in_Order": {
+          "type": "cds.String"
+        },
+        "Shortlisted_Vendors_Response_summary": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Project_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Order_Value_BKTIn_Bid_CurrencyBKT": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Date": {
+          "type": "cds.String"
+        },
+        "Vendor_Final_Quotation_Amount": {
+          "type": "cds.String"
+        },
+        "Project_CurrencyORBase_Currency": {
+          "type": "cds.String"
+        },
+        "Order_CurrencyORBid_currency": {
+          "type": "cds.String"
+        },
+        "Incoterms": {
+          "type": "cds.String"
+        },
+        "Number_of_Back_to_back_Terms_agreed_with_Vendor_as_per_GPC_OR_GCC": {
+          "type": "cds.String"
+        },
+        "Details_of_deviated_or_better_terms_agreed_with_the_Vendor": {
+          "type": "cds.String"
+        },
+        "Market_Scenario_and_Demand": {
+          "type": "cds.String"
+        },
+        "Companys_Position_and_Market_dynamics_of_this_purchase": {
+          "type": "cds.String"
+        },
+        "Should_Be_Cost_estimated": {
+          "type": "cds.String"
+        },
+        "Highlights_of_this_proposal_and_Price_Justification_for_this_proposal": {
+          "type": "cds.String"
+        },
+        "Price_Escalation_Agreed_if_any": {
+          "type": "cds.String"
+        },
+        "Particulars_of_any_Free_Service_OR_Supply_Guarantees_OR_Warrant_yfrom_Vendor": {
+          "type": "cds.String"
+        },
+        "Transportation": {
+          "type": "cds.String"
+        },
+        "Logistics_Cost": {
+          "type": "cds.String"
+        },
+        "Delivery_Schedule": {
+          "type": "cds.String"
+        },
+        "Tax_Details": {
+          "type": "cds.String"
+        },
+        "Additional_Remarks": {
+          "type": "cds.String"
+        },
+        "ABG": {
+          "type": "cds.String"
+        },
+        "ABG_Value": {
+          "type": "cds.String"
+        },
+        "CPBG": {
+          "type": "cds.String"
+        },
+        "CPBG_Value": {
+          "type": "cds.String"
+        },
+        "Scope_and_Responsibilities": {
+          "type": "cds.LargeString"
+        },
+        "Commercial_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Compliance_Terms": {
+          "type": "cds.LargeString"
+        },
+        "Others": {
+          "type": "cds.LargeString"
         }
       }
     },
