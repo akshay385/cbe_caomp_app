@@ -161,7 +161,7 @@ module.exports = cds.service.impl(async function () {
             await INSERT.into(Vendors).entries(vendor_details.value);
 
 
-            const vendor_res_details = await c4re.get("/odata/v4/pan-approval/PAN_vendor_data_APR");//vendor
+            const vendor_res_details = await c4re.get("/odata/v4/pan-approval/PAN_vendor_data_APR");//vendor response is replaced with vendor_data
             await DELETE.from(PAN_vendor_reponse_details);
             await INSERT.into(PAN_vendor_reponse_details).entries(vendor_res_details.value);
 

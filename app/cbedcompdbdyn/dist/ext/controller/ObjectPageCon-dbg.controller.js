@@ -18,10 +18,41 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 					// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 					var oModel = this.base.getExtensionAPI().getModel();
-
+					debugger
 					let header_anchor = this.base.getView().mAggregations.content[0].mAggregations.headerTitle;
-
+					let header_fragment = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::HeaderFacetCustomContainer::HeaderFragment--headervbox1");
 					header_anchor.destroyActions();
+					header_anchor.addAction(new sap.m.Button({
+						text: "ItemList-ExpandAll",
+						visible: false,
+						press: function (oEvent) {
+							debugger
+							if (oEvent.getSource().getText() == "ItemList-ExpandAll") {
+								oEvent.getSource().setText("ItemList-CollapseAll");
+								header_fragment.getItems()[0].firePress()
+							}
+							else {
+								oEvent.getSource().setText("ItemList-ExpandAll");
+								header_fragment.getItems()[0].firePress()
+							}
+						}
+					}))
+					header_anchor.addAction(new sap.m.Button({
+						text: "VendorList-ExpandAll",
+						visible: false,
+						press: function (oEvent) {
+							debugger
+							if (oEvent.getSource().getText() == "VendorList-ExpandAll") {
+								oEvent.getSource().setText("VendorList-CollapseAll");
+								header_fragment.getItems()[1].firePress()
+								debugger
+							}
+							else {
+								oEvent.getSource().setText("VendorList-ExpandAll");
+								header_fragment.getItems()[1].firePress()
+							}
+						}
+					}))
 
 				},
 				routing: {
@@ -46,7 +77,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							}
 							// window.location.reload(true);
 							var tempspath = oBindingContext.sPath;
-							var project_id = tempspath.match(/'([^']+)'/);
+							var project_id = tempspath?.match(/'([^']+)'/);
 							sap.ui.core.BusyIndicator.show();
 
 							//Base URI for deployment
@@ -224,10 +255,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							var pan_web_event = result[6];
 							debugger
 
-							vendorslist.sort((a, b) => {
-								// Assuming vendorname is a string property
-								return a.Vendor_Name.localeCompare(b.Vendor_Name);
-							});
+							if (vendorslist.length > 1) {
+								vendorslist?.sort((a, b) => {
+									// Assuming vendorname is a string property
+									return a.Vendor_Name.localeCompare(b.Vendor_Name);
+								});
+							}
+
 
 
 
@@ -241,7 +275,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 							let project_id_trim = project_id[0];
-							let cleaned_project_id = project_id_trim.replace(/'/g, '');
+							let cleaned_project_id = project_id_trim?.replace(/'/g, '');
 							let subject_op = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--Sopvalue")
 
 							let sop_value = pan_info.find(item => item.ProjectId == cleaned_project_id);
@@ -272,7 +306,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									size: "12px",
 									width: "20px",
 									press: function (oEvent) {
-
+										debugger
 
 										var vbox_omainhbox = omainHBox.getItems()[0];
 										let total_basic_pricing = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--total_basic_pricing");
@@ -284,7 +318,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 										if (vbox_omainhbox.getWidth() == "30%") {
 											itemstable.setFixedLayout(false);
-											vbox_omainhbox.setWidth("80%");
+											itemstable.getColumns()[0].getHeader().setWrapping(true)
+											vbox_omainhbox.setWidth("60vw");
+											omainHBox.getItems()[1].getContent()[0].setWidth("40vw")
 											oEvent.getSource().setSrc("sap-icon://collapse");
 											//
 											// temp_total_basic_pricing = total_basic_pricing.getText();
@@ -299,7 +335,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 										}
 										else {
 											itemstable.setFixedLayout(true);
+											itemstable.getColumns()[0].getHeader().setWrapping(false);
 											vbox_omainhbox.setWidth("30%");
+											omainHBox.getItems()[1].getContent()[0].setWidth("70vw")
 											oEvent.getSource().setSrc("sap-icon://expand");
 											//
 											// temp_total_basic_pricing = total_basic_pricing.getTooltip();
@@ -395,54 +433,54 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							// 	return acc;
 							// }, {});
 
-							let sortedData = list_of_items.sort((d1, d2) => {
-								if (d1.Item_Code !== d2.Item_Code) {
-									return d1.Item_Code.localeCompare(d2.Item_Code);
-								} else if (d1.Proposed_Vendor_Code !== d2.Proposed_Vendor_Code) {
-									return d1.Proposed_Vendor_Code.localeCompare(d2.Proposed_Vendor_Code);
-								} else {
-									return d1.PAN_Number.localeCompare(d2.PAN_Number);
-								}
-							});
+							// let sortedData = [...list_of_items]?.sort((d1, d2) => {
+							// 	if (d1.Item_Code !== d2.Item_Code) {
+							// 		return d1.Item_Code.localeCompare(d2.Item_Code);
+							// 	} else if (d1.Proposed_Vendor_Code !== d2.Proposed_Vendor_Code) {
+							// 		return d1.Proposed_Vendor_Code.localeCompare(d2.Proposed_Vendor_Code);
+							// 	} else {
+							// 		return d1.PAN_Number.localeCompare(d2.PAN_Number);
+							// 	}
+							// });
 
-							// let groupedData = sortedData.reduce((acc, currentItem) => {
-							// 	if (!acc[currentItem.Item_Code]) {
-							// 		acc[currentItem.Item_Code] = {};
+							// // let groupedData = sortedData.reduce((acc, currentItem) => {
+							// // 	if (!acc[currentItem.Item_Code]) {
+							// // 		acc[currentItem.Item_Code] = {};
+							// // 	}
+							// // 	if (!acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code]) {
+							// // 		acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code] = {};
+							// // 	}
+							// // 	if (!acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code][currentItem.PAN_Number]) {
+							// // 		acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code][currentItem.PAN_Number] = [];
+							// // 	}
+							// // 	acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code][currentItem.PAN_Number].push(currentItem);
+							// // 	return acc;
+							// // }, {});
+
+							// let groupedData = sortedData?.reduce((acc, currentItem) => {
+							// 	let key = `${currentItem.Item_Code}-${currentItem.Proposed_Vendor_Code}-${currentItem.PAN_Number}`;
+							// 	if (!acc[key]) {
+							// 		acc[key] = [];
 							// 	}
-							// 	if (!acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code]) {
-							// 		acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code] = {};
-							// 	}
-							// 	if (!acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code][currentItem.PAN_Number]) {
-							// 		acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code][currentItem.PAN_Number] = [];
-							// 	}
-							// 	acc[currentItem.Item_Code][currentItem.Proposed_Vendor_Code][currentItem.PAN_Number].push(currentItem);
+							// 	acc[key].push(currentItem);
 							// 	return acc;
 							// }, {});
 
-							let groupedData = sortedData.reduce((acc, currentItem) => {
-								let key = `${currentItem.Item_Code}-${currentItem.Proposed_Vendor_Code}-${currentItem.PAN_Number}`;
-								if (!acc[key]) {
-									acc[key] = [];
-								}
-								acc[key].push(currentItem);
-								return acc;
-							}, {});
-
-							console.log(groupedData);
+							// console.log(groupedData);
 
 
-							let maxGroupKey = "";
-							let maxGroupLength = 0;
+							// let maxGroupKey = "";
+							// let maxGroupLength = 0;
 
-							// Find the group with the largest array
-							for (let key in groupedData) {
-								if (groupedData[key].length > maxGroupLength) {
-									maxGroupLength = groupedData[key].length;
-									maxGroupKey = key;
-								}
-							}
+							// // Find the group with the largest array
+							// for (let key in groupedData) {
+							// 	if (groupedData[key].length > maxGroupLength) {
+							// 		maxGroupLength = groupedData[key].length;
+							// 		maxGroupKey = key;
+							// 	}
+							// }
 
-							let largestArray = groupedData[maxGroupKey]
+							// let largestArray = groupedData[maxGroupKey]
 
 							let tag_no_iterator = 1;
 
@@ -542,7 +580,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									// const element = list_of_items[i];
 
 									let quantity = list_of_items[j].Quantity;
-									let strippedQuantity = quantity.replace(/,/g, '');
+									let strippedQuantity = quantity?.replace(/,/g, '');
 									let integerQuantity = parseFloat(strippedQuantity, 10);
 
 									if (list_of_items[j].Item_Code == uniqueItems[i].Item_Code && quantity) {
@@ -617,6 +655,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 							//end of dynamic generation of Columns
 
+							//removed last column in table 
+							// let lastColumn = itemstable.getColumns()[itemstable.getColumns().length - 1];
+							// itemstable.getColumns()[itemstable.getColumns().length - 1].destroy();
+							// itemstable.getColumns()[itemstable.getColumns().length - 1].addItem
 
 
 
@@ -814,7 +856,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												if (awardvend == 'YES') {
 													debugger
 													console.log(vendorslist[k]?.Proposed_Vendor_Code)
-													awardVendorValue = `${vendorslist[k]?.Vendor_Location}`;
+													awardVendorValue = `${vendorslist[k]?.Order_amount_OR_Split_order_amount}`;
 													flagForAwardedVendor++;
 												}
 
@@ -866,7 +908,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													growing: true,
 													growingThreshold: 20,
 													width: "350px",
-													fixedLayout: true
+													fixedLayout: true,
+													// alternateRowColors:true
 												});
 
 
@@ -990,7 +1033,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 															// if (!itemMatchingPrjVenPan[0].Unit_Price) {
 															// 	debugger
 															// }
-															
+
 															AmtWithoutCommas = AmtWithoutCommas == 'NaN' ? ' ' : AmtWithoutCommas;
 															const total_amount_value = Number(AmtWithoutCommas ?? 0) * Number(quantityWithoutCommas ?? 0);
 															const total_amount_display = `${total_amount_value} ${itemMatchingPrjVenPan[0].Unit_Price ?? ' '}`;
@@ -1571,7 +1614,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												const inputString = vendorresponse_selecteditem[0]?.Vendor_Contact_PersonDASH1 ?? '';
 												if (inputString) {
 													var regex = /name\s*:(.*?)\s*email/;
-													var match = inputString.match(regex);
+													var match = inputString?.match(regex);
 												}
 
 												var contactPerson = match ? match[1].trim() : null;
@@ -1584,12 +1627,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													// height:"100px"
 												}));
 												const regexPh1 = /ph1\s*:\s*(.*?)\s*ph2/;
-												const matchPh1 = inputString.match(regexPh1);
+												const matchPh1 = inputString?.match(regexPh1);
 												let phoneNumber1 = matchPh1 ? matchPh1[1].trim() : null;
 
 												// Extracting ph2
 												const regexPh2 = /ph2\s*:\s*(.*?)$/;
-												const matchPh2 = inputString.match(regexPh2);
+												const matchPh2 = inputString?.match(regexPh2);
 												let phoneNumber2 = matchPh2 ? matchPh2[1].trim() : null;
 												if (phoneNumber1 == null) {
 													phoneNumber1 = ' ';
@@ -1711,7 +1754,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 											}),
 											new sap.m.Text({
 												text: `${awardVendorValue ?? ' '}`,
-												tooltip: `${vendorslist[i]?.Vendor_Location ?? ' '}`,
+												tooltip: `${vendorslist[i]?.Order_amount_OR_Split_order_amount ?? ' '}`,
 												wrapping: false,
 												textAlign: 'Center'
 											}),

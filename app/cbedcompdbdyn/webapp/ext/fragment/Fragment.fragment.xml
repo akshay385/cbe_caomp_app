@@ -34,7 +34,7 @@
 					<Label design="Bold" id="validityheader" text="Validity :"/>
 				</VBox>
 			</HBox>
-			<HBox id="demoxdemoe121" visible="false" justifyContent="Center">
+			<HBox id="demoxdemoe121" visible="false" justifyContent="Center"><!--Not used for structure purpose we are keeping it but its functionality is working(icon)-->
 				<HBox id="dexmodemotest" height="53px" alignItems="Center">
 					<Label id="titxle12" text="Expand" design="Bold"/>
 				</HBox>

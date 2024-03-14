@@ -57,7 +57,7 @@ sap.ui.define([
             var sectionslist = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::CustomSubSection::Fragment--rightHboxcontainer").getItems();
 
             var cylindrical_icon = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getSections()[0].mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.items[0].mAggregations.items[1].mAggregations.items[0].mAggregations.items[1];
-            if (oEvent.getSource().getPressed() == true) {
+            if (oEvent.getSource().getText() == "VendorList-ExpandAll") {
                 oEvent.getSource().setText("VendorList-CollapseAll");
 
                 if (cylindrical_icon.getSrc() == "sap-icon://expand") {
