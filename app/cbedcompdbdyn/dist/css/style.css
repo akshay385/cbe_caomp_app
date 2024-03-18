@@ -1,7 +1,7 @@
 :root {
     /* --green: #4fd4acd1; */
     /* --green: #4bbb8b; */
-    --green: #009879;
+    --green: #a0e490;
 }
 
 .v3spaceBetweenclass {
@@ -216,7 +216,7 @@
 /* background color of fragment */
 .ui-helper-clearfix {
     /* background-color: rgb(74, 74, 82) !important; */
-    background: radial-gradient(black, transparent);
+    /* background: radial-gradient(black, transparent); */
 }
 
 
@@ -224,7 +224,7 @@
 .sapFDynamicPageTitle,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:ObjectPage-OPHeaderContent {
     /* background: #8ec6ff !important; */
-    background: #36454F !important;
+    /* background: #36454F !important; */
     /* height: 70px; */
 }
 
@@ -236,12 +236,12 @@
 } */
 
 .sapFDynamicPageTitleMain>.sapFDynamicPageTitleMainInner .sapFDynamicPageTitleMainHeading .sapFDynamicPageTitleMainHeadingInner .sapMTitle:not(.sapUICompVarMngmtTitle) {
-    color: white !important;
-    filter: drop-shadow(2px 4px 6px black) !important;
+    /* color: white !important; */
+    /* filter: drop-shadow(2px 4px 6px black) !important; */
 }
 
 #__label1 {
-    color: white !important;
+    /* color: white !important; */
 }
 
 
@@ -446,18 +446,18 @@
 
 
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorDetailsTable {
-    height: 150px;
+    height: 88px;
     overflow-y: scroll;
     scrollbar-width: none;
-    /* border: solid 1px black; */
+    border: solid 1px black;
     margin-bottom: 20px;
     /* border-top-left-radius: 5px; */
     /* border-bottom-left-radius: 5px; */
 
-    border-collapse: collapse !important;
+    /* border-collapse: collapse !important;
     font-size: 0.9em !important;
     font-family: sans-serif !important;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important; */
 }
 
 
@@ -471,26 +471,27 @@
 /* Vendor table left section */
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorName,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--awardedVendor * {
-    background-color: #009879;
-    color: #ffffff;
+    /* background-color: #009879; */
+    /* color: #ffffff; */
     /* position: sticky;   for sticky */
     /* top: 0; */
     /* z-index: 2 ; */
 }
 
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--vendorName * {
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 
 /* items table left section css */
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--itemstable1 {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
+    border: solid 1px !important;
     /* margin: 25px 0; */
     font-size: 0.9em !important;
     font-family: sans-serif;
     /* min-width: 400px; */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
 }
 
 /* Items table header */
@@ -506,6 +507,6 @@
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col8,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col001,
 #cbedcompdbdyn\:\:Project_DetailsObjectPage--fe\:\:CustomSubSection\:\:Fragment--col9 {
-    background-color: burlywood !important;
-    color: aliceblue !important;
+    /* background-color: burlywood !important;
+    color: aliceblue !important; */
 }

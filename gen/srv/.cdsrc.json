@@ -6,7 +6,7 @@
         "dbservice": {
           "kind": "rest",
           "credentials": {
-            "url": "",
+            "url": "https://7c17a314trial-dev-main-db2-srv.cfapps.us10-001.hana.ondemand.com",
             "authentication": "BasicAuthentication",
             "username":"avan",
             "password":"1234"

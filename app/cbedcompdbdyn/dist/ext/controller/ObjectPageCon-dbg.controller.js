@@ -791,10 +791,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 								// vboxsuppnameloc.getItems()[0]
 
-								Location
-								vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierLocation" + (i + 1)}`, {
-									text: `${vendorslist[i].Vendor_Location ? vendorslist[i].Supplier_Origin_State : ' '}`
-								}));
+								// Location
+								// vboxsuppnameloc.addItem(new sap.m.Title(`${"SupplierLocation" + (i + 1)}`, {
+								// 	text: `${vendorslist[i].Vendor_Location ? vendorslist[i].Supplier_Origin_State : ' '}`
+								// }));
 
 
 								console.log(vendorslist);
@@ -879,10 +879,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 
-												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
-													text: `${vendorslist[k]?.validity ?? 'NA'}`
-													// text: `${plant_code[0].Plant_Code ?? 'NA'}`
-												}));
+												// vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_validity" + generateUniqueId()}`, {
+												// 	text: `${vendorslist[k]?.validity ?? 'NA'}`
+												// 	// text: `${plant_code[0].Plant_Code ?? 'NA'}`
+												// }));
 												vbmiddlesection_innervb.addItem(new sap.m.Text(`${"org_cylindrical_space" + generateUniqueId()}`, {
 													text: ""
 												}));
@@ -1272,18 +1272,18 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 												oTable.addItem(oItem1);
-												var oItem2 = new sap.m.ColumnListItem({
-													id: `${"spare" + generateUniqueId()}`,
-													cells: [
-														new sap.m.Text({ text: "" }),
-														new sap.m.Text({ text: "" }),
-														new sap.m.Text({ text: `${formatCurrency(valuesMap[namesToCheck[0]] ?? 0) + " " + grandTotalUnit ?? ' '}` })
-													]
-												});
+												// var oItem2 = new sap.m.ColumnListItem({
+												// 	id: `${"spare" + generateUniqueId()}`,
+												// 	cells: [
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: `${formatCurrency(valuesMap[namesToCheck[0]] ?? 0) + " " + grandTotalUnit ?? ' '}` })
+												// 	]
+												// });
 
 
 												let spares_2_value = grandTotalAmount + (parseFloat(valuesMap[namesToCheck[0]]) || 0)
-												oTable.addItem(oItem2);
+												// oTable.addItem(oItem2);
 												var oItem3 = new sap.m.ColumnListItem({
 													id: `${"grandtotal" + generateUniqueId()}`,
 													cells: [
@@ -1346,18 +1346,18 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// });
 
 												// oTable.addItem(oItem7);
-												var oItem8 = new sap.m.ColumnListItem({
-													id: `${"rnod" + generateUniqueId()}`,
-													visible: false,
-													cells: [
+												// var oItem8 = new sap.m.ColumnListItem({
+												// 	id: `${"rnod" + generateUniqueId()}`,
+												// 	visible: false,
+												// 	cells: [
 
-														new sap.m.Label({ text: `${valuesMap[namesToCheck[4]] ?? ' '}`, design: "Bold" }),
-														new sap.m.Text({ text: "" }),
-														new sap.m.Text({ text: "" }),
-													]
-												});
+												// 		new sap.m.Label({ text: `${valuesMap[namesToCheck[4]] ?? ' '}`, design: "Bold" }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: "" }),
+												// 	]
+												// });
 
-												oTable.addItem(oItem8);
+												// oTable.addItem(oItem8);
 												var oItem9 = new sap.m.ColumnListItem({
 													id: `${"customduty" + generateUniqueId()}`,
 													visible: false,
@@ -1437,22 +1437,23 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 												// });
 
 												// oTable.addItem(oItem12);
-												var oItem13 = new sap.m.ColumnListItem({
-													id: `${"shipment" + generateUniqueId()}`,
-													visible: false,
-													cells: [
+												// var oItem13 = new sap.m.ColumnListItem({
+												// 	id: `${"shipment" + generateUniqueId()}`,
+												// 	visible: false,
+												// 	cells: [
 
-														new sap.m.Text({ text: `${valuesMap[namesToCheck[9]] ?? ' '}` }),
-														new sap.m.Text({ text: "" }),
-														new sap.m.Text({ text: "" }),
-													]
-												});
+												// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[9]] ?? ' '}` }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: "" }),
+												// 	]
+												// });
+												// oTable.addItem(oItem13);
 												if (!extendedprice) {
 													extendedprice = 0;
 												}
 
 												let totalincludingtax = totalchargesB + sgst_amt + igst_amt + ugst_amt
-												oTable.addItem(oItem13);
+												
 												var oItem14 = new sap.m.ColumnListItem({
 													id: `${"totalincludingtaxes" + generateUniqueId()}`,
 													cells: [
@@ -1475,28 +1476,29 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 													]
 												});
 												oTable.addItem(oItem14);
-												var oItem15 = new sap.m.ColumnListItem({
-													id: `${"perdiemrate" + generateUniqueId()}`,
-													cells: [
-														new sap.m.Text({ text: `${valuesMap[namesToCheck[10]] ?? ' '}` }),
-														new sap.m.Text({ text: "" }),
-														new sap.m.Text({ text: "" })
-													]
-												});
-												oTable.addItem(oItem15);
+												// var oItem15 = new sap.m.ColumnListItem({
+												// 	id: `${"perdiemrate" + generateUniqueId()}`,
+												// 	cells: [
+												// 		new sap.m.Text({ text: `${valuesMap[namesToCheck[10]] ?? ' '}` }),
+												// 		new sap.m.Text({ text: "" }),
+												// 		new sap.m.Text({ text: "" })
+												// 	]
+												// });
+												// oTable.addItem(oItem15);
+												debugger
 												if (vendorslist[k].Rank == '1') {
 
 
 													oTable.getColumns()[0].setStyleClass("columnStyleClass");
 													oTable.getColumns()[1].setStyleClass("columnStyleClass");
 													oTable.getColumns()[2].setStyleClass("columnStyleClass");
-													oTable.getItems()[oTable.getItems().length - 5].addStyleClass("customColumnList")
+													oTable.getItems()[oTable.getItems().length - 3].addStyleClass("customColumnList")
 												}
 
 
-												oTable.getItems()[oTable.getItems().length - 5].addStyleClass("taxCell")
+												oTable.getItems()[oTable.getItems().length - 3].addStyleClass("taxCell")
 
-												let tax_text = oTable.getItems()[oTable.getItems().length - 5].getContent()[0].addStyleClass("taxTextClass")
+												let tax_text = oTable.getItems()[oTable.getItems().length - 3].getContent()[0].addStyleClass("taxTextClass")
 
 
 												var combobox_item = vbox_last_section.getItems()[0]
@@ -1655,10 +1657,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 
 
 												//Techncially Approved
-												chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
-													text: `${vendorslist[k].Technically_Approved ?? ' '}`,
-													// height:"25px"
-												}));
+												// chvbox.addItem(new sap.m.Text(`${"technicallyapproved" + generateUniqueId()}`, {
+												// 	text: `${vendorslist[k].Technically_Approved ?? ' '}`,
+												// 	// height:"25px"
+												// }));
 
 
 
@@ -1797,19 +1799,19 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								}
 							}
 
-
+							debugger
 							let sect_under_spares = omainHBox.getItems()[0].getItems()[3].getItems();
-							for (let i = 2; i <= 8; i++) {
+							for (let i = 1; i <= 5; i++) {
 								sect_under_spares[i].setVisible(false);
 							}
-							for (let i = 13; i < sect_under_spares.length; i++) {
+							for (let i = 9; i < sect_under_spares.length; i++) {
 								sect_under_spares[i].setVisible(false);
 							}
-							if (sect_under_spares[9].getItems()[1].getSrc() == 'sap-icon://navigation-up-arrow') {
-								sect_under_spares[9].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
+							if (sect_under_spares[6].getItems()[1].getSrc() == 'sap-icon://navigation-up-arrow') {
+								sect_under_spares[6].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
 							}
-							if (sect_under_spares[12].getItems()[1].getSrc() == 'sap-icon://navigation-down-arrow') {
-								sect_under_spares[12].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
+							if (sect_under_spares[8].getItems()[1].getSrc() == 'sap-icon://navigation-down-arrow') {
+								sect_under_spares[8].getItems()[1].setSrc('sap-icon://navigation-right-arrow')
 							}
 
 

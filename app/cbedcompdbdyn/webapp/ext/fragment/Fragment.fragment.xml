@@ -28,10 +28,10 @@
 				</VBox>
 				<VBox id="supplier_header" class="supplierheaderClass" alignItems="End">
 					<Label design="Bold" class="labelHeightClass" id="supplierheader" text="Supplier :"/>
-					<Label design="Bold" id="locationheader" text="Location :"/>
-					<Label design="Bold" id="qtn_ref_header" text="Qtn. Ref. :"/>
+					<!-- <Label design="Bold" id="locationheader" text="Location :"/> -->
+					<Label design="Bold" id="qtn_ref_header" text="Doc. Id :"/>
 					<Label design="Bold" id="dateheader" text="Date :"/>
-					<Label design="Bold" id="validityheader" text="Validity :"/>
+					<!-- <Label design="Bold" id="validityheader" text="Validity :"/> -->
 				</VBox>
 			</HBox>
 			<HBox id="demoxdemoe121" visible="false" justifyContent="Center"><!--Not used for structure purpose we are keeping it but its functionality is working(icon)-->
@@ -86,7 +86,7 @@
 			</HBox>
 
 			<VBox id="leftbelowtable" class="v3spaceBetweenclass" alignItems="End">
-				<Label id="sparesfor2" text="Spares for 2 Years operation" />
+				<!-- <Label id="sparesfor2" text="Spares for 2 Years operation" /> -->
 				<Label design="Bold" id="grandtotal" text=" Grand Total" />
 				<Label id="pmff" text="Freight" visible="true"/>
 				<Label id="inspection_testing_charges" text="Inspection / Testing Charges" visible="true"/>
@@ -95,20 +95,20 @@
 					<Label design="Bold" id="total_basic_pricing" text="Total Basic Price including packing, marking..." tooltip="Total Basic Price including packing, marking and forwarding" />
 					<core:Icon id="icon1" src="sap-icon://navigation-right-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_forwaring" size="13px"></core:Icon>
 				</HBox> -->
-				<Label design="Bold" id="rnod" text="RNOD" />
+				<!-- <Label design="Bold" id="rnod" text="RNOD" /> -->
 				<Label id="custom_duty" text="Custom Duty and Cess" visible="true"/>
 				<Label id="tax_field" class="taxClass" text="Tax" visible="true"/>
 				<!-- <Label id="sgst" text="SGST" visible="false"/>
 				<Label id="igst" text="IGST" visible="false"/>
 				<Label id="ugst" text="UGST" visible="false"/> -->
-				<Label id="shipmentcharges" text="Shipment charges from EXW to ISRO Mahendragiri " visible="true"/>
+				<!-- <Label id="shipmentcharges" text="Shipment charges from EXW to ISRO Mahendragiri " visible="true"/> -->
 				<HBox id="total_including_tax" alignItems="End">
 					<Label design="Bold" id="newItemID1" text="Total Basic Price including packing,..." tooltip="Total Basic Price including packing, marking and forwarding, Transportation including Taxes" />
 					<core:Icon id="icon2" src="sap-icon://navigation-up-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_includingtax" size="13px"></core:Icon>
 				</HBox>
 				<Label design="Bold" id="total_excluding_taxes" text="Total Basic Price including packing, marking and....." tooltip="Total Basic Price including packing, marking and forwarding, Transportation excluding Taxes" />
 				<!-- <Label design="Bold" id="2ndsparesfor2years" text= "Spares for 2 Years operation" /> -->
-				<Label design="Bold" id="per_diem" text="Per Diem rate for Supervision for Erection and commissioning" />
+				<!-- <Label design="Bold" id="per_diem" text="Per Diem rate for Supervision for Erection and commissioning" /> -->
 				<HBox id="hpricebasis" height="15px" alignItems="End">
 					<Label design="Bold" id="moreid" text=" View more..." />
 					<core:Icon id="icon3" src="sap-icon://navigation-down-arrow" color="darkblue" hoverColor="red" activeColor="darkgreen" width="20px" core:require="{ handler: 'cbedcompdbdyn/ext/fragment/Fragment'}" press="handler.onPress_priccebasis" size="13px"></core:Icon>
@@ -123,7 +123,7 @@
 				<Label id="contact_per" text="Contact Person" visible="true"/>
 				<Label id="contact_no" text="Contact No." visible="true"/>
 				<Label id="ordercanbe" text=" Order can be given to……..." visible="true"/>
-				<Label id="tech_approved" text=" Techncially Approved " class="custtechnically" visible="true"/>
+				<!-- <Label id="tech_approved" text=" Techncially Approved " class="custtechnically" visible="true"/> -->
 				<Label id="approvedvendor" text="Approved Vendor" class="custtechnically" visible="true"/>
 
 			</VBox>

@@ -135,10 +135,10 @@ sap.ui.define([
             var data = [
                 { 2: "Commercial Bid Evaluation" },
                 { 1: "", 11: 'Supplier' },
-                { 1: "", 11: 'Location' },
-                { 1: "Project", 2: `${"SOP: " + subject_op}`, 11: 'Qtn. Ref.' },
+                // { 1: "", 11: 'Location' },
+                { 1: "Project", 2: `${"SOP: " + subject_op}`, 11: 'Doc. Id' },
                 { 1: "", 11: 'Date' },
-                { 1: "", 11: 'Validity' },
+                // { 1: "", 11: 'Validity' },
                 { 1: "", },
                 // { 1: "MTO Sr.NO ", 2: 'Items Description', 3: "Tag No", 4: "Type of Vessel", 5: "Capacity Each ( Cu Mtr )", 6: "Dia mm", 7: "TL to TL Length (mm)", 8: "MOC", 9: "Design Pressure bar", 10: "Weights", 11: "Quantity" },
             ];
@@ -204,21 +204,21 @@ sap.ui.define([
             // }
             var new_data = [
                 { 1: "", 2: '' },
-                { 1: "3", [colcnt]: 'Spares for 2 Years operation' },
+                // { 1: "3", [colcnt]: 'Spares for 2 Years operation' },
                 { 1: " ", [colcnt]: 'Grand Total' },
                 { 1: "4", [colcnt]: 'Freight' },
                 { 1: "5", [colcnt]: 'Inspection / Testing Charges' },
                 { 1: "B.3", [colcnt]: 'Documentation Charges' },
                 // { 1: "3", 10: 'Total Basic Price including packing, marking & forwarding' },
-                { 1: "C", [colcnt]: 'RNOD' },
+                // { 1: "C", [colcnt]: 'RNOD' },
                 { 1: "D.1", [colcnt]: 'Custom Duty & Cess' },
                 { 1: "D.2", [colcnt]: 'Tax' },
                 // { 1: "D.3", 10: 'IGST' },
                 // { 1: "D.4", 10: 'UGST' },
-                { 1: "D.6", [colcnt]: 'Shipment charges from EXW to ISRO Mahendragiri' },
+                // { 1: "D.6", [colcnt]: 'Shipment charges from EXW to ISRO Mahendragiri' },
                 { 1: "D", [colcnt]: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes' },
                 { [colcnt]: 'Total Basic Price including packing, marking & forwarding, Transportation excluding Taxes' },
-                { 1: "F", [colcnt]: 'Per Diem rate for Supervision for Erection and commissioning' },
+                // { 1: "F", [colcnt]: 'Per Diem rate for Supervision for Erection and commissioning' },
                 // { 1: "G.1", 10: 'PriceBasic' },
                 // { 1: "G.2", 10: 'Point of delivery' },
                 { 1: "G.3", [colcnt]: 'Scope and Responsibilities' },
@@ -230,7 +230,7 @@ sap.ui.define([
                 { 1: "G.9", [colcnt]: 'Contact person' },
                 { 1: "G.10", [colcnt]: 'Contact No' },
                 { 1: "G.11", [colcnt]: 'Order can be given to ..' },
-                { 1: "G.12", [colcnt]: 'Technical approved' },
+                // { 1: "G.12", [colcnt]: 'Technical approved' },
                 { 1: "G.13", [colcnt]: 'Approved vendor' },
             ]
 
@@ -249,14 +249,14 @@ sap.ui.define([
 
 
                 let vendor_name = list_of_sections[i].getItems()[0].getItems()[0].getTooltip();
-                let venodor_location = list_of_sections[i].getItems()[0].getItems()[1].getText();
+                // let venodor_location = list_of_sections[i].getItems()[0].getItems()[1].getText();
 
                 let list_of_status = list_of_sections[i].getItems()[1].getItems();
                 let arr = [];
                 vendor = [
                     { [cnt]: '' },
                     { [cnt]: vendor_name },
-                    { [cnt]: venodor_location }
+                    // { [cnt]: venodor_location }
                 ];
 
                 // for (let j = 0; j < list_of_status.length; j++) {
@@ -269,7 +269,7 @@ sap.ui.define([
 
                     let qnt_ref = list_of_status[j].getItems()[0].getItems()[0].getText();
                     let rdate = list_of_status[j].getItems()[0].getItems()[1].getText();
-                    let validity = list_of_status[j].getItems()[0].getItems()[2].getText();
+                    // let validity = list_of_status[j].getItems()[0].getItems()[2].getText();
                     let pan_status_name = list_of_status[j].getItems()[1].getItems()[0].getText();
 
 
@@ -282,7 +282,7 @@ sap.ui.define([
                     let arr = [
                         { [keyl]: qnt_ref },
                         { [keyl]: rdate },
-                        { [keyl]: validity },
+                        // { [keyl]: validity },
                         { [keyl]: pan_status_name },
                         { [keyl]: 'Unit Rate', [keym]: 'Quantity', [keyn]: 'Total Amount' }
                         // { [keyl]: 'Unit Rate', [keym]: 'Rate per unit', [keyn]: 'Total Amount' }
@@ -326,23 +326,24 @@ sap.ui.define([
                     let items_table = list_of_status[j].getItems()[1].getItems()[1].getItems();
                     let tablelen = table_items.length;
 
+                    debugger
                     let aftertable = [
                         { [keyl]: "" },
+                        // { [keyn]: items_table[tablelen + 1].getCells()[2].getText() },//spares
                         { [keyn]: items_table[tablelen + 1].getCells()[2].getText() },
-                        { [keyn]: items_table[tablelen + 2].getCells()[2].getText() },
-                        { [keyl]: items_table[tablelen + 3].getCells()[0].getText(), [keyn]: items_table[tablelen + 3].getCells()[2].getText() },
-                        { [keyl]: items_table[tablelen + 4].getCells()[0].getText(), [keyn]: items_table[tablelen + 4].getCells()[2].getText() },
-                        { [keyl]: items_table[tablelen + 5].getCells()[0].getText(), [keyn]: items_table[tablelen + 5].getCells()[2].getText() },
-                        { [keyn]: items_table[tablelen + 6].getCells()[1].getText() },
-                        { [keyn]: items_table[tablelen + 7].getCells()[1].getText() },
-                        { [keyl]: items_table[tablelen + 8].getContent()[0].getText() },
+                        { [keyl]: items_table[tablelen + 2].getCells()[0].getText(), [keyn]: items_table[tablelen + 3].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 3].getCells()[0].getText(), [keyn]: items_table[tablelen + 4].getCells()[2].getText() },
+                        { [keyl]: items_table[tablelen + 4].getCells()[0].getText(), [keyn]: items_table[tablelen + 5].getCells()[2].getText() },
+                        { [keyn]: items_table[tablelen + 5].getCells()[1].getText() },
+                        // { [keyn]: items_table[tablelen + 6].getCells()[1].getText() },
+                        { [keyl]: items_table[tablelen + 6].getContent()[0].getText() },//tax
                         // { [keyl]: items_table[tablelen + 9].getCells()[0].getText(), [keyn]: items_table[tablelen + 9].getCells()[2].getText() }, // sgst
                         // { [keyl]: items_table[tablelen + 10].getCells()[0].getText(), [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // igst
                         // { [keyl]: items_table[tablelen + 11].getCells()[0].getText(), [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // ugst
-                        { [keyl]: items_table[tablelen + 9].getCells()[0].getText() }, // shipment     //Till here
-                        { [keyn]: items_table[tablelen + 10].getCells()[2].getText() }, // including tax
-                        { [keyn]: items_table[tablelen + 11].getCells()[2].getText() }, // excluding tax
-                        { [keyn]: items_table[tablelen + 12].getCells()[2].getText() }, // perdeim
+                        // { [keyl]: items_table[tablelen + 9].getCells()[0].getText() }, // shipment     //Till here
+                        { [keyn]: items_table[tablelen + 7].getCells()[2].getText() }, // including tax
+                        { [keyn]: items_table[tablelen + 8].getCells()[2].getText() }, // excluding tax
+                        // { [keyn]: items_table[tablelen + 12].getCells()[2].getText() }, // perdeim
                         // { [keyl]: pricesbasishbox[j].getItems()[0].getText() }, // pricebasis
                         // { [keyl]: pricesbasishbox[j].getItems()[1].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[0].getContent()[0].getText() },
@@ -354,7 +355,7 @@ sap.ui.define([
                         { [keyl]: pricesbasishbox[j].getItems()[5].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[6].getText() },
                         { [keyl]: pricesbasishbox[j].getItems()[7].getText() },
-                        { [keyl]: pricesbasishbox[j].getItems()[8].getText() },
+                        // { [keyl]: pricesbasishbox[j].getItems()[8].getText() },
                     ];
 
                     arr = arr.concat(aftertable);

@@ -25,14 +25,17 @@ module.exports = cds.service.impl(async function () {
     var panformDest;
     // let auth = req?.headers?.authorization;
     // console.log(auth);
+
+    //development
+    panformDest = vcap.destination[0]
+    
     vcap.destination.forEach((dest) => {
         if (dest?.name != undefined && dest?.name == "main_db2-destination-service") {
             panformDest = dest;
         }
     })
 
-    //development
-    //    panformDest =  vcap.destination[0]
+
 
     var tokenurl = panformDest.credentials.url + "/oauth/token?grant_type=client_credentials";
     var basicAuth = panformDest.credentials.clientid + ":" + panformDest.credentials.clientsecret;
@@ -67,6 +70,9 @@ module.exports = cds.service.impl(async function () {
 
     c4re.destination.url = baseSrvUrl;
     console.log()
+
+
+    //deployment
 
 
     // this.before("READ", PAN_Details, async (req) => {
